@@ -14,7 +14,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --navy:#1A3C5E;
@@ -213,9 +212,6 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
   color:#fff;font-weight:600;
   box-shadow:0 2px 12px rgba(26,60,94,0.18);
 }
-.trust-bar{display:flex;flex-wrap:wrap;gap:20px;padding-top:18px;border-top:1px solid var(--border)}
-.t-item{font-size:13px;font-weight:500;color:var(--warm);display:flex;align-items:center;gap:6px}
-.t-item::before{content:'✓';color:var(--success);font-weight:700;font-size:11px}
 .hero-call{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--warm);text-decoration:none;transition:color 0.15s}
 .hero-call:hover{color:var(--navy)}
 
@@ -453,14 +449,14 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
   background-image:url('https://images.unsplash.com/photo-1514395462725-fb4566210144?w=1600&q=80&auto=format&fit=crop');
   background-size:cover;
   background-position:center 55%;
-  filter:blur(1.5px) saturate(0.75) brightness(0.92);
+  filter:blur(0px) saturate(1) brightness(0.75);
   transform:scale(1.04);
   z-index:0;
 }
 .cities-section::after{
   content:'';
   position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(242,248,252,0.72) 0%,rgba(242,248,252,0.55) 40%,rgba(242,248,252,0.78) 100%);
+  background:linear-gradient(180deg,rgba(242,248,252,0.35) 0%,rgba(242,248,252,0.2) 40%,rgba(242,248,252,0.4) 100%);
   z-index:1;
 }
 .cities-section .container{position:relative;z-index:2}
@@ -570,22 +566,6 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
   .hero-eyebrow{display:none}
   .hero h1{font-size:28px;letter-spacing:-0.8px;margin-bottom:10px;line-height:1.12}
   .hero-sub{font-size:15px;margin-bottom:18px;max-width:100%}
-  .trust-bar{
-    gap:0;padding-top:0;border-top:none;
-    display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;
-    scrollbar-width:none;padding:14px 0 4px;
-    margin:0 -14px;padding-left:14px;
-  }
-  .trust-bar::-webkit-scrollbar{display:none}
-  .t-item{
-    flex-shrink:0;
-    background:#fff;border:1px solid var(--border);
-    border-radius:20px;padding:6px 14px;
-    font-size:12px;font-weight:600;color:var(--navy);
-    white-space:nowrap;margin-right:8px;
-    display:flex;align-items:center;gap:5px;
-  }
-  .t-item::before{font-size:10px}
 
   /* ══ QUOTE CARD — app card style ══ */
   #quote{margin-top:0}
@@ -759,7 +739,7 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
   /* ══ FAQ ══ */
   .faq-section{background:#fff}
   .faq-head{margin-bottom:20px}
-  .faq-list{max-width:100%}
+  .faq-list{grid-template-columns:1fr;max-width:100%}
   .faq-q{padding:14px 0;gap:12px}
   .faq-q-body h4{font-size:14px}
   .faq-a p{font-size:13px;padding:4px 0 12px}
@@ -800,7 +780,7 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
 
 
   /* ══ ABOUT — compact ══ */
-  .about-section{background:#fff}
+  .about-section{background:var(--offwhite)}
   .about-inner{max-width:100%}
   .about-photo-wrap{gap:14px;margin-bottom:20px}
   .about-photo{width:64px;height:64px;border-width:2px}
@@ -917,8 +897,14 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
 
 /* ── FAQ ── */
 .faq-section{padding:48px 0;background:#fff}
-.faq-head{margin-bottom:20px}
-.faq-list{display:flex;flex-direction:column;max-width:720px}
+.faq-head{margin-bottom:32px;text-align:center;max-width:640px;margin-left:auto;margin-right:auto}
+.faq-head .section-tag{margin:0 auto 10px}
+.faq-head .section-title{margin-bottom:8px}
+.faq-list{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0 40px;max-width:960px;margin:0 auto;
+  align-items:start;
+}
 .faq-item{border-bottom:1px solid var(--border)}
 .faq-item:first-child{border-top:1px solid var(--border)}
 .faq-q{
@@ -943,11 +929,11 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
 
 .partner-icon{font-size:26px;margin-bottom:10px}
 /* ── ABOUT ── */
-.about-section{padding:48px 0;background:#fff}
-.about-inner{max-width:680px}
+.about-section{padding:48px 0;background:var(--offwhite)}
+.about-inner{max-width:900px;margin:0 auto}
 .about-photo-wrap{display:flex;align-items:center;gap:20px;margin-bottom:28px}
 .about-photo{
-  width:88px;height:88px;border-radius:50%;flex-shrink:0;
+  width:96px;height:96px;border-radius:50%;flex-shrink:0;
   object-fit:cover;object-position:center top;
   border:3px solid var(--gold-pale);
   box-shadow:0 4px 16px rgba(26,60,94,0.12);
@@ -1151,48 +1137,382 @@ footer{background:var(--navy);padding:32px 0 0}
 
 
 
-/* ── GUIDES PAGE ── */
-.page-hero{background:var(--navy);padding:40px 0 36px;text-align:center}
-.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:#fff;letter-spacing:-0.8px;margin-bottom:8px}
-.page-hero p{font-size:15px;color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto 20px}
-.page-hero-nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-.page-hero-nav a{font-size:12px;font-weight:600;color:rgba(255,255,255,0.8);text-decoration:none;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:5px 14px;transition:all 0.15s}
-.page-hero-nav a:hover{background:rgba(255,255,255,0.2);color:#fff}
-.guides-wrap{max-width:1100px;margin:0 auto;padding:0 40px}
-.guides-layout{display:grid;grid-template-columns:220px 1fr;gap:44px;margin:40px 0}
-.guides-sidebar{position:sticky;top:80px}
-.guide-toc{background:var(--offwhite);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:16px}
+/* ── GUIDES PAGE HEADER ── */
+.guides-header{background:var(--navy);padding:56px 0 48px;position:relative;overflow:hidden}
+.guides-header::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:url('https://images.unsplash.com/photo-1514395462725-fb4566210144?w=1600&q=80&auto=format&fit=crop');background-size:cover;background-position:center;filter:blur(2px) saturate(0.6) brightness(0.3);z-index:0}
+.guides-header::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(26,60,94,0.6) 0%,rgba(26,60,94,0.4) 100%);pointer-events:none;z-index:1}
+.guides-header .container{position:relative;z-index:3}
+.guides-header h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,48px);font-weight:700;color:#fff;letter-spacing:-1.2px;margin-bottom:12px;line-height:1.1}
+.guides-header p{font-size:17px;color:rgba(255,255,255,0.75);max-width:580px;line-height:1.6}
+.guides-nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-start;margin-top:28px}
+.guides-nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,0.8);text-decoration:none;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);border-radius:8px;padding:8px 16px;transition:all 0.2s;white-space:nowrap}
+.guides-nav a:hover{background:rgba(255,255,255,0.22);color:#fff;border-color:rgba(255,255,255,0.4)}
+
+.guides-wrap{max-width:1140px;margin:0 auto;padding:0 48px}
+
+/* ── GUIDES HEADER ── */
+.guides-header{background:var(--navy);padding:56px 0 48px;text-align:center;position:relative;overflow:hidden}
+.guides-header::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:url('https://images.unsplash.com/photo-1514395462725-fb4566210144?w=1600&q=80&auto=format&fit=crop');background-size:cover;background-position:center;filter:blur(2px) saturate(0.5) brightness(0.3);z-index:0}
+.guides-header::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(26,60,94,0.6) 0%,rgba(26,60,94,0.4) 100%);pointer-events:none;z-index:1}
+.guides-header .container{position:relative;z-index:3}
+.guides-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);font-weight:700;color:#fff;letter-spacing:-0.8px;margin-bottom:12px;line-height:1.1}
+.guides-header p{font-size:16px;color:rgba(255,255,255,0.7);max-width:520px;margin:0 auto 24px;line-height:1.6}
+.guides-nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.guides-nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,0.8);text-decoration:none;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);border-radius:8px;padding:8px 16px;transition:all 0.2s;white-space:nowrap}
+.guides-nav a:hover{background:rgba(255,255,255,0.22);color:#fff}
+
+/* ── GUIDE ARTICLES ── */
+.guide-article{padding:64px 0;border-bottom:1px solid var(--border)}
+.guide-article:last-child{border-bottom:none;padding-bottom:0}
+.article-grid{display:grid;grid-template-columns:260px 1fr;gap:60px;align-items:start}
+.article-sidebar{position:sticky;top:82px;align-self:start}
+.art-cat{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+.article-sidebar h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:10px;letter-spacing:-0.3px}
+.art-meta{font-size:12px;color:var(--warm);margin-bottom:18px;display:flex;gap:12px}
+.toc-box{background:var(--offwhite);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:0}
+.toc-title{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--warm);margin-bottom:12px}
+.toc-box ul{list-style:none;display:flex;flex-direction:column;gap:2px}
+.toc-box a{display:flex;align-items:center;font-size:13px;color:var(--warm);text-decoration:none;padding:8px 10px;border-radius:8px;transition:all 0.15s;font-family:'DM Sans',sans-serif}
+.toc-box a::before{content:'→';margin-right:7px;opacity:0;transform:translateX(-4px);transition:all 0.15s;color:var(--gold);font-size:12px}
+.toc-box a:hover{color:var(--navy);background:var(--gold-pale)}
+.toc-box a:hover::before{opacity:1;transform:translateX(0)}
+
+/* ── ARTICLE BODY ── */
+.body{min-width:0}
+.body h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--navy);line-height:1.25;margin:32px 0 14px;letter-spacing:-0.3px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.body h3:first-child{margin-top:0}
+.body h5{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.body p{font-size:15px;color:#3D5166;line-height:1.82;margin-bottom:16px}
+.body ul,.body ol{margin:0 0 18px;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.body ul li,.body ol li{font-size:15px;color:#3D5166;line-height:1.7;display:flex;align-items:flex-start;gap:12px}
+.body ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:8px}
+.body ol{counter-reset:n}
+.body ol li{counter-increment:n}
+.body ol li::before{content:counter(n);min-width:26px;height:26px;border-radius:50%;background:var(--gold-pale);color:var(--navy);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0}
+.body strong{font-weight:600;color:var(--navy)}
+.callout{background:var(--gold-pale);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0}
+.callout p{font-size:14px;color:var(--navy);margin:0;line-height:1.65;font-weight:500}
+.warn{background:#fff8f0;border-left:3px solid #e0940a;border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0}
+.warn p{font-size:14px;color:#7a5200;margin:0;line-height:1.65}
+.guide-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:10px;overflow:hidden;box-shadow:0 3px 12px rgba(26,60,94,0.08)}
+.guide-table thead th{background:var(--navy);color:#fff;padding:13px 18px;text-align:left;font-weight:600;font-size:12px;letter-spacing:0.4px;text-transform:uppercase}
+.guide-table td{padding:13px 18px;border-bottom:1px solid var(--border);color:#3d5166;line-height:1.55;vertical-align:top;font-size:14px}
+.guide-table td:first-child{white-space:nowrap;font-weight:500;color:var(--navy)}
+.guide-table tr:last-child td{border-bottom:none}
+.guide-table tr:nth-child(even) td{background:var(--offwhite)}
+.guide-table tr:hover td{background:var(--gold-pale)}
+.steps{display:flex;flex-direction:column;margin:20px 0;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.step{display:flex;gap:16px;padding:16px 20px;border-bottom:1px solid var(--border);align-items:flex-start;background:#fff;transition:background 0.12s}
+.step:last-child{border-bottom:none}
+.step:hover{background:var(--gold-pale)}
+.snum{width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Playfair Display',serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-body p{font-size:13px;color:var(--warm);line-height:1.6;margin:3px 0 0}
+
+/* ── GUIDES BOTTOM CTA ── */
+.guides-bottom-cta{background:var(--navy);border-radius:12px;padding:32px;text-align:center;margin:48px 0}
+.guides-bottom-cta h3{font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin-bottom:8px}
+.guides-bottom-cta p{font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:20px}
+
+@media(max-width:900px){.article-grid{grid-template-columns:1fr;gap:28px}.article-sidebar{position:static;display:none}.guide-article{padding:40px 0}.guides-wrap{padding:28px 24px 0}}
+@media(max-width:480px){.guides-wrap{padding:20px 16px 0}.guide-article{padding:28px 0}.body h3{font-size:17px}body{padding-bottom:76px}}
+.guide-toc{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(26,60,94,0.05)}
 .guide-toc-head{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--warm);margin-bottom:10px}
-.guide-toc a{display:block;font-size:13px;color:var(--warm);text-decoration:none;padding:7px 0;border-bottom:1px solid var(--border);transition:color 0.15s}
-.guide-toc a:last-child{border-bottom:none}
-.guide-toc a:hover{color:var(--navy);font-weight:500}
+.guide-toc a{display:flex;align-items:center;font-size:13px;color:var(--warm);text-decoration:none;padding:8px 10px;border-radius:8px;transition:all 0.15s;margin-bottom:2px;font-family:'DM Sans',sans-serif}
+.guide-toc a::before{content:'→';margin-right:7px;opacity:0;transform:translateX(-4px);transition:all 0.15s;color:var(--gold);font-size:12px}
+.guide-toc a:hover{color:var(--navy);background:var(--gold-pale)}
+.guide-toc a:hover::before{opacity:1;transform:translateX(0)}
+.guide-toc a.active{color:var(--navy);font-weight:600;background:var(--gold-pale)}
+.guide-toc a.active::before{opacity:1;transform:translateX(0)}
 .guide-cta-box{background:var(--navy);border-radius:12px;padding:18px;text-align:center}
 .guide-cta-box p{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.55;margin-bottom:12px}
 .guide-cta-box .gcta-btn{width:100%;background:var(--gold);color:var(--navy);border:none;border-radius:8px;padding:10px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer}
 .guide-cta-box .gcta-phone{display:block;font-size:12px;color:rgba(255,255,255,0.45);margin-top:8px;text-decoration:none}
-.guide-article{margin-bottom:44px;padding-bottom:44px;border-bottom:1px solid var(--border)}
-.guide-article:last-child{border-bottom:none}
+.guide-article{padding:64px 0;border-bottom:1px solid var(--border)}
+.guide-article:last-child{border-bottom:none;padding-bottom:0}
+.article-grid{display:grid;grid-template-columns:260px 1fr;gap:60px;align-items:start}
+.article-sidebar{position:sticky;top:82px;align-self:start}
 .art-cat{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block}
-.guide-article h2{font-family:'Playfair Display',serif;font-size:clamp(20px,2.5vw,26px);font-weight:700;color:var(--navy);letter-spacing:-0.4px;margin-bottom:12px;line-height:1.2}
-.guide-article h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--navy);margin:20px 0 8px}
-.guide-article p{font-size:15px;color:var(--warm);line-height:1.75;margin-bottom:12px}
-.guide-article ul,.guide-article ol{margin:0 0 12px 18px}
-.guide-article li{font-size:15px;color:var(--warm);line-height:1.7;margin-bottom:4px}
-.guide-article strong{color:var(--charcoal);font-weight:600}
+
+
+/* ── Article grid layout — sidebar + content ── */
+.art-meta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 16px}
+.art-meta span{font-size:11px;font-weight:600;letter-spacing:0.8px;color:var(--warm);background:var(--offwhite);border:1px solid var(--border);border-radius:20px;padding:3px 10px}
+
+/* ── TOC box inside article — matches left panel style exactly ── */
+.toc-box{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px;margin-top:12px;box-shadow:0 2px 8px rgba(26,60,94,0.05)}
+.toc-title{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--warm);margin-bottom:10px}
+.toc-box ul{list-style:none;margin:0;padding:0}
+.toc-box li{margin:0}
+.toc-box a{display:flex;align-items:center;font-size:13px;color:var(--warm);text-decoration:none;padding:8px 10px;border-radius:8px;transition:all 0.15s;margin-bottom:2px;font-family:'DM Sans',sans-serif}
+.toc-box a::before{content:'→';margin-right:7px;opacity:0;transform:translateX(-4px);transition:all 0.15s;color:var(--gold);font-size:12px}
+.toc-box a:hover{color:var(--navy);background:var(--gold-pale)}
+.toc-box a:hover::before{opacity:1;transform:translateX(0)}
+
+/* ── Article CTA box — matches sidebar CTA ── */
+.art-cta{background:var(--navy);border-radius:12px;padding:18px;text-align:center;margin-top:16px}
+.art-cta p{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:12px}
+.art-cta-btn{width:100%;background:var(--gold);color:var(--navy);border:none;border-radius:8px;padding:10px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.2s;display:block}
+.art-cta-btn:hover{background:#fff;transform:translateY(-1px)}
+.art-cta-phone{display:block;font-size:11px;color:rgba(255,255,255,0.45);margin-top:8px;text-decoration:none;transition:color 0.15s}
+.art-cta-phone:hover{color:rgba(255,255,255,0.85)}
+
+/* ── Content body links ── */
+.guide-article .content-body a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:2px;font-weight:500;transition:color 0.15s}
+.guide-article .content-body a:hover{color:var(--gold)}
 .callout{background:var(--gold-pale);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0}
 .callout p{font-size:14px;color:var(--navy);line-height:1.65;margin:0;font-weight:500}
 .warn{background:#FFFBF0;border-left:3px solid #D4920A;border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0}
 .warn p{font-size:14px;color:#7A5008;line-height:1.65;margin:0}
-.guide-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
-.guide-table th{background:#5580a3;color:#fff;padding:9px 12px;text-align:left;font-size:12px;font-weight:600}
-.guide-table td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--warm);vertical-align:top}
-.guide-table tr:nth-child(even) td{background:var(--offwhite)}
+
 .pill-row{display:none}
 .guides-bottom-cta{background:var(--navy);border-radius:12px;padding:28px;text-align:center;margin:32px 0}
 .guides-bottom-cta h3{font-family:'Playfair Display',serif;font-size:20px;color:#fff;margin-bottom:6px}
 .guides-bottom-cta p{font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:18px}
-@media(max-width:1024px){.guides-layout{grid-template-columns:1fr}.guides-sidebar{position:static}.guide-toc{display:none}}
-@media(max-width:480px){.guides-wrap{padding:0 14px}.page-hero{padding:24px 0 20px}.page-hero h1{font-size:22px}.guide-article{margin-bottom:28px;padding-bottom:28px}.guide-article h2{font-size:19px}.guides-layout{margin:20px 0}body{padding-bottom:76px}}
+@media(max-width:900px){.guide-article{padding:40px 0}.guides-wrap{padding:32px 24px 0}}
+@media(max-width:480px){.guides-wrap{padding:0 16px}.guide-article{padding:28px 0}.body h3{font-size:17px}body{padding-bottom:76px}}
+
+
+/* ── Guide article card layout ── */
+.art-card-head{
+  background:var(--offwhite);
+  border-bottom:1px solid var(--border);
+  padding:20px 28px 18px;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+  flex-wrap:wrap;
+}
+.art-card-head-left{flex:1;min-width:0}
+.art-card-head .art-cat{margin-bottom:6px}
+.art-card-head h2{margin-bottom:8px;font-size:clamp(18px,2vw,22px)}
+.art-card-head .art-meta{margin:0}
+.art-card-body{padding:24px 28px}
+.art-card-body h3{margin-top:18px}
+.art-card-body h3:first-child{margin-top:0}
+@media(max-width:768px){
+  .art-card-head{padding:16px 18px 14px}
+  .art-card-body{padding:18px 18px}
+  .guide-article{margin-bottom:14px}
+}
+
+
+/* ── MODERN GUIDE COMPONENTS ── */
+
+/* Stat blocks */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 28px}
+.stat-box{
+  background:#fff;border:1px solid var(--border);border-radius:12px;
+  padding:18px 14px;text-align:center;
+  box-shadow:0 1px 6px rgba(26,60,94,0.05);
+}
+.stat-n{
+  font-family:'Playfair Display',serif;font-size:30px;font-weight:700;
+  color:var(--navy);line-height:1;letter-spacing:-1px;
+}
+.stat-l{font-size:11px;font-weight:500;color:var(--warm);margin-top:6px;line-height:1.4}
+
+/* Price cards */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 28px}
+.price-box{
+  background:var(--navy);border-radius:12px;padding:20px 16px;text-align:center;
+  box-shadow:0 2px 10px rgba(26,60,94,0.14);
+}
+.price-box-wide{grid-column:span 3}
+.price-type{
+  font-size:11px;font-weight:600;color:rgba(255,255,255,0.55);
+  margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;
+}
+.price-range{
+  font-family:'Playfair Display',serif;font-size:20px;font-weight:700;
+  color:var(--gold);line-height:1.2;
+}
+
+/* Icon rows */
+.icon-grid{display:flex;flex-direction:column;gap:6px;margin:0 0 20px}
+.icon-row{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:13px 16px;background:#fff;border:1px solid var(--border);
+  border-radius:10px;font-size:14px;color:var(--warm);line-height:1.55;
+  transition:border-color 0.15s,background 0.15s;
+}
+.icon-row:hover{background:var(--gold-pale);border-color:rgba(58,143,181,0.25)}
+.icon-row strong{color:var(--navy);font-size:14px;font-weight:600;display:block;margin-bottom:1px}
+.icon-dot{
+  width:34px;height:34px;border-radius:8px;display:flex;
+  align-items:center;justify-content:center;font-size:16px;
+  flex-shrink:0;background:var(--gold-pale);
+}
+
+/* Timeline steps */
+.timeline-steps{
+  display:flex;flex-direction:column;
+  border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;margin:0 0 20px;
+  box-shadow:0 1px 6px rgba(26,60,94,0.04);
+}
+.ts{
+  display:flex;gap:16px;padding:16px 20px;
+  border-bottom:1px solid var(--border);
+  align-items:flex-start;background:#fff;transition:background 0.12s;
+}
+.ts:last-child{border-bottom:none}
+.ts:hover{background:var(--gold-pale)}
+.ts-num{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--navy);color:#fff;
+  font-family:'Playfair Display',serif;font-size:13px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:1px;
+}
+.ts strong{display:block;color:var(--navy);font-size:14px;font-weight:600;margin-bottom:3px}
+.ts p{margin:0;font-size:13px;color:var(--warm);line-height:1.55}
+
+/* Checklists */
+.checklist{
+  display:flex;flex-direction:column;
+  border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;margin:0 0 20px;
+  box-shadow:0 1px 6px rgba(26,60,94,0.04);
+}
+.ci{
+  padding:12px 16px 12px 44px;border-bottom:1px solid var(--border);
+  font-size:14px;color:var(--warm);line-height:1.6;position:relative;
+  background:#fff;transition:background 0.12s;
+}
+.ci:last-child{border-bottom:none}
+.ci:hover{background:var(--gold-pale)}
+.ci::before{
+  content:'✓';position:absolute;left:16px;top:13px;
+  color:var(--gold);font-weight:700;font-size:13px;
+}
+
+/* Inline CTA */
+.art-cta-inline{
+  background:var(--offwhite);border:1px solid var(--border);border-radius:10px;
+  padding:18px 22px;margin-top:28px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.art-cta-inline p{margin:0;font-size:14px;color:var(--warm);font-style:italic;font-family:'Lora',serif}
+.art-cta-btn{
+  background:var(--navy);color:#fff;border:none;border-radius:8px;
+  padding:10px 24px;font-family:'DM Sans',sans-serif;
+  font-size:12px;font-weight:800;letter-spacing:1.5px;
+  cursor:pointer;transition:all 0.15s;white-space:nowrap;
+}
+.art-cta-btn:hover{background:var(--gold);color:var(--navy)}
+
+/* Card head & body */
+.art-card-head{
+  background:var(--offwhite);border-bottom:1px solid var(--border);
+  padding:24px 28px 20px;
+}
+.art-card-head h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(20px,2.5vw,26px);
+  font-weight:700;color:var(--navy);letter-spacing:-0.5px;
+  margin:6px 0 10px;line-height:1.15;
+}
+.art-card-head .art-cat{
+  font-size:10px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:4px;display:block;
+}
+.art-card-head .art-meta{display:flex;gap:8px;flex-wrap:wrap}
+.art-card-head .art-meta span{
+  font-size:11px;font-weight:500;color:var(--warm);
+  background:#fff;border:1px solid var(--border);
+  border-radius:20px;padding:3px 10px;
+}
+.art-card-body{padding:28px 28px}
+.art-card-body>h3{
+  font-family:'Playfair Display',serif;
+  font-size:16px;font-weight:600;color:var(--navy);
+  margin:26px 0 12px;letter-spacing:-0.2px;
+  padding-bottom:8px;border-bottom:1px solid var(--border);
+}
+.art-card-body>h3:first-child{margin-top:0}
+.art-card-body>p{
+  font-size:15px;color:var(--warm);line-height:1.78;
+  margin-bottom:14px;font-family:'Lora',serif;
+}
+
+/* Callout & warn */
+.callout{
+  background:var(--gold-pale);border-left:3px solid var(--gold);
+  border-radius:0 10px 10px 0;padding:14px 18px;margin:0 0 20px;
+}
+.callout p{font-size:14px;color:var(--navy);line-height:1.65;margin:0;font-weight:500}
+.warn{
+  background:#fff8f0;border-left:3px solid #e0940a;
+  border-radius:0 10px 10px 0;padding:14px 18px;margin:0 0 20px;
+}
+.warn p{font-size:14px;color:#7a5200;line-height:1.65;margin:0}
+
+@media(max-width:768px){
+  .stat-row{grid-template-columns:1fr 1fr}
+  .price-grid{grid-template-columns:1fr 1fr}
+  .price-box-wide{grid-column:span 2}
+  .price-range{font-size:17px}
+  .art-card-head,.art-card-body{padding:18px 18px}
+  .art-cta-inline{flex-direction:column;align-items:flex-start}
+  .art-cta-btn{width:100%;text-align:center;padding:12px}
+  .ts{padding:13px 16px}
+  .ci{padding:11px 14px 11px 40px}
+}
+
+
+/* ── Article layout ── */
+.art-cat{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+.article-sidebar h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:10px;letter-spacing:-0.3px}
+.art-meta{font-size:12px;color:var(--warm);margin-bottom:18px;display:flex;gap:12px}
+.toc-box{background:var(--offwhite);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:16px}
+.toc-title{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--warm);margin-bottom:12px}
+.toc-box ul{list-style:none;display:flex;flex-direction:column;gap:2px}
+.toc-box a{display:flex;align-items:center;font-size:13px;color:var(--warm);text-decoration:none;padding:8px 10px;border-radius:8px;transition:all 0.15s;font-family:'DM Sans',sans-serif}
+.toc-box a::before{content:'→';margin-right:7px;opacity:0;transform:translateX(-4px);transition:all 0.15s;color:var(--gold);font-size:12px}
+.toc-box a:hover{color:var(--navy);background:var(--gold-pale)}
+.toc-box a:hover::before{opacity:1;transform:translateX(0)}
+.cta-box{background:var(--navy);border-radius:10px;padding:18px 20px;text-align:center;margin-top:4px}
+.cta-box p{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.55;margin-bottom:12px}
+.art-cta-btn{width:100%;background:var(--gold);color:var(--navy);border:none;border-radius:8px;padding:10px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:800;letter-spacing:1.2px;cursor:pointer;transition:all 0.15s}
+.art-cta-btn:hover{background:#fff}
+
+/* ── Article body ── */
+.body{min-width:0}
+.body h3{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:var(--navy);line-height:1.25;margin:36px 0 14px;letter-spacing:-0.3px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.body h3:first-child{margin-top:0}
+.body h5{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.body p{font-size:15px;color:#3D5166;line-height:1.82;margin-bottom:16px}
+.body ul,.body ol{margin:0 0 18px;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.body ul li,.body ol li{font-size:15px;color:#3D5166;line-height:1.7;display:flex;align-items:flex-start;gap:12px}
+.body ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:8px}
+.body ol{counter-reset:n}
+.body ol li{counter-increment:n}
+.body ol li::before{content:counter(n);min-width:26px;height:26px;border-radius:50%;background:var(--gold-pale);color:var(--navy);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0}
+.body strong{font-weight:600;color:var(--navy)}
+.callout{background:var(--gold-pale);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0}
+.callout p{font-size:14px;color:var(--navy);margin:0;line-height:1.65;font-weight:500}
+.warn{background:#fff8f0;border-left:3px solid #e0940a;border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0}
+.warn p{font-size:14px;color:#7a5200;margin:0;line-height:1.65}
+.guide-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:10px;overflow:hidden;box-shadow:0 3px 12px rgba(26,60,94,0.08)}
+.guide-table thead th{background:var(--navy);color:#fff;padding:13px 18px;text-align:left;font-weight:600;font-size:12px;letter-spacing:0.4px;text-transform:uppercase}
+.guide-table td{padding:13px 18px;border-bottom:1px solid var(--border);color:#3d5166;line-height:1.55;vertical-align:top;font-size:14px}
+.guide-table td:first-child{white-space:nowrap;font-weight:500;color:var(--navy)}
+.guide-table tr:last-child td{border-bottom:none}
+.guide-table tr:nth-child(even) td{background:var(--offwhite)}
+.guide-table tr:hover td{background:var(--gold-pale)}
+.steps{display:flex;flex-direction:column;margin:20px 0;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.step{display:flex;gap:16px;padding:16px 20px;border-bottom:1px solid var(--border);align-items:flex-start;background:#fff;transition:background 0.12s}
+.step:last-child{border-bottom:none}
+.step:hover{background:var(--gold-pale)}
+.snum{width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Playfair Display',serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-body p{font-size:13px;color:var(--warm);line-height:1.6;margin:3px 0 0}
+
+@media(max-width:1024px){
+      .toc-box{display:none}
+  .guide-article{padding:52px 0}
+}
+@media(max-width:768px){
+  .guide-article{padding:36px 0}
+  .body h3{font-size:18px}
+}
 
 /* ── BUTTON STYLES ── */
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.15s;cursor:pointer;border:none}
@@ -1228,28 +1548,28 @@ footer{background:var(--navy);padding:32px 0 0}
         <div class="nav-item">
           <button class="nav-link">Services <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
           <div class="nav-dropdown">
-            <a href="#services" class="nav-drop-item" onclick="scrollToEl('services');return false;">
+            <a href="#services" class="nav-drop-item" onclick="window.location.href='index.html#services';return false;">
               <div class="ndi-text"><strong>Estate Clearance</strong><span>Full property clear-out</span></div>
             </a>
-            <a href="#services" class="nav-drop-item" onclick="scrollToEl('services');return false;">
+            <a href="#services" class="nav-drop-item" onclick="window.location.href='index.html#services';return false;">
               <div class="ndi-text"><strong>Property Preparation</strong><span>Clean, repair & style</span></div>
             </a>
-            <a href="#services" class="nav-drop-item" onclick="scrollToEl('services');return false;">
+            <a href="#services" class="nav-drop-item" onclick="window.location.href='index.html#services';return false;">
               <div class="ndi-text"><strong>Downsizing & Transitions</strong><span>Life change support</span></div>
             </a>
           </div>
         </div>
 
         <div class="nav-item">
-          <a href="#blog" class="nav-link" onclick="scrollToEl('blog');return false;">Resources</a>
+          <a href="#blog" class="nav-link" onclick="window.location.href='index.html#blog';return false;">Resources</a>
         </div>
 
         <div class="nav-item">
-          <a href="#about" class="nav-link" onclick="scrollToEl('about');return false;">About</a>
+          <a href="#about" class="nav-link" onclick="window.location.href='index.html#about';return false;">About</a>
         </div>
 
         <div class="nav-item">
-          <a href="#faq" class="nav-link" onclick="scrollToEl('faq');return false;">FAQ</a>
+          <a href="#faq" class="nav-link" onclick="window.location.href='index.html#faq';return false;">FAQ</a>
         </div>
 
       </nav>
@@ -1298,60 +1618,40 @@ footer{background:var(--navy);padding:32px 0 0}
   </div>
   <div class="drawer-actions">
     <a href="tel:0401857730" onclick="window.location.href='tel:0401857730';return false;" class="nav-call-btn" style="flex:1;justify-content:center">CALL</a>
-    <button onclick="closeDrawer();scrollToEl('quote')" class="nav-quote-btn" style="flex:1;justify-content:center">QUOTE</button>
+    <button onclick="closeDrawer();window.location.replace('index.html#quote')" class="nav-quote-btn" style="flex:1;justify-content:center">QUOTE</button>
   </div>
 </div>
 
 
-<div class="page-hero">
-  <div style="max-width:1100px;margin:0 auto;padding:0 40px">
-    <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:8px">Resources</div>
+<!-- Page header -->
+<div class="guides-header">
+  <div class="container">
+    <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px">Resources</div>
     <h1>Estate Guides &amp; Resources</h1>
     <p>Plain-English guides for executors and families navigating deceased estate clearance.</p>
-    <div class="page-hero-nav">
+    <div class="guides-nav">
       <a href="#guide-complete">Complete Guide</a>
       <a href="#guide-executor">Executor Checklist</a>
       <a href="#guide-costs">Costs &amp; Pricing</a>
       <a href="#guide-remote">Remote Management</a>
       <a href="#guide-probate">Probate</a>
-          </div>
+    </div>
   </div>
 </div>
 
 <div class="guides-wrap">
-  <div class="guides-layout">
-    <div class="guides-sidebar">
-      <div class="guide-toc">
-        <div class="guide-toc-head">In this section</div>
-        <a href="#guide-complete">Complete clearance guide</a>
-        <a href="#guide-executor">Executor checklist</a>
-        <a href="#guide-costs">Costs &amp; pricing</a>
-        <a href="#guide-remote">Remote management</a>
-        <a href="#guide-probate">Probate explained</a>
-              </div>
-      <div class="guide-cta-box">
-        <p>Need help with your estate? Get a fixed quote.</p>
-        <button class="gcta-btn" onclick="window.location.replace('index.html#quote')">QUOTE</button>
-        <a href="tel:0401857730" onclick="window.location.href='tel:0401857730';return false;" class="gcta-phone">or call 0401 857 730</a>
-      </div>
-    </div>
-    <div>
-
-<!-- GUIDE 1 — COMPLETE GUIDE                    -->
-  <!-- ═══════════════════════════════════════════ -->
   <div class="guide-article" id="guide-complete">
     <div class="article-grid">
-      <div class="sidebar">
+      <div class="article-sidebar">
         <div class="art-cat">Guide</div>
         <h2>The Complete Guide to Deceased Estate Clearance in Australia</h2>
-        <p class="sr-only">Deceased estate clearance guide for executors and families — costs, timeline, process, Sydney Melbourne Brisbane Adelaide Perth</p>
         <div class="art-meta">
           <span>12 min read</span>
           <span>Updated 2025</span>
         </div>
         <div class="toc-box">
           <div class="toc-title">In this guide</div>
-          <ul class="toc-list">
+          <ul>
             <li><a href="#g1-what">What is estate clearance?</a></li>
             <li><a href="#g1-when">When does it happen?</a></li>
             <li><a href="#g1-what-stays">What to keep, sell &amp; donate</a></li>
@@ -1360,10 +1660,6 @@ footer{background:var(--navy);padding:32px 0 0}
             <li><a href="#g1-choose">Choosing a service</a></li>
           </ul>
         </div>
-        <div class="cta-box">
-          <p>Ready to get a fixed quote for your property?</p>
-          <a href="index.html#quote" class="nav-quote-btn" style="text-decoration:none;display:inline-flex">QUOTE</a>
-        </div>
       </div>
       <div class="body">
         <h3 id="g1-what">What is deceased estate clearance?</h3>
@@ -1371,24 +1667,30 @@ footer{background:var(--navy);padding:32px 0 0}
         <p>Unlike a standard house clean-out, estate clearance involves legal obligations, emotional sensitivity, and significant decisions about items of financial and sentimental value. Done well, it protects the estate's value and gives the executor the documentation they need. Done poorly, it can create legal exposure, family conflict, and lost financial value.</p>
 
         <h3 id="g1-when">When does estate clearance happen?</h3>
-        <p>In most cases, estate clearance happens after probate has been applied for but before the property is listed for sale. However, the timing depends on several factors:</p>
-        <ul>
-          <li><strong>Probate timing:</strong> In most Australian states, clearance can begin before probate is formally granted — particularly if the executor has identified sentimental items or perishables that need immediate attention. Your solicitor can advise on what is permissible in your state.</li>
-          <li><strong>Property ownership structure:</strong> If the property was owned jointly and passes by survivorship, it may not form part of the estate at all and clearance can begin sooner.</li>
-          <li><strong>Holding costs:</strong> Every week the property sits empty costs the estate in rates, insurance, utilities, and potentially mortgage repayments. There is a real financial incentive to move efficiently.</li>
-          <li><strong>Urgency:</strong> Perishables, pets, medication, and valuables should be addressed within days of a death. Full clearance typically follows within 2–8 weeks.</li>
-        </ul>
+        <p>In most cases, clearance happens after probate is applied for but before the property lists for sale. The timing depends on several factors:</p>
+        <table class="guide-table">
+          <thead><tr><th>Factor</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Probate timing</strong></td><td>Clearance can begin before probate is formally granted in most states — particularly for perishables and sentimental items. Your solicitor can advise what's permissible.</td></tr>
+            <tr><td><strong>Property ownership</strong></td><td>If the property was jointly owned and passes by survivorship, it may not form part of the estate and clearance can begin sooner.</td></tr>
+            <tr><td><strong>Holding costs</strong></td><td>Every week empty costs the estate in rates, insurance, utilities, and potentially mortgage repayments — a real financial incentive to move efficiently.</td></tr>
+            <tr><td><strong>Urgency</strong></td><td>Perishables, pets, medication, and valuables should be addressed within days. Full clearance typically follows within 2–8 weeks.</td></tr>
+          </tbody>
+        </table>
 
         <div class="callout"><p><strong>Practical note:</strong> You do not need to wait for probate to be granted to begin sorting the property. Contact your estate solicitor to understand what actions are permitted in your state before probate is complete.</p></div>
 
         <h3 id="g1-what-stays">What to keep, sell, and donate</h3>
-        <p>Before clearance begins, the executor — usually with input from beneficiaries — should identify items in each category:</p>
-        <ul>
-          <li><strong>Keep:</strong> Items of sentimental value, jewellery, photographs, personal documents, heirlooms specified in the will, and items bequeathed to specific beneficiaries.</li>
-          <li><strong>Sell:</strong> Furniture, antiques, artworks, collectables, vehicles, electronics, and household goods with market value. A professional estate item selling service can manage this on the estate's behalf, with all proceeds returned to the estate.</li>
-          <li><strong>Donate:</strong> Clothing, books, kitchenware, and everyday household items in good condition. Many Australian charities — including St Vincent de Paul, the Salvos, and Lifeline — accept estate donations. Charitable donation receipts are provided and may assist with estate accounting.</li>
-          <li><strong>Dispose:</strong> Items that cannot be sold or donated — broken goods, perishables, hazardous materials. Professional clearance services handle responsible disposal, including recycling and proper waste management.</li>
-        </ul>
+        <p>Before clearance begins, the executor — with input from beneficiaries — should identify items in each category:</p>
+        <table class="guide-table">
+          <thead><tr><th>Category</th><th>What belongs here</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Keep</strong></td><td>Jewellery, photographs, personal documents, heirlooms specified in the will, and items bequeathed to specific beneficiaries.</td></tr>
+            <tr><td><strong>Sell</strong></td><td>Furniture, antiques, artworks, collectables, vehicles, electronics, and household goods with market value. All proceeds returned to the estate.</td></tr>
+            <tr><td><strong>Donate</strong></td><td>Clothing, books, kitchenware, and everyday items in good condition. St Vincent de Paul, the Salvos, and Lifeline accept estate donations. Receipts provided.</td></tr>
+            <tr><td><strong>Dispose</strong></td><td>Broken goods, perishables, hazardous materials. Professional services handle responsible disposal including recycling and proper waste management.</td></tr>
+          </tbody>
+        </table>
 
         <h3 id="g1-who">Who is responsible for estate clearance?</h3>
         <p>The executor named in the will has legal responsibility for managing the estate, which includes organising clearance of the property. If there is no will (intestacy), an administrator is appointed — typically the next of kin — who takes on the same obligations.</p>
@@ -1404,15 +1706,18 @@ footer{background:var(--navy);padding:32px 0 0}
         </div>
 
         <h3 id="g1-choose">How to choose an estate clearance service</h3>
-        <p>Not all clearance services are the same. When engaging a provider, verify the following:</p>
-        <ul>
-          <li>They carry current <strong>public liability insurance</strong> of at least $10M (request a certificate)</li>
-          <li>All staff are covered by <strong>workers compensation</strong></li>
-          <li>They provide a <strong>fixed, all-inclusive quote</strong> — not hourly or approximate</li>
-          <li>They provide a <strong>digital estate report</strong> at completion documenting all items</li>
-          <li>They offer <strong>pay at settlement</strong> for deceased estate work</li>
-          <li>They are a <strong>registered Australian business</strong> with a current ABN (EstateCo ABN: <a href="https://abr.business.gov.au/ABN/View?abn=34618204290" target="_blank" rel="noopener" style="color:var(--gold)">34 618 204 290</a>)</li>
-        </ul>
+        <p>Not all clearance services are the same. Verify the following before engaging a provider:</p>
+        <table class="guide-table">
+          <thead><tr><th>What to check</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Public liability insurance</strong> $10M+</td><td>Protects the estate if anything is damaged. Always request a current certificate.</td></tr>
+            <tr><td><strong>Workers compensation</strong></td><td>Ensures you have no liability if a worker is injured on the property.</td></tr>
+            <tr><td><strong>Fixed all-inclusive quote</strong></td><td>Hourly or approximate quotes can leave the estate exposed to unexpected costs.</td></tr>
+            <tr><td><strong>Digital estate report</strong></td><td>Required for executor records and probate. Should document everything removed.</td></tr>
+            <tr><td><strong>Pay at settlement</strong></td><td>Means no upfront payment — clearance cost deducted from sale proceeds.</td></tr>
+            <tr><td><strong>Registered ABN</strong></td><td>Confirms the business is legitimate and provides GST-compliant invoices for estate accounting.</td></tr>
+          </tbody>
+        </table>
         <div class="warn"><p><strong>Warning:</strong> Avoid services that quote by the hour, cannot provide insurance certificates, or do not offer written fixed-price agreements. These represent significant financial and legal risk for the executor.</p></div>
       </div>
     </div>
@@ -1423,10 +1728,9 @@ footer{background:var(--navy);padding:32px 0 0}
   <!-- ═══════════════════════════════════════════ -->
   <div class="guide-article" id="guide-executor">
     <div class="article-grid">
-      <div class="sidebar">
+      <div class="article-sidebar">
         <div class="art-cat">Executor</div>
         <h2>Executor Checklist: Managing a Deceased Estate Step by Step</h2>
-        <p class="sr-only">Australian executor checklist for deceased estate — probate, property, accounts, distribution</p>
         <div class="art-meta">
           <span>8 min read</span>
           <span>Updated 2025</span>
@@ -1441,10 +1745,6 @@ footer{background:var(--navy);padding:32px 0 0}
             <li><a href="#g2-accounts">Accounts &amp; finances</a></li>
             <li><a href="#g2-distribution">Distribution</a></li>
           </ul>
-        </div>
-        <div class="cta-box">
-          <p>Need help with property clearance as part of your executor duties?</p>
-          <a href="index.html#quote" class="nav-quote-btn" style="text-decoration:none;display:inline-flex">QUOTE</a>
         </div>
       </div>
       <div class="body">
@@ -1516,10 +1816,9 @@ footer{background:var(--navy);padding:32px 0 0}
   <!-- ═══════════════════════════════════════════ -->
   <div class="guide-article" id="guide-costs">
     <div class="article-grid">
-      <div class="sidebar">
+      <div class="article-sidebar">
         <div class="art-cat">Costs</div>
         <h2>How Much Does Deceased Estate Clearance Cost in Australia?</h2>
-        <p class="sr-only">Deceased estate clearance cost Australia — price ranges, factors, pay at settlement, tax deductibility</p>
         <div class="art-meta">
           <span>6 min read</span>
           <span>Updated 2025</span>
@@ -1534,15 +1833,11 @@ footer{background:var(--navy);padding:32px 0 0}
             <li><a href="#g3-settlement">Pay at settlement</a></li>
           </ul>
         </div>
-        <div class="cta-box">
-          <p>Get a fixed quote for your property in under 4 hours.</p>
-          <a href="index.html#quote" class="nav-quote-btn" style="text-decoration:none;display:inline-flex">QUOTE</a>
-        </div>
       </div>
       <div class="body">
         <h3 id="g3-ranges">Typical price ranges in Australia (2025)</h3>
         <p>The cost of deceased estate clearance in Australia varies significantly based on property size, location, contents volume, and the scope of services required. The following ranges reflect full-service professional clearance including sorting, removal, donation, and basic disposal:</p>
-        <table class="tbl">
+        <table class="guide-table">
           <thead><tr><th>Property Type</th><th>Typical Range</th><th>What's Included</th></tr></thead>
           <tbody>
             <tr><td>Studio / 1 bedroom apartment</td><td>$1,200 – $2,800</td><td>Full clearance, donation, disposal</td></tr>
@@ -1555,20 +1850,26 @@ footer{background:var(--navy);padding:32px 0 0}
         <div class="callout"><p><strong>Note:</strong> These ranges reflect full-service professional clearance. Services like deep cleaning, painting, garden tidying, property styling, and selling valuable items are priced separately but can be bundled for efficiency.</p></div>
 
         <h3 id="g3-factors">What affects the price?</h3>
-        <ul>
-          <li><strong>Property size and contents volume:</strong> The primary cost driver. A four-bedroom home fully furnished takes significantly more time and resources than a small unit.</li>
-          <li><strong>Location:</strong> Properties in regional or remote areas may incur travel costs. City properties with restricted parking or no lift access may take longer.</li>
-          <li><strong>Contents type:</strong> Homes with large amounts of heavy furniture, hazardous materials, or items requiring specialist handling cost more to clear.</li>
-          <li><strong>Access and urgency:</strong> Urgent clearances (within 48–72 hours) may attract a premium. Properties with difficult access, security gates, or strata rules may also cost more.</li>
-          <li><strong>Scope of additional services:</strong> Deep cleaning, painting, garden work, and styling are charged separately. However, bundling these services through a single provider is generally more cost-effective than engaging separate tradespeople.</li>
-        </ul>
+        <table class="guide-table">
+          <thead><tr><th>Factor</th><th>Impact</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Property size &amp; contents</strong></td><td>The primary cost driver. A four-bedroom home fully furnished takes significantly more time than a small unit.</td></tr>
+            <tr><td><strong>Location</strong></td><td>Regional or remote properties may incur travel costs. City properties with restricted access may take longer.</td></tr>
+            <tr><td><strong>Contents type</strong></td><td>Heavy furniture, hazardous materials, or items needing specialist handling increase cost.</td></tr>
+            <tr><td><strong>Access &amp; urgency</strong></td><td>Urgent clearances within 48–72 hours attract a premium. Difficult access or strata rules add time.</td></tr>
+            <tr><td><strong>Additional services</strong></td><td>Deep cleaning, garden work, and styling are separate — but bundling with one provider saves money.</td></tr>
+          </tbody>
+        </table>
 
         <h3 id="g3-value">The value recovery equation</h3>
-        <p>Most executors think of clearance as a pure cost. In reality, professional clearance frequently recovers more than it costs through two mechanisms:</p>
-        <ul>
-          <li><strong>Valuables sold on the estate's behalf:</strong> A professional estate item selling service can identify, value, and sell furniture, antiques, jewellery, artworks, and collectables — with all proceeds returned to the estate. It is not uncommon for $3,000–$8,000 in items to be recovered from what might otherwise have been donated or disposed of.</li>
-          <li><strong>Higher property sale price:</strong> A professionally cleared, cleaned, and styled property consistently achieves a higher sale price than one sold with contents in place or with evidence of deferred maintenance. The uplift typically significantly exceeds the cost of the clearance.</li>
-        </ul>
+        <p>Most executors think of clearance as a pure cost. In reality, professional clearance frequently recovers more than it costs:</p>
+        <table class="guide-table">
+          <thead><tr><th>Source</th><th>How value is recovered</th><th>Typical amount</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Valuables sold</strong></td><td>Furniture, antiques, jewellery, artworks, collectables identified and sold — all proceeds returned to estate.</td><td>$3,000–$8,000+</td></tr>
+            <tr><td><strong>Higher sale price</strong></td><td>A professionally cleared, cleaned, and styled property consistently achieves more at sale than one with contents in place.</td><td>Often exceeds clearance cost</td></tr>
+          </tbody>
+        </table>
 
         <h3 id="g3-tax">Is estate clearance tax deductible?</h3>
         <p>Deceased estate clearance costs are generally treated as a legitimate estate expense — that is, deductible against the estate, not against the personal income of the executor or beneficiaries. This means the cost reduces the taxable value of the estate rather than creating a personal deduction.</p>
@@ -1587,10 +1888,9 @@ footer{background:var(--navy);padding:32px 0 0}
   <!-- ═══════════════════════════════════════════ -->
   <div class="guide-article" id="guide-remote">
     <div class="article-grid">
-      <div class="sidebar">
+      <div class="article-sidebar">
         <div class="art-cat">Remote</div>
         <h2>How to Manage a Deceased Estate Remotely from Interstate or Overseas</h2>
-        <p class="sr-only">Managing deceased estate remotely Australia — interstate executor, overseas executor, remote clearance service</p>
         <div class="art-meta">
           <span>7 min read</span>
           <span>Updated 2025</span>
@@ -1606,10 +1906,6 @@ footer{background:var(--navy);padding:32px 0 0}
             <li><a href="#g4-checklist">Remote executor checklist</a></li>
           </ul>
         </div>
-        <div class="cta-box">
-          <p>Managing an estate from interstate or overseas? We handle everything.</p>
-          <a href="index.html#quote" class="nav-quote-btn" style="text-decoration:none;display:inline-flex">QUOTE</a>
-        </div>
       </div>
       <div class="body">
         <h3 id="g4-who">Who manages estates remotely?</h3>
@@ -1617,13 +1913,16 @@ footer{background:var(--navy);padding:32px 0 0}
         <p>The good news: with the right service provider, you do not need to attend the property at all. Every step of the process — from initial quote to final documentation — can be managed digitally.</p>
 
         <h3 id="g4-challenges">Common challenges — and how to solve them</h3>
-        <ul>
-          <li><strong>Getting an accurate quote without being there:</strong> A 60-second video walkthrough of the property (recorded by a neighbour, real estate agent, or anyone with property access) is usually sufficient for a professional estate clearance service to provide a fixed quote. Photographs also work, though video provides more context.</li>
-          <li><strong>Not knowing what's in the property:</strong> A professional estate valuation and inventory service can photograph and document all items before clearance begins — giving you a complete record without requiring your presence.</li>
-          <li><strong>Signing legal documents from overseas:</strong> Most estate documents can be signed electronically. For documents requiring witness signatures (such as probate applications), Australian embassies, consulates, notaries public, and solicitors can witness signatures internationally.</li>
-          <li><strong>Managing tradespeople access:</strong> EstateCo's estate concierge service handles all on-site access coordination — letting in real estate agents, tradespeople, and inspectors — without requiring the executor to travel.</li>
-          <li><strong>Paying for services without Australian accounts:</strong> International bank transfers are straightforward for estate expenses. Many providers also accept credit card payments online.</li>
-        </ul>
+        <table class="guide-table">
+          <thead><tr><th>Challenge</th><th>Solution</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Getting an accurate quote</strong></td><td>A 60-second video walkthrough recorded by a neighbour or agent is sufficient for a fixed quote. Photographs also work.</td></tr>
+            <tr><td><strong>Not knowing what's in the property</strong></td><td>A professional inventory service photographs and documents all items before clearance — no presence required.</td></tr>
+            <tr><td><strong>Signing legal documents from overseas</strong></td><td>Most documents can be signed electronically. Embassies, consulates, notaries, and solicitors can witness signatures internationally.</td></tr>
+            <tr><td><strong>Managing tradespeople access</strong></td><td>EstateCo coordinates all on-site access — agents, tradespeople, inspectors — so the executor doesn't need to travel.</td></tr>
+            <tr><td><strong>Paying without Australian accounts</strong></td><td>International bank transfers work for estate expenses. Most providers also accept online credit card payments.</td></tr>
+          </tbody>
+        </table>
 
         <h3 id="g4-quote">Getting a remote quote</h3>
         <p>The fastest and most accurate way to get a remote quote is a short video walkthrough:</p>
@@ -1636,12 +1935,14 @@ footer{background:var(--navy);padding:32px 0 0}
         </ol>
 
         <h3 id="g4-legal">Signing and legal documents</h3>
-        <p>Managing legal documentation from overseas requires some planning but is entirely achievable:</p>
-        <ul>
-          <li><strong>Probate applications:</strong> Most Australian state Supreme Courts now accept electronically lodged probate applications. Your Australian solicitor can manage this on your behalf.</li>
-          <li><strong>Service agreements:</strong> EstateCo's service agreements are signed electronically via email — no printing, scanning, or posting required.</li>
-          <li><strong>Powers of attorney:</strong> If you need someone in Australia to act on your behalf across multiple matters, an enduring power of attorney (EPA) gives them broad authority. These can be executed overseas at an Australian consulate.</li>
-        </ul>
+        <table class="guide-table">
+          <thead><tr><th>Document type</th><th>How it's handled remotely</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Probate applications</strong></td><td>Most state Supreme Courts accept electronic lodgement. Your Australian solicitor manages this on your behalf.</td></tr>
+            <tr><td><strong>Service agreements</strong></td><td>EstateCo agreements are signed electronically via email — no printing, scanning, or posting required.</td></tr>
+            <tr><td><strong>Powers of attorney</strong></td><td>An enduring power of attorney (EPA) authorises someone in Australia to act on your behalf across multiple matters. Can be executed at an Australian consulate overseas.</td></tr>
+          </tbody>
+        </table>
 
         <h3 id="g4-updates">Staying informed throughout the job</h3>
         <p>When you cannot be present, visibility is everything. A professional estate clearance service should provide:</p>
@@ -1672,10 +1973,9 @@ footer{background:var(--navy);padding:32px 0 0}
   <!-- ═══════════════════════════════════════════ -->
   <div class="guide-article" id="guide-probate">
     <div class="article-grid">
-      <div class="sidebar">
+      <div class="article-sidebar">
         <div class="art-cat">Legal</div>
         <h2>What Is Probate in Australia? A Plain-English Guide for Executors</h2>
-        <p class="sr-only">Probate Australia guide — what is probate, Supreme Court, grant of probate, executor responsibilities</p>
         <div class="art-meta">
           <span>9 min read</span>
           <span>Updated 2025</span>
@@ -1690,10 +1990,6 @@ footer{background:var(--navy);padding:32px 0 0}
             <li><a href="#g5-timing">Timing and clearance</a></li>
             <li><a href="#g5-intestacy">No will — intestacy</a></li>
           </ul>
-        </div>
-        <div class="cta-box">
-          <p>Need probate-ready documentation? Our estate valuation service provides it.</p>
-          <a href="index.html#quote" class="nav-quote-btn" style="text-decoration:none;display:inline-flex">QUOTE</a>
         </div>
       </div>
       <div class="body">
@@ -1711,16 +2007,16 @@ footer{background:var(--navy);padding:32px 0 0}
         <p>Probate is generally <em>not</em> required when all assets were held jointly (and pass by survivorship), or when the estate is very small. Your solicitor can advise based on the specific assets involved.</p>
 
         <h3 id="g5-process">The probate process — step by step</h3>
-        <ol>
-          <li><strong>Lodge a Notice of Intention to Apply for Probate</strong> in the relevant state Supreme Court registry (some states require this to be published for a set period before the application can be made).</li>
-          <li><strong>Gather required documents:</strong> original will, original death certificate, an inventory of assets and liabilities (a professional estate valuation assists significantly here).</li>
-          <li><strong>Lodge the probate application</strong> with the Supreme Court. Most Australian states now accept electronic lodgement through their online portal.</li>
-          <li><strong>Court review:</strong> The court examines the application and, if satisfied, issues a Grant of Probate. This typically takes 4–8 weeks from lodgement.</li>
-          <li><strong>Administer the estate:</strong> With the Grant of Probate in hand, the executor can formally collect assets, pay debts, and distribute the estate.</li>
-        </ol>
+        <div class="steps">
+          <div class="step"><div class="snum">1</div><div class="step-body"><h5>Lodge Notice of Intention</h5><p>File with the relevant state Supreme Court registry. Some states require a publication period before the application can proceed.</p></div></div>
+          <div class="step"><div class="snum">2</div><div class="step-body"><h5>Gather required documents</h5><p>Original will, death certificate, and an inventory of assets and liabilities. A professional estate valuation assists significantly here.</p></div></div>
+          <div class="step"><div class="snum">3</div><div class="step-body"><h5>Lodge the probate application</h5><p>Filed with the Supreme Court. Most Australian states accept electronic lodgement through their online portal.</p></div></div>
+          <div class="step"><div class="snum">4</div><div class="step-body"><h5>Court review</h5><p>The court examines the application and issues a Grant of Probate if satisfied. Typically 4–8 weeks from lodgement.</p></div></div>
+          <div class="step"><div class="snum">5</div><div class="step-body"><h5>Administer the estate</h5><p>With probate granted, the executor can collect assets, pay debts, clear the property, and distribute the estate.</p></div></div>
+        </div>
 
         <h3 id="g5-states">Probate by state</h3>
-        <table class="tbl">
+        <table class="guide-table">
           <thead><tr><th>State / Territory</th><th>Court</th><th>Typical Timeline</th></tr></thead>
           <tbody>
             <tr><td>New South Wales</td><td>Supreme Court of NSW</td><td>4–8 weeks</td></tr>
@@ -1749,5 +2045,51 @@ footer{background:var(--navy);padding:32px 0 0}
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- GUIDE 6 — DIGITAL LEGACY                   -->
-  <!-- ═══════════════════════════════════════════ -->
-  >
+  <!-- ══════\u
+
+</div><!-- /.guides-wrap -->
+</div><!-- /.guides-body -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <p class="tagline">Australian family business. Deceased estate clearance, handled completely.</p>
+        <a href="tel:0401857730" onclick="window.location.href='tel:0401857730';return false;" class="footer-phone">0401 857 730</a>
+        <a href="mailto:hello@estateco.com.au" class="footer-email">hello@estateco.com.au</a>
+      </div>
+
+      <div class="footer-legal-col">
+        <p class="footer-legal-short" style="margin-top:0">Estate Co. Pty Ltd · ABN <a href="https://abr.business.gov.au/ABN/View?abn=34618204290" target="_blank" rel="noopener">34 618 204 290</a></p>
+        <p class="footer-legal-short">$20M public liability · Workers compensation · Privacy Act 1988 compliant.</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Estate Co. Pty Ltd · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      <p>Estate Co. acknowledges Australia's Traditional Custodians.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mob-bar">
+  <div class="mob-bar-inner">
+    <a href="#" class="mob-logo logo-wrap"><img src="logo.png" alt="EstateCo" class="mob-logo-img"></a>
+    <div class="mob-actions">
+      <a href="tel:0401857730" onclick="window.location.href=\'tel:0401857730\';return false;" class="mb-action mb-call">0401 857 730</a>
+      <button onclick="window.location.replace('index.html#quote')" class="mb-action mb-quote">Quote Request</button>
+    </div>
+  </div>
+</div>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+</body>
+</html>
