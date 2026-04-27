@@ -1309,7 +1309,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- Brand -->
       <div class="nav-brand">
-        <a href="#" class="logo-wrap">
+        <a href="index.html" class="logo-wrap">
           <img src="logo.png" alt="Estate Co." class="nav-logo-img">
         </a>
         <span class="nav-tagline">WE UNDERSTAND THIS ISN'T JUST A CLEAN</span>
@@ -1319,11 +1319,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <nav class="nav-menu">
 
         <div class="nav-item">
-          <a href="#services" class="nav-link" onclick="scrollToEl('services');return false;">Services</a>
-        </div>
-
-        <div class="nav-item">
-          <a href="#blog" class="nav-link" onclick="scrollToEl('blog');return false;">Resources</a>
+          <a href="guides.html" class="nav-link">Resources</a>
         </div>
 
         <div class="nav-item">
@@ -1352,24 +1348,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Mobile drawer -->
 <div class="nav-drawer" id="navDrawer">
   <div class="drawer-section">
-    <div class="drawer-heading">Services</div>
-    <a href="#services" class="drawer-link" onclick="closeDrawer();scrollToEl('services')">
-      <div><strong>Our Services</strong></div>
-    </a>
-  </div>
-  <div class="drawer-section">
     <div class="drawer-heading">Navigate</div>
-    <a href="#cities" class="drawer-link" onclick="closeDrawer();scrollToEl('cities')">
-      <div><strong>Service Areas</strong><span>All states covered</span></div>
-    </a>
-    <a href="#blog" class="drawer-link" onclick="closeDrawer();scrollToEl('blog')">
+    <a href="guides.html" class="drawer-link" onclick="closeDrawer()">
       <div><strong>Resources & Guides</strong><span>Executor help</span></div>
-    </a>
-    <a href="#about" class="drawer-link" onclick="closeDrawer();scrollToEl('about')">
-      <div><strong>About Corinne</strong><span>Our founder</span></div>
     </a>
     <a href="#faq" class="drawer-link" onclick="closeDrawer();scrollToEl('faq')">
       <div><strong>FAQ</strong><span>Common questions</span></div>
+    </a>
+    <a href="#about" class="drawer-link" onclick="closeDrawer();scrollToEl('about')">
+      <div><strong>About</strong><span>Our founder</span></div>
     </a>
   </div>
   <div class="drawer-actions">
@@ -1644,6 +1631,11 @@ function baGoTo(idx){
                     </div>
                   </div>
                 </div>
+              </div>
+
+              <!-- Resources link -->
+              <div style="padding:16px 28px;border-top:1px solid var(--border);background:var(--offwhite);text-align:center">
+                <a href="guides.html" style="display:inline-block;text-decoration:none;color:var(--navy);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;padding:11px 24px;background:#fff;border:2px solid var(--navy);border-radius:8px;transition:all 0.2s" onmouseover="this.style.background='var(--navy)';this.style.color='#fff'" onmouseout="this.style.background='#fff';this.style.color='var(--navy)'">View our Estate Guides &amp; Resources</a>
               </div>
 
             </div>
@@ -2079,7 +2071,7 @@ function baGoTo(idx){
 <!-- MOBILE BAR -->
 <div class="mob-bar">
   <div class="mob-bar-inner">
-    <a href="#" class="mob-logo logo-wrap"><img src="logo.png" alt="Estate Co." class="mob-logo-img"></a>
+    <a href="index.html" class="mob-logo logo-wrap"><img src="logo.png" alt="Estate Co." class="mob-logo-img"></a>
     <div class="mob-actions">
       <a href="tel:0401857730" onclick="window.location.href=\'tel:0401857730\';return false;" class="mb-action mb-call">0401 857 730</a>
       <button onclick="scrollToEl('quote')" class="mb-action mb-quote">Quote Request</button>
