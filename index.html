@@ -2202,10 +2202,10 @@ function submitQ(){
     if(quoteEl){const top=quoteEl.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:top,behavior:'smooth'});}
   },80);
 
-  // Collect uploaded files — use global files array (captures drag & drop too)
-  const uploadedFiles=(typeof files!=='undefined'&&files.length>0)?files:
-    (document.getElementById('fIn')&&document.getElementById('fIn').files?
-    Array.from(document.getElementById('fIn').files):[]);
+  // Collect uploaded files — use global files array
+  console.log('Files in array:', files.length, files);
+  const uploadedFiles = files && files.length > 0 ? [...files] : [];
+  console.log('Uploaded files:', uploadedFiles.length);
 
   const payload={
     reference:ref, name:n, email:e, phone:ph,
