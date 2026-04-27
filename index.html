@@ -676,262 +676,213 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
 ══════════════════════════════════════════ */
 @media(max-width:480px){
 
-  /* ── BASE ── */
-  html{-webkit-text-size-adjust:100%;font-size:16px}
-  body{padding-bottom:76px;background:#F5F7FA}
-  .container{padding:0 16px}
+  /* ════════════════════════════════════
+     RADICAL MOBILE REDESIGN
+     Think: native app, not website
+  ════════════════════════════════════ */
 
-  /* ══ NAV — app-style compact header ══ */
-  nav{
-    padding:0;
-    background:#fff;
-    border-bottom:none;
-    box-shadow:0 1px 0 rgba(0,0,0,0.08);
-    width:100%;
-    max-width:100vw;
-    overflow:hidden;
-  }
-  nav .container{padding:0 14px;max-width:100%;overflow:hidden}
-  nav .nav-inner{height:56px;width:100%;box-sizing:border-box}
-  .nav-tagline{display:none}
-  .nav-menu{display:none}
-  .nav-right{gap:8px;flex-shrink:0}
-  .nav-call-btn{padding:8px 14px;font-size:11px;border-radius:7px;border-width:1.5px;letter-spacing:0.5px;white-space:nowrap}
-  .nav-quote-btn{padding:8px 14px;font-size:11px;border-radius:7px;border-width:1.5px;letter-spacing:0.5px;white-space:nowrap}
-  .nav-hamburger{display:flex}
-  .nav-logo-img{height:30px}
-  .logo{font-size:20px}
+  /* ── FOUNDATION ── */
+  html{-webkit-text-size-adjust:100%}
+  body{background:#f0f4f8;padding-bottom:90px;font-size:16px;overflow-x:hidden}
+  .container{padding:0 20px}
+  *{-webkit-tap-highlight-color:transparent}
 
-  /* ══ SECTION HEADERS ══ */
-  .section-tag{font-size:11px;letter-spacing:1.8px;margin-bottom:8px}
-  .section-title{font-size:26px;letter-spacing:-0.5px;margin-bottom:10px;line-height:1.15}
-  .section-sub{font-size:14px;line-height:1.65;margin-bottom:24px}
+  /* ── NAV — minimal logo bar ── */
+  nav{background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.08);width:100%;overflow:hidden}
+  nav .container{padding:0 16px}
+  nav .nav-inner{height:52px}
+  .nav-tagline,.nav-menu,.nav-call-btn{display:none}
+  .nav-right{gap:8px}
+  .nav-call-btn{display:none}
+  .nav-quote-btn{display:none}
+  .nav-hamburger{display:flex;width:40px;height:40px;border-radius:10px;background:#f0f4f8;border:none;align-items:center;justify-content:center}
+  .nav-hamburger span{background:var(--navy);border-radius:2px}
+  .nav-logo-img{height:28px}
+  .logo{font-size:18px;font-weight:800}
 
-  /* ══ HERO ══ */
-  .hero{padding:28px 0 24px;background:#fff}
-  .hero::before{filter:blur(8px) saturate(0.3) brightness(0.95)}
-  .hero::after{background:linear-gradient(160deg,rgba(255,255,255,0.97) 0%,rgba(234,244,250,0.95) 100%)}
-  .hero-inner{gap:0}
-  .hero-eyebrow{display:none}
-  .hero h1{font-size:28px;letter-spacing:-0.8px;margin-bottom:10px;line-height:1.12}
-  .hero-sub{font-size:15px;margin-bottom:18px;max-width:100%}
+  /* ── SERVICES HEADER — big, bold, immediate ── */
+  .services-section{padding:32px 0 8px;background:#f0f4f8;border-top:none}
+  .services-section .section-tag{font-size:10px;letter-spacing:2px;margin-bottom:6px;color:var(--gold)}
+  .services-section .section-title{font-size:28px;font-weight:800;line-height:1.1;letter-spacing:-0.5px;margin-bottom:6px}
+  .services-section .section-sub{font-size:13px;line-height:1.55;color:var(--warm);margin-bottom:0;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
-  /* ══ QUOTE CARD ══ */
-  #quote{margin-top:0;scroll-margin-top:90px}
-  .quote-wrapper,#quote>div{margin-top:0}
-  .quote-card{border-radius:16px;margin:0 0 4px;box-shadow:0 2px 16px rgba(26,60,94,0.1);border:none;overflow:hidden}
-  .qc-head{padding:18px 18px 14px;background:var(--navy)}
-  .qc-head h3{font-size:18px;font-weight:700}
-  .qc-head p{font-size:13px}
-  .qc-badge{margin-top:8px;font-size:11px;padding:4px 10px}
-  .prog-bar{padding:10px 18px;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;background:#fff}
-  .sp{font-size:10px;min-width:52px;color:#bbb}
-  .sp.on{color:var(--navy)}
-  .sp.done{color:var(--success)}
-  .sn{width:18px;height:18px;font-size:9px}
-  .qbody{padding:16px 18px}
-  .ql{font-size:11px;margin-bottom:8px}
-  .ro{padding:13px 14px;font-size:15px;border-radius:10px;min-height:50px;border:1.5px solid var(--border);background:#fff}
-  .ro.sel{border-color:var(--navy);background:var(--gold-pale)}
-  .ro input{width:18px;height:18px}
-  .fg input,.fg select,.fg textarea{padding:13px 14px;font-size:16px;border-radius:10px;min-height:50px;border:1.5px solid var(--border);background:#fff}
-  .fg label{font-size:12px;font-weight:600}
-  .co{padding:12px 14px;font-size:14px;min-height:48px;border-radius:10px;border:1.5px solid var(--border)}
-  .co.ck{border-color:var(--navy);background:var(--gold-pale)}
-  .co input{width:16px;height:16px}
-  .cgrid{grid-template-columns:1fr}
-  .bbk{padding:13px 18px;font-size:14px;border-radius:10px;min-height:50px;background:#F5F7FA;border:none;color:var(--navy);font-weight:600}
-  .bnx{padding:14px 18px;font-size:15px;font-weight:700;border-radius:10px;min-height:50px;background:var(--gold);color:var(--navy)}
-  .btn-row{gap:10px;margin-top:16px}
-  .upz{padding:28px 16px;border-radius:12px;background:var(--gold-pale)}
-  .uz-t{font-size:15px}
-  .uz-s{font-size:13px}
-  .qr-bar{padding:12px 18px;gap:10px;background:#F5F7FA;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .qr-i{font-size:12px;flex-shrink:0}
-
-  /* ══ SECTION WRAPPERS ══ */
-  .services-section,.testi-section,.blog-section,.faq-section,.covered-section,.partners-section,.about-section{padding:28px 0}
-
-  /* ══ SERVICES — card grid ══ */
-  .services-section{}
-  .services-tabs{gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;padding-bottom:0;margin:16px -14px 0;padding-left:14px;scrollbar-width:none;border-bottom:1.5px solid var(--border)}
-  .services-tabs::-webkit-scrollbar{display:none}
-  .stab{padding:10px 16px;font-size:13px;white-space:nowrap;flex-shrink:0;font-weight:600}
-  .svc-panel.on{grid-template-columns:1fr}
-  .svc-grid{grid-template-columns:1fr;gap:12px;margin-top:20px}
-  .svc-card{padding:20px;border-radius:14px;background:#fff;border:1px solid var(--border);box-shadow:0 2px 10px rgba(26,60,94,0.07)}
-  .svc-card h4{font-size:17px;margin-bottom:8px;line-height:1.3}
-  .svc-card p{font-size:13px;line-height:1.65}
-  .svc-icon{width:36px;height:36px;border-radius:8px;margin-bottom:10px}
-
-  /* ══ REVIEWS ══ */
-  .reviews-section{padding:24px 0;background:#fff}
-  .reviews-header{padding:0 14px;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-  .leave-review-btn{font-size:12px;padding:7px 12px;border-radius:8px}
-  .reviews-track-wrap{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 5%,#000 95%,transparent 100%)}
-  .review-card{width:240px;padding:14px;border-radius:12px;box-shadow:0 1px 8px rgba(26,60,94,0.07);border:none}
-  .review-card p{font-size:13px}
-  .rc-name{font-size:13px}
-
-  /* ══ TESTIMONIALS ══ */
-  .testi-section{padding:28px 0}
-  .testi-grid{display:flex !important;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;padding:0 14px 4px;margin:20px -14px 0}
-  .testi-grid::-webkit-scrollbar{display:none}
-  .testi-card{flex-shrink:0;width:280px;padding:18px;border-radius:14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12)}
-  .testi-card blockquote{font-size:14px;line-height:1.6;margin-bottom:12px}
-  .testi-name{font-size:13px}
-  .testi-loc{font-size:12px}
-
-  /* ══ BLOG — horizontal scroll ══ */
-  .blog-section{background:#fff}
-  .blog-grid{display:flex !important;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;padding:0 14px 4px;margin:16px -14px 0;grid-template-columns:unset}
-  .blog-grid::-webkit-scrollbar{display:none}
-  .blog-card{
-    flex-shrink:0;width:220px;
-    border-radius:12px;
-    box-shadow:0 1px 8px rgba(26,60,94,0.07);
-    border:none;
-  }
-  .blog-thumb{height:110px}
-  .blog-body{padding:14px}
-  .blog-card h4{font-size:14px;line-height:1.3}
-  .blog-card p{font-size:12px}
-
-  /* ══ FAQ ══ */
-  .faq-section{background:#fff}
-  .faq-head{margin-bottom:20px}
-  .faq-list{grid-template-columns:1fr;max-width:100%}
-  .faq-q{padding:14px 0;gap:12px}
-  .faq-q-body h4{font-size:14px}
-  .faq-a p{font-size:13px;padding:4px 0 12px}
-  .faq-icon{width:24px;height:24px;font-size:14px}
-
-  /* ══ COVERED — compact list ══ */
-  .covered-section{background:#fff}
-  .covered-inner{gap:20px}
-  .covered-right{gap:0}
-  .cover-card{
-    flex-direction:row;gap:12px;padding:14px 0;
-    border-bottom:1px solid var(--border);
-  }
-  .cover-icon{
-    width:34px;height:34px;border-radius:8px;flex-shrink:0;
-  }
-  .cover-body h4{font-size:15px}
-  .cover-body p{font-size:13px;line-height:1.55}
-
-  /* ══ PARTNERS — 2 col grid ══ */
-  .partners-grid{
+  /* ── SERVICE CARDS — pill chips, swipe row ── */
+  .svc-grid{
     display:flex !important;
-    overflow-x:auto;-webkit-overflow-scrolling:touch;
-    scrollbar-width:none;gap:10px;
-    padding:0 14px 4px;margin:16px -14px 0;
-    grid-template-columns:unset;
+    flex-direction:column;
+    gap:10px;margin-top:20px
   }
-  .partners-grid::-webkit-scrollbar{display:none}
-  .partner-card{
-    flex-shrink:0;width:190px;
-    padding:16px 14px;border-radius:12px;
-    box-shadow:0 1px 8px rgba(26,60,94,0.07);
-    border:none;background:#fff;text-align:center;
+  .svc-card{
+    padding:20px 18px;
+    border-radius:16px;
+    background:#fff;
+    border:none;
+    box-shadow:0 2px 12px rgba(0,0,0,0.06);
+    display:flex;align-items:center;gap:14px;
   }
-  .partner-icon{font-size:22px;margin-bottom:8px;width:38px;height:38px;border-radius:8px}
-  .partner-card h4{font-size:14px;margin-bottom:4px}
-  .partner-card p{font-size:12px;line-height:1.55}
+  .svc-card::before{
+    content:'→';
+    font-size:18px;color:var(--gold);font-weight:700;
+    flex-shrink:0;margin-left:auto;
+  }
+  .svc-card::after{display:none}
+  .svc-card h4{font-size:16px;font-weight:700;margin:0;color:var(--navy);line-height:1.25}
+  .svc-card p{display:none}
 
+  /* ── CAROUSEL — edge-to-edge ── */
+  .ba-section{padding:20px 0;background:#f0f4f8}
+  .ba-section .container{padding:0}
+  .ba-wrapper{border-radius:0}
+  .ba-full-img{max-height:220px;object-fit:cover}
 
-  /* ══ ABOUT — compact ══ */
-  .about-section{background:var(--offwhite)}
-  .about-inner{max-width:100%}
-  .about-photo-wrap{gap:14px;margin-bottom:20px}
-  .about-photo{width:64px;height:64px;border-width:2px}
-  .about-name{font-size:15px}
-  .about-title{font-size:10px}
-  .about-story blockquote{font-size:15px;padding-left:14px;margin:16px 0}
-  .about-values{gap:10px;margin-top:16px}
-  .family-badge{margin-top:16px}
+  /* ── HERO / QUOTE — app screen feel ── */
+  .hero{padding:0;background:#f0f4f8}
+  .hero .container{padding:0 20px}
+  .hero-inner{display:block;padding:24px 0 0}
+  .hero-trust-col{display:none}
+  .hero-quote-col{width:100%}
+  #quote{scroll-margin-top:60px}
+  .quote-card{
+    border-radius:20px;
+    box-shadow:0 4px 24px rgba(0,0,0,0.1);
+    border:none;overflow:hidden;
+    margin-bottom:0
+  }
+  #quote .quote-card > div:first-child{padding:16px 20px}
+  #quote .quote-card > div:first-child span{font-size:12px;letter-spacing:1.5px}
+  .prog-bar{padding:12px 20px;background:#fff}
+  .sp{font-size:10px;min-width:48px}
+  .sn{width:20px;height:20px;font-size:9px}
+  .qbody{padding:20px}
+  .fg label{font-size:13px;font-weight:600;margin-bottom:6px}
+  .fg input,.fg select,.fg textarea{padding:14px;font-size:16px;border-radius:12px;border:1.5px solid var(--border);background:#fff;min-height:52px}
+  .ro{padding:14px 16px;font-size:15px;border-radius:12px;min-height:54px;border:1.5px solid var(--border)}
+  .co{padding:13px 15px;font-size:14px;min-height:50px;border-radius:12px;border:1.5px solid var(--border)}
+  .cgrid{grid-template-columns:1fr}
+  .bnx{padding:16px;font-size:16px;font-weight:800;border-radius:14px;min-height:54px;letter-spacing:0.5px}
+  .bbk{padding:14px;font-size:14px;border-radius:14px;min-height:54px;background:#e8edf2;border:none}
+  .btn-row{gap:10px;margin-top:20px}
+  .ql{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--warm);margin-bottom:12px}
+  .upz{padding:24px 16px;border-radius:14px}
 
-  /* ══ BOTTOM TAB BAR — app style ══ */
+  /* ── REVIEWS — big scrollable cards ── */
+  .reviews-section{padding:28px 0;background:#f0f4f8}
+  .reviews-section .container{padding:0}
+  .reviews-header{padding:0 20px;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+  .reviews-header .g-logo{font-size:14px}
+  .g-rating{font-size:26px;font-weight:800}
+  .leave-review-btn{display:none}
+  .reviews-track-wrap{padding:0}
+  .review-card{
+    width:280px;padding:20px;
+    border-radius:16px;background:#fff;
+    box-shadow:0 2px 12px rgba(0,0,0,0.07);border:none
+  }
+  .review-card p{
+    font-size:14px;line-height:1.6;
+    display:-webkit-box;-webkit-line-clamp:4;
+    -webkit-box-orient:vertical;overflow:hidden
+  }
+  .rc-name{font-size:14px;font-weight:700}
+  .rc-date{font-size:12px}
+
+  /* ── TESTIMONIALS — full-width swipe ── */
+  .testi-section{padding:28px 0}
+  .testi-section .container{padding:0 20px}
+  .testi-grid{display:flex !important;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;padding:0 20px 4px;margin:16px -20px 0}
+  .testi-grid::-webkit-scrollbar{display:none}
+  .testi-card{flex-shrink:0;width:calc(100vw - 60px);padding:22px;border-radius:18px}
+  .testi-card blockquote{font-size:15px;line-height:1.65;margin-bottom:14px}
+  .testi-name{font-size:14px;font-weight:700}
+
+  /* ── FAQ — large accordion ── */
+  .faq-section{background:#f0f4f8;padding:28px 0}
+  .faq-head{margin-bottom:20px}
+  .faq-head .section-title{font-size:24px;font-weight:800}
+  .faq-cats{display:none}
+  .faq-list{grid-template-columns:1fr;max-width:100%;display:flex;flex-direction:column;gap:8px}
+  .faq-item{background:#fff;border-radius:14px;overflow:hidden;border:none;box-shadow:0 1px 6px rgba(0,0,0,0.06)}
+  .faq-q{padding:18px 16px;gap:12px;border:none}
+  .faq-q-body h4{font-size:15px;font-weight:700;line-height:1.35;color:var(--navy)}
+  .faq-a p{font-size:14px;line-height:1.7;padding:0 16px 18px;color:var(--warm)}
+  .faq-icon-wrap{display:none}
+
+  /* ── ABOUT — photo + name + 1 line ── */
+  .about-section{background:#fff;padding:28px 0}
+  .about-inner{display:block}
+  .about-photo-wrap{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .about-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--gold)}
+  .about-name{font-size:18px;font-weight:800}
+  .about-title{font-size:12px;color:var(--warm);letter-spacing:1px;text-transform:uppercase}
+  .about-story h2{font-size:22px;font-weight:800;margin-bottom:10px}
+  .about-story p{font-size:14px;line-height:1.7}
+  .about-story p:nth-of-type(n+2){display:none}
+  .about-stats{grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
+  .about-stat{background:#f0f4f8;border-radius:14px;padding:14px 10px;border:none;box-shadow:none}
+  .about-stat-num{font-size:24px;font-weight:800;color:var(--navy)}
+  .about-stat-label{font-size:11px;color:var(--warm);line-height:1.3}
+  .about-values,.family-badge,.about-img-col{display:none}
+
+  /* ── RESOURCES PROMO — dark card ── */
+  .res-promo-inner{grid-template-columns:1fr;gap:16px}
+  .res-promo-inner h2{font-size:20px;font-weight:800;line-height:1.2}
+  .res-promo-inner p{font-size:13px;line-height:1.6;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .res-promo-inner > .res-promo-text > div:last-child{display:none}
+  .res-promo-btn a{width:100%;text-align:center;display:block;padding:16px;border-radius:14px;font-size:15px}
+
+  /* ── FOOTER — ultra minimal ── */
+  footer{padding:24px 0 20px;background:var(--navy)}
+  .footer-top{grid-template-columns:1fr;gap:12px}
+  .footer-brand .tagline{font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:10px}
+  .footer-phone{font-size:22px;font-weight:800;color:#fff;text-decoration:none;display:block;margin-bottom:4px}
+  .footer-email{font-size:13px;color:rgba(255,255,255,0.6)}
+  .footer-legal-col{display:none}
+  .footer-bottom{flex-direction:column;gap:4px;text-align:center;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1)}
+  .footer-bottom p{font-size:11px;color:rgba(255,255,255,0.4)}
+  .footer-bottom a{color:rgba(255,255,255,0.5)}
+
+  /* ── BOTTOM BAR — native app tab bar ── */
   .mob-bar{
     display:flex;
+    position:fixed;bottom:0;left:0;right:0;z-index:500;
     background:#fff;
-    border-top:1px solid rgba(0,0,0,0.08);
-    box-shadow:0 -2px 12px rgba(0,0,0,0.08);
-    padding-bottom:env(safe-area-inset-bottom);
+    border-top:1px solid rgba(0,0,0,0.1);
+    box-shadow:0 -4px 20px rgba(0,0,0,0.12);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
   }
-  .mob-bar-inner{
-    padding:8px 16px 6px;
-    display:flex;align-items:center;
-    justify-content:space-between;
-    width:100%;
-  }
-  .mob-logo{font-size:18px}
-  .mob-actions{gap:8px}
+  .mob-bar-inner{display:flex;gap:10px;width:100%;align-items:center}
+  .mob-logo{display:none}
+  .mob-actions{display:flex;gap:10px;flex:1}
   .mb-action{
-    padding:8px 16px;
-    font-size:13px;font-weight:700;
-    border-radius:10px;
+    flex:1;display:flex;align-items:center;justify-content:center;
+    padding:14px 12px;border-radius:14px;
+    font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;
+    text-decoration:none;border:none;cursor:pointer;letter-spacing:0
   }
-  .mb-call{
-    background:none;border:1.5px solid #1A3C5E;
-    color:#1A3C5E;
-  }
-  .mb-quote{
-    background:#1A3C5E;
-    color:#fff;
-  }
+  .mb-call{background:var(--navy);color:#fff}
+  .mb-quote{background:var(--gold);color:var(--navy)}
 
+  /* ── SECTION SPACING ── */
+  .services-section,.testi-section,.faq-section,.about-section,.reviews-section{border-top:none}
+  .services-cards-section{padding:16px 0 28px;background:#f0f4f8}
 
-  /* ══ REMOTE ══ */
-  .remote-section{background:var(--offwhite)}
-  .remote-cards{margin-bottom:16px;border-radius:12px;border-width:1px}
-  .remote-card{padding:15px 16px;gap:12px;min-height:60px}
-  .remote-card h4{font-size:14px}
-  .remote-card p{font-size:12px}
-  .remote-card-num{width:30px;height:30px;font-size:13px}
-  .remote-card-arrow{font-size:18px}
-  .remote-tags{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px;margin:0 -14px;padding-left:14px}
-  .remote-tags::-webkit-scrollbar{display:none}
-  .remote-tag{flex-shrink:0}
-  .rs-body h5{font-size:14px}
-  .rs-body p{font-size:13px}
-
-  /* ══ FOOTER ══ */
-  footer{padding:20px 0 0}
-  .footer-top{grid-template-columns:1fr;gap:20px;padding-bottom:16px}
-  .footer-top{grid-template-columns:1fr;gap:24px;padding-bottom:24px}
-  .footer-bottom{flex-direction:column;gap:6px;align-items:flex-start;padding:12px 0}
-  .footer-bottom p{font-size:11px}
-  .footer-insurance-badges{gap:6px;flex-wrap:wrap}
-  .ins-badge{font-size:10px;padding:3px 8px}
-
-  /* ══ FOOTER CTA ══ */
-  section[style*="padding:56px"]{padding:36px 0 !important}
-
-  /* ══ iOS SPECIFICS ══ */
-  .sit-card,.ro,.co,.stab,.fcat,.blog-card,.city-card{
-    -webkit-tap-highlight-color:transparent;
-  }
-  input,select,textarea{
-    -webkit-appearance:none;
-    appearance:none;
-  }
+  /* ── HIDE NOISE ── */
+  .nav-tagline,.partners-section,.cities-section,.steps-section{display:none}
+  .float-quote-btn{display:none}
+  .faq-cats{display:none}
+  .section-sub br{display:none}
 }
 
-/* ══════════════════════════════════════════
-   SMALL IPHONE (375px — iPhone SE, 12/13 mini)
-══════════════════════════════════════════ */
+/* ══ SMALL IPHONE (375px) ══ */
 @media(max-width:375px){
-  .container{padding:0 12px}
-  .hero h1{font-size:25px}
-  .section-title{font-size:22px}
-  .qc-head h3{font-size:16px}
-  .cities-grid{grid-template-columns:1fr 1fr;gap:8px}
-  .city-card{padding:14px 10px}
-  .city-state{font-size:17px}
-  .partners-grid{grid-template-columns:1fr 1fr}
-  .testi-card{width:250px}
-  .blog-card{width:200px}
+  .container{padding:0 14px}
+  .services-section .section-title{font-size:24px}
+  .svc-card h4{font-size:14px}
+  .testi-card{width:calc(100vw - 50px)}
+  .review-card{width:260px}
+}
   .step-item{width:148px}
   .mob-logo{font-size:16px}
   .mb-action{padding:7px 12px;font-size:12px}
