@@ -2221,20 +2221,17 @@ function submitQ(){
 
   function sendToSheet(p){
     console.log('Sending to sheet, files:',p.files.length);
+    const form=new FormData();
+    form.append('data',JSON.stringify(p));
     fetch(SHEET_URL,{
       method:'POST',
-      headers:{'Content-Type':'text/plain'},
+      mode:'no-cors',
       body:JSON.stringify(p)
     })
-    .then(r=>r.json())
-    .then(d=>{
-      console.log('Sheet response:',d);
-      showSuccess();
-    })
-    .catch(err=>{
-      console.warn('Sheet error:',err);
-      showSuccess(); // Show success anyway so user isn't stuck
-    });
+    .then(()=>console.log('Sent to sheet'))
+    .catch(err=>console.warn('Sheet error:',err));
+    // Show success after short delay to allow upload to start
+    setTimeout(showSuccess, uploadedFiles.length>0 ? 1500 : 300);
   }
 
   function fileToBase64(file){
