@@ -2202,9 +2202,10 @@ function submitQ(){
     if(quoteEl){const top=quoteEl.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:top,behavior:'smooth'});}
   },80);
 
-  // Collect uploaded files and convert to Base64
-  const fileInput=document.getElementById('fIn');
-  const files=fileInput&&fileInput.files?Array.from(fileInput.files):[];
+  // Collect uploaded files — use global files array (captures drag & drop too)
+  const uploadedFiles=(typeof files!=='undefined'&&files.length>0)?files:
+    (document.getElementById('fIn')&&document.getElementById('fIn').files?
+    Array.from(document.getElementById('fIn').files):[]);
 
   const payload={
     reference:ref, name:n, email:e, phone:ph,
@@ -2212,7 +2213,7 @@ function submitQ(){
     services:services, notes:notes, files:[]
   };
 
-  const SHEET_URL='https://script.google.com/macros/s/AKfycbzLb_KYuMoi9hXcFg0HMylHxBhg2hvXShWWwI2SQyAKiJDNXDmqypWl39UFJCez8jQ/exec';
+  const SHEET_URL='https://script.google.com/macros/s/AKfycbxka3Mn40NR8BInd3K29nlLH1tsALJz7NlSQ7-0OzycB-ZUjW9bpoPEoZy2v1leaYkezA/exec';
 
   function sendToSheet(payload){
     fetch(SHEET_URL,{
@@ -2225,10 +2226,10 @@ function submitQ(){
     .catch(err=>console.warn('Sheet error:',err));
   }
 
-  if(files.length===0){
+  if(uploadedFiles.length===0){
     sendToSheet(payload);
   } else {
-    const readers=files.map(file=>new Promise(resolve=>{
+    const readers=uploadedFiles.map(file=>new Promise(resolve=>{
       const reader=new FileReader();
       reader.onload=ev=>{
         const b64=ev.target.result.split(',')[1];
