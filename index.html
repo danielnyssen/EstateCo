@@ -2220,14 +2220,26 @@ function submitQ(){
   }
 
   function sendToSheet(p){
-    console.log('Sending payload, files:',p.files.length);
-    // Use an image trick to fire GET request — most reliable no-cors method
-    const encoded=encodeURIComponent(JSON.stringify(p));
-    const img=new Image();
-    img.src=SHEET_URL+'?data='+encoded;
-    img.onload=()=>console.log('Sheet: sent');
-    img.onerror=()=>console.log('Sheet: sent (error expected for non-image)');
-    setTimeout(showSuccess, uploadedFiles.length>0?2000:800);
+    console.log('Sending, files:',p.files.length);
+    // Create hidden iframe to receive response
+    let ifr=document.getElementById('sheetFrame');
+    if(!ifr){ifr=document.createElement('iframe');ifr.id='sheetFrame';ifr.name='sheetFrame';ifr.style.display='none';document.body.appendChild(ifr);}
+    // Create hidden form targeting iframe
+    const frm=document.createElement('form');
+    frm.method='POST';
+    frm.action=SHEET_URL;
+    frm.target='sheetFrame';
+    frm.style.display='none';
+    const inp=document.createElement('input');
+    inp.type='hidden';
+    inp.name='payload';
+    inp.value=JSON.stringify(p);
+    frm.appendChild(inp);
+    document.body.appendChild(frm);
+    frm.submit();
+    console.log('Form submitted to sheet');
+    document.body.removeChild(frm);
+    setTimeout(showSuccess, uploadedFiles.length>0?2500:1000);
   }
 
   function fileToBase64(file){
