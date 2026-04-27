@@ -2202,7 +2202,119 @@ function filterFaq(el,cat){
 .float-quote-btn{position:fixed;bottom:24px;right:24px;left:auto;z-index:999;background:var(--gold);color:var(--navy);border:none;border-radius:50px;padding:14px 22px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,0.18);transition:transform 0.2s,box-shadow 0.2s}
 .float-quote-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.22)}
 .float-quote-btn:active{transform:translateY(0)}
-@media(max-width:660px){.float-quote-btn{bottom:80px;right:16px;left:auto;padding:12px 18px;font-size:11px}}
+@media(max-width:660px){.float-quote-btn{display:none}}
+</style>
+
+<!-- MOBILE-ONLY REDESIGN -->
+<style>
+@media(max-width:480px){
+
+  /* ── Hide desktop elements on mobile ── */
+  .hero-trust-col{display:none}
+  .hero-quote-col .quote-card .prog-bar,
+  .hero-quote-col .quote-card .qbody,
+  .hero-quote-col .quote-card .btn-row{display:none}
+  .float-quote-btn{display:none}
+
+  /* ── Mobile hero — full width, centered, minimal ── */
+  .mob-hero{display:flex !important}
+  .services-section{padding:20px 0 12px}
+  .services-section .section-title{font-size:24px;line-height:1.2;margin-bottom:6px}
+  .services-section .section-sub{font-size:13px;line-height:1.6;margin-bottom:0}
+
+  /* ── Service cards — compact 2-col, title only ── */
+  .svc-grid{grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+  .svc-card{padding:16px 14px;border-radius:12px;box-shadow:0 1px 8px rgba(0,0,0,0.07)}
+  .svc-card h4{font-size:13px;font-weight:700;margin-bottom:0;line-height:1.3;color:var(--navy)}
+  .svc-card p{display:none}
+  .svc-card::after{display:none}
+
+  /* ── Carousel ── */
+  .ba-section{padding:16px 0}
+  .ba-full-img{max-height:200px}
+
+  /* ── Quote section — show as CTA strip ── */
+  .hero{padding:0}
+  .hero .container{padding:0}
+  .hero-inner{display:block}
+  .hero-quote-col{padding:0}
+  #quote .quote-card{border-radius:0;box-shadow:none;border:none;border-top:1px solid var(--border)}
+  #quote .quote-card > div:first-child{padding:14px 16px}
+  #quote .quote-card > div:first-child span{font-size:11px}
+
+  /* Show only the CTA bar for quote on mobile */
+  .mob-quote-cta{display:flex !important}
+
+  /* ── Reviews — slim cards ── */
+  .reviews-section{padding:20px 0}
+  .review-card{width:220px;padding:14px}
+  .review-card p{font-size:13px;line-height:1.5;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+  /* ── Testimonials — horizontal ── */
+  .testi-card{width:260px}
+  .testi-card blockquote{font-size:13px;
+    display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+
+  /* ── FAQ — cleaner accordion ── */
+  .faq-section{padding:24px 0}
+  .faq-head{margin-bottom:20px}
+  .faq-head .section-title{font-size:22px}
+  .faq-cats{display:none}
+  .faq-q{padding:14px 16px}
+  .faq-q h4{font-size:14px;line-height:1.4}
+  .faq-a p{font-size:13px;line-height:1.65;padding:0 16px 14px}
+  .faq-icon{font-size:18px;width:24px;height:24px}
+
+  /* ── About — photo + 2 lines ── */
+  .about-section{padding:24px 0}
+  .about-inner{grid-template-columns:1fr;gap:20px}
+  .about-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;margin-bottom:12px}
+  .about-title{font-size:12px}
+  .about-story h2{font-size:20px;margin-bottom:8px}
+  .about-story p:not(:first-of-type){display:none}
+  .about-stats{grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+  .about-stat-num{font-size:22px}
+  .about-stat-label{font-size:11px}
+
+  /* ── Resources promo — compact ── */
+  .res-promo-inner{grid-template-columns:1fr}
+  .res-promo-inner h2{font-size:18px}
+  .res-promo-inner p{font-size:13px;line-height:1.6}
+  .res-promo-inner > div:first-child > div{display:none}
+  .res-promo-btn{margin-top:12px}
+
+  /* ── Footer — minimal ── */
+  footer{padding:24px 0 80px}
+  .footer-top{grid-template-columns:1fr;gap:16px}
+  .footer-bottom{flex-direction:column;gap:4px;text-align:center;font-size:11px}
+  .footer-phone{font-size:20px;margin:8px 0 4px}
+  .footer-email{font-size:13px}
+  .tagline{font-size:13px;margin-bottom:12px}
+
+  /* ── Mobile bottom bar — prominent ── */
+  .mob-bar{
+    position:fixed;bottom:0;left:0;right:0;z-index:200;
+    background:#fff;border-top:1px solid var(--border);
+    padding:10px 16px 14px;
+    box-shadow:0 -4px 20px rgba(0,0,0,0.1)
+  }
+  .mob-bar-inner{display:flex;gap:10px;align-items:center}
+  .mob-logo{display:none}
+  .mb-call{
+    flex:1;text-align:center;padding:13px;border-radius:12px;
+    font-size:14px;font-weight:700;letter-spacing:0;
+    background:var(--navy);color:#fff;text-decoration:none;
+    display:flex;align-items:center;justify-content:center;gap:6px
+  }
+  .mb-quote{
+    flex:1;text-align:center;padding:13px;border-radius:12px;
+    font-size:14px;font-weight:700;
+    background:var(--gold);color:var(--navy);border:none;cursor:pointer
+  }
+  .mob-actions{display:flex;gap:10px;flex:1}
+
+}
 </style>
 
 </body>
