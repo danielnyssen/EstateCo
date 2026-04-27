@@ -2202,10 +2202,9 @@ function submitQ(){
     if(quoteEl){const top=quoteEl.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:top,behavior:'smooth'});}
   },80);
 
-  // Collect uploaded files — use global files array
-  console.log('Files in array:', files.length, files);
-  const uploadedFiles = files && files.length > 0 ? [...files] : [];
-  console.log('Uploaded files:', uploadedFiles.length);
+  // Collect files - copy array at submission time
+  const uploadedFiles = [...files];
+  console.log('Files to upload:', uploadedFiles.length, uploadedFiles.map(f=>f.name));
 
   const payload={
     reference:ref, name:n, email:e, phone:ph,
@@ -2215,32 +2214,50 @@ function submitQ(){
 
   const SHEET_URL='https://script.google.com/macros/s/AKfycbxka3Mn40NR8BInd3K29nlLH1tsALJz7NlSQ7-0OzycB-ZUjW9bpoPEoZy2v1leaYkezA/exec';
 
-  function sendToSheet(payload){
+  function sendToSheet(p){
+    console.log('Sending to sheet, files:', p.files.length);
     fetch(SHEET_URL,{
       method:'POST',
       headers:{'Content-Type':'text/plain'},
-      body:JSON.stringify(payload)
+      body:JSON.stringify(p)
     })
     .then(r=>r.json())
     .then(d=>console.log('Sheet response:',d))
     .catch(err=>console.warn('Sheet error:',err));
   }
 
-  if(uploadedFiles.length===0){
-    sendToSheet(payload);
-  } else {
-    const readers=uploadedFiles.map(file=>new Promise(resolve=>{
+  function fileToBase64(file){
+    return new Promise((resolve,reject)=>{
       const reader=new FileReader();
       reader.onload=ev=>{
         const b64=ev.target.result.split(',')[1];
+        console.log('Converted file:',file.name,'size:',b64.length);
         resolve({name:file.name,type:file.type,data:b64});
       };
+      reader.onerror=err=>{
+        console.warn('FileReader error:',err);
+        reject(err);
+      };
       reader.readAsDataURL(file);
-    }));
-    Promise.all(readers).then(fileData=>{
-      payload.files=fileData;
-      sendToSheet(payload);
     });
+  }
+
+  if(uploadedFiles.length===0){
+    console.log('No files — sending text only');
+    sendToSheet(payload);
+  } else {
+    console.log('Converting',uploadedFiles.length,'files to Base64...');
+    Promise.all(uploadedFiles.map(f=>fileToBase64(f)))
+      .then(fileData=>{
+        console.log('All files converted:', fileData.length);
+        payload.files=fileData;
+        sendToSheet(payload);
+      })
+      .catch(err=>{
+        console.warn('File conversion failed:',err);
+        // Send without files rather than fail completely
+        sendToSheet(payload);
+      });
   }
 }
 
