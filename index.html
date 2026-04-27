@@ -2212,14 +2212,22 @@ function submitQ(){
     services:services, notes:notes, files:[]
   };
 
-  const SHEET_URL='https://script.google.com/macros/s/AKfycbzTm1gK8t3sayHwl46E_JyHUmUCQoroBGmuD_x5IbC_VJMcCRJj3fFx5HepcyCyny2-/exec';
+  const SHEET_URL='https://script.google.com/macros/s/AKfycbxka3Mn40NR8BInd3K29nlLH1tsALJz7NlSQ7-0OzycB-ZUjW9bpoPEoZy2v1leaYkezA/exec';
+
+  function sendToSheet(payload){
+    fetch(SHEET_URL,{
+      method:'POST',
+      headers:{'Content-Type':'text/plain'},
+      body:JSON.stringify(payload)
+    })
+    .then(r=>r.json())
+    .then(d=>console.log('Sheet response:',d))
+    .catch(err=>console.warn('Sheet error:',err));
+  }
 
   if(files.length===0){
-    // No files — send immediately
-    fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-      .catch(err=>console.warn('Sheet error:',err));
+    sendToSheet(payload);
   } else {
-    // Convert all files to Base64 then send
     const readers=files.map(file=>new Promise(resolve=>{
       const reader=new FileReader();
       reader.onload=ev=>{
@@ -2228,11 +2236,9 @@ function submitQ(){
       };
       reader.readAsDataURL(file);
     }));
-
     Promise.all(readers).then(fileData=>{
       payload.files=fileData;
-      fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-        .catch(err=>console.warn('Sheet error:',err));
+      sendToSheet(payload);
     });
   }
 }
