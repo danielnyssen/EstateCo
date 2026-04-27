@@ -2001,23 +2001,29 @@ function baGoTo(idx){
 <!-- RESOURCES PROMO -->
 <section style="padding:56px 0;background:var(--navy);position:relative;overflow:hidden">
   <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;opacity:0.06"></div>
-  <div class="container" style="position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center">
-    <div>
-      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Free Resources</div>
-      <h2 style="font-family:'DM Sans',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px">Plain-English guides written for families — not lawyers.</h2>
-      <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:520px">Navigating a deceased estate is unfamiliar territory for most people. Our free guides walk you through costs, executor responsibilities, probate, and how to manage everything remotely — so you can make informed decisions with confidence.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px">
-        <span style="font-size:12px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px">✓ Executor checklists</span>
-        <span style="font-size:12px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px">✓ Cost breakdowns</span>
-        <span style="font-size:12px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px">✓ Probate explained</span>
-        <span style="font-size:12px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px">✓ Remote estate management</span>
+  <div class="container" style="position:relative;z-index:2">
+    <div class="res-promo-inner">
+      <div class="res-promo-text">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Free Resources</div>
+        <h2 style="font-family:'DM Sans',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px">Plain-English guides written for families — not lawyers.</h2>
+        <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:520px">Navigating a deceased estate is unfamiliar territory for most people. Our free guides walk you through costs, executor responsibilities, probate, and how to manage everything remotely — so you can make informed decisions with confidence.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px">
+          <span style="font-size:12px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px">✓ Executor checklists</span>
+          <span style="font-size:12px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px">✓ Cost breakdowns</span>
+          <span style="font-size:12px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px">✓ Probate explained</span>
+          <span style="font-size:12px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px">✓ Remote estate management</span>
+        </div>
       </div>
-    </div>
-    <div style="flex-shrink:0">
-      <a href="guides.html" style="display:inline-block;background:var(--gold);color:var(--navy);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:14px 28px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Read the Guides →</a>
+      <div class="res-promo-btn">
+        <a href="guides.html" style="display:inline-block;background:var(--gold);color:var(--navy);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:14px 28px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Read the Guides →</a>
+      </div>
     </div>
   </div>
 </section>
+<style>
+.res-promo-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+@media(max-width:660px){.res-promo-inner{grid-template-columns:1fr}.res-promo-btn{margin-top:8px}}
+</style>
 
 <!-- ABOUT -->
 <section class="about-section" id="about">
