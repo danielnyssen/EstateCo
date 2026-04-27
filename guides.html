@@ -1149,7 +1149,7 @@ footer{background:var(--navy);padding:32px 0 0}
 .guides-nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,0.8);text-decoration:none;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);border-radius:8px;padding:8px 16px;transition:all 0.2s;white-space:nowrap}
 .guides-nav a:hover{background:rgba(255,255,255,0.22);color:#fff;border-color:rgba(255,255,255,0.4)}
 
-.guides-wrap{max-width:1140px;margin:0 auto;padding:0 48px}
+.guides-wrap{max-width:1140px;margin:0 auto;padding:0 24px}
 
 /* ── GUIDES HEADER ── */
 .guides-header{background:var(--navy);padding:56px 0 48px;text-align:center;position:relative;overflow:hidden}
@@ -1214,8 +1214,8 @@ footer{background:var(--navy);padding:32px 0 0}
 .guides-bottom-cta h3{font-family:'DM Sans',sans-serif;font-size:22px;color:#fff;margin-bottom:8px}
 .guides-bottom-cta p{font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:20px}
 
-@media(max-width:900px){.article-grid{grid-template-columns:1fr;gap:28px}.article-sidebar{position:static;display:none}.guide-article{padding:40px 0}.guides-wrap{padding:28px 24px 0}}
-@media(max-width:480px){.guides-wrap{padding:20px 16px 0}.guide-article{padding:28px 0}.body h3{font-size:17px}body{padding-bottom:76px}}
+@media(max-width:900px){.article-grid{grid-template-columns:1fr;gap:28px}.article-sidebar{position:static;display:none}.guide-article{padding:40px 0}.guides-wrap{padding:28px 16px 0}}
+@media(max-width:480px){.guides-wrap{padding:16px 16px 0}.guide-article{padding:24px 0}.body h3{font-size:17px}body{padding-bottom:76px}}
 .guide-toc{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(26,60,94,0.05)}
 .guide-toc-head{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--warm);margin-bottom:10px}
 .guide-toc a{display:flex;align-items:center;font-size:13px;color:var(--warm);text-decoration:none;padding:8px 10px;border-radius:8px;transition:all 0.15s;margin-bottom:2px;font-family:'DM Sans',sans-serif}
@@ -1269,8 +1269,8 @@ footer{background:var(--navy);padding:32px 0 0}
 .guides-bottom-cta{background:var(--navy);border-radius:12px;padding:28px;text-align:center;margin:32px 0}
 .guides-bottom-cta h3{font-family:'DM Sans',sans-serif;font-size:20px;color:#fff;margin-bottom:6px}
 .guides-bottom-cta p{font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:18px}
-@media(max-width:900px){.guide-article{padding:40px 0}.guides-wrap{padding:32px 24px 0}}
-@media(max-width:480px){.guides-wrap{padding:0 16px}.guide-article{padding:28px 0}.body h3{font-size:17px}body{padding-bottom:76px}}
+@media(max-width:900px){.guide-article{padding:40px 0}.guides-wrap{padding:32px 16px 0}}
+@media(max-width:480px){.guides-wrap{padding:16px 16px 0}.guide-article{padding:24px 0}.body h3{font-size:17px}body{padding-bottom:76px}}
 
 
 /* ── Guide article card layout ── */
@@ -2145,6 +2145,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .float-quote-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.22)}
 .float-quote-btn:active{transform:translateY(0)}
 @media(max-width:660px){.float-quote-btn{bottom:80px;left:16px;padding:12px 18px;font-size:11px}}
+@media(max-width:660px){
+  .guides-header{padding:36px 0 32px}
+  .guides-header h1{font-size:24px;letter-spacing:-0.5px}
+  .guides-header p{font-size:14px}
+  .guides-nav{gap:8px;margin-top:20px}
+  .guides-nav a{font-size:12px;padding:7px 12px}
+  .guides-wrap{padding:16px 16px 0}
+  .guide-article{padding:24px 0}
+  .body p{font-size:14px;line-height:1.7}
+  .body h3{font-size:17px}
+  .article-grid{grid-template-columns:1fr}
+  .article-sidebar{display:none}
+  .art-cat{font-size:10px}
+  .checklist-item{padding:10px 12px;gap:10px}
+  .faq-q,.faq-a{padding:14px 16px}
+}
 </style>
 
 </body>
