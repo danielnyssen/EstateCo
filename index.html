@@ -317,7 +317,14 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
   z-index:1;
 }
 .hero .container{position:relative;z-index:2}
-.hero-inner{display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:start}
+.hero-inner{display:grid;grid-template-columns:1fr 440px;gap:48px;align-items:start}
+.hero-trust-col{padding-top:8px}
+.trust-list{display:flex;flex-direction:column;gap:20px;margin-top:4px}
+.trust-item{display:flex;gap:14px;align-items:flex-start}
+.trust-icon{width:24px;height:24px;border-radius:50%;background:var(--gold);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.trust-item strong{display:block;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.trust-item p{font-size:13px;color:var(--warm);line-height:1.6;margin:0}
+@media(max-width:860px){.hero-inner{grid-template-columns:1fr}.hero-trust-col{order:2;border-top:1px solid var(--border);padding-top:24px;margin-top:8px}}
 .hero-eyebrow{display:none}
 .hero h1{font-family:'DM Sans',sans-serif;font-size:clamp(38px,5.5vw,64px);font-weight:700;color:var(--navy);line-height:1.06;letter-spacing:-1px;margin-bottom:18px}
 .hero h1 em{font-style:normal;font-family:'DM Sans',sans-serif;font-weight:400;color:var(--gold);letter-spacing:-0.5px;font-size:0.95em}
@@ -1474,8 +1481,52 @@ function baGoTo(idx){
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
-      <div>
 
+      <!-- LEFT: Trust points -->
+      <div class="hero-trust-col">
+        <div class="section-tag">Why families choose us</div>
+        <h2 class="section-title" style="margin-bottom:24px">Handled with care,<br>from start to finish.</h2>
+        <div class="trust-list">
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <div>
+              <strong>Fixed quote — no surprises</strong>
+              <p>You receive a fixed all-inclusive price before any work begins.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <div>
+              <strong>No need to attend</strong>
+              <p>Fully managed remotely with photo updates throughout.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <div>
+              <strong>$20M public liability insured</strong>
+              <p>Fully insured on every job. Certificates available on request.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <div>
+              <strong>Australian family business</strong>
+              <p>Every job handled by our own team — no franchises or contractors.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <div>
+              <strong>Legally compliant documentation</strong>
+              <p>Estate reports suitable for solicitors, executors and probate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Quote form -->
+      <div>
       <div id="quote">
         <div class="quote-card">
           <div style="background:var(--gold);padding:14px 24px;text-align:center">
@@ -1603,11 +1654,10 @@ function baGoTo(idx){
 
         </div>
       </div>
+      </div><!-- end right col -->
     </div>
   </div>
 </section>
-
-<!-- STATS -->
 
 
 <!-- GOOGLE REVIEWS -->
@@ -1853,126 +1903,7 @@ function baGoTo(idx){
   </div>
 </section>
 
-<!-- FULLY COVERED -->
-<section class="covered-section" id="covered">
-  <div class="container">
-    <div class="covered-inner">
-      <div class="covered-left">
-        <div class="section-tag">Fully covered &amp; compliant</div>
-        <h2 class="section-title">Work with a team you can trust — legally and professionally.</h2>
-        <p class="section-sub">When you hand over the keys to a family home, you deserve complete confidence that the people inside are qualified, insured, and operating to the highest professional standard.</p>
-        <p style="font-size:13px;color:var(--warm);margin-top:16px">All insurance certificates available on request.</p>
-      </div>
-      <div class="covered-right">
 
-        <div class="cover-card">
-          <div class="cover-icon ci-shield"></div>
-          <div class="cover-body">
-            <h4>$20M Public Liability Insurance</h4>
-            <p>$20 million public liability cover on every job. Certificates available on request.</p>
-          </div>
-        </div>
-
-        <div class="cover-card">
-          <div class="cover-icon ci-workers"></div>
-          <div class="cover-body">
-            <h4>Workers Compensation (Mandatory)</h4>
-            <p>All staff are covered by state-compliant workers compensation. No liability passes to you.</p>
-          </div>
-        </div>
-
-        <div class="cover-card">
-          <div class="cover-icon ci-pro"></div>
-          <div class="cover-body">
-            <h4>Professional Indemnity Insurance</h4>
-            <p>Our valuation and advisory services carry professional indemnity cover.</p>
-          </div>
-        </div>
-
-        <div class="cover-card">
-          <div class="cover-icon ci-vehicle"></div>
-          <div class="cover-body">
-            <h4>Fully Insured Vehicles &amp; Equipment</h4>
-            <p>All vehicles and equipment are comprehensively insured. No risk passes to the estate.</p>
-          </div>
-        </div>
-
-        <div class="cover-card">
-          <div class="cover-icon ci-abn"></div>
-          <div class="cover-body">
-            <h4>Registered Australian Business (ABN)</h4>
-            <p>Registered Australian company · ABN <a href="https://abr.business.gov.au/ABN/View?abn=34618204290" target="_blank" rel="noopener" style="color:var(--gold)">34 618 204 290</a> · GST-compliant invoicing · Australian Consumer Law compliant.</p>
-          </div>
-        </div>
-
-        <div class="cover-card">
-          <div class="cover-icon ci-privacy"></div>
-          <div class="cover-body">
-            <h4>Privacy Act Compliant</h4>
-            <p>All personal data handled under the Privacy Act 1988. Securely destroyed at completion.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BLOG -->
-<section class="blog-section" id="blog">
-  <div class="container">
-    <div class="section-tag">Resources &amp; guides</div>
-    <h2 class="section-title">Helpful guides for executors &amp; families.</h2>
-    <p class="section-sub">Plain-English guides to help you navigate the estate process with confidence.</p>
-    <div class="blog-grid">
-      <div class="blog-card">
-        <div class="blog-thumb t1"><div class="blog-cat">Guide</div></div>
-        <div class="blog-body">
-          <div class="blog-meta">12 min read · Informational</div>
-          <h4>The Complete Guide to Deceased Estate Clearance in Australia 2025</h4>
-          <p>Everything executors and families need to know — from first steps to final report. Covers costs, timelines, what to keep, and how to choose a service.</p>
-          <a href="guides.html#guide-complete" class="blog-read">Read →</a>
-        </div>
-      </div>
-      <div class="blog-card">
-        <div class="blog-thumb t2"><div class="blog-cat">Executor</div></div>
-        <div class="blog-body">
-          <div class="blog-meta">8 min read · Informational</div>
-          <h4>Executor Checklist Australia: Managing a Deceased Estate Step by Step</h4>
-          <p>A practical, downloadable checklist for Australian executors covering probate, property, accounts, and clearance — in plain English.</p>
-          <a href="guides.html#guide-executor" class="blog-read">Read →</a>
-        </div>
-      </div>
-      <div class="blog-card">
-        <div class="blog-thumb t3"><div class="blog-cat">Costs</div></div>
-        <div class="blog-body">
-          <div class="blog-meta">6 min read · Commercial</div>
-          <h4>How Much Does Deceased Estate Clearance Cost in Australia?</h4>
-          <p>A transparent breakdown of estate clearance costs by property size, location, and service scope — including what affects pricing and how to get a fixed quote.</p>
-          <a href="guides.html#guide-costs" class="blog-read">Read →</a>
-        </div>
-      </div>
-      <div class="blog-card">
-        <div class="blog-thumb t4"><div class="blog-cat">Remote</div></div>
-        <div class="blog-body">
-          <div class="blog-meta">7 min read · Informational</div>
-          <h4>How to Manage a Deceased Estate Remotely From Interstate or Overseas</h4>
-          <p>A step-by-step guide for executors who cannot attend the property — covering quotes, documentation, signing, and completion without travelling.</p>
-          <a href="guides.html#guide-remote" class="blog-read">Read →</a>
-        </div>
-      </div>
-      <div class="blog-card">
-        <div class="blog-thumb t5"><div class="blog-cat">Legal</div></div>
-        <div class="blog-body">
-          <div class="blog-meta">9 min read · Informational</div>
-          <h4>What Is Probate in Australia? A Plain-English Guide for Executors</h4>
-          <p>Demystifying the probate process — what it is, when you need it, how long it takes, and what documentation is required for property and estate clearance.</p>
-          <a href="guides.html#guide-probate" class="blog-read">Read →</a>
-        </div>
-    </div>
-    <div style="text-align:center;margin-top:24px"><a href="guides.html" style="font-size:14px;font-weight:600;color:var(--gold);text-decoration:none">View all guides →</a></div>
-  </div>
-</section>
 
 <!-- FAQ -->
 <section class="faq-section" id="faq">
