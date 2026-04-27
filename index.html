@@ -2177,55 +2177,64 @@ function submitQ(){
 
   const ref=genRef();
   const firstName=n.split(' ')[0];
-  const callTime="We'll be in touch shortly";
 
-  // Collect all form data
+  // Collect form data
   const suburb=document.getElementById('suburb').value.trim();
-  const ptype=document.getElementById('ptype').value;
-  const psize=document.getElementById('psize').value;
+  const ptypeEl=document.getElementById('ptype');
+  const ptype=ptypeEl.options[ptypeEl.selectedIndex].text;
+  const psizeEl=document.getElementById('psize');
+  const psize=psizeEl.options[psizeEl.selectedIndex].text;
   const notes=(document.getElementById('fnotes')||{}).value||'';
   const services=Array.from(document.querySelectorAll('#fs2 input[type="checkbox"]:checked'))
     .map(cb=>cb.parentElement.textContent.trim()).join(', ');
 
-  // Send to Google Sheets
-  const SHEET_URL='https://script.google.com/macros/s/AKfycbzTm1gK8t3sayHwl46E_JyHUmUCQoroBGmuD_x5IbC_VJMcCRJj3fFx5HepcyCyny2-/exec';
-  fetch(SHEET_URL,{
-    method:'POST',
-    mode:'no-cors',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({
-      reference: ref,
-      name: n,
-      email: e,
-      phone: ph,
-      suburb: suburb,
-      propertyType: ptype,
-      size: psize,
-      services: services,
-      notes: notes
-    })
-  }).catch(err=>console.warn('Sheet POST error:',err));
-
-  // Hide form, show success
+  // Hide form, show success immediately
   document.getElementById('qbody').style.display='none';
   document.getElementById('progBar').style.display='none';
   const sb=document.getElementById('sucBox');
   sb.style.display='block';
-
-  // Populate dynamic fields
   document.getElementById('sucName').textContent=firstName;
   document.getElementById('sucRef').textContent='Reference: '+ref;
   const ctEl=document.getElementById('callTime');
-  if(ctEl) ctEl.textContent=callTime;
-
-  // Scroll to top of quote section
+  if(ctEl) ctEl.textContent="We'll be in touch shortly";
   setTimeout(()=>{
     const quoteEl=document.getElementById('quote');
-    if(quoteEl){
-      const top=quoteEl.getBoundingClientRect().top+window.scrollY-90;
-      window.scrollTo({top:top,behavior:'smooth'});
-    }
+    if(quoteEl){const top=quoteEl.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:top,behavior:'smooth'});}
   },80);
+
+  // Collect uploaded files and convert to Base64
+  const fileInput=document.getElementById('fIn');
+  const files=fileInput&&fileInput.files?Array.from(fileInput.files):[];
+
+  const payload={
+    reference:ref, name:n, email:e, phone:ph,
+    suburb:suburb, propertyType:ptype, size:psize,
+    services:services, notes:notes, files:[]
+  };
+
+  const SHEET_URL='https://script.google.com/macros/s/AKfycbzTm1gK8t3sayHwl46E_JyHUmUCQoroBGmuD_x5IbC_VJMcCRJj3fFx5HepcyCyny2-/exec';
+
+  if(files.length===0){
+    // No files — send immediately
+    fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .catch(err=>console.warn('Sheet error:',err));
+  } else {
+    // Convert all files to Base64 then send
+    const readers=files.map(file=>new Promise(resolve=>{
+      const reader=new FileReader();
+      reader.onload=ev=>{
+        const b64=ev.target.result.split(',')[1];
+        resolve({name:file.name,type:file.type,data:b64});
+      };
+      reader.readAsDataURL(file);
+    }));
+
+    Promise.all(readers).then(fileData=>{
+      payload.files=fileData;
+      fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+        .catch(err=>console.warn('Sheet error:',err));
+    });
+  }
 }
 
 // SERVICE TABS
