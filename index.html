@@ -162,7 +162,7 @@ body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--charcoal);over
 
 /* ── UTILITY ── */
 .container{max-width:1180px;margin:0 auto;padding:0 48px}
-.section-tag{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.section-tag{display:block;font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 
 .section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.2vw,40px);font-weight:700;color:var(--navy);line-height:1.1;letter-spacing:-0.8px;margin-bottom:6px}
 .section-sub{font-family:'Lora',serif;font-size:18px;color:var(--warm);line-height:1.7;max-width:580px;margin-bottom:20px}
@@ -531,7 +531,16 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
 .step-item{text-align:center;padding:0 16px}
 
 /* ── SERVICES ── */
-.services-section{padding:48px 0}
+.services-section{padding:48px 0;position:relative;overflow:hidden}
+.services-section::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;filter:blur(8px) brightness(0.65);transform:scale(1.06);z-index:0}
+.services-section::after{content:'';position:absolute;inset:0;background:rgba(210,228,248,0.45);z-index:1}
+.services-section .container{position:relative;z-index:2}
+.services-section .section-tag{color:var(--navy);font-weight:800}
+.services-section .section-title{color:var(--navy);text-shadow:0 1px 3px rgba(255,255,255,0.6)}
+.services-section .section-sub{color:var(--navy);opacity:0.85}
+.services-section .svc-card{background:rgba(255,255,255,0.82);border:1px solid rgba(255,255,255,0.6);backdrop-filter:blur(6px);box-shadow:0 2px 16px rgba(0,0,0,0.08)}
+.services-section .svc-card h4{color:var(--navy)}
+.services-section .svc-card p{color:var(--warm)}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
 .svc-card{border:1px solid var(--border);border-radius:10px;padding:18px 16px;transition:all 0.2s;background:#fff}
 .svc-card:hover{border-color:var(--gold);background:var(--gold-pale)}
@@ -777,13 +786,13 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
   }
 
   /* Section headers tighter */
-  .section-tag{font-size:10px;letter-spacing:1.8px;margin-bottom:6px}
+  .section-tag{font-size:15px;letter-spacing:1.8px;margin-bottom:6px}
   .section-title{font-size:24px;letter-spacing:-0.5px;margin-bottom:8px}
   .section-sub{font-size:15px;line-height:1.6;margin-bottom:20px}
 
 
   /* ══ SERVICES — app tab + card style ══ */
-  .services-section{background:#fff}
+  .services-section{}
   .services-tabs{
     gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;
     flex-wrap:nowrap;padding-bottom:0;
@@ -1296,7 +1305,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="#" class="logo-wrap">
           <img src="logo.png" alt="Estate Co." class="nav-logo-img">
         </a>
-        <span class="nav-tagline">Australia's Complete Property Solutions</span>
+        <span class="nav-tagline">WE UNDERSTAND THIS ISN'T JUST A CLEAN</span>
       </div>
 
       <!-- Desktop menu -->
@@ -1322,8 +1331,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- Right buttons + hamburger -->
       <div class="nav-right">
-        <a href="tel:0401857730" onclick="window.location.href='tel:0401857730';return false;" class="nav-call-btn">CALL</a>
-        <button onclick="scrollToEl('quote')" class="nav-quote-btn">QUOTE</button>
+        <a href="tel:0401857730" onclick="window.location.href='tel:0401857730';return false;" class="nav-call-btn">CALL NOW</a>
+        <button onclick="scrollToEl('quote')" class="nav-quote-btn">GET FAST QUOTE</button>
         <button class="nav-hamburger" id="navHamburger" onclick="toggleDrawer()" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -1357,27 +1366,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
   </div>
   <div class="drawer-actions">
-    <a href="tel:0401857730" onclick="window.location.href='tel:0401857730';return false;" class="nav-call-btn" style="flex:1;justify-content:center">CALL</a>
-    <button onclick="closeDrawer();scrollToEl('quote')" class="nav-quote-btn" style="flex:1;justify-content:center">QUOTE</button>
+    <a href="tel:0401857730" onclick="window.location.href='tel:0401857730';return false;" class="nav-call-btn" style="flex:1;justify-content:center">CALL NOW</a>
+    <button onclick="closeDrawer();scrollToEl('quote')" class="nav-quote-btn" style="flex:1;justify-content:center">GET FAST QUOTE</button>
   </div>
 </div>
 
-<!-- HERO -->
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="section-tag">Our services</div>
+    <h2 class="section-title">We Clear Properties With Care, Respect &amp; <em style="font-style:normal;color:var(--gold)">Zero Stress</em></h2>
+    <p class="section-sub">Everything the estate needs — a complete service covering every aspect of estate clearance, preparation, and transition.</p>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <h4>Deceased Estate Clearance</h4>
+        <p>Complete property clear-out including sorting, donating, and responsible disposal. Handled with care and professionalism.</p>
+      </div>
+      <div class="svc-card">
+        <h4>Property Preparation</h4>
+        <p>Deep cleaning, garden and exterior tidying to leave the property market-ready and presented at its best.</p>
+      </div>
+      <div class="svc-card">
+        <h4>Downsizing &amp; Transitions</h4>
+        <p>Whole-home sort for homeowners moving to smaller properties or aged care. Keep, donate, sell, or store. All coordinated.</p>
+      </div>
+      <div class="svc-card">
+        <h4>Remote Property Clearance</h4>
+        <p>Fully managed remotely for interstate or overseas executors. Photo quote, digital documentation, no travel required.</p>
+      </div>
+      <div class="svc-card">
+        <h4>Property Manager Services</h4>
+        <p>Difficult vacates handled promptly including hoarder, abandoned, or deceased tenant situations. Insurance-claim ready reports.</p>
+      </div>
+      <div class="svc-card">
+        <h4>Commercial Estate Clearance</h4>
+        <p>Office furniture, equipment, and documents cleared efficiently. Secure destruction and commercial agent coordination.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
       <div>
-        <h1>Estate clearance,<br><em>handled completely.</em></h1>
-        <p class="hero-sub">We manage everything — handled completely.</p>
-        <p class="sr-only">Deceased estate clearance across Sydney, Melbourne, Brisbane, Adelaide and Perth. Fixed quotes, pay at settlement, Australia-wide.</p>
-        
-      </div>
 
-      <!-- QUOTE CARD -->
       <div id="quote">
         <div class="quote-card">
+          <div style="background:var(--gold);padding:14px 24px;text-align:center">
+            <span style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff">Share your details for a personalised estimate</span>
+          </div>
           <div class="prog-bar" id="progBar">
-            <div class="sp on" id="p1"><div class="sn">1</div><span>Property</span></div>
+            <div class="sp on" id="p1"><div class="sn">1</div><span>About the property</span></div>
             <div class="sl"></div>
             <div class="sp" id="p2"><div class="sn">2</div><span>Services</span></div>
             <div class="sl"></div>
@@ -1386,8 +1426,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="qbody" id="qbody">
             <!-- Step 1 — Property -->
             <div class="fstep on" id="fs1">
-              <span class="ql">About the property</span>
-              <div class="fg"><label>Suburb & State</label><input type="text" id="suburb" placeholder="e.g. Mosman NSW"></div>
+              <div class="fg"><label>Suburb & State</label><input type="text" id="suburb" placeholder="e.g. Melbourne, VIC"></div>
               <div class="fg"><label>Property type</label>
                 <select id="ptype">
                   <option value="">Select type</option>
@@ -1418,6 +1457,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <label class="co" onclick="ckToggle(this)"><input type="checkbox"> Deep cleaning</label>
                 <label class="co" onclick="ckToggle(this)"><input type="checkbox"> Painting</label>
                 <label class="co" onclick="ckToggle(this)"><input type="checkbox"> Garden</label>
+                <label class="co" onclick="ckToggle(this)"><input type="checkbox"> Minor repairs</label>
                 <label class="co" onclick="ckToggle(this)" style="grid-column:1/-1"><input type="checkbox" id="otherCheck" onclick="toggleOther()"> Other — please describe</label>
                 <div id="otherBox" style="display:none;grid-column:1/-1;margin-top:4px"><textarea placeholder="Please describe what you need…" rows="2" style="width:100%;font-family:'DM Sans',sans-serif;font-size:14px;border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;resize:vertical;line-height:1.5"></textarea></div>
               </div>
@@ -1436,7 +1476,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="fg"><label>Email *</label><input type="email" id="femail" placeholder="jane@email.com" aria-label="Your email address" autocomplete="email"></div>
               <div class="fg"><label>Phone *</label><input type="tel" id="fphone" placeholder="04XX XXX XXX" aria-label="Your phone number" autocomplete="tel"></div>
               <div class="fg"><label>Notes (optional)</label><textarea id="fnotes" placeholder="Anything else we should know…"></textarea></div>
-              <div class="btn-row"><button class="bbk" onclick="qBack(3)">← Back</button><button class="bnx" onclick="submitQ()">QUOTE REQUEST</button></div>
+              <div class="btn-row"><button class="bbk" onclick="qBack(3)">← Back</button><button class="bnx" onclick="submitQ()">GET FAST QUOTE</button></div>
             </div>
           </div>
           <div class="suc-box" id="sucBox">
@@ -1495,10 +1535,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           </div>
-          <div class="qr-bar">
-            <span class="qr-i">No obligation</span>
-            <span class="qr-i">Pay at settlement</span>
-          </div>
+
         </div>
       </div>
     </div>
@@ -1734,40 +1771,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-<!-- SERVICES -->
-<section class="services-section" id="services">
-  <div class="container">
-    <div class="section-tag">Our services</div>
-    <h2 class="section-title">Everything the estate needs.</h2>
-    <p class="section-sub">A complete service covering every aspect of estate clearance, preparation, and transition.</p>
-    <div class="svc-grid">
-      <div class="svc-card">
-        <h4>Deceased Estate Clearance</h4>
-        <p>Complete property clear-out including sorting, donating, and responsible disposal. Handled with care and professionalism.</p>
-      </div>
-      <div class="svc-card">
-        <h4>Property Preparation</h4>
-        <p>Deep cleaning, garden and exterior tidying to leave the property market-ready and presented at its best.</p>
-      </div>
-      <div class="svc-card">
-        <h4>Downsizing &amp; Transitions</h4>
-        <p>Whole-home sort for homeowners moving to smaller properties or aged care. Keep, donate, sell, or store. All coordinated.</p>
-      </div>
-      <div class="svc-card">
-        <h4>Remote Property Clearance</h4>
-        <p>Fully managed remotely for interstate or overseas executors. Photo quote, digital documentation, no travel required.</p>
-      </div>
-      <div class="svc-card">
-        <h4>Property Manager Services</h4>
-        <p>Difficult vacates handled promptly including hoarder, abandoned, or deceased tenant situations. Insurance-claim ready reports.</p>
-      </div>
-      <div class="svc-card">
-        <h4>Commercial Estate Clearance</h4>
-        <p>Office furniture, equipment, and documents cleared efficiently. Secure destruction and commercial agent coordination.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 
@@ -2046,8 +2049,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title" style="margin:0 auto 14px;max-width:600px">One call. Everything handled.</h2>
     <p style="font-family:'Lora',serif;font-size:17px;color:var(--warm);margin-bottom:36px">Upload photos now and receive a fixed quote. No obligation.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="tel:0401857730" onclick="window.location.href='tel:0401857730';return false;" class="nav-call-btn" style="padding:12px 24px;font-size:13px">CALL</a>
-      <button class="nav-quote-btn" style="padding:12px 24px;font-size:13px" onclick="scrollToEl('quote')">QUOTE</button>
+      <a href="tel:0401857730" onclick="window.location.href='tel:0401857730';return false;" class="nav-call-btn" style="padding:12px 24px;font-size:13px">CALL NOW</a>
+      <button class="nav-quote-btn" style="padding:12px 24px;font-size:13px" onclick="scrollToEl('quote')">GET FAST QUOTE</button>
     </div>
   </div>
 </section>
@@ -2116,7 +2119,26 @@ function updProg(){
     p.className='sp'+(i<qStep?' done':i===qStep?' on':'');
   });
 }
+function showErr(msg){
+  let err=document.getElementById('qErr');
+  if(!err){err=document.createElement('div');err.id='qErr';err.style.cssText='color:#c0392b;font-size:13px;font-family:DM Sans,sans-serif;margin:8px 0 0;padding:10px 14px;background:#fdf0ef;border-radius:8px;border:1px solid #f5c6c2';document.querySelector('.fstep.on').appendChild(err);}
+  err.textContent=msg;err.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function clearErr(){const err=document.getElementById('qErr');if(err)err.remove();}
 function qGo(from){
+  clearErr();
+  if(from===1){
+    const suburb=document.getElementById('suburb').value.trim();
+    const ptype=document.getElementById('ptype').value;
+    const psize=document.getElementById('psize').value;
+    if(!suburb){showErr('Please enter a suburb and state.');return;}
+    if(!ptype){showErr('Please select a property type.');return;}
+    if(!psize){showErr('Please select an approximate size.');return;}
+  }
+  if(from===2){
+    const checked=document.querySelectorAll('#fs2 input[type="checkbox"]:checked');
+    if(checked.length===0){showErr('Please select at least one service.');return;}
+  }
   document.getElementById('fs'+from).classList.remove('on');
   document.getElementById('fs'+(from+1)).classList.add('on');
   qStep=from+1;updProg();
@@ -2184,10 +2206,13 @@ function getCallTime(){
 }
 
 function submitQ(){
+  clearErr();
   const n=document.getElementById('fname').value.trim();
   const e=document.getElementById('femail').value.trim();
   const ph=document.getElementById('fphone').value.trim();
-  if(!n||!e||!ph){alert('Please fill in your name, email and phone.');return;}
+  if(!n){showErr('Please enter your full name.');return;}
+  if(!e||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){showErr('Please enter a valid email address.');return;}
+  if(!ph){showErr('Please enter your phone number.');return;}
 
   const ref=genRef();
   const firstName=n.split(' ')[0];
@@ -2202,7 +2227,8 @@ function submitQ(){
   // Populate dynamic fields
   document.getElementById('sucName').textContent=firstName;
   document.getElementById('sucRef').textContent='Reference: '+ref;
-  document.getElementById('callTime').textContent=callTime;
+  const ctEl=document.getElementById('callTime');
+  if(ctEl) ctEl.textContent=callTime;
 
   // Scroll to top of quote section immediately
   setTimeout(()=>{
