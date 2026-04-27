@@ -2188,42 +2188,53 @@ function submitQ(){
   const services=Array.from(document.querySelectorAll('#fs2 input[type="checkbox"]:checked'))
     .map(cb=>cb.parentElement.textContent.trim()).join(', ');
 
-  // Hide form, show success immediately
-  document.getElementById('qbody').style.display='none';
-  document.getElementById('progBar').style.display='none';
-  const sb=document.getElementById('sucBox');
-  sb.style.display='block';
-  document.getElementById('sucName').textContent=firstName;
-  document.getElementById('sucRef').textContent='Reference: '+ref;
-  const ctEl=document.getElementById('callTime');
-  if(ctEl) ctEl.textContent="We'll be in touch shortly";
-  setTimeout(()=>{
-    const quoteEl=document.getElementById('quote');
-    if(quoteEl){const top=quoteEl.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:top,behavior:'smooth'});}
-  },80);
-
-  // Collect files - copy array at submission time
-  const uploadedFiles = [...files];
-  console.log('Files to upload:', uploadedFiles.length, uploadedFiles.map(f=>f.name));
+  // Collect files at submission time
+  const uploadedFiles=[...files];
+  console.log('Files to upload:',uploadedFiles.length);
 
   const payload={
-    reference:ref, name:n, email:e, phone:ph,
-    suburb:suburb, propertyType:ptype, size:psize,
-    services:services, notes:notes, files:[]
+    reference:ref,name:n,email:e,phone:ph,
+    suburb:suburb,propertyType:ptype,size:psize,
+    services:services,notes:notes,files:[]
   };
 
   const SHEET_URL='https://script.google.com/macros/s/AKfycbxka3Mn40NR8BInd3K29nlLH1tsALJz7NlSQ7-0OzycB-ZUjW9bpoPEoZy2v1leaYkezA/exec';
 
+  // Show a loading state on the submit button
+  const submitBtn=document.querySelector('#fs3 .bnx');
+  if(submitBtn){submitBtn.disabled=true;submitBtn.textContent=uploadedFiles.length>0?'Uploading photos…':'Submitting…';}
+
+  function showSuccess(){
+    document.getElementById('qbody').style.display='none';
+    document.getElementById('progBar').style.display='none';
+    const sb=document.getElementById('sucBox');
+    sb.style.display='block';
+    document.getElementById('sucName').textContent=firstName;
+    document.getElementById('sucRef').textContent='Reference: '+ref;
+    const ctEl=document.getElementById('callTime');
+    if(ctEl)ctEl.textContent="We'll be in touch shortly";
+    setTimeout(()=>{
+      const quoteEl=document.getElementById('quote');
+      if(quoteEl){const top=quoteEl.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:top,behavior:'smooth'});}
+    },80);
+  }
+
   function sendToSheet(p){
-    console.log('Sending to sheet, files:', p.files.length);
+    console.log('Sending to sheet, files:',p.files.length);
     fetch(SHEET_URL,{
       method:'POST',
       headers:{'Content-Type':'text/plain'},
       body:JSON.stringify(p)
     })
     .then(r=>r.json())
-    .then(d=>console.log('Sheet response:',d))
-    .catch(err=>console.warn('Sheet error:',err));
+    .then(d=>{
+      console.log('Sheet response:',d);
+      showSuccess();
+    })
+    .catch(err=>{
+      console.warn('Sheet error:',err);
+      showSuccess(); // Show success anyway so user isn't stuck
+    });
   }
 
   function fileToBase64(file){
@@ -2231,31 +2242,25 @@ function submitQ(){
       const reader=new FileReader();
       reader.onload=ev=>{
         const b64=ev.target.result.split(',')[1];
-        console.log('Converted file:',file.name,'size:',b64.length);
+        console.log('Converted:',file.name,'bytes:',b64.length);
         resolve({name:file.name,type:file.type,data:b64});
       };
-      reader.onerror=err=>{
-        console.warn('FileReader error:',err);
-        reject(err);
-      };
+      reader.onerror=reject;
       reader.readAsDataURL(file);
     });
   }
 
   if(uploadedFiles.length===0){
-    console.log('No files — sending text only');
     sendToSheet(payload);
   } else {
-    console.log('Converting',uploadedFiles.length,'files to Base64...');
     Promise.all(uploadedFiles.map(f=>fileToBase64(f)))
       .then(fileData=>{
-        console.log('All files converted:', fileData.length);
+        console.log('All files converted:',fileData.length);
         payload.files=fileData;
         sendToSheet(payload);
       })
       .catch(err=>{
-        console.warn('File conversion failed:',err);
-        // Send without files rather than fail completely
+        console.warn('File error:',err);
         sendToSheet(payload);
       });
   }
