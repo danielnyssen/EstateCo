@@ -550,7 +550,7 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
 .step-item{text-align:center;padding:0 16px}
 
 /* ── SERVICES ── */
-.services-section{padding:64px 0;background:#fff;border-top:1px solid var(--border)}
+.services-section{padding:8px 0 64px;background:#fff}
 .services-section .section-tag{color:var(--gold)}
 .services-section .section-title{color:var(--navy)}
 .services-section .section-sub{color:var(--warm)}
@@ -687,272 +687,152 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
 ══════════════════════════════════════════ */
 @media(max-width:480px){
 
-  /* ── BASE ── */
-  html{-webkit-text-size-adjust:100%;font-size:16px}
-  body{padding-bottom:76px;background:#F5F7FA}
+  /* ── FOUNDATION ── */
+  html{-webkit-text-size-adjust:100%}
+  body{background:#f0f4f8;padding-bottom:88px;overflow-x:hidden}
+  *{-webkit-tap-highlight-color:transparent;box-sizing:border-box}
   .container{padding:0 16px}
+  input,select,textarea{-webkit-appearance:none;appearance:none}
 
-  /* ══ NAV — app-style compact header ══ */
-  nav{
-    padding:0;
-    background:#fff;
-    border-bottom:none;
-    box-shadow:0 1px 0 rgba(0,0,0,0.08);
-    width:100%;
-    max-width:100vw;
-    overflow:hidden;
-  }
-  nav .container{padding:0 14px;max-width:100%;overflow:hidden}
-  nav .nav-inner{height:56px;width:100%;box-sizing:border-box}
-  .nav-tagline{display:none}
-  .nav-menu{display:none}
-  .nav-right{gap:8px;flex-shrink:0}
-  .nav-call-btn{padding:8px 14px;font-size:11px;border-radius:7px;border-width:1.5px;letter-spacing:0.5px;white-space:nowrap}
-  .nav-quote-btn{display:none}
-  .nav-hamburger{display:flex}
-  .nav-logo-img{height:30px}
-  .logo{font-size:20px}
+  /* ── NAV ── */
+  nav{background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.08);width:100%;max-width:100vw;overflow:hidden}
+  nav .container{padding:0 14px}
+  nav .nav-inner{height:52px}
+  .nav-tagline,.nav-menu,.nav-quote-btn{display:none}
+  .nav-call-btn{padding:8px 12px;font-size:11px;border-radius:8px;font-weight:700;white-space:nowrap}
+  .nav-hamburger{display:flex;width:36px;height:36px;border-radius:10px;background:#f0f4f8;border:none;align-items:center;justify-content:center}
+  .nav-logo-img{height:26px}
+  .logo{font-size:18px;font-weight:800}
 
-  /* ══ SECTION HEADERS ══ */
+  /* ── SECTION TAGS & TITLES ── */
   .section-tag{font-size:11px;letter-spacing:1.8px;margin-bottom:8px}
-  .section-title{font-size:36px;letter-spacing:-1px;margin-bottom:10px;line-height:1.1}
-  .section-sub{font-size:14px;line-height:1.65;margin-bottom:24px}
+  .section-title{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:8px;line-height:1.1}
+  .section-sub{font-size:14px;line-height:1.6;margin-bottom:20px}
 
-  /* ══ HERO ══ */
-  .hero{padding:28px 0 24px;background:#fff}
-  .hero::before{filter:blur(8px) saturate(0.3) brightness(0.95)}
-  .hero::after{background:linear-gradient(160deg,rgba(255,255,255,0.97) 0%,rgba(234,244,250,0.95) 100%)}
-  .hero-inner{gap:0}
-  .hero-eyebrow{display:none}
-  .hero h1{font-size:28px;letter-spacing:-0.8px;margin-bottom:10px;line-height:1.12}
-  .hero-sub{font-size:15px;margin-bottom:18px;max-width:100%}
+  /* ── 3 STEPS ── */
+  .steps-section{padding:20px 0 12px;background:#f0f4f8}
+  .steps-section h2{font-size:14px !important;margin-bottom:16px !important}
 
-  /* ══ QUOTE CARD ══ */
-  #quote{margin-top:0;scroll-margin-top:90px}
-  .quote-wrapper,#quote>div{margin-top:0}
-  .quote-card{border-radius:16px;margin:0 0 4px;box-shadow:0 2px 16px rgba(26,60,94,0.1);border:none;overflow:hidden}
-  .qc-head{padding:18px 18px 14px;background:var(--navy)}
-  .qc-head h3{font-size:18px;font-weight:700}
-  .qc-head p{font-size:13px}
-  .qc-badge{margin-top:8px;font-size:11px;padding:4px 10px}
-  .prog-bar{padding:10px 18px;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;background:#fff}
-  .sp{font-size:10px;min-width:52px;color:#bbb}
-  .sp.on{color:var(--navy)}
-  .sp.done{color:var(--success)}
-  .sn{width:18px;height:18px;font-size:9px}
-  .qbody{padding:16px 18px}
-  .ql{font-size:11px;margin-bottom:8px}
-  .ro{padding:13px 14px;font-size:15px;border-radius:10px;min-height:50px;border:1.5px solid var(--border);background:#fff}
-  .ro.sel{border-color:var(--navy);background:var(--gold-pale)}
-  .ro input{width:18px;height:18px}
-  .fg input,.fg select,.fg textarea{padding:13px 14px;font-size:16px;border-radius:10px;min-height:50px;border:1.5px solid var(--border);background:#fff}
-  .fg label{font-size:12px;font-weight:600}
-  .co{padding:12px 14px;font-size:14px;min-height:48px;border-radius:10px;border:1.5px solid var(--border)}
-  .co.ck{border-color:var(--navy);background:var(--gold-pale)}
-  .co input{width:16px;height:16px}
-  .cgrid{grid-template-columns:1fr}
-  .bbk{padding:13px 18px;font-size:14px;border-radius:10px;min-height:50px;background:#F5F7FA;border:none;color:var(--navy);font-weight:600}
-  .bnx{padding:14px 18px;font-size:15px;font-weight:700;border-radius:10px;min-height:50px;background:var(--gold);color:var(--navy)}
-  .btn-row{gap:10px;margin-top:16px}
-  .upz{padding:28px 16px;border-radius:12px;background:var(--gold-pale)}
-  .uz-t{font-size:15px}
-  .uz-s{font-size:13px}
-  .qr-bar{padding:12px 18px;gap:10px;background:#F5F7FA;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .qr-i{font-size:12px;flex-shrink:0}
-
-  /* ══ SECTION WRAPPERS ══ */
-  .services-section,.testi-section,.blog-section,.faq-section,.covered-section,.partners-section,.about-section{padding:28px 0}
-
-  /* ══ SERVICES — card grid ══ */
-  .services-section{}
-  .services-tabs{gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;padding-bottom:0;margin:16px -14px 0;padding-left:14px;scrollbar-width:none;border-bottom:1.5px solid var(--border)}
-  .services-tabs::-webkit-scrollbar{display:none}
-  .stab{padding:10px 16px;font-size:13px;white-space:nowrap;flex-shrink:0;font-weight:600}
-  .svc-panel.on{grid-template-columns:1fr}
-  /* ── OUR SERVICES — mobile ── */
-  .services-section .section-tag{
-    font-size:16px;letter-spacing:2px;font-weight:800;
-    margin-top:28px;margin-bottom:20px;color:var(--gold)
-  }
-  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:0}
-  .svc-card{
-    padding:0;border-radius:18px;
-    background:#fff;border:none;
-    box-shadow:0 4px 18px rgba(0,0,0,0.09);
-    overflow:hidden;position:relative;
-    transition:transform 0.15s;
-  }
-  .svc-card:active{transform:scale(0.96)}
-  .svc-card::before{
-    content:'';display:block;
-    height:6px;width:100%;
-    background:linear-gradient(90deg,var(--gold),#3A8FB5);
-  }
-  .svc-card:nth-child(even)::before{
-    background:linear-gradient(90deg,#3A8FB5,var(--navy));
-  }
+  /* ── SERVICES ── */
+  .services-section{padding:8px 0 24px;background:#f0f4f8}
+  .services-section .section-tag{font-size:14px;letter-spacing:2px;font-weight:800;margin-top:16px;margin-bottom:14px;color:var(--gold)}
+  .svc-grid{grid-template-columns:1fr 1fr;gap:10px;margin-top:0}
+  .svc-card{padding:0;border-radius:16px;background:#fff;border:none;box-shadow:0 3px 12px rgba(0,0,0,0.08);overflow:hidden;transition:transform 0.15s}
+  .svc-card:active{transform:scale(0.97)}
+  .svc-card::before{content:'';display:block;height:5px;width:100%;background:linear-gradient(90deg,var(--gold),#3A8FB5)}
+  .svc-card:nth-child(even)::before{background:linear-gradient(90deg,#3A8FB5,var(--navy))}
   .svc-card::after{display:none}
-  .svc-card h4{
-    font-size:14px;font-weight:700;
-    color:var(--navy);line-height:1.3;
-    margin:0;padding:16px 14px 18px;
-  }
+  .svc-card h4{font-size:13px;font-weight:700;color:var(--navy);line-height:1.3;margin:0;padding:14px 12px 16px}
   .svc-card p{display:none}
-  .svc-icon{width:36px;height:36px;border-radius:8px;margin-bottom:10px}
 
-  /* ══ REVIEWS ══ */
-  .reviews-section{padding:24px 0;background:#fff}
-  .reviews-header{padding:0 14px;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-  .leave-review-btn{font-size:12px;padding:7px 12px;border-radius:8px}
-  .reviews-track-wrap{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 5%,#000 95%,transparent 100%)}
-  .review-card{width:240px;padding:14px;border-radius:12px;box-shadow:0 1px 8px rgba(26,60,94,0.07);border:none}
-  .review-card p{font-size:13px}
-  .rc-name{font-size:13px}
+  /* ── CAROUSEL ── */
+  .ba-section{padding:16px 0;background:#f0f4f8}
+  .ba-section .container{padding:0}
+  .ba-wrapper{border-radius:0;box-shadow:none}
+  .ba-full-img{max-height:200px;object-fit:cover}
 
-  /* ══ TESTIMONIALS ══ */
-  .testi-section{padding:28px 0}
-  .testi-grid{display:flex !important;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;padding:0 14px 4px;margin:20px -14px 0}
+  /* ── HERO / QUOTE ── */
+  .hero{padding:0;background:#f0f4f8}
+  .hero .container{padding:0 16px}
+  .hero-inner{display:block;padding:20px 0 0}
+  .hero-trust-col{display:none}
+  #quote{scroll-margin-top:60px}
+  .quote-card{border-radius:18px;box-shadow:0 4px 20px rgba(0,0,0,0.1);border:none;overflow:hidden}
+  #quote .quote-card>div:first-child{padding:14px 18px}
+  #quote .quote-card>div:first-child span{font-size:11px;letter-spacing:1.5px}
+  .prog-bar{padding:10px 18px;background:#fff;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .sp{font-size:10px;min-width:48px;color:#bbb}
+  .sp.on{color:var(--navy)}
+  .sn{width:18px;height:18px;font-size:9px}
+  .qbody{padding:18px 16px}
+  .fg label{font-size:13px;font-weight:600;margin-bottom:5px}
+  .fg input,.fg select,.fg textarea{padding:13px 14px;font-size:16px;border-radius:12px;min-height:50px;border:1.5px solid var(--border);background:#fff}
+  .ro{padding:13px 14px;font-size:15px;border-radius:12px;min-height:52px;border:1.5px solid var(--border)}
+  .ro.sel{border-color:var(--navy);background:var(--gold-pale)}
+  .co{padding:12px 13px;font-size:14px;min-height:48px;border-radius:12px;border:1.5px solid var(--border)}
+  .co.ck{border-color:var(--navy);background:var(--gold-pale)}
+  .cgrid{grid-template-columns:1fr}
+  .bnx{padding:15px;font-size:15px;font-weight:800;border-radius:13px;min-height:52px}
+  .bbk{padding:13px;font-size:14px;border-radius:13px;min-height:52px;background:#e8edf2;border:none}
+  .btn-row{gap:10px;margin-top:16px}
+  .upz{padding:22px 14px;border-radius:14px}
+  .ql{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+
+  /* ── REVIEWS ── */
+  .reviews-section{padding:24px 0;background:#f0f4f8}
+  .reviews-section .container{padding:0}
+  .reviews-header{padding:0 16px;margin-bottom:14px;flex-wrap:wrap;gap:8px}
+  .g-rating{font-size:26px;font-weight:800}
+  .leave-review-btn{display:none}
+  .review-card{width:260px;padding:18px;border-radius:16px;background:#fff;box-shadow:0 3px 12px rgba(0,0,0,0.08);border:none;border-top:4px solid var(--gold)}
+  .review-card p{font-size:13px;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .rc-name{font-size:13px;font-weight:700}
+
+  /* ── TESTIMONIALS ── */
+  .testi-section{padding:24px 0}
+  .testi-grid{display:flex !important;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;padding:0 16px 4px;margin:14px -16px 0}
   .testi-grid::-webkit-scrollbar{display:none}
-  .testi-card{flex-shrink:0;width:280px;padding:18px;border-radius:14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12)}
-  .testi-card blockquote{font-size:14px;line-height:1.6;margin-bottom:12px}
-  .testi-name{font-size:13px}
-  .testi-loc{font-size:12px}
+  .testi-card{flex-shrink:0;width:calc(100vw - 52px);padding:20px;border-radius:16px}
+  .testi-card blockquote{font-size:14px;line-height:1.65;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+  .testi-name{font-size:13px;font-weight:700}
 
-  /* ══ BLOG — horizontal scroll ══ */
-  .blog-section{background:#fff}
-  .blog-grid{display:flex !important;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;padding:0 14px 4px;margin:16px -14px 0;grid-template-columns:unset}
-  .blog-grid::-webkit-scrollbar{display:none}
-  .blog-card{
-    flex-shrink:0;width:220px;
-    border-radius:12px;
-    box-shadow:0 1px 8px rgba(26,60,94,0.07);
-    border:none;
-  }
-  .blog-thumb{height:110px}
-  .blog-body{padding:14px}
-  .blog-card h4{font-size:14px;line-height:1.3}
-  .blog-card p{font-size:12px}
+  /* ── FAQ ── */
+  .faq-section{background:#f0f4f8;padding:24px 0}
+  .faq-head .section-title{font-size:24px;font-weight:800}
+  .faq-cats{display:none}
+  .faq-list{grid-template-columns:1fr;display:flex;flex-direction:column;gap:8px}
+  .faq-item{background:#fff;border-radius:14px;overflow:hidden;border:none;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-left:4px solid var(--gold)}
+  .faq-q{padding:16px 14px;gap:10px;border:none}
+  .faq-q-body h4{font-size:15px;font-weight:700;line-height:1.35;color:var(--navy)}
+  .faq-a p{font-size:13px;line-height:1.7;padding:0 14px 16px;color:var(--warm)}
+  .faq-icon-wrap{display:none}
 
-  /* ══ FAQ ══ */
-  .faq-section{background:#fff}
-  .faq-head{margin-bottom:20px}
-  .faq-list{grid-template-columns:1fr;max-width:100%}
-  .faq-q{padding:14px 0;gap:12px}
-  .faq-q-body h4{font-size:14px}
-  .faq-a p{font-size:13px;padding:4px 0 12px}
-  .faq-icon{width:24px;height:24px;font-size:14px}
+  /* ── ABOUT ── */
+  .about-section{background:#fff;padding:24px 0}
+  .about-inner{display:block}
+  .about-photo{width:68px;height:68px;border-radius:50%;object-fit:cover;border:3px solid var(--gold)}
+  .about-story h2{font-size:22px;font-weight:800;margin-bottom:10px}
+  .about-story p{font-size:14px;line-height:1.7}
+  .about-story p:nth-of-type(n+2){display:none}
+  .about-stats{grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+  .about-stat{background:#f0f4f8;border-radius:14px;padding:12px 8px;border:none;box-shadow:none;text-align:center}
+  .about-stat-num{font-size:22px;font-weight:800;color:var(--navy)}
+  .about-stat-label{font-size:11px;color:var(--warm);line-height:1.3}
+  .about-values,.family-badge,.about-img-col{display:none}
 
-  /* ══ COVERED — compact list ══ */
-  .covered-section{background:#fff}
-  .covered-inner{gap:20px}
-  .covered-right{gap:0}
-  .cover-card{
-    flex-direction:row;gap:12px;padding:14px 0;
-    border-bottom:1px solid var(--border);
-  }
-  .cover-icon{
-    width:34px;height:34px;border-radius:8px;flex-shrink:0;
-  }
-  .cover-body h4{font-size:15px}
-  .cover-body p{font-size:13px;line-height:1.55}
+  /* ── RESOURCES PROMO ── */
+  .res-promo-inner{grid-template-columns:1fr;gap:14px}
+  .res-promo-inner h2{font-size:20px;font-weight:800;line-height:1.2}
+  .res-promo-inner p{font-size:13px;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .res-promo-text>div:last-child{display:none}
+  .res-promo-btn a{width:100%;text-align:center;display:block;padding:15px;border-radius:13px;font-size:14px;font-weight:700}
 
-  /* ══ PARTNERS — 2 col grid ══ */
-  .partners-grid{
-    display:flex !important;
-    overflow-x:auto;-webkit-overflow-scrolling:touch;
-    scrollbar-width:none;gap:10px;
-    padding:0 14px 4px;margin:16px -14px 0;
-    grid-template-columns:unset;
-  }
-  .partners-grid::-webkit-scrollbar{display:none}
-  .partner-card{
-    flex-shrink:0;width:190px;
-    padding:16px 14px;border-radius:12px;
-    box-shadow:0 1px 8px rgba(26,60,94,0.07);
-    border:none;background:#fff;text-align:center;
-  }
-  .partner-icon{font-size:22px;margin-bottom:8px;width:38px;height:38px;border-radius:8px}
-  .partner-card h4{font-size:14px;margin-bottom:4px}
-  .partner-card p{font-size:12px;line-height:1.55}
+  /* ── FOOTER ── */
+  footer{padding:24px 0 16px;background:var(--navy)}
+  .footer-top{grid-template-columns:1fr;gap:12px}
+  .footer-brand .tagline{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:10px}
+  .footer-phone{font-size:22px;font-weight:800;color:#fff;text-decoration:none;display:block;margin-bottom:4px}
+  .footer-email{font-size:12px;color:rgba(255,255,255,0.5)}
+  .footer-legal-col{display:none}
+  .footer-bottom{flex-direction:column;gap:4px;text-align:center;padding-top:14px;border-top:1px solid rgba(255,255,255,0.1)}
+  .footer-bottom p{font-size:11px;color:rgba(255,255,255,0.4)}
+  .footer-bottom a{color:rgba(255,255,255,0.4)}
 
+  /* ── BOTTOM BAR ── */
+  .mob-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:500;background:#fff;border-top:1px solid rgba(0,0,0,0.1);box-shadow:0 -4px 20px rgba(0,0,0,0.1);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+  .mob-bar-inner{display:flex;gap:10px;width:100%;align-items:center}
+  .mob-logo{display:none}
+  .mob-actions{display:flex;gap:10px;flex:1}
+  .mb-action{flex:1;display:flex;align-items:center;justify-content:center;padding:14px 10px;border-radius:13px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-decoration:none;border:none;cursor:pointer}
+  .mb-call{background:#f0f4f8;border:1.5px solid var(--border);color:var(--navy);font-size:12px}
+  .mb-quote{background:var(--navy);color:#fff}
 
-  /* ══ ABOUT — compact ══ */
-  .about-section{background:var(--offwhite)}
-  .about-inner{max-width:100%}
-  .about-photo-wrap{gap:14px;margin-bottom:20px}
-  .about-photo{width:64px;height:64px;border-width:2px}
-  .about-name{font-size:15px}
-  .about-title{font-size:10px}
-  .about-story blockquote{font-size:15px;padding-left:14px;margin:16px 0}
-  .about-values{gap:10px;margin-top:16px}
-  .family-badge{margin-top:16px}
+  /* ── FLOAT BTN ── */
+  .float-quote-btn{bottom:90px;right:14px;padding:11px 16px;font-size:11px;letter-spacing:1px}
 
-  /* ══ BOTTOM TAB BAR — app style ══ */
-  .mob-bar{
-    display:flex;
-    background:#fff;
-    border-top:1px solid rgba(0,0,0,0.08);
-    box-shadow:0 -2px 12px rgba(0,0,0,0.08);
-    padding-bottom:env(safe-area-inset-bottom);
-  }
-  .mob-bar-inner{
-    padding:8px 16px 6px;
-    display:flex;align-items:center;
-    justify-content:space-between;
-    width:100%;
-  }
-  .mob-logo{font-size:18px}
-  .mob-actions{gap:8px}
-  .mb-action{
-    flex:1;display:flex;align-items:center;justify-content:center;
-    padding:14px 10px;font-size:14px;font-weight:700;
-    border-radius:12px;text-decoration:none;border:none;cursor:pointer;
-    font-family:'DM Sans',sans-serif;
-  }
-  .mb-call{
-    background:#f0f4f8;border:1.5px solid var(--border);
-    color:var(--navy);font-size:13px;
-  }
-  .mb-quote{
-    background:var(--navy);
-    color:#fff;
-  }
-
-
-  /* ══ REMOTE ══ */
-  .remote-section{background:var(--offwhite)}
-  .remote-cards{margin-bottom:16px;border-radius:12px;border-width:1px}
-  .remote-card{padding:15px 16px;gap:12px;min-height:60px}
-  .remote-card h4{font-size:14px}
-  .remote-card p{font-size:12px}
-  .remote-card-num{width:30px;height:30px;font-size:13px}
-  .remote-card-arrow{font-size:18px}
-  .remote-tags{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px;margin:0 -14px;padding-left:14px}
-  .remote-tags::-webkit-scrollbar{display:none}
-  .remote-tag{flex-shrink:0}
-  .rs-body h5{font-size:14px}
-  .rs-body p{font-size:13px}
-
-  /* ══ FOOTER ══ */
-  footer{padding:20px 0 0}
-  .footer-top{grid-template-columns:1fr;gap:20px;padding-bottom:16px}
-  .footer-top{grid-template-columns:1fr;gap:24px;padding-bottom:24px}
-  .footer-bottom{flex-direction:column;gap:6px;align-items:flex-start;padding:12px 0}
-  .footer-bottom p{font-size:11px}
-  .footer-insurance-badges{gap:6px;flex-wrap:wrap}
-  .ins-badge{font-size:10px;padding:3px 8px}
-
-  /* ══ FOOTER CTA ══ */
-  section[style*="padding:56px"]{padding:36px 0 !important}
-
-  /* ══ iOS SPECIFICS ══ */
-  .sit-card,.ro,.co,.stab,.fcat,.blog-card,.city-card{
-    -webkit-tap-highlight-color:transparent;
-  }
-  input,select,textarea{
-    -webkit-appearance:none;
-    appearance:none;
-  }
+  /* ── HIDE CLUTTER ── */
+  .nav-tagline,.partners-section,.cities-section,.faq-cats{display:none}
+  section[style*="padding:56px"]{padding:32px 0 !important}
 }
 
 /* ══════════════════════════════════════════
@@ -1318,6 +1198,84 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
+<!-- HOW IT WORKS -->
+<section class="steps-section">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;margin-bottom:6px">From full cleanouts to respectful estate clearances, <em style="font-style:normal;color:var(--gold)">done for you.</em></h2>
+    <h2 style="text-align:center;margin-bottom:20px;font-family:'DM Sans',sans-serif;font-size:18px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy)">Three simple steps</h2>
+      <div class="steps-grid">
+        <div class="step-card" data-step="1">
+          <div class="step-num">01</div>
+          <h3>Send photos</h3>
+          <p>Upload via the quote form. No visit needed.</p>
+        </div>
+        <div class="step-card" data-step="2">
+          <div class="step-num">02</div>
+          <h3>Get a fixed quote</h3>
+          <p>We call and send a written fixed price.</p>
+        </div>
+        <div class="step-card" data-step="3">
+          <div class="step-num">03</div>
+          <h3>We handle everything</h3>
+          <p>Agree a start date — we do the rest.</p>
+        </div>
+      </div>
+  </div>
+</section>
+<style>
+.steps-section{padding:32px 0 20px;background:#fff}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
+.step-card{background:#f8fafc;border-radius:14px;padding:18px 16px;position:relative;border:1px solid var(--border);transition:transform 0.2s,box-shadow 0.2s;overflow:hidden}
+.step-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,0.08)}
+.step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),#3A8FB5)}
+.step-num{font-family:'DM Sans',sans-serif;font-size:26px;font-weight:800;color:rgba(58,143,181,0.15);line-height:1;margin-bottom:6px;letter-spacing:-2px}
+.step-card h3{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.2}
+.step-card p{font-size:12px;color:var(--warm);line-height:1.5;margin:0}
+@media(max-width:768px){
+  .steps-section{padding:24px 0 16px}
+  .steps-grid{
+    grid-template-columns:1fr;
+    gap:0;
+    position:relative;
+  }
+  .steps-grid::before{
+    content:'';
+    position:absolute;
+    left:22px;top:0;bottom:0;
+    width:2px;
+    background:linear-gradient(180deg,var(--gold),#3A8FB5);
+    z-index:0;
+  }
+  .step-card{
+    padding:14px 16px 14px 52px;
+    border-radius:12px;
+    background:#fff;
+    border:none;
+    box-shadow:none;
+    position:relative;
+    z-index:1;
+    margin-bottom:4px;
+  }
+  .step-card::before{display:none}
+  .step-card::after{
+    content:attr(data-step);
+    position:absolute;
+    left:8px;top:50%;
+    transform:translateY(-50%);
+    width:28px;height:28px;
+    background:var(--gold);
+    color:#fff;
+    font-size:11px;font-weight:800;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    z-index:2;
+  }
+  .step-num{display:none}
+  .step-card h3{font-size:15px;font-weight:700;margin-bottom:2px;color:var(--navy)}
+  .step-card p{font-size:12px;line-height:1.5;color:var(--warm)}
+}
+</style>
+
 <!-- SERVICES -->
 
 <style>
@@ -1368,32 +1326,31 @@ function baGoTo(idx){
 
 <section class="services-section" id="services">
   <div class="container">
-    <h2 class="section-title">We Clear Properties With Care, Respect &amp; <em style="font-style:normal;color:var(--gold)">Zero Stress</em></h2>
     <div class="section-tag" style="margin-top:32px;margin-bottom:16px;font-size:22px">Our Services</div>
     <div class="svc-grid">
       <div class="svc-card">
-        <h4>Estate Clearance</h4>
-        <p>A complete, managed clear-out of the entire property — from furniture and appliances to documents and personal effects. We coordinate every step so the family doesn't have to.</p>
+        <h4>Estate Cleanouts</h4>
+        <p>Full home clearances handled with care and respect. We sort, remove and manage everything — so families don't have to during a difficult time.</p>
       </div>
       <div class="svc-card">
-        <h4>Property Preparation</h4>
-        <p>Deep cleaning, garden and exterior tidying to leave the property market-ready and presented at its best.</p>
+        <h4>Downsizing &amp; Aged Care Transitions</h4>
+        <p>We help simplify the move to a smaller home or aged care. Items are thoughtfully sorted, kept, donated, sold or stored with everything coordinated for you.</p>
       </div>
       <div class="svc-card">
-        <h4>Downsizing &amp; Transitions</h4>
-        <p>Whole-home sort for homeowners moving to smaller properties or aged care. Keep, donate, sell, or store. All coordinated.</p>
+        <h4>Hoarded &amp; Neglected Properties</h4>
+        <p>Sensitive, non-judgmental cleanouts of heavily cluttered or long-neglected homes. We restore order with discretion, care and zero overwhelm.</p>
       </div>
       <div class="svc-card">
-        <h4>Remote Property Clearance</h4>
-        <p>Fully managed remotely for interstate or overseas executors. Photo quote, digital documentation, no travel required.</p>
+        <h4>End-of-Lease &amp; Rental Resets</h4>
+        <p>Fast, reliable clearouts for vacated or problem tenancies. We remove all items, clean the property, and get it ready for the next tenant.</p>
       </div>
       <div class="svc-card">
-        <h4>Giving Belongings a Second Life</h4>
-        <p>Furniture, appliances and household goods are donated to local charities or recycling programmes wherever possible — keeping usable items out of landfill.</p>
+        <h4>Pre-Sale Property Preparation</h4>
+        <p>Clear, clean and presentation-ready. We prepare homes for market to help maximise appeal and sale price without the stress.</p>
       </div>
       <div class="svc-card">
-        <h4>Commercial Estate Clearance</h4>
-        <p>Office furniture, equipment, and documents cleared efficiently. Secure destruction and commercial agent coordination.</p>
+        <h4>Gardens, Garages &amp; Outdoor Spaces</h4>
+        <p>Overgrown yards, sheds and storage areas cleared and refreshed. We bring outdoor spaces back to clean, usable condition.</p>
       </div>
     </div>
   </div>
