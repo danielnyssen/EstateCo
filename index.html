@@ -3113,7 +3113,7 @@ footer,.testi-section{background:#163653 !important}
 <input accept=".jpg,.jpeg,.png,.heic,.pdf" id="fIn" multiple="" onchange="addF(this.files)" type="file"/>
 <div class="upload-cam-icon"></div>
 <div class="uz-t">Drop photos here or click to browse</div>
-<div class="uz-s">JPG, PNG, HEIC, PDF · max 10MB per file · up to 5 files<br/><strong>Your enquiry will submit first so uploads never block the quote request</strong></div>
+<div class="uz-s">JPG, PNG, HEIC, PDF · max 10MB per file · up to 10 files<br/><strong>Your enquiry saves first, then files upload to Google Drive</strong></div>
 </div>
 <div class="chips" id="chipArea"></div>
 <div class="fg"><label>Full name *</label><input aria-label="Your full name" autocomplete="name" id="fname" placeholder="Jane Smith" type="text"/></div>
@@ -3999,8 +3999,8 @@ function ckToggle(el){setTimeout(()=>el.classList.toggle('ck',el.querySelector('
 function toggleOther(){var box=document.getElementById('otherBox');var chk=document.getElementById('otherCheck');box.style.display=chk.checked?'block':'none';}
 function addF(fl){
   const MAX_SIZE=10*1024*1024; // 10MB per file
-  const MAX_FILES=3;
-  const MAX_TOTAL_SIZE=25*1024*1024; // Safer total limit for Google Apps Script base64 uploads
+  const MAX_FILES=10;
+  const MAX_TOTAL_SIZE=100*1024*1024; // 10 files x 10MB max, uploaded one-by-one after lead capture
   Array.from(fl).forEach(f=>{
     if(f.size>MAX_SIZE){
       alert(f.name+' is too large. Please keep files under 10MB each.');
@@ -4012,7 +4012,7 @@ function addF(fl){
     }
     const currentTotal=files.reduce((sum,x)=>sum+x.size,0);
     if(currentTotal+f.size>MAX_TOTAL_SIZE){
-      alert('Total upload size is too large. Please keep combined files under 25MB.');
+      alert('Total upload size is too large. Please keep combined files under 100MB.');
       return;
     }
     if(!files.find(x=>x.name===f.name&&x.size===f.size)) files.push(f);
@@ -4077,7 +4077,6 @@ async function submitQ(){
   const ref=genRef();
   const firstName=n.split(' ')[0];
 
-  // Collect form data
   const suburb=document.getElementById('suburb').value.trim();
   const ptypeEl=document.getElementById('ptype');
   const ptype=ptypeEl.options[ptypeEl.selectedIndex].text;
@@ -4088,48 +4087,21 @@ async function submitQ(){
     .map(cb=>cb.parentElement.textContent.trim()).join(', ');
 
   const submitBtn=document.querySelector('#fs3 .bnx');
-  if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Preparing files…';}
+  if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Submitting enquiry…';}
 
-  // Upload approach: keep lead capture stable, but include selected files as base64 so Apps Script can save them to Google Drive.
-  // Limits above keep requests below the size where Google Apps Script commonly fails.
   const uploadedFiles=[...files];
-  let encodedFiles=[];
+  const SHEET_URL='https://script.google.com/macros/s/AKfycby7vphB2CDw73b5GIrV1zGiva7hFcKvfuvizJgl44e3KEbsgA5AIM6mY_9YcngMC0UFbQ/exec';
 
-  function fileToBase64(file){
-    return new Promise((resolve,reject)=>{
-      const reader=new FileReader();
-      reader.onload=()=>{
-        const result=String(reader.result||'');
-        resolve({
-          name:file.name,
-          type:file.type||'application/octet-stream',
-          size:file.size,
-          data:result.includes(',')?result.split(',')[1]:result
-        });
-      };
-      reader.onerror=()=>reject(new Error('Could not read '+file.name));
-      reader.readAsDataURL(file);
-    });
-  }
-
-  try{
-    encodedFiles=await Promise.all(uploadedFiles.map(fileToBase64));
-  }catch(fileErr){
-    showErr('One of the files could not be read. Please remove it and try again.');
-    if(submitBtn){submitBtn.disabled=false;submitBtn.textContent='Submit quote request';}
-    return;
-  }
-
-  const payload={
+  const leadPayload={
+    action:'lead',
     reference:ref,name:n,email:e,phone:ph,
     suburb:suburb,propertyType:ptype,size:psize,
-    services:services,notes:notes.trim(),files:encodedFiles
+    services:services,
+    notes:notes.trim(),
+    fileCount:uploadedFiles.length,
+    fileNames:uploadedFiles.map(f=>f.name).join(', '),
+    files:[]
   };
-
-  const SHEET_URL='https://script.google.com/macros/s/AKfycby_LeF_Jb7nenDBrB4qvBBWjjuDUDDcs-tzXkaEvg49U8uR1-80Fpx1hOzbJl2nzCqN/exec';
-
-  // Show a loading state on the submit button
-  if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Submitting…';}
 
   function showSuccess(){
     document.getElementById('qbody').style.display='none';
@@ -4139,36 +4111,94 @@ async function submitQ(){
     document.getElementById('sucName').textContent=firstName;
     document.getElementById('sucRef').textContent='Reference: '+ref;
     const ctEl=document.getElementById('callTime');
-    if(ctEl)ctEl.textContent="We'll be in touch shortly";
+    if(ctEl){
+      ctEl.textContent=uploadedFiles.length
+        ? 'Your enquiry is saved. Photos are uploading to Drive.'
+        : "We'll be in touch shortly";
+    }
     setTimeout(()=>{
       const quoteEl=document.getElementById('quote');
       if(quoteEl){const top=quoteEl.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:top,behavior:'smooth'});}
     },80);
   }
 
-  function sendToSheet(p){
-    console.log('Submitting lead payload with files:',uploadedFiles.length);
-    // Create hidden iframe to avoid CORS issues with Google Apps Script.
+  function postPayload(payload){
     let ifr=document.getElementById('sheetFrame');
-    if(!ifr){ifr=document.createElement('iframe');ifr.id='sheetFrame';ifr.name='sheetFrame';ifr.style.display='none';document.body.appendChild(ifr);}
+    if(!ifr){
+      ifr=document.createElement('iframe');
+      ifr.id='sheetFrame';
+      ifr.name='sheetFrame';
+      ifr.style.display='none';
+      document.body.appendChild(ifr);
+    }
     const frm=document.createElement('form');
     frm.method='POST';
     frm.action=SHEET_URL;
     frm.target='sheetFrame';
+    frm.enctype='application/x-www-form-urlencoded';
     frm.style.display='none';
     const inp=document.createElement('input');
     inp.type='hidden';
     inp.name='payload';
-    inp.value=JSON.stringify(p);
+    inp.value=JSON.stringify(payload);
     frm.appendChild(inp);
     document.body.appendChild(frm);
     frm.submit();
-    console.log('Lead form submitted to Apps Script');
-    document.body.removeChild(frm);
-    setTimeout(showSuccess,1000);
+    setTimeout(()=>{try{document.body.removeChild(frm);}catch(e){}},500);
   }
 
-  sendToSheet(payload);
+  function fileToBase64(file){
+    return new Promise((resolve,reject)=>{
+      const reader=new FileReader();
+      reader.onload=()=>{
+        const result=String(reader.result||'');
+        resolve(result.includes(',')?result.split(',')[1]:result);
+      };
+      reader.onerror=()=>reject(new Error('Could not read '+file.name));
+      reader.readAsDataURL(file);
+    });
+  }
+
+  async function uploadFilesOneByOne(){
+    if(!uploadedFiles.length)return;
+    for(let i=0;i<uploadedFiles.length;i++){
+      const file=uploadedFiles[i];
+      try{
+        if(submitBtn){submitBtn.textContent='Uploading file '+(i+1)+' of '+uploadedFiles.length+'…';}
+        const base64=await fileToBase64(file);
+        postPayload({
+          action:'file',
+          reference:ref,
+          name:n,
+          email:e,
+          phone:ph,
+          suburb:suburb,
+          propertyType:ptype,
+          size:psize,
+          services:services,
+          notes:notes.trim(),
+          fileIndex:i+1,
+          fileTotal:uploadedFiles.length,
+          file:{
+            name:file.name,
+            type:file.type||'application/octet-stream',
+            size:file.size,
+            data:base64
+          }
+        });
+        await new Promise(resolve=>setTimeout(resolve,2200));
+      }catch(err){
+        console.warn('File upload failed:',file.name,err);
+      }
+    }
+    if(submitBtn){submitBtn.textContent='Submitted';}
+    const ctEl=document.getElementById('callTime');
+    if(ctEl)ctEl.textContent="We'll be in touch shortly";
+  }
+
+  postPayload(leadPayload);
+  setTimeout(showSuccess,900);
+  setTimeout(()=>{uploadFilesOneByOne();},1400);
 }
 
 // SERVICE TABS
