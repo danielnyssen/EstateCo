@@ -709,7 +709,7 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
   .section-title{font-size:24px;font-weight:800;letter-spacing:-0.5px;margin-bottom:8px;line-height:1.15}
   .section-sub{font-size:13px;line-height:1.6;margin-bottom:16px}
 
-  /* ══ UNIFIED HERO BLOCK — Steps + Services ══ */
+  /* ══ STEPS — square sliding tiles with icons ══ */
 
   .steps-section{padding:16px 0 0;background:#f0f4f8}
   .steps-section .container{
@@ -727,77 +727,125 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
     font-size:10px !important;font-weight:700 !important;
     letter-spacing:2.5px !important;text-transform:uppercase !important;
     color:rgba(255,255,255,0.45) !important;
-    margin-bottom:14px !important;text-align:left !important;
+    margin-bottom:16px !important;text-align:left !important;
   }
   .steps-grid{
-    display:flex !important;flex-direction:row !important;
-    gap:8px;grid-template-columns:unset !important;
-    position:static;overflow-x:auto;
-    -webkit-overflow-scrolling:touch;scrollbar-width:none;
-    margin:0 -20px;padding:0 20px 2px;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    gap:10px !important;
+    grid-template-columns:unset !important;
+    position:static !important;
+    overflow-x:scroll !important;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    margin:0 -20px !important;
+    padding:0 20px 8px !important;
+    width:calc(100% + 40px) !important;
   }
   .steps-grid::-webkit-scrollbar{display:none}
-  .steps-grid::before{display:none}
+  .steps-grid::before{display:none !important}
   .step-card{
-    flex-shrink:0;padding:9px 14px;
-    border-radius:50px;
-    background:rgba(255,255,255,0.1);
-    border:1px solid rgba(255,255,255,0.15);
-    box-shadow:none;display:flex;align-items:center;gap:8px;
-    margin-bottom:0;border-bottom:none !important;
-    transition:background 0.2s;
+    flex:0 0 140px !important;
+    width:140px !important;
+    min-height:160px !important;
+    padding:18px 14px 16px !important;
+    border-radius:16px !important;
+    background:rgba(255,255,255,0.1) !important;
+    border:1.5px solid rgba(255,255,255,0.15) !important;
+    box-shadow:none !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    gap:0 !important;
+    text-align:center !important;
+    margin-bottom:0 !important;
+    border-bottom:none !important;
+    transition:background 0.2s,border-color 0.2s;
   }
-  .step-card.in-view{background:rgba(255,255,255,0.2);border-color:var(--gold)}
-  .step-card::before{display:none}
-  .step-card::after{
-    content:attr(data-step);position:static;transform:none;
-    width:20px;height:20px;flex-shrink:0;
-    background:var(--gold);color:#fff;
-    font-size:10px;font-weight:800;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    order:-1;box-shadow:none;
+  .step-card::before{display:none !important}
+  .step-card::after{display:none !important}
+  .step-num{
+    display:block !important;
+    font-size:10px !important;font-weight:800 !important;
+    letter-spacing:2px !important;text-transform:uppercase !important;
+    color:rgba(255,255,255,0.45) !important;
+    margin-bottom:12px !important;
+    font-family:'DM Sans',sans-serif !important;
   }
-  .step-card:nth-child(2)::after{background:#3A8FB5}
-  .step-card:nth-child(3)::after{background:rgba(255,255,255,0.25);color:var(--navy)}
-  .step-num{display:none}
-  .step-card>div{display:flex;flex-direction:column;gap:1px}
-  .step-card h3{font-size:12px;font-weight:700;color:#fff;margin:0;line-height:1.2;white-space:nowrap}
-  .step-card p{font-size:10px;color:rgba(255,255,255,0.5);margin:0;line-height:1.3;white-space:nowrap;display:block}
+  .step-icon-wrap{
+    width:56px !important;height:56px !important;
+    background:rgba(255,255,255,0.12) !important;
+    border-radius:14px !important;
+    display:flex !important;align-items:center !important;justify-content:center !important;
+    margin-bottom:12px !important;
+    padding:10px !important;
+  }
+  .step-icon-img{
+    width:36px !important;height:36px !important;
+    object-fit:contain !important;
+    filter:brightness(0) invert(1) !important;
+    opacity:0.9 !important;
+  }
+  .step-card h3{
+    font-size:13px !important;font-weight:700 !important;
+    color:#fff !important;margin:0 0 4px !important;
+    line-height:1.25 !important;
+  }
+  .step-card p{
+    display:block !important;
+    font-size:11px !important;
+    color:rgba(255,255,255,0.5) !important;
+    margin:0 !important;line-height:1.35 !important;
+  }
 
-  /* ── SERVICES — list rows in white card ── */
+  /* ══ SERVICES — big, bold, app-native list ══ */
   .services-section{padding:0 0 20px;background:#f0f4f8}
   .services-section .container{
     background:#fff;border-radius:20px;
     padding:0;margin-top:10px;overflow:hidden;
   }
   .services-section .section-tag{
-    font-size:10px !important;letter-spacing:2.5px !important;
+    font-size:11px !important;letter-spacing:2.5px !important;
     font-weight:800 !important;color:var(--gold) !important;
-    padding:16px 18px 0 !important;
+    padding:20px 20px 0 !important;
     margin:0 !important;display:block;
   }
   .svc-grid{
     display:flex !important;flex-direction:column !important;
     grid-template-columns:unset !important;
-    gap:0;margin-top:10px;
+    gap:0 !important;margin-top:12px !important;
   }
   .svc-card{
-    padding:13px 18px;border-radius:0;background:#fff;
-    border:none;border-bottom:1px solid #f0f4f8;
-    box-shadow:none;overflow:visible;
-    display:flex;align-items:center;gap:12px;
+    padding:16px 20px !important;
+    border-radius:0 !important;background:#fff !important;
+    border:none !important;
+    border-bottom:1px solid #f0f4f8 !important;
+    box-shadow:none !important;overflow:visible !important;
+    display:flex !important;align-items:center !important;gap:14px !important;
     transition:background 0.15s;
   }
-  .svc-card:last-child{border-bottom:none;padding-bottom:16px}
-  .svc-card:active{background:#f8fafc}
-  .svc-card::before{display:none}
+  .svc-card:last-child{border-bottom:none !important;padding-bottom:22px !important}
+  .svc-card:active{background:#f8fafc !important}
+  .svc-card::before{display:none !important}
   .svc-card::after{
-    content:'→';margin-left:auto;
-    font-size:14px;color:var(--gold);
+    content:'→' !important;
+    margin-left:auto;
+    font-size:18px !important;color:var(--gold) !important;
     font-weight:700;flex-shrink:0;
   }
-  .svc-card h4{font-size:14px;font-weight:700;color:var(--navy);margin:0 0 2px;line-height:1.25}
-  .svc-card p{display:block;font-size:11px;color:var(--warm);line-height:1.45;margin:0}
+  .svc-card>div{flex:1}
+  .svc-card h4{
+    font-size:17px !important;font-weight:700 !important;
+    color:var(--navy) !important;margin:0 0 4px !important;
+    line-height:1.25 !important;
+  }
+  .svc-card p{
+    display:block !important;
+    font-size:13px !important;color:var(--warm) !important;
+    line-height:1.5 !important;margin:0 !important;
+  }
 
   /* ── CAROUSEL ── */
   .ba-section{padding:16px 0;background:#f0f4f8}
@@ -1301,24 +1349,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="steps-grid">
         <div class="step-card" data-step="1">
           <div class="step-num">01</div>
-          <div>
-            <h3>Send photos</h3>
-            <p>Upload here — no visit needed</p>
-          </div>
+          <div class="step-icon-wrap"><img src="upload.png" alt="Upload photos" class="step-icon-img"></div>
+          <h3>Send photos</h3>
+          <p>Upload here — no visit needed</p>
         </div>
         <div class="step-card" data-step="2">
           <div class="step-num">02</div>
-          <div>
-            <h3>Get a fixed quote</h3>
-            <p>Within 24 hours</p>
-          </div>
+          <div class="step-icon-wrap"><img src="quote.png" alt="Get a quote" class="step-icon-img"></div>
+          <h3>Get a fixed quote</h3>
+          <p>Within 24 hours</p>
         </div>
         <div class="step-card" data-step="3">
           <div class="step-num">03</div>
-          <div>
-            <h3>We handle everything</h3>
-            <p>Peace of mind, start to finish</p>
-          </div>
+          <div class="step-icon-wrap"><img src="complete.png" alt="We handle everything" class="step-icon-img"></div>
+          <h3>We handle everything</h3>
+          <p>Peace of mind, start to finish</p>
         </div>
       </div>
   </div>
@@ -1326,10 +1371,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <style>
 .steps-section{padding:32px 0 20px;background:#fff}
 .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
-.step-card{background:#f8fafc;border-radius:14px;padding:18px 16px;position:relative;border:1px solid var(--border);transition:transform 0.2s,box-shadow 0.2s;overflow:hidden}
+.step-card{background:#f8fafc;border-radius:14px;padding:24px 20px;position:relative;border:1px solid var(--border);transition:transform 0.2s,box-shadow 0.2s;overflow:hidden;text-align:center}
 .step-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,0.08)}
 .step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),#3A8FB5)}
-.step-num{font-family:'DM Sans',sans-serif;font-size:26px;font-weight:800;color:rgba(58,143,181,0.15);line-height:1;margin-bottom:6px;letter-spacing:-2px}
+.step-num{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:800;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.step-icon-wrap{margin-bottom:14px}
+.step-icon-img{width:56px;height:56px;object-fit:contain;opacity:0.85}
 .step-card h3{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.2}
 .step-card p{font-size:12px;color:var(--warm);line-height:1.5;margin:0}
 @media(max-width:768px){
