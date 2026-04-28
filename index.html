@@ -3113,7 +3113,7 @@ footer,.testi-section{background:#163653 !important}
 <input accept=".jpg,.jpeg,.png,.heic,.pdf" id="fIn" multiple="" onchange="addF(this.files)" type="file"/>
 <div class="upload-cam-icon"></div>
 <div class="uz-t">Drop photos here or click to browse</div>
-<div class="uz-s">JPG, PNG, HEIC, PDF · max 2MB per file · up to 3 files<br/><strong>Smaller photos upload more reliably</strong></div>
+<div class="uz-s">JPG, PNG, HEIC, PDF · max 10MB per file · up to 5 files<br/><strong>Your enquiry will submit first so uploads never block the quote request</strong></div>
 </div>
 <div class="chips" id="chipArea"></div>
 <div class="fg"><label>Full name *</label><input aria-label="Your full name" autocomplete="name" id="fname" placeholder="Jane Smith" type="text"/></div>
@@ -3144,7 +3144,7 @@ footer,.testi-section{background:#163653 !important}
 <div class="ss-num">1</div>
 <div class="ss-content">
 <h6>We review your property</h6>
-<p>Our team reviews your photos or video and assesses the scope of work.</p>
+<p>Our team reviews your enquiry details. If photos were selected, we may follow up for the images separately.</p>
 </div>
 </div>
 <div class="suc-step">
@@ -3998,12 +3998,12 @@ function selR(el){
 function ckToggle(el){setTimeout(()=>el.classList.toggle('ck',el.querySelector('input').checked),0);}
 function toggleOther(){var box=document.getElementById('otherBox');var chk=document.getElementById('otherCheck');box.style.display=chk.checked?'block':'none';}
 function addF(fl){
-  const MAX_SIZE=2*1024*1024; // 2MB per file - safer for Google Apps Script
-  const MAX_FILES=3;
-  const MAX_TOTAL_SIZE=5*1024*1024; // Keep total upload payload small for Apps Script
+  const MAX_SIZE=10*1024*1024; // 10MB per file
+  const MAX_FILES=5;
+  const MAX_TOTAL_SIZE=50*1024*1024; // Display limit only; files are not converted into the lead payload
   Array.from(fl).forEach(f=>{
     if(f.size>MAX_SIZE){
-      alert(f.name+' is too large. Please keep files under 2MB each.');
+      alert(f.name+' is too large. Please keep files under 10MB each.');
       return;
     }
     if(files.length>=MAX_FILES){
@@ -4087,21 +4087,24 @@ function submitQ(){
   const services=Array.from(document.querySelectorAll('#fs2 input[type="checkbox"]:checked'))
     .map(cb=>cb.parentElement.textContent.trim()).join(', ');
 
-  // Collect files at submission time
+  // Keep file selection available, but do not send large files inside the lead payload.
+  // This protects the Google Sheet/email submission from failing when photos are attached.
   const uploadedFiles=[...files];
-  console.log('Files to upload:',uploadedFiles.length);
+  const fileNote=uploadedFiles.length
+    ? '\n\nCustomer selected files on the form: '+uploadedFiles.map(f=>f.name+' ('+Math.round(f.size/1024/1024*10)/10+'MB)').join(', ')+'\nFollow up for photos if they are not received separately.'
+    : '';
 
   const payload={
     reference:ref,name:n,email:e,phone:ph,
     suburb:suburb,propertyType:ptype,size:psize,
-    services:services,notes:notes,files:[]
+    services:services,notes:(notes+fileNote).trim(),files:[]
   };
 
   const SHEET_URL='https://script.google.com/macros/s/AKfycbxENVDYbsg_v7s-0e75TOtcNzd9tlHFxIJELPrb1zS5yz_4I0s13X-JmqTSCN7AaMEqNQ/exec';
 
   // Show a loading state on the submit button
   const submitBtn=document.querySelector('#fs3 .bnx');
-  if(submitBtn){submitBtn.disabled=true;submitBtn.textContent=uploadedFiles.length>0?'Uploading photos…':'Submitting…';}
+  if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Submitting…';}
 
   function showSuccess(){
     document.getElementById('qbody').style.display='none';
@@ -4119,11 +4122,10 @@ function submitQ(){
   }
 
   function sendToSheet(p){
-    console.log('Sending, files:',p.files.length);
-    // Create hidden iframe to receive response
+    console.log('Submitting lead payload only. Selected files:',uploadedFiles.length);
+    // Create hidden iframe to avoid CORS issues with Google Apps Script.
     let ifr=document.getElementById('sheetFrame');
     if(!ifr){ifr=document.createElement('iframe');ifr.id='sheetFrame';ifr.name='sheetFrame';ifr.style.display='none';document.body.appendChild(ifr);}
-    // Create hidden form targeting iframe
     const frm=document.createElement('form');
     frm.method='POST';
     frm.action=SHEET_URL;
@@ -4136,38 +4138,12 @@ function submitQ(){
     frm.appendChild(inp);
     document.body.appendChild(frm);
     frm.submit();
-    console.log('Form submitted to sheet');
+    console.log('Lead form submitted to Apps Script');
     document.body.removeChild(frm);
-    setTimeout(showSuccess, uploadedFiles.length>0?2500:1000);
+    setTimeout(showSuccess,1000);
   }
 
-  function fileToBase64(file){
-    return new Promise((resolve,reject)=>{
-      const reader=new FileReader();
-      reader.onload=ev=>{
-        const b64=ev.target.result.split(',')[1];
-        console.log('Converted:',file.name,'bytes:',b64.length);
-        resolve({name:file.name,type:file.type,data:b64});
-      };
-      reader.onerror=reject;
-      reader.readAsDataURL(file);
-    });
-  }
-
-  if(uploadedFiles.length===0){
-    sendToSheet(payload);
-  } else {
-    Promise.all(uploadedFiles.map(f=>fileToBase64(f)))
-      .then(fileData=>{
-        console.log('All files converted:',fileData.length);
-        payload.files=fileData;
-        sendToSheet(payload);
-      })
-      .catch(err=>{
-        console.warn('File error:',err);
-        sendToSheet(payload);
-      });
-  }
+  sendToSheet(payload);
 }
 
 // SERVICE TABS
