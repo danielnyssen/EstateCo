@@ -554,14 +554,18 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
 .services-section .section-tag{color:var(--gold)}
 .services-section .section-title{color:var(--navy)}
 .services-section .section-sub{color:var(--warm)}
+.svc-mob-icon{display:none}
 .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
-.svc-card{border:1px solid var(--border);border-radius:14px;padding:36px 32px;position:relative;background:#fff;transition:all 0.25s;box-shadow:0 2px 12px rgba(0,0,0,0.05)}
-.svc-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--gold);transition:width 0.35s ease;border-radius:0 0 14px 14px}
+.svc-card{
+  border:1px solid rgba(26,60,94,0.08);border-radius:14px;padding:28px;
+  position:relative;background:#fff;transition:all 0.25s;
+  box-shadow:0 2px 12px rgba(0,0,0,0.05);
+}
+.svc-card::after{display:none}
 .svc-card:hover{background:#fafbfd;box-shadow:0 8px 32px rgba(0,0,0,0.1);transform:translateY(-2px)}
-.svc-card:hover::after{width:100%}
-.svc-num{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:2px;margin-bottom:16px;opacity:0.8}
-.svc-card h4{font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3}
-.svc-card p{font-size:13px;color:var(--warm);line-height:1.7;margin:0}
+.svc-right{display:flex;flex-direction:column;gap:6px}
+.svc-card h4{font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;color:var(--navy);margin:0;line-height:1.3}
+.svc-card p{font-size:13px;color:var(--warm);line-height:1.6;margin:0}
 
 
 /* ── TESTIMONIALS ── */
@@ -710,52 +714,69 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
   .section-sub{font-size:13px;line-height:1.6;margin-bottom:16px}
 
 
-  /* ══ SERVICES — big, bold, app-native list ══ */
-  .services-section{padding:0 0 20px;background:#f0f4f8}
-  .services-section .container{
-    background:#fff;border-radius:20px;
-    padding:0;margin-top:10px;overflow:hidden;
-  }
+  /* ══ SERVICES — clean minimal list ══ */
+  .services-section{padding:24px 0 28px !important;background:#fff !important}
+  .services-section .container{padding:0 16px !important}
   .services-section .section-tag{
-    font-size:11px !important;letter-spacing:2.5px !important;
-    font-weight:800 !important;color:var(--gold) !important;
-    padding:20px 20px 0 !important;
-    margin:0 !important;display:block;
+    font-size:11px !important;letter-spacing:2px !important;
+    font-weight:700 !important;color:var(--gold) !important;
+    padding:0 !important;margin:0 0 6px !important;display:block !important;
+    text-transform:uppercase !important;
   }
   .svc-grid{
-    display:flex !important;flex-direction:column !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:0 !important;
     grid-template-columns:unset !important;
-    gap:0 !important;margin-top:12px !important;
+    margin:0 !important;
+    padding:0 !important;
+    width:100% !important;
+    overflow-x:visible !important;
+    border:1px solid rgba(26,60,94,0.08) !important;
+    border-radius:16px !important;
+    overflow:hidden !important;
   }
   .svc-card{
-    padding:16px 20px !important;
-    border-radius:0 !important;background:#fff !important;
+    flex:unset !important;width:100% !important;height:auto !important;
+    padding:16px !important;
+    border-radius:0 !important;
+    background:#fff !important;
     border:none !important;
-    border-bottom:1px solid #f0f4f8 !important;
-    box-shadow:none !important;overflow:visible !important;
-    display:flex !important;align-items:center !important;gap:14px !important;
-    transition:background 0.15s;
+    border-bottom:1px solid rgba(26,60,94,0.07) !important;
+    box-shadow:none !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    position:relative !important;
+    overflow:visible !important;
+    gap:0 !important;
+    transition:background 0.15s !important;
   }
-  .svc-card:last-child{border-bottom:none !important;padding-bottom:22px !important}
-  .svc-card:active{background:#f8fafc !important}
+  .svc-card:last-child{border-bottom:none !important}
   .svc-card::before{display:none !important}
-  .svc-card::after{
-    content:'→' !important;
-    margin-left:auto;
-    font-size:18px !important;color:var(--gold) !important;
-    font-weight:700;flex-shrink:0;
+  .svc-card::after{display:none !important}
+  .svc-card:active{background:#f7fafc !important}
+  .svc-mob-icon{display:none !important}
+  .svc-right{
+    display:flex !important;flex-direction:column !important;
+    gap:4px !important;
+    padding:0 !important;
+    flex:1 !important;
+    width:100% !important;
   }
-  .svc-card>div{flex:1}
   .svc-card h4{
-    font-size:17px !important;font-weight:700 !important;
-    color:var(--navy) !important;margin:0 0 4px !important;
-    line-height:1.25 !important;
+    font-size:15px !important;font-weight:700 !important;
+    color:var(--navy) !important;margin:0 !important;line-height:1.25 !important;
+    display:block !important;letter-spacing:-0.2px !important;
   }
   .svc-card p{
     display:block !important;
     font-size:13px !important;color:var(--warm) !important;
-    line-height:1.5 !important;margin:0 !important;
+    line-height:1.55 !important;margin:0 !important;
   }
+  .svc-num,.svc-icon-wrap{display:none !important}
+  .svc-left{display:none !important}
+  .svc-right{display:flex !important}
 
   /* ── CAROUSEL ── */
   .ba-section{padding:16px 0;background:#f0f4f8}
@@ -1254,63 +1275,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HOW IT WORKS -->
 <section class="steps-section">
   <div class="container">
-    <h2 class="section-title" style="text-align:center;margin-bottom:6px">From full cleanouts to respectful estate clearances, <em style="font-style:normal;color:var(--gold)">done for you.</em></h2>
-    <h2 style="text-align:center;margin-bottom:20px;font-family:'DM Sans',sans-serif;font-size:18px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy)">Three simple steps</h2>
+    <h2 class="section-title" style="text-align:center;margin-bottom:6px">Estate clearances, <em style="font-style:normal;color:var(--gold)">handled with care.</em></h2>
+    <div class="section-tag" style="margin-top:16px;margin-bottom:20px;font-size:22px">Three simple steps</div>
       <div class="steps-grid">
-        <div class="step-card" data-step="1">
-          <div class="step-num">01</div>
-          <div class="step-icon-wrap"><img src="upload.png" alt="Upload photos" class="step-icon-img"></div>
-          <h3>Send photos</h3>
-          <p>Upload here — no visit needed</p>
+        <div class="step-wrap">
+          <div class="step-num-above">01</div>
+          <div class="step-card" data-step="1">
+            <div class="step-left">
+              <div class="step-num">01</div>
+              <div class="step-icon-wrap"><img src="upload.png" alt="Upload photos" class="step-icon-img"></div>
+            </div>
+            <div class="step-right">
+              <h3>Complete online &amp; upload photos</h3>
+              <p>Upload photos or a short video. No site visit needed.</p>
+            </div>
+          </div>
+          <div class="step-label-below">Upload</div>
         </div>
-        <div class="step-card" data-step="2">
-          <div class="step-num">02</div>
-          <div class="step-icon-wrap"><img src="quote.png" alt="Get a quote" class="step-icon-img"></div>
-          <h3>Get a fixed quote</h3>
-          <p>Within 24 hours</p>
+        <div class="step-wrap">
+          <div class="step-num-above">02</div>
+          <div class="step-card" data-step="2">
+            <div class="step-left">
+              <div class="step-num">02</div>
+              <div class="step-icon-wrap"><img src="quote.png" alt="Get a quote" class="step-icon-img"></div>
+            </div>
+            <div class="step-right">
+              <h3>Receive your fixed quote</h3>
+              <p>Fixed price, no hidden charges. Pay at settlement if eligible.</p>
+            </div>
+          </div>
+          <div class="step-label-below">Quote</div>
         </div>
-        <div class="step-card" data-step="3">
-          <div class="step-num">03</div>
-          <div class="step-icon-wrap"><img src="complete.png" alt="We handle everything" class="step-icon-img"></div>
-          <h3>We handle everything</h3>
-          <p>Peace of mind, start to finish</p>
+        <div class="step-wrap">
+          <div class="step-num-above">03</div>
+          <div class="step-card" data-step="3">
+            <div class="step-left">
+              <div class="step-num">03</div>
+              <div class="step-icon-wrap"><img src="complete.png" alt="We handle everything" class="step-icon-img"></div>
+            </div>
+            <div class="step-right">
+              <h3>We handle everything</h3>
+              <p>We clear, clean and prepare. Full digital report on completion.</p>
+            </div>
+          </div>
+          <div class="step-label-below">Complete</div>
         </div>
       </div>
   </div>
 </section>
-<style>
-/* ── STEPS DESKTOP ── */
-.steps-section{padding:32px 0 20px;background:#fff}
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
-.step-card{background:#f8fafc;border-radius:14px;padding:24px 20px;position:relative;border:1px solid var(--border);transition:transform 0.2s,box-shadow 0.2s;overflow:hidden;text-align:center;display:flex;flex-direction:column;align-items:center}
-.step-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,0.08)}
-.step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),#3A8FB5)}
-.step-num{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:800;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
-.step-icon-wrap{margin-bottom:14px}
-.step-icon-img{width:56px;height:56px;object-fit:contain;opacity:0.85}
-.step-card h3{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.2}
-.step-card p{font-size:12px;color:var(--warm);line-height:1.5;margin:0}
-
-/* ── STEPS MOBILE ── */
-@media(max-width:480px){
-  .steps-section{padding:16px 0 0 !important;background:#f0f4f8 !important}
-  .steps-section .container{background:var(--navy) !important;border-radius:20px !important;padding:24px 20px 20px !important}
-  .steps-section .section-title{font-size:20px !important;font-weight:800 !important;color:#fff !important;line-height:1.2 !important;margin-bottom:2px !important;text-align:left !important;letter-spacing:-0.5px !important}
-  .steps-section .section-title em{color:var(--gold) !important}
-  .steps-section h2:last-of-type{font-size:10px !important;font-weight:700 !important;letter-spacing:2.5px !important;text-transform:uppercase !important;color:rgba(255,255,255,0.45) !important;margin-bottom:18px !important;text-align:left !important}
-  .steps-grid{display:flex !important;flex-direction:row !important;flex-wrap:nowrap !important;gap:12px !important;grid-template-columns:unset !important;position:static !important;overflow-x:scroll !important;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -20px !important;padding:0 20px 8px !important;width:calc(100% + 40px) !important}
-  .steps-grid::-webkit-scrollbar{display:none}
-  .steps-grid::before{display:none !important}
-  .step-card{flex:0 0 160px !important;width:160px !important;min-height:200px !important;padding:18px 16px 16px !important;border-radius:18px !important;background:rgba(255,255,255,0.1) !important;border:1.5px solid rgba(255,255,255,0.2) !important;box-shadow:none !important;display:flex !important;flex-direction:column !important;align-items:flex-start !important;justify-content:space-between !important;text-align:left !important;margin-bottom:0 !important;border-bottom:none !important}
-  .step-card::before{display:none !important}
-  .step-card::after{display:none !important}
-  .step-num{display:block !important;font-size:72px !important;font-weight:800 !important;color:#fff !important;line-height:0.9 !important;letter-spacing:-4px !important;margin:0 0 8px -2px !important;text-transform:none !important;font-family:'DM Sans',sans-serif !important}
-  .step-icon-wrap{width:48px !important;height:48px !important;background:rgba(255,255,255,0.15) !important;border-radius:12px !important;display:flex !important;align-items:center !important;justify-content:center !important;margin-bottom:12px !important;padding:9px !important}
-  .step-icon-img{width:30px !important;height:30px !important;object-fit:contain !important;filter:brightness(0) invert(1) !important;opacity:1 !important}
-  .step-card h3{font-size:14px !important;font-weight:700 !important;color:#fff !important;margin:0 0 3px !important;line-height:1.2 !important}
-  .step-card p{display:block !important;font-size:11px !important;color:rgba(255,255,255,0.55) !important;margin:0 !important;line-height:1.4 !important}
-}
-</style>
 
 <!-- SERVICES -->
 
@@ -1362,58 +1374,230 @@ function baGoTo(idx){
 
 <section class="services-section" id="services">
   <div class="container">
-    <div class="section-tag" style="margin-top:32px;margin-bottom:16px;font-size:22px">Our Services</div>
+    <div class="section-tag" style="margin-top:8px;margin-bottom:8px;font-size:22px">Our Services</div>
     <div class="svc-grid">
       <div class="svc-card">
-        <h4>Estate Cleanouts</h4>
-        <p>Full home clearances handled with care and respect. We sort, remove and manage everything — so families don't have to during a difficult time.</p>
+        <div class="svc-right">
+          <h4>Estate Cleanouts</h4>
+          <p>Full home clearances handled with care and respect. We sort, remove and manage everything — so families don't have to during a difficult time.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <h4>Downsizing &amp; Aged Care Transitions</h4>
-        <p>We help simplify the move to a smaller home or aged care. Items are thoughtfully sorted, kept, donated, sold or stored with everything coordinated for you.</p>
+        <div class="svc-right">
+          <h4>Downsizing &amp; Aged Care Transitions</h4>
+          <p>We help simplify the move to a smaller home or aged care. Items are thoughtfully sorted, kept, donated, sold or stored with everything coordinated for you.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <h4>Hoarded &amp; Neglected Properties</h4>
-        <p>Sensitive, non-judgmental cleanouts of heavily cluttered or long-neglected homes. We restore order with discretion, care and zero overwhelm.</p>
+        <div class="svc-right">
+          <h4>Hoarded &amp; Neglected Properties</h4>
+          <p>Sensitive, non-judgmental cleanouts of heavily cluttered or long-neglected homes. We restore order with discretion, care and zero overwhelm.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <h4>End-of-Lease &amp; Rental Resets</h4>
-        <p>Fast, reliable clearouts for vacated or problem tenancies. We remove all items, clean the property, and get it ready for the next tenant.</p>
+        <div class="svc-right">
+          <h4>End-of-Lease &amp; Rental Resets</h4>
+          <p>Fast, reliable clearouts for vacated or problem tenancies. We remove all items, clean the property, and get it ready for the next tenant.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <h4>Pre-Sale Property Preparation</h4>
-        <p>Clear, clean and presentation-ready. We prepare homes for market to help maximise appeal and sale price without the stress.</p>
+        <div class="svc-right">
+          <h4>Pre-Sale Property Preparation</h4>
+          <p>Clear, clean and presentation-ready. We prepare homes for market to help maximise appeal and sale price without the stress.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <h4>Gardens, Garages &amp; Outdoor Spaces</h4>
-        <p>Overgrown yards, sheds and storage areas cleared and refreshed. We bring outdoor spaces back to clean, usable condition.</p>
+        <div class="svc-right">
+          <h4>Gardens, Garages &amp; Outdoor Spaces</h4>
+          <p>Overgrown yards, sheds and storage areas cleared and refreshed. We bring outdoor spaces back to clean, usable condition.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- IMAGE CAROUSEL -->
-<section class="ba-section">
-  <div class="container">
-    <div class="ba-wrapper">
-      <div class="ba-track" id="baTrack">
-        <div class="ba-slide"><img src="Image_1.png" alt="Estate clearance result" class="ba-full-img"></div>
-        <div class="ba-slide"><img src="Image_3.png" alt="Kitchen clearance result" class="ba-full-img"></div>
-      </div>
-      <button class="ba-nav ba-prev" onclick="baGoTo(baCurrent-1)">&#8592;</button>
-      <button class="ba-nav ba-next" onclick="baGoTo(baCurrent+1)">&#8594;</button>
-    </div>
-    <div class="ba-dots">
-      <span class="ba-dot active" onclick="baGoTo(0)"></span>
-      <span class="ba-dot" onclick="baGoTo(1)"></span>
-    </div>
-  </div>
-</section>
+<!-- HOW IT WORKS PLACEHOLDER -->
+<style>
+/* ── STEPS DESKTOP ── */
+.steps-section{padding:32px 0 20px;background:#fff}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
+
+/* Number top-left, icon bottom-left, text right */
+.step-card{
+  background:#fff;border-radius:14px;padding:24px;
+  position:relative;border:1px solid rgba(26,60,94,0.08);
+  transition:transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 2px 12px rgba(0,0,0,0.05);
+  display:flex;
+  flex-direction:row;
+  gap:18px;
+  align-items:stretch;
+}
+.step-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,0.08)}
+.step-card::before{display:none}
+
+/* Left column: number and icon centered together */
+.step-left{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  flex-shrink:0;
+  gap:8px;
+}
+
+/* Number — same size box as icon */
+.step-num{
+  font-family:'DM Sans',sans-serif;
+  font-size:28px;font-weight:800;
+  color:rgba(58,143,181,0.65);line-height:1;
+  letter-spacing:-0.5px;margin:0;
+  width:64px;height:64px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--gold-pale);
+  border-radius:14px;
+  border:1px solid rgba(58,143,181,0.15);
+}
+
+/* Icon box — same size as number box */
+.step-icon-wrap{
+  width:64px;height:64px;
+  background:#fff;
+  border:1px solid rgba(26,60,94,0.08);
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  padding:10px;
+  flex-shrink:0;
+}
+.step-icon-img{width:42px;height:42px;object-fit:contain;opacity:1;filter:none}
+
+/* Right column: title + subtext */
+.step-right{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:8px;
+  flex:1;
+}
+.step-card h3{
+  font-family:'DM Sans',sans-serif;
+  font-size:17px;font-weight:700;
+  color:var(--navy);margin:0;line-height:1.3;
+}
+.step-card p{
+  font-size:13px;color:var(--warm);line-height:1.6;margin:0;
+}
+
+/* ── STEPS MOBILE ── */
+/* Hide above/below elements on desktop */
+.step-num-above{display:none}
+.step-label-below{display:none}
+/* step-wrap is invisible on desktop — just passes through */
+.step-wrap{display:contents}
+
+@media(max-width:480px){
+  .steps-section{padding:12px 0 16px !important;background:#fff !important}
+  .steps-section .container{padding:0 12px !important}
+  .steps-section .section-title{font-size:26px !important;font-weight:800 !important;color:var(--navy) !important;line-height:1.15 !important;margin-bottom:4px !important;text-align:left !important;letter-spacing:-0.7px !important}
+  .steps-section .section-title em{color:var(--gold) !important;font-style:normal !important}
+  .steps-section .section-tag{font-size:11px !important;font-weight:700 !important;letter-spacing:2px !important;text-transform:uppercase !important;color:var(--gold) !important;margin-bottom:16px !important;text-align:left !important;margin-top:6px !important}
+
+  .steps-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:8px !important;
+    overflow-x:visible !important;
+    margin:0 !important;
+    padding:0 !important;
+    width:100% !important;
+    grid-template-columns:unset !important;
+  }
+  .steps-grid::before{display:none !important}
+  .step-wrap{display:contents !important}
+  .step-num-above{display:none !important}
+  .step-label-below{display:none !important}
+
+  .step-card{
+    width:100% !important;
+    height:auto !important;
+    padding:14px !important;
+    border-radius:12px !important;
+    background:#fff !important;
+    border:1px solid rgba(26,60,94,0.08) !important;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05) !important;
+    display:flex !important;
+    flex-direction:row !important;
+    gap:14px !important;
+    align-items:stretch !important;
+    position:relative !important;
+    overflow:visible !important;
+    margin-bottom:0 !important;
+  }
+  .step-card::before{display:none !important}
+  .step-card::after{display:none !important}
+
+  .step-left{
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:6px !important;
+    flex-shrink:0 !important;
+  }
+  .step-num{
+    display:flex !important;
+    width:44px !important;height:44px !important;
+    font-size:18px !important;font-weight:800 !important;
+    color:rgba(58,143,181,0.65) !important;
+    letter-spacing:-0.5px !important;margin:0 !important;
+    align-items:center !important;justify-content:center !important;
+    background:var(--gold-pale) !important;
+    border-radius:10px !important;
+    border:1px solid rgba(58,143,181,0.15) !important;
+    line-height:1 !important;
+  }
+  .step-icon-wrap{
+    width:44px !important;height:44px !important;
+    background:#fff !important;
+    border:1px solid rgba(26,60,94,0.08) !important;
+    border-radius:10px !important;
+    display:flex !important;align-items:center !important;justify-content:center !important;
+    padding:7px !important;
+    flex-shrink:0 !important;
+    position:static !important;
+    transform:none !important;
+  }
+  .step-icon-img{
+    width:28px !important;height:28px !important;
+    object-fit:contain !important;
+    display:block !important;
+    filter:none !important;
+    opacity:1 !important;
+  }
+  .step-right{
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    gap:4px !important;
+    flex:1 !important;
+  }
+  .step-card h3{
+    display:block !important;
+    font-family:'DM Sans',sans-serif !important;
+    font-size:14px !important;font-weight:700 !important;
+    color:var(--navy) !important;margin:0 !important;line-height:1.3 !important;
+  }
+  .step-card p{
+    display:block !important;
+    font-size:12px !important;color:var(--warm) !important;line-height:1.5 !important;margin:0 !important;
+  }
+  .step-left,.step-right{display:flex !important}
+}
+</style>
 
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
-
       <!-- LEFT: Trust points -->
       <div class="hero-trust-col">
         <div class="section-tag" style="font-size:22px">Why families choose us</div>
@@ -1599,6 +1783,24 @@ function baGoTo(idx){
   </div>
 </section>
 
+
+<!-- IMAGE CAROUSEL -->
+<section class="ba-section">
+  <div class="container">
+    <div class="ba-wrapper">
+      <div class="ba-track" id="baTrack">
+        <div class="ba-slide"><img src="Image_1.png" alt="Estate clearance result" class="ba-full-img"></div>
+        <div class="ba-slide"><img src="Image_3.png" alt="Kitchen clearance result" class="ba-full-img"></div>
+      </div>
+      <button class="ba-nav ba-prev" onclick="baGoTo(baCurrent-1)">&#8592;</button>
+      <button class="ba-nav ba-next" onclick="baGoTo(baCurrent+1)">&#8594;</button>
+    </div>
+    <div class="ba-dots">
+      <span class="ba-dot active" onclick="baGoTo(0)"></span>
+      <span class="ba-dot" onclick="baGoTo(1)"></span>
+    </div>
+  </div>
+</section>
 
 <!-- GOOGLE REVIEWS -->
 <section class="reviews-section">
