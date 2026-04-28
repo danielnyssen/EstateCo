@@ -1519,10 +1519,10 @@ function baGoTo(idx){
             <!-- Step 3 — Contact + Upload -->
             <div class="fstep" id="fs3">
               <div class="upz" id="upz">
-                <input type="file" multiple accept=".jpg,.jpeg,.png,.heic,.mp4,.mov,.pdf" onchange="addF(this.files)" id="fIn">
+                <input type="file" multiple accept=".jpg,.jpeg,.png,.heic,.pdf" onchange="addF(this.files)" id="fIn">
                 <div class="upload-cam-icon"></div>
-                <div class="uz-t">Drop photos or a video walkthrough</div>
-                <div class="uz-s">JPG, PNG, MP4, MOV · up to 100MB<br><strong>A 60-sec video = most accurate quote</strong></div>
+                <div class="uz-t">Drop photos here or click to browse</div>
+                <div class="uz-s">JPG, PNG, HEIC, PDF · max 5MB per photo · up to 10 photos<br><strong>More photos = more accurate quote</strong></div>
               </div>
               <div class="chips" id="chipArea"></div>
               <div class="fg"><label>Full name *</label><input type="text" id="fname" placeholder="Jane Smith" aria-label="Your full name" autocomplete="name"></div>
@@ -2121,7 +2121,19 @@ function selR(el){
 function ckToggle(el){setTimeout(()=>el.classList.toggle('ck',el.querySelector('input').checked),0);}
 function toggleOther(){var box=document.getElementById('otherBox');var chk=document.getElementById('otherCheck');box.style.display=chk.checked?'block':'none';}
 function addF(fl){
-  Array.from(fl).forEach(f=>{if(!files.find(x=>x.name===f.name))files.push(f)});
+  const MAX_SIZE=5*1024*1024; // 5MB per file
+  const MAX_FILES=10;
+  Array.from(fl).forEach(f=>{
+    if(f.size>MAX_SIZE){
+      alert(f.name+' is too large. Please keep photos under 5MB each.');
+      return;
+    }
+    if(files.length>=MAX_FILES){
+      alert('Maximum '+MAX_FILES+' files allowed.');
+      return;
+    }
+    if(!files.find(x=>x.name===f.name)) files.push(f);
+  });
   renderChips();
 }
 function renderChips(){
