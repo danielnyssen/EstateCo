@@ -3999,20 +3999,20 @@ function ckToggle(el){setTimeout(()=>el.classList.toggle('ck',el.querySelector('
 function toggleOther(){var box=document.getElementById('otherBox');var chk=document.getElementById('otherCheck');box.style.display=chk.checked?'block':'none';}
 function addF(fl){
   const MAX_SIZE=10*1024*1024; // 10MB per file
-  const MAX_FILES=5;
-  const MAX_TOTAL_SIZE=50*1024*1024; // Display limit only; files are not converted into the lead payload
+  const MAX_FILES=3;
+  const MAX_TOTAL_SIZE=25*1024*1024; // Safer total limit for Google Apps Script base64 uploads
   Array.from(fl).forEach(f=>{
     if(f.size>MAX_SIZE){
       alert(f.name+' is too large. Please keep files under 10MB each.');
       return;
     }
     if(files.length>=MAX_FILES){
-      alert('Maximum '+MAX_FILES+' files allowed.');
+      alert('Maximum '+MAX_FILES+' files allowed. For larger jobs, submit the form first and email extra photos afterwards.');
       return;
     }
     const currentTotal=files.reduce((sum,x)=>sum+x.size,0);
     if(currentTotal+f.size>MAX_TOTAL_SIZE){
-      alert('Total upload size is too large. Please upload fewer or smaller files.');
+      alert('Total upload size is too large. Please keep combined files under 25MB.');
       return;
     }
     if(!files.find(x=>x.name===f.name&&x.size===f.size)) files.push(f);
@@ -4065,7 +4065,7 @@ function getCallTime(){
   return `By ${fh}${fm}${suffix} today`;
 }
 
-function submitQ(){
+async function submitQ(){
   clearErr();
   const n=document.getElementById('fname').value.trim();
   const e=document.getElementById('femail').value.trim();
@@ -4087,23 +4087,48 @@ function submitQ(){
   const services=Array.from(document.querySelectorAll('#fs2 input[type="checkbox"]:checked'))
     .map(cb=>cb.parentElement.textContent.trim()).join(', ');
 
-  // Keep file selection available, but do not send large files inside the lead payload.
-  // This protects the Google Sheet/email submission from failing when photos are attached.
+  const submitBtn=document.querySelector('#fs3 .bnx');
+  if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Preparing files…';}
+
+  // Upload approach: keep lead capture stable, but include selected files as base64 so Apps Script can save them to Google Drive.
+  // Limits above keep requests below the size where Google Apps Script commonly fails.
   const uploadedFiles=[...files];
-  const fileNote=uploadedFiles.length
-    ? '\n\nCustomer selected files on the form: '+uploadedFiles.map(f=>f.name+' ('+Math.round(f.size/1024/1024*10)/10+'MB)').join(', ')+'\nFollow up for photos if they are not received separately.'
-    : '';
+  let encodedFiles=[];
+
+  function fileToBase64(file){
+    return new Promise((resolve,reject)=>{
+      const reader=new FileReader();
+      reader.onload=()=>{
+        const result=String(reader.result||'');
+        resolve({
+          name:file.name,
+          type:file.type||'application/octet-stream',
+          size:file.size,
+          data:result.includes(',')?result.split(',')[1]:result
+        });
+      };
+      reader.onerror=()=>reject(new Error('Could not read '+file.name));
+      reader.readAsDataURL(file);
+    });
+  }
+
+  try{
+    encodedFiles=await Promise.all(uploadedFiles.map(fileToBase64));
+  }catch(fileErr){
+    showErr('One of the files could not be read. Please remove it and try again.');
+    if(submitBtn){submitBtn.disabled=false;submitBtn.textContent='Submit quote request';}
+    return;
+  }
 
   const payload={
     reference:ref,name:n,email:e,phone:ph,
     suburb:suburb,propertyType:ptype,size:psize,
-    services:services,notes:(notes+fileNote).trim(),files:[]
+    services:services,notes:notes.trim(),files:encodedFiles
   };
 
-  const SHEET_URL='https://script.google.com/macros/s/AKfycbxENVDYbsg_v7s-0e75TOtcNzd9tlHFxIJELPrb1zS5yz_4I0s13X-JmqTSCN7AaMEqNQ/exec';
+  const SHEET_URL='https://script.google.com/macros/s/AKfycby_LeF_Jb7nenDBrB4qvBBWjjuDUDDcs-tzXkaEvg49U8uR1-80Fpx1hOzbJl2nzCqN/exec';
 
   // Show a loading state on the submit button
-  const submitBtn=document.querySelector('#fs3 .bnx');
   if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Submitting…';}
 
   function showSuccess(){
@@ -4122,7 +4147,7 @@ function submitQ(){
   }
 
   function sendToSheet(p){
-    console.log('Submitting lead payload only. Selected files:',uploadedFiles.length);
+    console.log('Submitting lead payload with files:',uploadedFiles.length);
     // Create hidden iframe to avoid CORS issues with Google Apps Script.
     let ifr=document.getElementById('sheetFrame');
     if(!ifr){ifr=document.createElement('iframe');ifr.id='sheetFrame';ifr.name='sheetFrame';ifr.style.display='none';document.body.appendChild(ifr);}
