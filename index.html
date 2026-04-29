@@ -2488,6 +2488,179 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
   }
 }
 
+
+/* Definitive mobile header: hamburger + phone + quote */
+.mobile-header-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-shrink:0;
+}
+.mobile-menu-button,
+.mobile-phone-button{
+  display:none;
+}
+.mobile-quote-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#163653;
+  color:#fff;
+  border:2px solid #163653;
+  border-radius:9px;
+  padding:9px 14px;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-decoration:none;
+  white-space:nowrap;
+}
+@media(max-width:760px){
+  .site-header-inner,
+  .nav-inner{
+    height:58px !important;
+    gap:8px !important;
+  }
+
+  .site-nav-menu,
+  .nav-menu{
+    display:none !important;
+  }
+
+  .mobile-header-actions{
+    display:flex !important;
+    align-items:center !important;
+    gap:7px !important;
+    margin-left:auto !important;
+  }
+
+  .mobile-menu-button{
+    display:inline-flex !important;
+    width:36px !important;
+    height:36px !important;
+    min-width:36px !important;
+    border-radius:9px !important;
+    background:#f0f4f8 !important;
+    border:1.5px solid rgba(22,54,83,.18) !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex-direction:column !important;
+    gap:4px !important;
+    padding:0 !important;
+    margin:0 !important;
+    cursor:pointer !important;
+    -webkit-appearance:none !important;
+    appearance:none !important;
+    flex-shrink:0 !important;
+  }
+
+  .mobile-menu-button span{
+    display:block !important;
+    width:19px !important;
+    height:2px !important;
+    min-height:2px !important;
+    background:#163653 !important;
+    border-radius:999px !important;
+    opacity:1 !important;
+    transition:transform .2s ease, opacity .2s ease !important;
+  }
+
+  .mobile-menu-button.open span:nth-child(1){
+    transform:rotate(45deg) translate(4px,4px) !important;
+  }
+  .mobile-menu-button.open span:nth-child(2){
+    opacity:0 !important;
+  }
+  .mobile-menu-button.open span:nth-child(3){
+    transform:rotate(-45deg) translate(4px,-4px) !important;
+  }
+
+  .mobile-phone-button{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:36px !important;
+    height:36px !important;
+    min-width:36px !important;
+    border-radius:9px !important;
+    border:2px solid #163653 !important;
+    background:#fff !important;
+    color:#163653 !important;
+    text-decoration:none !important;
+    flex-shrink:0 !important;
+  }
+
+  .mobile-phone-button svg{
+    width:15px !important;
+    height:15px !important;
+    display:block !important;
+  }
+
+  .mobile-quote-button{
+    display:inline-flex !important;
+    height:36px !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:0 10px !important;
+    border-radius:9px !important;
+    background:#163653 !important;
+    color:#fff !important;
+    border:2px solid #163653 !important;
+    font-size:10px !important;
+    font-weight:800 !important;
+    letter-spacing:.45px !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    text-decoration:none !important;
+    flex-shrink:0 !important;
+  }
+
+  .site-call-btn,
+  .nav-call-btn,
+  .site-quote-btn,
+  .nav-quote-btn,
+  .mobile-call-btn,
+  .nav-hamburger{
+    display:none !important;
+  }
+
+  .site-logo-main,
+  .logo{
+    font-size:21px !important;
+  }
+
+  .site-logo-sub,
+  .nav-tagline{
+    font-size:8.5px !important;
+    letter-spacing:1.4px !important;
+  }
+}
+
+
+/* Desktop call button restore */
+.desktop-call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #163653;
+  color:#163653;
+  background:#fff;
+  border-radius:9px;
+  padding:9px 14px;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-decoration:none;
+}
+
+@media(max-width:760px){
+  .desktop-call-btn{
+    display:none !important;
+  }
+}
+
 </style>
 <style>
 /* Premium services and location SEO upgrades */
@@ -3351,6 +3524,30 @@ footer,.testi-section{background:#163653 !important}
     line-height:1.6 !important;
   }
 }
+
+/* Desktop call button restore */
+.desktop-call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #163653;
+  color:#163653;
+  background:#fff;
+  border-radius:9px;
+  padding:9px 14px;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-decoration:none;
+}
+
+@media(max-width:760px){
+  .desktop-call-btn{
+    display:none !important;
+  }
+}
+
 </style><meta content="Melbourne" name="geo.placename"/><meta content="-37.8136,144.9631" name="ICBM"/><link href="//images.unsplash.com" rel="dns-prefetch"/>
 
 <style>
@@ -3363,6 +3560,30 @@ footer,.testi-section{background:#163653 !important}
 .seo-location-details summary{cursor:pointer;color:#1A3C5E;font-weight:700;font-size:14px;}
 .seo-location-details p{font-size:13px;color:#425F73;line-height:1.65;margin:10px 0 0;}
 @media(max-width:760px){.location-card-grid{grid-template-columns:1fr}.service-locations-section{padding:28px 0}}
+
+/* Desktop call button restore */
+.desktop-call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #163653;
+  color:#163653;
+  background:#fff;
+  border-radius:9px;
+  padding:9px 14px;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-decoration:none;
+}
+
+@media(max-width:760px){
+  .desktop-call-btn{
+    display:none !important;
+  }
+}
+
 </style>
 
 <style id="estateco-shared-consistency">
@@ -3370,6 +3591,30 @@ footer,.testi-section{background:#163653 !important}
 .nav-menu{gap:4px}.nav-link{font-weight:700}.nav-quote-btn{text-decoration:none}.nav-call-btn{text-decoration:none}.nav-logo-img{height:36px;width:auto}.footer-service-links a{color:inherit;text-decoration:none;font-weight:700}.footer-service-links a:hover{color:var(--gold)}
 body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .nav-quote-btn,.drawer-actions .nav-call-btn{padding:12px 14px;border-radius:10px;font-size:12px;font-weight:400;text-align:center;display:flex;align-items:center;justify-content:center;white-space:nowrap}.drawer-actions .nav-quote-btn{background:var(--navy);color:#fff;border:2px solid var(--navy)}
 @media(max-width:480px){.nav-right{gap:6px}.nav-call-btn{font-size:11px}.nav-hamburger{display:flex}.nav-drawer{top:52px}.footer-service-links{display:block}}
+
+/* Desktop call button restore */
+.desktop-call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #163653;
+  color:#163653;
+  background:#fff;
+  border-radius:9px;
+  padding:9px 14px;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-decoration:none;
+}
+
+@media(max-width:760px){
+  .desktop-call-btn{
+    display:none !important;
+  }
+}
+
 </style>
 
 </head>
@@ -3388,15 +3633,24 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
       <div class="site-nav-menu">
         <a href="index.html">Home</a><a href="index.html#services-heading">Services</a><a href="index.html#service-locations">Areas</a><a href="guides.html">Resources</a><a href="index.html#faq">FAQ</a>
       </div>
-      <div class="site-nav-actions">
-        <a class="site-call-btn" href="tel:0401857730">CALL NOW</a>
-        <a class="mobile-call-btn" href="tel:0401857730" aria-label="Call EstateCo">
-  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.3-.3.73-.4 1.12-.27 1.22.4 2.53.62 3.89.62.62 0 1.11.49 1.11 1.11v3.49c0 .62-.49 1.11-1.11 1.11C10.68 21.24 2.76 13.32 2.76 3.58c0-.62.49-1.11 1.11-1.11h3.5c.62 0 1.11.49 1.11 1.11 0 1.36.21 2.67.62 3.89.12.39.03.82-.28 1.12l-2.2 2.2z"/>
-  </svg>
-</a>
-        <a class="site-quote-btn" href="index.html#quote">REQUEST QUOTE</a>
-      </div>
+      
+<div class="site-nav-actions mobile-header-actions">
+  <a class="site-call-btn desktop-call-btn" href="tel:0401857730">CALL NOW</a>
+  <button class="mobile-menu-button" id="navHamburger" type="button" aria-label="Open menu" onclick="toggleDrawer()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <a class="mobile-phone-button" href="tel:0401857730" aria-label="Call EstateCo">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.3-.3.73-.4 1.12-.27 1.22.4 2.53.62 3.89.62.62 0 1.11.49 1.11 1.11v3.49c0 .62-.49 1.11-1.11 1.11C10.68 21.24 2.76 13.32 2.76 3.58c0-.62.49-1.11 1.11-1.11h3.5c.62 0 1.11.49 1.11 1.11 0 1.36.21 2.67.62 3.89.12.39.03.82-.28 1.12l-2.2 2.2z"/>
+    </svg>
+  </a>
+
+  <a class="mobile-quote-button" href="#quote">REQUEST QUOTE</a>
+</div>
+
     </div>
   </div>
 </nav>
@@ -3412,7 +3666,7 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
   </div>
   <div class="drawer-actions">
     <a class="nav-call-btn" href="tel:0401857730" style="flex:1;justify-content:center">CALL NOW</a>
-    <a class="nav-quote-btn" href="index.html#quote" onclick="closeDrawer()" style="flex:1;justify-content:center">REQUEST QUOTE</a>
+    <a class="nav-quote-btn" href="#quote" onclick="closeDrawer()" style="flex:1;justify-content:center">REQUEST QUOTE</a>
   </div>
 </div>
 
@@ -3699,6 +3953,30 @@ body{color:#24384A;background:#fff}
 footer,.testi-section{background:#163653 !important}
 @media(max-width:480px){body{background:#F3F7FA}.services-section,.faq-section,.reviews-section,.quote-section{background:#F3F7FA !important}.svc-card,.step-card,.review-card,.faq-item,.quote-card{box-shadow:0 5px 18px rgba(26,60,94,0.10) !important}.section-sub,.hero-sub,.svc-card p,.step-card p,.faq-a p{color:#405B70 !important}}
 
+
+/* Desktop call button restore */
+.desktop-call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #163653;
+  color:#163653;
+  background:#fff;
+  border-radius:9px;
+  padding:9px 14px;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-decoration:none;
+}
+
+@media(max-width:760px){
+  .desktop-call-btn{
+    display:none !important;
+  }
+}
+
 </style>
 <script>
 var baCurrent=0;
@@ -3799,6 +4077,30 @@ body{color:#24384A;background:#fff}
 .city-card,.reviews-badge{background:rgba(255,255,255,0.94) !important}
 footer,.testi-section{background:#163653 !important}
 @media(max-width:480px){body{background:#F3F7FA}.services-section,.faq-section,.reviews-section,.quote-section{background:#F3F7FA !important}.svc-card,.step-card,.review-card,.faq-item,.quote-card{box-shadow:0 5px 18px rgba(26,60,94,0.10) !important}.section-sub,.hero-sub,.svc-card p,.step-card p,.faq-a p{color:#405B70 !important}}
+
+
+/* Desktop call button restore */
+.desktop-call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #163653;
+  color:#163653;
+  background:#fff;
+  border-radius:9px;
+  padding:9px 14px;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-decoration:none;
+}
+
+@media(max-width:760px){
+  .desktop-call-btn{
+    display:none !important;
+  }
+}
 
 </style>
 <!-- IMAGE CAROUSEL -->
@@ -3906,6 +4208,30 @@ footer,.testi-section{background:#163653 !important}
 .ba-panel figcaption strong{font-size:13px;line-height:1;color:#fff;white-space:nowrap}
 .ba-pair-caption{background:linear-gradient(180deg,rgba(16,43,68,0),rgba(16,43,68,0.92));padding-top:80px}
 @media(max-width:700px){.ba-pair{grid-template-columns:1fr;min-height:0}.ba-panel:first-child{border-right:none;border-bottom:2px solid rgba(255,255,255,0.8)}.ba-panel .ba-full-img{height:245px}.ba-pair-caption{position:relative;left:auto;right:auto;bottom:auto;background:#102B44;padding:16px}.ba-panel figcaption{top:10px;left:10px}.ba-panel figcaption strong{font-size:12px}.ba-pair-caption .ba-counter{display:inline-flex;margin-top:10px}.ba-slide::after{display:none}}
+
+/* Desktop call button restore */
+.desktop-call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #163653;
+  color:#163653;
+  background:#fff;
+  border-radius:9px;
+  padding:9px 14px;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-decoration:none;
+}
+
+@media(max-width:760px){
+  .desktop-call-btn{
+    display:none !important;
+  }
+}
+
 </style>
 <!-- GOOGLE REVIEWS -->
 <div class="section-divider"></div><section class="reviews-section">
@@ -4260,6 +4586,30 @@ body{color:#24384A;background:#fff}
 .city-card,.reviews-badge{background:rgba(255,255,255,0.94) !important}
 footer,.testi-section{background:#163653 !important}
 @media(max-width:480px){body{background:#F3F7FA}.services-section,.faq-section,.reviews-section,.quote-section{background:#F3F7FA !important}.svc-card,.step-card,.review-card,.faq-item,.quote-card{box-shadow:0 5px 18px rgba(26,60,94,0.10) !important}.section-sub,.hero-sub,.svc-card p,.step-card p,.faq-a p{color:#405B70 !important}}
+
+
+/* Desktop call button restore */
+.desktop-call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #163653;
+  color:#163653;
+  background:#fff;
+  border-radius:9px;
+  padding:9px 14px;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-decoration:none;
+}
+
+@media(max-width:760px){
+  .desktop-call-btn{
+    display:none !important;
+  }
+}
 
 </style>
 <!-- ABOUT -->
@@ -5084,6 +5434,30 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
     display:none;
   }
 }
+
+/* Desktop call button restore */
+.desktop-call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #163653;
+  color:#163653;
+  background:#fff;
+  border-radius:9px;
+  padding:9px 14px;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-decoration:none;
+}
+
+@media(max-width:760px){
+  .desktop-call-btn{
+    display:none !important;
+  }
+}
+
 </style>
 
 <!-- SEO Content (collapsed for users but indexable) -->
@@ -5144,7 +5518,7 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
   }
 
   document.addEventListener('click', function(e){
-    var link = e.target.closest('a[data-quote-cta="true"], a[href="#quote"], a[href="index.html#quote"]');
+    var link = e.target.closest('a[data-quote-cta="true"], a[href="#quote"], a[href="#quote"]');
     if (!link) return;
 
     trackQuoteClick(link);
