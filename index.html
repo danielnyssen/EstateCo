@@ -2914,60 +2914,83 @@ footer,.testi-section{background:#163653 !important}
     line-height:1.6 !important;
   }
 }
-</style><meta content="Melbourne" name="geo.placename"/><meta content="-37.8136,144.9631" name="ICBM"/><link href="//images.unsplash.com" rel="dns-prefetch"/></head>
+</style><meta content="Melbourne" name="geo.placename"/><meta content="-37.8136,144.9631" name="ICBM"/><link href="//images.unsplash.com" rel="dns-prefetch"/>
+
+<style>
+.service-locations-section{padding:44px 0;background:#fff;}
+.location-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;}
+.location-card{background:#f8fafc;border:1px solid rgba(26,60,94,.10);border-radius:14px;padding:20px;}
+.location-card h3{font-size:17px;color:#1A3C5E;margin:0 0 6px;font-weight:700;}
+.location-card p{font-size:14px;color:#425F73;line-height:1.55;margin:0;}
+.seo-location-details{margin-top:16px;border-top:1px solid rgba(26,60,94,.10);padding-top:12px;}
+.seo-location-details summary{cursor:pointer;color:#1A3C5E;font-weight:700;font-size:14px;}
+.seo-location-details p{font-size:13px;color:#425F73;line-height:1.65;margin:10px 0 0;}
+@media(max-width:760px){.location-card-grid{grid-template-columns:1fr}.service-locations-section{padding:28px 0}}
+</style>
+
+<style id="estateco-shared-consistency">
+:root{--navy:#1A3C5E;--navy-mid:#1F4D78;--gold:#2D7FA6;--gold-pale:#E7F2F7;--gold-mid:#236A8A;--offwhite:#F2F8FC;--warm:#425F73;--charcoal:#24384A;--success:#1E7A5A;--success-pale:#E8F5EE;--border:rgba(26,60,94,0.1);--border-med:rgba(26,60,94,0.16)}
+.nav-menu{gap:4px}.nav-link{font-weight:700}.nav-quote-btn{text-decoration:none}.nav-call-btn{text-decoration:none}.nav-logo-img{height:36px;width:auto}.footer-logo-img{height:34px;width:auto}.footer-service-links a{color:inherit;text-decoration:none;font-weight:700}.footer-service-links a:hover{color:var(--gold)}
+body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .nav-quote-btn,.drawer-actions .nav-call-btn{padding:12px 14px;border-radius:10px;font-size:12px;font-weight:800;text-align:center;display:flex;align-items:center;justify-content:center;white-space:nowrap}.drawer-actions .nav-quote-btn{background:var(--navy);color:#fff;border:2px solid var(--navy)}
+@media(max-width:480px){.nav-right{gap:6px}.nav-call-btn{font-size:11px}.nav-hamburger{display:flex}.nav-drawer{top:52px}.footer-logo-wrap{align-items:flex-start}.footer-service-links{display:block}}
+</style>
+
+</head>
 <body>
 <a class="skip-link sr-only" href="#quote">Skip to quote form</a>
 <!-- NAV -->
 <nav id="nav">
-<div class="container">
-<div class="nav-inner">
-<!-- Brand -->
-<div class="nav-brand">
-<a class="logo-wrap" href="index.html">
-<img alt="Estate Co estate clearance services logo" class="nav-logo-img" src="logo.png"/>
-</a>
-<span class="nav-tagline">Not just a clean. A fresh start.</span>
-</div>
-<!-- Desktop menu -->
-<div class="nav-menu">
-<div class="nav-item">
-<a class="nav-link" href="guides.html">Resources</a>
-</div>
-<div class="nav-item">
-<a class="nav-link" href="#faq" onclick="scrollToEl('faq');return false;">FAQ</a>
-</div>
-<div class="nav-item">
-<a class="nav-link" href="#about" onclick="scrollToEl('about');return false;">About</a>
-</div>
-<a class="nav-link" href="#locations">Areas</a></div>
-<!-- Right buttons + hamburger -->
-<div class="nav-right">
-<a class="nav-call-btn" href="tel:0401857730" onclick="window.location.href='tel:0401857730';return false;">CALL NOW</a>
-<button class="nav-quote-btn" onclick="scrollToEl('quote')" type="button">REQUEST QUOTE</button>
-<button aria-controls="navDrawer" aria-expanded="false" aria-label="Open menu" class="nav-hamburger" id="navHamburger" onclick="toggleDrawer()" type="button">
-<span></span><span></span><span></span>
-</button>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <a class="logo-wrap" href="index.html" aria-label="Estate Co. home">
+          <img alt="Estate Co estate clearance services logo" class="nav-logo-img" src="logo.png"/>
+        </a>
+        <span class="nav-tagline">Not just a clean. A fresh start.</span>
+      </div>
+
+      <div class="nav-menu" aria-label="Main navigation">
+        <div class="nav-item"><a class="nav-link" href="index.html#services-heading">Services</a></div>
+        <div class="nav-item"><a class="nav-link" href="index.html#service-locations">Areas</a></div>
+        <div class="nav-item"><a class="nav-link" href="guides.html">Resources</a></div>
+        <div class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></div>
+        <div class="nav-item"><a class="nav-link" href="index.html#about">About</a></div>
+      </div>
+
+      <div class="nav-right">
+        <a class="nav-call-btn" href="tel:0401857730">CALL NOW</a>
+        <a class="nav-quote-btn" href="index.html#quote">REQUEST QUOTE</a>
+        <button aria-controls="navDrawer" aria-expanded="false" aria-label="Open menu" class="nav-hamburger" id="navHamburger" onclick="toggleDrawer()" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
 </nav>
 <!-- Mobile drawer -->
 <div class="nav-drawer" id="navDrawer">
-<div class="drawer-section">
-<div class="drawer-heading">Navigate</div>
-<a class="drawer-link" href="guides.html" onclick="closeDrawer()">
-<div><strong>Resources &amp; Guides</strong><span>Executor help</span></div>
-</a>
-<a class="drawer-link" href="#faq" onclick="closeDrawer();scrollToEl('faq')">
-<div><strong>FAQ</strong><span>Common questions</span></div>
-</a>
-<a class="drawer-link" href="#about" onclick="closeDrawer();scrollToEl('about')">
-<div><strong>About</strong><span>Our founder</span></div>
-</a>
-</div>
-<div class="drawer-actions">
-<a class="nav-call-btn" href="tel:0401857730" onclick="window.location.href='tel:0401857730';return false;" style="flex:1;justify-content:center">CALL NOW</a>
-</div>
+  <div class="drawer-section">
+    <div class="drawer-heading">Navigate</div>
+    <a class="drawer-link" href="index.html#services-heading" onclick="closeDrawer()">
+      <div><strong>Services</strong><span>Clearance, cleanouts and property preparation</span></div>
+    </a>
+    <a class="drawer-link" href="index.html#service-locations" onclick="closeDrawer()">
+      <div><strong>Areas</strong><span>Melbourne, regional and interstate support</span></div>
+    </a>
+    <a class="drawer-link" href="guides.html" onclick="closeDrawer()">
+      <div><strong>Resources &amp; Guides</strong><span>Executor and property clearance help</span></div>
+    </a>
+    <a class="drawer-link" href="index.html#faq" onclick="closeDrawer()">
+      <div><strong>FAQ</strong><span>Common questions</span></div>
+    </a>
+    <a class="drawer-link" href="index.html#about" onclick="closeDrawer()">
+      <div><strong>About</strong><span>Professional, polite and insured</span></div>
+    </a>
+  </div>
+  <div class="drawer-actions">
+    <a class="nav-call-btn" href="tel:0401857730" style="flex:1;justify-content:center">CALL NOW</a>
+    <a class="nav-quote-btn" href="index.html#quote" onclick="closeDrawer()" style="flex:1;justify-content:center">REQUEST QUOTE</a>
+  </div>
 </div>
 <section class="hero layout-hero">
 <div class="container layout-container">
@@ -3171,66 +3194,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 </div>
 </div></div></div></section>
-<div class="section-divider"></div><section class="steps-section" id="how-it-works">
-<div class="container">
-<div class="steps-head">
-<span class="section-tag">Process</span>
-<h2 class="section-title">How it works</h2>
-<p class="section-sub">A simple process from quote to completion.</p>
-</div>
-<div aria-label="Estate clearance process in three steps" class="steps-grid">
-<article class="step-card site-card" data-step="1">
-<div class="step-right">
-<h3>Send photos or details</h3>
-<p>Share details and photos of the property.</p>
-<span class="step-note">Quick start</span>
-</div>
-</article>
-<article class="step-card site-card" data-step="2">
-<div class="step-right">
-<h3>Get a clear quote</h3>
-<p>We confirm scope, timing and price upfront.</p>
-<span class="step-note">Clear quote</span>
-</div>
-</article>
-<article class="step-card site-card" data-step="3">
-<div class="step-right">
-<h3>We handle the property</h3>
-<p>We clear, clean and prepare the property.</p>
-<span class="step-note">Remote support available</span>
-</div>
-</article>
-</div>
-<div aria-label="Start your estate clearance quote" class="steps-cta">
-<a class="navy-btn" href="#quote">Start my quote</a>
-<a class="ghost-btn" href="tel:0401857730">Call 0401 857 730</a>
-</div>
-</div>
-</section>
-<section class="location-seo-section" id="locations">
-<div class="container">
-<span class="section-tag">Areas we service</span>
-<h2 class="section-title">Estate clearance across Melbourne, Sydney and Brisbane</h2>
-<p class="section-sub">We support families, executors, agents and property owners across major metro areas, including inner suburbs, established family neighbourhoods, retirement areas and outer growth corridors.</p>
-<div class="location-grid">
-<article class="location-card">
-<h3>Estate clearance Melbourne</h3>
-<p>Servicing inner Melbourne, Eastern Suburbs, South Eastern Suburbs, Bayside, Northern Suburbs and Western Suburbs.</p>
-<a href="estate-clearance-melbourne.html">View Melbourne service areas</a>
-</article>
-<article class="location-card">
-<h3>Estate clearance Sydney</h3>
-<p>Servicing Inner West, Eastern Suburbs, North Shore, Northern Beaches, Hills District, Western Sydney and Sutherland Shire.</p>
-<a href="estate-clearance-sydney.html">View Sydney service areas</a>
-</article>
-<article class="location-card">
-<h3>Estate clearance Brisbane</h3>
-<p>Servicing Brisbane Northside, Southside, Bayside, Western Suburbs, Logan, Ipswich and surrounding areas.</p>
-<a href="estate-clearance-brisbane.html">View Brisbane service areas</a>
-</article>
-</div>
-</div>
-</section>
+<div class="section-divider"></div>
 <!-- HOW IT WORKS -->
 <!-- SERVICES -->
 <style>
@@ -3575,119 +3539,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 </section>
 <!-- TESTIMONIALS -->
-<section class="testi-section">
-<div class="container">
-<div class="section-tag" style="color:#fff;font-size:22px">Client stories</div>
-<h2 class="section-title" style="color:#fff">What families say about us.</h2>
-<div class="testi-grid">
-<div class="testi-card"><div class="stars"><span class="star-pip"></span><span class="star-pip"></span><span class="star-pip"></span><span class="star-pip"></span><span class="star-pip"></span></div><blockquote>"I was in Singapore managing Mum's estate in Sydney. Photo updates every day, and the final report was exactly what the solicitor needed. Never had to fly back."</blockquote><div class="testi-author"><span class="testi-name">Sarah M.</span><span class="testi-loc">Executor — Estate in Mosman, Sydney NSW</span></div></div>
-<div class="testi-card"><div class="stars"><span class="star-pip"></span><span class="star-pip"></span><span class="star-pip"></span><span class="star-pip"></span><span class="star-pip"></span></div><blockquote>"Estate Co. sent someone within 48 hours, gave us a fixed quote, and handled everything with sensitivity."</blockquote><div class="testi-author"><span class="testi-name">James &amp; Linda T.</span><span class="testi-loc">Family — Estate in Camberwell, Melbourne VIC</span></div></div>
-<div class="testi-card"><div class="stars"><span class="star-pip"></span><span class="star-pip"></span><span class="star-pip"></span><span class="star-pip"></span><span class="star-pip"></span></div><blockquote>"Estate Co. is the only service I've found that provides professional-grade documentation, real status updates, and genuinely treats families with care."</blockquote><div class="testi-author"><span class="testi-name">Michael C., Principal Solicitor</span><span class="testi-loc">Chandler &amp; Associates Estate Law, Brisbane QLD</span></div></div>
-<div class="testi-card"><div class="stars"><span class="star-pip"></span><span class="star-pip"></span><span class="star-pip"></span><span class="star-pip"></span><span class="star-pip"></span></div><blockquote>"Managing from Perth while the property was in Burnside — Estate Co. handled everything, sold her antiques, and had the house market-ready within a week."</blockquote><div class="testi-author"><span class="testi-name">Natalie R.</span><span class="testi-loc">Family — Estate in Burnside, Adelaide SA</span></div></div>
-</div>
-</div>
-</section>
-<!-- FAQ -->
-<div class="section-divider"></div><section aria-labelledby="scenario-heading" class="seo-scenarios">
-<div class="container">
-<div class="seo-section-intro">
-<span class="section-tag">When we can help</span>
-<h2 class="section-title" id="scenario-heading">Situations where estate clearance is often needed</h2>
-<p class="section-sub">Estate clearance is often required during major life transitions. Estate Co. supports families, executors, agents and property owners with practical help clearing and preparing homes.</p>
-</div>
-<div class="scenario-grid">
-<div class="scenario-card">
-<h3>After a death in the family</h3>
-<p>Clearing a loved one's home can feel overwhelming. We help manage household contents so the property can be settled, sold or handed over.</p>
-</div>
-<div class="scenario-card">
-<h3>Preparing a home for sale</h3>
-<p>Removing unwanted furniture, rubbish and clutter helps buyers see the space clearly and can improve the presentation of the property.</p>
-</div>
-<div class="scenario-card">
-<h3>Downsizing or moving to aged care</h3>
-<p>When someone moves into a smaller home or care facility, we can help sort, clear and remove belongings from the original property.</p>
-</div>
-<div class="scenario-card">
-<h3>Hoarded or cluttered homes</h3>
-<p>Some properties accumulate large volumes of belongings over time. We handle cluttered or hoarded homes respectfully and without judgement.</p>
-</div>
-<div class="scenario-card">
-<h3>Rental or abandoned properties</h3>
-<p>Landlords and property managers often need fast cleanouts when tenants leave behind furniture, rubbish or unwanted items.</p>
-</div>
-<div class="scenario-card">
-<h3>Property handover or settlement</h3>
-<p>We help ensure the property is cleared and ready for settlement, sale, renovation, rental reset or handover.</p>
-</div>
-</div>
-</div>
-</section>
-<div class="section-divider"></div><section aria-labelledby="melbourne-authority-heading" class="melbourne-authority">
-<div class="container">
-<div class="seo-section-intro">
-<span class="section-tag">Melbourne estate clearance</span>
-<h2 class="section-title" id="melbourne-authority-heading">Estate clearance support across Melbourne</h2>
-<p class="section-sub">For Melbourne families, executors and agents, Estate Co. supports deceased estate cleanouts, downsizing clearances, hoarded property cleanups and pre-sale property preparation across established inner, eastern, bayside, northern, western and peninsula suburbs.</p>
-</div>
-<div class="melbourne-seo-layout">
-<div class="melbourne-copy-card">
-<h3>Why this matters for Melbourne properties</h3>
-<p>Many Melbourne estate clearances involve older family homes, long-held contents, garages, sheds, gardens and properties that need to be prepared quickly for valuation, photography, sale campaign or settlement. We help coordinate the practical work so the next step is easier.</p>
-<a class="navy-btn" href="/estate-clearance-melbourne.html">View Melbourne estate clearance page</a>
-</div>
-<div class="melbourne-suburb-card">
-<h3>Key Melbourne areas we support</h3>
-<div class="suburb-pill-grid">
-<span>Glen Waverley</span>
-<span>Mount Waverley</span>
-<span>Doncaster</span>
-<span>Box Hill</span>
-<span>Camberwell</span>
-<span>Hawthorn</span>
-<span>Kew</span>
-<span>Brighton</span>
-<span>Essendon</span>
-<span>Moonee Ponds</span>
-<span>Preston</span>
-<span>Reservoir</span>
-<span>Williamstown</span>
-<span>Point Cook</span>
-<span>Frankston</span>
-<span>Mornington</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div class="section-divider"></div>
-<section aria-labelledby="local-seo-heading" class="local-seo-authority">
-<div class="container">
-<div class="local-seo-intro">
-<span class="section-tag">Service locations</span>
-<h2 class="section-title" id="local-seo-heading">Estate clearance across Melbourne, Sydney and Brisbane</h2>
-<p class="section-sub">Estate Co. provides respectful estate clearance, deceased estate cleanouts, house clearances and property preparation services across major Australian cities and surrounding suburbs.</p>
-</div>
-<div class="local-link-grid">
-<a class="local-link-card" href="/estate-clearance-melbourne.html">
-<h3>Melbourne estate clearance</h3>
-<p>Deceased estate cleanouts, house clearances and property preparation across Melbourne suburbs including Glen Waverley, Doncaster, Camberwell, Brighton and Essendon.</p>
-</a>
-<a class="local-link-card" href="/estate-clearance-sydney.html">
-<h3>Sydney estate clearance</h3>
-<p>Estate cleanouts, apartment clearances and pre-sale property preparation across Sydney and surrounding suburbs.</p>
-</a>
-<a class="local-link-card" href="/estate-clearance-brisbane.html">
-<h3>Brisbane estate clearance</h3>
-<p>House clearances, downsizing cleanouts and estate property preparation across Brisbane and nearby areas.</p>
-</a>
-</div>
-<div class="suburb-seo-copy">
-<h3>Melbourne suburbs we support</h3>
-<p>Estate Co. supports estate clearance services across Melbourne including Glen Waverley, Mount Waverley, Doncaster, Box Hill, Camberwell, Hawthorn, Kew, Brighton, Essendon, Moonee Ponds, Preston, Reservoir, Brunswick, Coburg, Ringwood, Blackburn, Frankston, Mornington and surrounding suburbs.</p>
-</div>
-</div>
-</section>
+
 <section class="faq-section" id="faq">
 <div class="container">
 <div class="faq-head">
@@ -3876,39 +3728,86 @@ footer,.testi-section{background:#163653 !important}
 </div>
 </section>
 <!-- FOOTER -->
-<footer>
-<div class="container">
-<div class="footer-top">
-<div class="footer-brand">
-<p class="tagline">Australian family business. Deceased estate clearance, handled completely.</p>
-<a class="footer-phone" href="tel:0401857730" onclick="window.location.href='tel:0401857730';return false;">0401 857 730</a>
-<a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a>
-</div>
-<div class="footer-legal-col">
-<p class="footer-legal-short" style="margin-top:0">Estate Co. Pty Ltd · ABN <a href="https://abr.business.gov.au/ABN/View?abn=34618204290" rel="noopener" target="_blank">34 618 204 290</a></p>
-<p class="footer-legal-short">$20M public liability · Workers compensation · Privacy Act 1988 compliant.</p>
-</div>
-</div>
 
-<div class="footer-suburbs">
-<h4>Melbourne areas we service</h4>
-<p>Estate Co. provides estate clearance services across Melbourne including <a href="/estate-clearance-melbourne.html">Melbourne estate clearance</a>, Glen Waverley, Doncaster, Camberwell, Hawthorn, Kew, Brighton, Essendon, Moonee Ponds, Preston, Reservoir, Brunswick, Coburg, Northcote, Ringwood, Blackburn, Box Hill, Mount Waverley, Burwood, Chadstone, Cheltenham, Frankston, Mornington and surrounding suburbs.</p>
-</div>
-<div class="footer-bottom">
-<p>© 2025 Estate Co. Pty Ltd · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-<p>Estate Co. acknowledges Australia's Traditional Custodians.</p>
-</div>
-</div>
+<section class="service-locations-section" id="service-locations">
+  <span id="locations" style="position:relative;top:-90px;display:block;height:0;overflow:hidden;"></span>
+  <div class="container">
+    <span class="section-tag">Service Locations</span>
+    <h2 class="section-title">Estate clearance across Melbourne and beyond</h2>
+    <p class="section-sub">
+      We support families, executors, agents and property managers across Melbourne, regional Victoria and major Australian cities.
+    </p>
+
+    <div class="location-card-grid">
+      <div class="location-card">
+        <h3>Melbourne Metro</h3>
+        <p>Eastern, northern, western, bayside, inner and peninsula suburbs.</p>
+      </div>
+      <div class="location-card">
+        <h3>Regional Victoria</h3>
+        <p>Selected regional areas by arrangement, depending on property size and timing.</p>
+      </div>
+      <div class="location-card">
+        <h3>Interstate Support</h3>
+        <p>Sydney, Brisbane, Adelaide and Perth enquiries can be coordinated through our network.</p>
+      </div>
+    </div>
+
+    <details class="seo-location-details">
+      <summary>Melbourne areas we support</summary>
+      <p>
+        Estate Co. supports estate clearance, deceased estate cleanouts, downsizing clearances,
+        hoarded property cleanups and pre-sale property preparation across Melbourne suburbs including
+        Glen Waverley, Mount Waverley, Doncaster, Box Hill, Camberwell, Hawthorn, Kew, Brighton,
+        Essendon, Moonee Ponds, Preston, Reservoir, Williamstown, Point Cook, Frankston and Mornington.
+      </p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-logo-wrap logo-wrap" href="index.html" aria-label="Estate Co. home">
+          <img alt="Estate Co." class="footer-logo-img" src="logo.png"/>
+        </a>
+        <p class="tagline">Professional, respectful estate clearance and property cleanout support.</p>
+        <a class="footer-phone" href="tel:0401857730">0401 857 730</a>
+        <a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a>
+      </div>
+
+      <div class="footer-legal-col">
+        <p class="footer-legal-short" style="margin-top:0">Estate Co. Pty Ltd · ABN <a href="https://abr.business.gov.au/ABN/View?abn=34618204290" rel="noopener" target="_blank">34 618 204 290</a></p>
+        <p class="footer-legal-short">Public liability insured · Workers compensation · Privacy Act 1988 compliant.</p>
+      </div>
+    </div>
+
+    <div class="footer-suburbs footer-service-links">
+      <h4>Service areas</h4>
+      <p>
+        <a href="estate-clearance-melbourne.html">Melbourne</a> ·
+        <a href="estate-clearance-sydney.html">Sydney</a> ·
+        <a href="estate-clearance-brisbane.html">Brisbane</a> ·
+        <a href="guides.html">Guides</a>
+      </p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Estate Co. Pty Ltd · <a href="index.html#quote">Request a quote</a></p>
+      <p>Estate Co. acknowledges Australia's Traditional Custodians.</p>
+    </div>
+  </div>
 </footer>
 <!-- MOBILE BAR -->
 <div class="mob-bar">
-<div class="mob-bar-inner">
-<a class="mob-logo logo-wrap" href="index.html"><img alt="Estate Co." class="mob-logo-img" src="logo.png"/></a>
-<div class="mob-actions">
-<a class="mb-action mb-call" href="tel:0401857730">📞 0401 857 730</a>
-<a class="mb-action mb-quote" href="tel:0401857730">CALL NOW</a>
-</div>
-</div>
+  <div class="mob-bar-inner">
+    <a class="mob-logo logo-wrap" href="index.html" aria-label="Estate Co. home"><img alt="Estate Co." class="mob-logo-img" src="logo.png"/></a>
+    <div class="mob-actions">
+      <a class="mb-action mb-call" href="tel:0401857730">📞 0401 857 730</a>
+      <a class="mb-action mb-quote" href="index.html#quote">Get Quote</a>
+    </div>
+  </div>
 </div>
 <script>
 // NAV
@@ -4417,5 +4316,41 @@ footer,.testi-section{background:#163653 !important}
 @media(max-width:480px){body{background:#F3F7FA}.services-section,.faq-section,.reviews-section,.quote-section{background:#F3F7FA !important}.svc-card,.step-card,.review-card,.faq-item,.quote-card{box-shadow:0 5px 18px rgba(26,60,94,0.10) !important}.section-sub,.hero-sub,.svc-card p,.step-card p,.faq-a p{color:#405B70 !important}}
 
 </style>
+
+<!-- SEO Content (collapsed for users but indexable) -->
+
+
+<script id="estateco-shared-nav-script">
+(function(){
+  const nav=document.getElementById('nav');
+  const drawer=document.getElementById('navDrawer');
+  const burger=document.getElementById('navHamburger');
+  window.toggleDrawer=function(){
+    const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger');
+    if(!d||!b)return;
+    const open=!d.classList.contains('open');
+    d.classList.toggle('open',open);
+    b.classList.toggle('open',open);
+    b.setAttribute('aria-expanded',open?'true':'false');
+    document.body.classList.toggle('menu-open',open);
+    document.body.style.overflow=open?'hidden':'';
+  };
+  window.closeDrawer=function(){
+    const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger');
+    if(d)d.classList.remove('open');
+    if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');}
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow='';
+  };
+  if(nav){window.addEventListener('scroll',function(){nav.classList.toggle('raised',window.scrollY>10);},{passive:true});}
+  document.addEventListener('click',function(e){
+    const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger');
+    if(!d||!b||!d.classList.contains('open'))return;
+    if(!d.contains(e.target)&&!b.contains(e.target))window.closeDrawer();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeDrawer();});
+})();
+</script>
+
 </body>
 </html>
