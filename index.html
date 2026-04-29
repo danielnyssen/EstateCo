@@ -4144,7 +4144,7 @@ async function submitQ(){
   if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Submitting enquiry…';}
 
   const uploadedFiles=[...files];
-  const SHEET_URL='https://script.google.com/macros/s/AKfycbzjTra6asOwm1QuzGtrSnYzHp8VVDNnBluN39i5lFCalmA26Lmc5xjbKOKswrkLIBcc/exec';
+  const SHEET_URL='https://script.google.com/macros/s/AKfycby7vphB2CDw73b5GIrV1zGiva7hFcKvfuvizJgl44e3KEbsgA5AIM6mY_9YcngMC0UFbQ/exec';
 
   const leadPayload={
     action:'lead',
@@ -4181,21 +4181,23 @@ async function submitQ(){
     },80);
   }
 
-  function postPayload(payload){
-    let ifr=document.getElementById('sheetFrame');
-    if(!ifr){
-      ifr=document.createElement('iframe');
-      ifr.id='sheetFrame';
-      ifr.name='sheetFrame';
-      ifr.style.display='none';
-      document.body.appendChild(ifr);
-    }
+  function postPayload(payload, holdMs){
+    // Use a fresh hidden iframe per submission. Reusing the same iframe can cancel
+    // earlier Apps Script POSTs, which can make only one uploaded file arrive.
+    const frameName='sheetFrame_'+Date.now()+'_'+Math.floor(Math.random()*100000);
+    const ifr=document.createElement('iframe');
+    ifr.name=frameName;
+    ifr.id=frameName;
+    ifr.style.display='none';
+    document.body.appendChild(ifr);
+
     const frm=document.createElement('form');
     frm.method='POST';
     frm.action=SHEET_URL;
-    frm.target='sheetFrame';
+    frm.target=frameName;
     frm.enctype='application/x-www-form-urlencoded';
     frm.style.display='none';
+
     const inp=document.createElement('input');
     inp.type='hidden';
     inp.name='payload';
@@ -4203,7 +4205,14 @@ async function submitQ(){
     frm.appendChild(inp);
     document.body.appendChild(frm);
     frm.submit();
-    setTimeout(()=>{try{document.body.removeChild(frm);}catch(e){}},500);
+
+    const wait=holdMs||9000;
+    setTimeout(()=>{
+      try{document.body.removeChild(frm);}catch(e){}
+      try{document.body.removeChild(ifr);}catch(e){}
+    },wait);
+
+    return new Promise(resolve=>setTimeout(resolve,wait));
   }
 
 
@@ -4250,7 +4259,7 @@ async function submitQ(){
           if(submitBtn){submitBtn.textContent='Uploading file '+(i+1)+' of '+uploadedFiles.length+(attempt>1?' — retry '+attempt:'')+'…';}
           ecUpdateLeadBackup(ref,{status:'Uploading file '+(i+1)+' of '+uploadedFiles.length,uploadedCount:uploadedCount});
           const base64=await fileToBase64(file);
-          postPayload({
+          await postPayload({
             action:'file',
             reference:ref,
             name:n,
@@ -4270,11 +4279,10 @@ async function submitQ(){
               size:file.size,
               data:base64
             }
-          });
+          },11000);
           uploadedCount++;
           sent=true;
           ecUpdateLeadBackup(ref,{status:'File '+(i+1)+' sent to Drive upload queue',uploadedCount:uploadedCount});
-          await new Promise(resolve=>setTimeout(resolve,2400));
         }catch(err){
           console.warn('File upload failed:',file.name,err);
           ecUpdateLeadBackup(ref,{status:'File upload retry needed',lastError:String(err)});
@@ -4293,10 +4301,11 @@ async function submitQ(){
     if(ctEl)ctEl.textContent="We'll be in touch shortly";
   }
 
-  postPayload(leadPayload);
+  await postPayload(leadPayload,2500);
   ecUpdateLeadBackup(ref,{status:'Lead sent to Apps Script'});
-  setTimeout(()=>{ecUpdateLeadBackup(ref,{status:'Lead submitted. Uploading files if selected.'});showSuccess();},900);
-  setTimeout(()=>{uploadFilesOneByOne();},1400);
+  ecUpdateLeadBackup(ref,{status:'Lead submitted. Uploading files if selected.'});
+  showSuccess();
+  setTimeout(()=>{uploadFilesOneByOne();},500);
 }
 
 // SERVICE TABS
