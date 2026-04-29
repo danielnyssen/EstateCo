@@ -1,314 +1,422 @@
 <!DOCTYPE html>
-
 <html lang="en-AU">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<meta content="#1A3C5E" name="theme-color"/>
-<title>Estate clearance guides | Estate Co.</title>
-<meta content="Helpful estate clearance guides for Australian families, executors and property owners." name="description"/>
-<meta content="estate clearance guides, executor estate checklist, deceased estate cleanout" name="keywords"/>
-<meta content="index, follow, max-snippet:-1, max-image-preview:large" name="robots"/>
-<link href="https://estateco.com.au/guides.html" rel="canonical"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1A3C5E">
+<title>Estate Clearance Resources | Estate Co.</title>
+<meta name="description" content="Helpful estate clearance resources for Australian families, executors and property owners. Practical guides for cleanouts, downsizing, hoarded homes, remote clearances and preparing a property for sale.">
+<meta name="keywords" content="estate clearance resources, deceased estate cleanout guide, executor estate checklist, house clearance Melbourne, property cleanout resources">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://estateco.com.au/guides.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#1A3C5E;
+  --navy:#163653;
   --navy-mid:#1F4D78;
   --blue:#2D7FA6;
-  --blue-pale:#E7F2F7;
-  --offwhite:#F6FAFD;
+  --blue-soft:#E7F2F7;
+  --blue-soft-2:#F2F8FC;
+  --cream:#FBFCFD;
   --warm:#425F73;
   --charcoal:#24384A;
   --border:rgba(26,60,94,.12);
+  --shadow:0 18px 45px rgba(26,60,94,.10);
+  --shadow-soft:0 8px 26px rgba(26,60,94,.08);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',Arial,sans-serif;background:#fff;color:var(--charcoal);line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-.container{max-width:1120px;margin:0 auto;padding:0 28px}
-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-.nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.container{max-width:1180px;margin:0 auto;padding:0 32px}
+
+/* Header */
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-inner{height:66px;display:flex;align-items:center;justify-content:space-between;gap:18px}
 .logo-wrap{text-decoration:none;display:flex;flex-direction:column;line-height:1}
 .logo{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.8px}
 .logo span{color:var(--blue)}
 .nav-tagline{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--warm);font-weight:700;margin-top:3px}
 .nav-menu{display:flex;align-items:center;gap:4px}
 .nav-link{font-size:13px;font-weight:700;text-decoration:none;color:var(--navy);padding:9px 13px;border-radius:9px;transition:.18s}
-.nav-link:hover{background:var(--blue-pale);color:var(--blue)}
+.nav-link:hover,.nav-link.active{background:var(--blue-soft);color:var(--blue)}
 .nav-actions{display:flex;align-items:center;gap:8px}
 .call-btn,.quote-btn{font-size:12px;font-weight:800;text-decoration:none;border-radius:9px;padding:9px 14px;letter-spacing:.7px;white-space:nowrap}
 .call-btn{border:2px solid var(--navy);color:var(--navy);background:#fff}
 .quote-btn{border:2px solid var(--navy);background:var(--navy);color:#fff}
-.nav-hamburger{display:none;background:#f0f5f8;border:none;border-radius:10px;width:38px;height:38px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer}
-.nav-hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.2s}
-.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.nav-hamburger.open span:nth-child(2){opacity:0}
-.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.nav-drawer{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#fff;z-index:49;padding:18px 22px 90px;overflow:auto;border-top:1px solid var(--border)}
-.nav-drawer.open{display:block}
-.drawer-heading{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--warm);margin:14px 0 8px}
-.drawer-link{display:block;text-decoration:none;padding:14px 15px;border-radius:14px;background:#f7fbfe;margin-bottom:8px;border:1px solid var(--border)}
-.drawer-link strong{display:block;color:var(--navy);font-size:15px}
-.drawer-link span{display:block;color:var(--warm);font-size:12px;margin-top:2px}
-.hero{background:linear-gradient(150deg,#fff 0%,#f6fafd 56%,#eaf4fa 100%);border-bottom:1px solid var(--border)}
-.hero-inner{padding:58px 0 46px;display:grid;grid-template-columns:1fr 320px;gap:46px;align-items:center}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#fff 0%,#f6fafd 52%,#eaf4fa 100%);border-bottom:1px solid var(--border)}
+.hero::before{content:"";position:absolute;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;background:rgba(45,127,166,.10)}
+.hero::after{content:"";position:absolute;left:-180px;bottom:-220px;width:420px;height:420px;border-radius:50%;background:rgba(26,60,94,.06)}
+.hero-inner{position:relative;z-index:1;padding:68px 0 54px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:52px;align-items:center}
 .breadcrumb{font-size:12px;color:var(--warm);margin-bottom:18px}
-.breadcrumb a{text-decoration:none;color:var(--blue);font-weight:700}
-.eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
-h1{font-size:clamp(34px,5vw,58px);line-height:1.05;color:var(--navy);letter-spacing:-1.4px;margin-bottom:16px}
-.hero p{font-size:18px;color:var(--warm);max-width:680px}
-.trust-panel{background:#fff;border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:0 12px 35px rgba(26,60,94,.08)}
-.trust-panel h3{font-size:16px;color:var(--navy);margin-bottom:10px}
-.trust-list{display:grid;gap:9px}
-.trust-list div{font-size:13px;color:var(--warm)}
-.trust-list div::before{content:"✓";color:var(--blue);font-weight:900;margin-right:8px}
-.article-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:42px;padding:54px 0}
-.article-card{background:#fff}
-.article-card h2{font-size:28px;line-height:1.18;color:var(--navy);margin:32px 0 10px}
-.article-card h2:first-child{margin-top:0}
-.article-card h3{font-size:20px;color:var(--navy);margin:22px 0 8px}
-.article-card p{font-size:16px;color:var(--warm);margin-bottom:16px}
-.article-card ul{margin:10px 0 20px 20px;color:var(--warm)}
-.article-card li{margin:7px 0}
-.checklist{background:#f7fbfe;border:1px solid var(--border);border-radius:16px;padding:22px;margin:24px 0}
-.checklist li{list-style:none;margin-left:0}
-.checklist li::before{content:"✓";font-weight:900;color:var(--blue);margin-right:8px}
-.side-card{position:sticky;top:90px;background:#f7fbfe;border:1px solid var(--border);border-radius:18px;padding:22px;height:max-content}
-.side-card h3{color:var(--navy);font-size:18px;margin-bottom:8px}
-.side-card p{color:var(--warm);font-size:14px;margin-bottom:14px}
-.button{display:inline-flex;align-items:center;justify-content:center;background:var(--navy);color:#fff;text-decoration:none;border-radius:10px;padding:12px 18px;font-weight:800;font-size:14px}
-.link-list{display:grid;gap:10px;margin-top:18px}
-.link-list a{text-decoration:none;color:var(--navy);font-size:14px;font-weight:700;background:#fff;border:1px solid var(--border);padding:11px;border-radius:10px}
-.guides-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
-.guide-card{display:block;text-decoration:none;background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px;transition:.2s}
-.guide-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(26,60,94,.10);border-color:rgba(45,127,166,.35)}
-.guide-card h3{font-size:18px;color:var(--navy);margin-bottom:7px}
-.guide-card p{font-size:14px;color:var(--warm)}
-.start-card{background:var(--navy);color:#fff;border-radius:20px;padding:30px;margin:10px 0 38px;display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center}
-.start-card h2{color:#fff;margin:0 0 8px;font-size:30px}
-.start-card p{color:rgba(255,255,255,.75);margin:0}
-.start-card .button{background:#fff;color:var(--navy)}
-footer{background:var(--navy);color:#fff;margin-top:50px}
-.footer-inner{padding:42px 0;display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:28px}
-.footer-logo{font-size:28px;font-weight:800;letter-spacing:-.7px;margin-bottom:8px}
-.footer-logo span{color:#9bd3e8}
-footer p,footer a{color:rgba(255,255,255,.72);font-size:14px;text-decoration:none}
-footer h4{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:12px;color:#fff}
-.footer-links{display:grid;gap:8px}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding:16px 0;color:rgba(255,255,255,.55);font-size:12px}
-@media(max-width:860px){
-  .nav-menu,.nav-actions{display:none}
-  .nav-hamburger{display:flex}
-  .hero-inner,.article-wrap{grid-template-columns:1fr}
-  .trust-panel{display:none}
-  .guides-grid{grid-template-columns:1fr}
-  .start-card{grid-template-columns:1fr}
-  .footer-inner{grid-template-columns:1fr}
+.breadcrumb a{text-decoration:none;color:var(--blue);font-weight:800}
+.eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+h1{font-size:clamp(38px,5vw,62px);line-height:1.04;color:var(--navy);letter-spacing:-1.6px;margin-bottom:16px}
+.hero p{font-size:18px;color:var(--warm);max-width:720px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.primary-action,.secondary-action{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:12px;padding:13px 18px;font-weight:800;font-size:13px;letter-spacing:.6px}
+.primary-action{background:var(--navy);color:#fff}
+.secondary-action{background:#fff;color:var(--navy);border:1.5px solid rgba(26,60,94,.22)}
+.trust-panel{background:#fff;border:1px solid var(--border);border-radius:22px;padding:26px;box-shadow:var(--shadow)}
+.trust-panel h3{font-size:17px;color:var(--navy);margin-bottom:12px}
+.trust-list{display:grid;gap:10px}
+.trust-list div{font-size:13px;color:var(--warm);display:flex;gap:9px;align-items:flex-start}
+.trust-list div::before{content:"✓";color:var(--blue);font-weight:900}
+.trust-mini{margin-top:18px;padding-top:16px;border-top:1px solid var(--border);font-size:12px;color:var(--warm)}
+
+/* Intro */
+.intro-strip{background:#fff;padding:34px 0;border-bottom:1px solid var(--border)}
+.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.intro-card{background:var(--blue-soft-2);border:1px solid var(--border);border-radius:16px;padding:18px}
+.intro-card strong{display:block;color:var(--navy);font-size:15px;margin-bottom:4px}
+.intro-card p{font-size:13px;color:var(--warm)}
+
+/* Main hub */
+.resources-section{padding:56px 0;background:#fff}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}
+.section-tag{display:block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.section-title{font-size:clamp(28px,3.6vw,44px);line-height:1.08;color:var(--navy);letter-spacing:-.9px}
+.section-sub{font-size:16px;color:var(--warm);max-width:620px;margin-top:8px}
+.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.resource-card{position:relative;background:#fff;border:1px solid var(--border);border-radius:22px;padding:24px;box-shadow:var(--shadow-soft);text-decoration:none;transition:.22s;overflow:hidden;min-height:310px;display:flex;flex-direction:column}
+.resource-card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,var(--blue),#A8D8EA)}
+.resource-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(45,127,166,.28)}
+
+.resource-card h2{font-size:22px;line-height:1.18;color:var(--navy);letter-spacing:-.4px;margin-bottom:10px}
+.resource-card p{font-size:14px;color:var(--warm);margin-bottom:14px}
+.card-list{margin:0 0 18px 18px;color:var(--warm);font-size:13px}
+.card-list li{margin:5px 0}
+.card-footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid var(--border)}
+.read-time{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+.read-link{font-size:13px;font-weight:800;color:var(--navy)}
+
+/* Feature panels */
+.feature-section{padding:20px 0 58px;background:#fff}
+.feature-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
+.feature-panel{background:linear-gradient(150deg,var(--navy),#1F4D78);border-radius:24px;padding:30px;color:#fff;box-shadow:var(--shadow)}
+.feature-panel h2{font-size:30px;line-height:1.12;margin-bottom:12px}
+.feature-panel p{color:rgba(255,255,255,.78);font-size:15px;margin-bottom:18px}
+.feature-panel ul{margin-left:18px;color:rgba(255,255,255,.78)}
+.feature-panel li{margin:7px 0}
+.quick-panel{background:var(--blue-soft-2);border:1px solid var(--border);border-radius:24px;padding:28px}
+.quick-panel h3{font-size:22px;color:var(--navy);margin-bottom:12px}
+.quick-panel ol{margin-left:20px;color:var(--warm);font-size:15px}
+.quick-panel li{margin:9px 0}
+.quick-panel a{display:inline-flex;margin-top:18px;background:var(--navy);color:#fff;text-decoration:none;font-weight:800;border-radius:11px;padding:12px 16px;font-size:13px}
+
+/* CTA */
+.cta-section{padding:54px 0;background:linear-gradient(150deg,#f6fafd 0%,#eaf4fa 100%);border-top:1px solid var(--border)}
+.cta-card{background:#fff;border:1px solid var(--border);border-radius:24px;padding:32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;box-shadow:var(--shadow-soft)}
+.cta-card h2{font-size:30px;color:var(--navy);line-height:1.12;margin-bottom:8px}
+.cta-card p{color:var(--warm)}
+.cta-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* Footer */
+footer{background:var(--navy);color:#fff;padding:34px 0 0}
+.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand-name{display:inline-block;color:#fff;text-decoration:none;font-size:26px;font-weight:800;letter-spacing:-.6px;margin-bottom:8px}
+.footer-brand .tagline{font-size:13px;color:rgba(255,255,255,.62);max-width:380px}
+.footer-phone,.footer-email{display:block;text-decoration:none;color:rgba(255,255,255,.82);font-size:13px;margin-top:5px}
+.footer-links{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.footer-links a{color:rgba(255,255,255,.72);font-size:13px;text-decoration:none}
+.footer-bottom{padding:14px 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,.45)}
+
+@media(max-width:920px){
+  .hero-inner{grid-template-columns:1fr;gap:26px;padding:48px 0 38px}
+  .resource-grid{grid-template-columns:1fr 1fr}
+  .intro-grid,.feature-grid,.cta-card{grid-template-columns:1fr}
+  .footer-links{justify-content:flex-start}
+}
+@media(max-width:640px){
   .container{padding:0 18px}
-  h1{font-size:34px}
-  .hero-inner{padding:40px 0 32px}
-  .article-wrap{padding:34px 0}
-  .side-card{position:static}
+  .nav-inner{height:58px}
+  .nav-menu{display:none}
+  .call-btn{display:none}
+  .quote-btn{padding:8px 11px;font-size:11px}
+  .logo{font-size:22px}
+  .nav-tagline{font-size:9px}
+  .hero-inner{padding:34px 0 30px}
+  h1{font-size:36px}
+  .hero p{font-size:15px}
+  .trust-panel{padding:20px;border-radius:18px}
+  .intro-grid,.resource-grid{grid-template-columns:1fr}
+  .section-head{display:block}
+  .resource-card{min-height:auto}
+  .cta-card{padding:24px}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{display:block}
 }
 
-/* === Estate Co. shared header + footer === */
-:root{--navy:#1A3C5E;--navy-mid:#1F4D78;--gold:#2D7FA6;--gold-pale:#E7F2F7;--warm:#425F73;--charcoal:#24384A;--border:rgba(26,60,94,.12);--border-med:rgba(26,60,94,.18)}
-.site-nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);transition:box-shadow .2s ease}
-.site-nav.raised{box-shadow:0 6px 24px rgba(26,60,94,.10)}
-.site-nav .container,.site-footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
-.nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nav-brand{display:flex;align-items:center;flex-shrink:0}.logo-wrap{display:flex;flex-direction:column;gap:2px;text-decoration:none;line-height:1}.logo{font-family:'DM Sans',Arial,sans-serif;font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.7px}.logo span{color:#5FA8D3}.nav-tagline{font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#6b7c8c;white-space:nowrap;text-align:left}
-.nav-menu{display:flex;align-items:center;gap:2px;flex:1;justify-content:center}.nav-item{position:relative}.nav-link{display:flex;align-items:center;padding:8px 15px;border-radius:9px;font-size:13px;font-weight:700;color:var(--navy);text-decoration:none;transition:.18s;white-space:nowrap}.nav-link:hover{color:var(--gold);background:rgba(45,127,166,.08)}
-.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}.nav-call-btn,.nav-quote-btn{font-family:'DM Sans',Arial,sans-serif;font-size:12px;font-weight:800;text-decoration:none;border-radius:10px;padding:10px 14px;letter-spacing:.5px;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;line-height:1}.nav-call-btn{border:2px solid var(--navy);color:var(--navy);background:#fff}.nav-quote-btn{border:2px solid var(--navy);background:var(--navy);color:#fff}.nav-call-btn:hover{background:var(--gold-pale)}.nav-quote-btn:hover{background:var(--navy-mid);border-color:var(--navy-mid)}
-.nav-hamburger{display:none;background:#f0f5f8;border:none;border-radius:10px;width:40px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer}.nav-hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.2s}.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.nav-hamburger.open span:nth-child(2){opacity:0}.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.nav-drawer{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;z-index:999;background:rgba(255,255,255,.98);padding:20px 22px 28px;overflow:auto;border-top:1px solid var(--border)}.nav-drawer.open{display:block}.drawer-heading{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin:4px 0 12px}.drawer-link{display:block;text-decoration:none;padding:16px 4px;border-bottom:1px solid var(--border);color:var(--navy)}.drawer-link strong{display:block;font-size:17px;margin-bottom:3px}.drawer-link span{display:block;font-size:13px;color:var(--warm);line-height:1.35}.drawer-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.drawer-actions .nav-call-btn,.drawer-actions .nav-quote-btn{width:100%;padding:13px 10px}
-.site-footer{background:#163653;color:#fff;margin-top:60px;padding:34px 0 0}.site-footer a{color:inherit}.footer-top{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.10)}.footer-brand-name{display:inline-block;color:#fff;text-decoration:none;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1;margin-bottom:8px}.footer-brand-name span{color:#5FA8D3}.footer-brand .tagline{font-size:13px;color:rgba(255,255,255,.72);line-height:1.55;margin:0 0 12px;max-width:430px}.footer-phone{display:block;font-size:15px;font-weight:800;color:#fff;text-decoration:none;margin-bottom:4px}.footer-email{display:block;font-size:13px;color:rgba(255,255,255,.72);text-decoration:none}.footer-legal-col{display:flex;flex-direction:column;justify-content:center;gap:6px}.footer-legal-short{font-size:13px;color:rgba(255,255,255,.72);line-height:1.5;margin:0}.footer-service-links{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.10)}.footer-service-links h4{font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.92);margin:0 0 8px}.footer-service-links p{margin:0;color:rgba(255,255,255,.7);font-size:14px}.footer-service-links a{text-decoration:none;color:rgba(255,255,255,.78)}.footer-service-links a:hover{color:#fff}.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 0;color:rgba(255,255,255,.62);font-size:12px}.footer-bottom p{margin:0;color:rgba(255,255,255,.62)}.footer-bottom a{text-decoration:none;color:rgba(255,255,255,.82)}
-@media(max-width:980px){.site-nav .container,.site-footer .container{padding:0 24px}.nav-menu{display:none}.nav-hamburger{display:flex}.nav-inner{height:62px}.nav-drawer{top:62px}.nav-call-btn{display:inline-flex}.nav-quote-btn{display:none}.drawer-actions .nav-quote-btn{display:inline-flex}.logo{font-size:24px}.nav-tagline{font-size:10px}}
-@media(max-width:640px){.site-nav .container,.site-footer .container{padding:0 18px}.nav-inner{height:58px}.nav-drawer{top:58px}.nav-call-btn{font-size:11px;padding:9px 10px}.nav-right{gap:6px}.logo{font-size:22px}.nav-tagline{font-size:9px;letter-spacing:1.4px}.footer-top{grid-template-columns:1fr;gap:18px}.footer-bottom{display:block}.footer-bottom p+p{margin-top:8px}.drawer-actions{grid-template-columns:1fr}.site-footer{margin-top:42px}}
+/* Standard EstateCo text-logo header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,60,94,.12)}
+.site-header .container{max-width:1180px;margin:0 auto;padding:0 28px}
+.site-header-inner{height:66px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.site-logo-text{text-decoration:none;display:flex;flex-direction:column;line-height:1;flex-shrink:0}
+.site-logo-main{font-family:'DM Sans',Arial,sans-serif;font-size:26px;font-weight:800;color:#163653;letter-spacing:-.8px}
+.site-logo-main span{color:#2D7FA6}
+.site-logo-sub{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#425F73;font-weight:700;margin-top:3px}
+.site-nav-menu{display:flex;align-items:center;gap:4px}
+.site-nav-menu a{font-family:'DM Sans',Arial,sans-serif;font-size:13px;font-weight:700;text-decoration:none;color:#163653;padding:9px 13px;border-radius:9px;transition:.18s}
+.site-nav-menu a:hover,.site-nav-menu a.active{background:#E7F2F7;color:#2D7FA6}
+.site-nav-actions{display:flex;align-items:center;gap:8px}
+.site-call-btn,.site-quote-btn{font-family:'DM Sans',Arial,sans-serif;font-size:12px;font-weight:800;text-decoration:none;border-radius:9px;padding:9px 14px;letter-spacing:.7px;white-space:nowrap}
+.site-call-btn{border:2px solid #163653;color:#163653;background:#fff}
+.site-quote-btn{border:2px solid #163653;background:#163653;color:#fff}
+.site-call-btn:hover{background:#163653;color:#fff}
+.site-quote-btn:hover{background:#2D7FA6;border-color:#2D7FA6;color:#fff}
+@media(max-width:760px){
+  .site-header .container{padding:0 16px}
+  .site-header-inner{height:58px}
+  .site-nav-menu{display:none}
+  .site-call-btn{display:none}
+  .site-logo-main{font-size:22px}
+  .site-logo-sub{font-size:9px}
+  .site-quote-btn{padding:8px 11px;font-size:11px}
+}
+
+
+/* Consistent EstateCo footer */
+footer{background:#163653;color:#fff;margin-top:60px;padding:32px 0 0}
+footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
+.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand-name{display:inline-block;color:#fff;text-decoration:none;font-size:26px;font-weight:800;letter-spacing:-0.5px;line-height:1;margin-bottom:8px}
+.footer-brand .tagline{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.55;margin-bottom:12px;max-width:360px}
+.footer-phone{display:block;font-size:14px;font-weight:700;color:rgba(255,255,255,0.92);text-decoration:none;margin-bottom:4px}
+.footer-email{display:block;font-size:12px;color:rgba(255,255,255,0.72);text-decoration:none}
+.footer-legal-col{display:flex;flex-direction:column;gap:0;justify-content:flex-start}
+.footer-legal-short{font-size:12px;color:rgba(255,255,255,0.62);line-height:1.6;margin-bottom:8px}
+.footer-service-links{font-size:12px;color:rgba(255,255,255,0.52);line-height:1.7}
+.footer-service-links a{color:rgba(255,255,255,0.78);text-decoration:none;font-weight:700}
+.footer-suburbs{padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-suburbs h4{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin:0 0 8px}
+.footer-suburbs p{font-size:13px;color:rgba(255,255,255,0.68);margin:0;line-height:1.7}
+.footer-suburbs a{color:rgba(255,255,255,0.82);text-decoration:none;font-weight:700}
+.footer-suburbs a:hover,.footer-service-links a:hover{color:#A8D8EA}
+.footer-bottom{padding:12px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:0}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;margin:0}
+@media(max-width:760px){footer .container{padding:0 24px}.footer-top{grid-template-columns:1fr;gap:14px}.footer-bottom{flex-direction:column;align-items:flex-start}.footer-legal-col{display:block}}
 
 </style>
 </head>
-<body><nav class="site-nav" id="nav">
-<div class="container">
-<div class="nav-inner">
-<div class="nav-brand">
-<a aria-label="Estate Co. home" class="logo-wrap" href="index.html">
-<span class="logo">Estate <span>Co.</span></span>
-<span class="nav-tagline">Property clearance</span>
-</a>
-</div>
-<div aria-label="Main navigation" class="nav-menu">
-<div class="nav-item"><a class="nav-link" href="index.html#services-heading">Services</a></div>
-<div class="nav-item"><a class="nav-link" href="index.html#service-locations">Areas</a></div>
-<div class="nav-item"><a class="nav-link" href="guides.html">Resources</a></div>
-<div class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></div>
-<div class="nav-item"><a class="nav-link" href="index.html#our-story">About</a></div>
-</div>
-<div class="nav-right">
-<a class="nav-call-btn" href="tel:0401857730">CALL NOW</a>
-<a class="nav-quote-btn" href="index.html#quote">REQUEST QUOTE</a>
-<button aria-controls="navDrawer" aria-expanded="false" aria-label="Open menu" class="nav-hamburger" id="navHamburger" onclick="toggleDrawer()" type="button">
-<span></span><span></span><span></span>
-</button>
-</div>
-</div>
-</div>
+<body>
+
+
+<nav class="site-header">
+  <div class="container">
+    <div class="site-header-inner">
+      <a class="site-logo-text" href="index.html" aria-label="EstateCo home">
+        <span class="site-logo-main">Estate<span>Co.</span></span>
+        <span class="site-logo-sub">Property Clearance</span>
+      </a>
+      <div class="site-nav-menu">
+        <a href="index.html">Home</a><a href="index.html#services-heading">Services</a><a href="index.html#service-locations">Areas</a><a class="active" href="guides.html">Resources</a><a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="site-nav-actions">
+        <a class="site-call-btn" href="tel:0401857730">CALL NOW</a>
+        <a class="site-quote-btn" href="index.html#quote">REQUEST QUOTE</a>
+      </div>
+    </div>
+  </div>
 </nav>
-<div class="nav-drawer" id="navDrawer">
-<div class="drawer-section">
-<div class="drawer-heading">Navigate</div>
-<a class="drawer-link" href="index.html#services-heading" onclick="closeDrawer()"><div><strong>Services</strong><span>Clearance, cleanouts and property preparation</span></div></a>
-<a class="drawer-link" href="index.html#service-locations" onclick="closeDrawer()"><div><strong>Areas</strong><span>Melbourne, Sydney, Brisbane and surrounding areas</span></div></a>
-<a class="drawer-link" href="guides.html" onclick="closeDrawer()"><div><strong>Resources</strong><span>Helpful guides for families and executors</span></div></a>
-<a class="drawer-link" href="index.html#faq" onclick="closeDrawer()"><div><strong>FAQ</strong><span>Common questions answered</span></div></a>
-<a class="drawer-link" href="index.html#our-story" onclick="closeDrawer()"><div><strong>About</strong><span>Family based, respectful and insured</span></div></a>
-</div>
-<div class="drawer-actions">
-<a class="nav-call-btn" href="tel:0401857730">CALL NOW</a>
-<a class="nav-quote-btn" href="index.html#quote" onclick="closeDrawer()">REQUEST QUOTE</a>
-</div>
-</div>
+
 
 
 <header class="hero">
-<div class="container hero-inner">
-<div>
-<div class="breadcrumb"><a href="index.html">Home</a> / Guides</div>
-<span class="eyebrow">Helpful resources</span>
-<h1>Estate clearance guides</h1>
-<p>Plain-English resources for families, executors and property owners managing clearances, cleanouts and sale preparation.</p>
-</div>
-<aside class="trust-panel">
-<h3>Estate Co. support</h3>
-<div class="trust-list">
-<div>Respectful property clearances</div>
-<div>Remote support available</div>
-<div>Clear quotes and communication</div>
-</div>
-</aside>
-</div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="breadcrumb"><a href="index.html">Home</a> / Resources</div>
+        <span class="eyebrow">Estate clearance resources</span>
+        <h1>Clear, practical guidance for difficult property transitions.</h1>
+        <p>Helpful guides for families, executors, agents and property owners dealing with estate clearances, downsizing, hoarded properties, remote cleanouts and preparing a home for sale.</p>
+        <div class="hero-actions">
+          <a class="primary-action" href="index.html#quote">Request a property clearance quote</a>
+          <a class="secondary-action" href="tel:0401857730">Call 0401 857 730</a>
+        </div>
+      </div>
+      <aside class="trust-panel">
+        <h3>What these guides help with</h3>
+        <div class="trust-list">
+          <div>Understand what to do first before clearing a home</div>
+          <div>Plan costs, timing and access before work begins</div>
+          <div>Protect important documents, sentimental items and property value</div>
+          <div>Know when to use professional clearance support</div>
+        </div>
+        <div class="trust-mini">Written for Australian families and property owners who need practical next steps, not confusing jargon.</div>
+      </aside>
+    </div>
+  </div>
 </header>
-<main class="container" style="padding:50px 28px;">
-<section class="start-card">
-<div>
-<span class="eyebrow" style="color:#9bd3e8">Start here</span>
-<h2>Executor estate clearance checklist</h2>
-<p>A practical first-step guide for families and executors managing a property after a death.</p>
-</div>
-<a class="button" href="executor-estate-clearance-guide.html">Read the checklist</a>
+
+<section class="intro-strip">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-card"><strong>For families</strong><p>Simple guidance when a home needs to be cleared respectfully after a passing or major life change.</p></div>
+      <div class="intro-card"><strong>For executors</strong><p>Steps to reduce stress, protect records and coordinate the clearance without taking everything on yourself.</p></div>
+      <div class="intro-card"><strong>For property owners</strong><p>Practical advice for preparing cluttered, neglected or occupied homes for sale, rent, settlement or handover.</p></div>
+    </div>
+  </div>
 </section>
-<span class="eyebrow">More helpful guides</span>
-<h2 style="color:var(--navy);font-size:32px;margin:0 0 8px;">Choose a guide</h2>
-<p style="color:var(--warm);max-width:700px;">Each guide is designed to answer a specific question and help you take the next practical step.</p>
-<div class="guides-grid">
-<a class="guide-card" href="executor-estate-clearance-guide.html">
-<h3>Executor estate clearance checklist</h3>
-<p>A practical first-step guide for executors managing a property after a death.</p>
-</a>
-<a class="guide-card" href="deceased-estate-cleanout-costs.html">
-<h3>Deceased estate cleanout costs</h3>
-<p>Understand what affects the cost of clearing a deceased estate property.</p>
-</a>
-<a class="guide-card" href="preparing-property-for-sale-after-death.html">
-<h3>Preparing a property for sale after a death</h3>
-<p>Steps to prepare a deceased estate property for valuation, photography, sale or settlement.</p>
-</a>
-<a class="guide-card" href="remote-estate-clearance.html">
-<h3>Remote estate clearance for interstate families</h3>
-<p>How families can coordinate an estate clearance when they cannot attend in person.</p>
-</a>
-<a class="guide-card" href="downsizing-property-clearance.html">
-<h3>Downsizing property clearance guide</h3>
-<p>A calm guide for families preparing a home for downsizing or aged care transitions.</p>
-</a>
-<a class="guide-card" href="hoarded-property-cleanout-guide.html">
-<h3>Hoarded property cleanout guide</h3>
-<p>A respectful approach to clearing severely cluttered or long-neglected properties.</p>
-</a></div>
+
+<main class="resources-section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">Featured guides</span>
+        <h2 class="section-title">Start with the guide that matches your situation</h2>
+        <p class="section-sub">Each resource is written like a practical checklist so you can make decisions faster and avoid common mistakes.</p>
+      </div>
+    </div>
+
+    <div class="resource-grid">
+      <a class="resource-card" href="executor-estate-clearance-guide.html">
+        <h2>Executor estate clearance checklist</h2>
+        <p>A step-by-step guide for executors managing a property cleanout after a death.</p>
+        <ul class="card-list">
+          <li>What to check before clearing</li>
+          <li>Documents and sentimental items</li>
+          <li>How to coordinate family decisions</li>
+        </ul>
+        <div class="card-footer"><span class="read-time">8 min read</span><span class="read-link">Read guide →</span></div>
+      </a>
+
+      <a class="resource-card" href="deceased-estate-cleanout-costs.html">
+        <h2>Deceased estate cleanout costs</h2>
+        <p>Understand what affects the cost of clearing a home and how to avoid surprise charges.</p>
+        <ul class="card-list">
+          <li>Size and access factors</li>
+          <li>Rubbish, donation and disposal</li>
+          <li>When photos are enough for a quote</li>
+        </ul>
+        <div class="card-footer"><span class="read-time">7 min read</span><span class="read-link">Read guide →</span></div>
+      </a>
+
+      <a class="resource-card" href="preparing-property-for-sale-after-death.html">
+        <h2>Preparing a property for sale after death</h2>
+        <p>How to move from a full home to a presentable property ready for photos, inspections and agent appraisal.</p>
+        <ul class="card-list">
+          <li>Clearance before presentation</li>
+          <li>Repairs, gardens and cleaning</li>
+          <li>Sale-readiness checklist</li>
+        </ul>
+        <div class="card-footer"><span class="read-time">9 min read</span><span class="read-link">Read guide →</span></div>
+      </a>
+
+      <a class="resource-card" href="remote-estate-clearance.html">
+        <h2>Remote estate clearance</h2>
+        <p>For families who live interstate, overseas or too far away to manage the property in person.</p>
+        <ul class="card-list">
+          <li>Photo and video updates</li>
+          <li>Access and key handover</li>
+          <li>Remote approval process</li>
+        </ul>
+        <div class="card-footer"><span class="read-time">6 min read</span><span class="read-link">Read guide →</span></div>
+      </a>
+
+      <a class="resource-card" href="downsizing-property-clearance.html">
+        <h2>Downsizing property clearance</h2>
+        <p>A practical guide for moving to a smaller home, retirement village or aged care accommodation.</p>
+        <ul class="card-list">
+          <li>Keep, donate, sell or store</li>
+          <li>Reducing overwhelm</li>
+          <li>Preparing the old home</li>
+        </ul>
+        <div class="card-footer"><span class="read-time">7 min read</span><span class="read-link">Read guide →</span></div>
+      </a>
+
+      <a class="resource-card" href="hoarded-property-cleanout-guide.html">
+        <h2>Hoarded property cleanout guide</h2>
+        <p>How to approach heavily cluttered or neglected homes safely, respectfully and without judgement.</p>
+        <ul class="card-list">
+          <li>Safety and access issues</li>
+          <li>Sorting and staged clearing</li>
+          <li>Deep cleaning after clearance</li>
+        </ul>
+        <div class="card-footer"><span class="read-time">8 min read</span><span class="read-link">Read guide →</span></div>
+      </a>
+    </div>
+  </div>
 </main>
 
-<script>
-(function(){
-  const btn=document.querySelector('.nav-hamburger');
-  const drawer=document.querySelector('.nav-drawer');
-  if(!btn||!drawer) return;
-  btn.addEventListener('click',function(e){
-    e.stopPropagation();
-    btn.classList.toggle('open');
-    drawer.classList.toggle('open');
-    document.body.classList.toggle('menu-open');
-  });
-  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',function(){
-    btn.classList.remove('open'); drawer.classList.remove('open'); document.body.classList.remove('menu-open');
-  }));
-  document.addEventListener('click',function(e){
-    if(drawer.classList.contains('open')&&!drawer.contains(e.target)&&!btn.contains(e.target)){
-      btn.classList.remove('open'); drawer.classList.remove('open'); document.body.classList.remove('menu-open');
-    }
-  });
-})();
-</script>
+<section class="feature-section">
+  <div class="container">
+    <div class="feature-grid">
+      <div class="feature-panel">
+        <h2>The biggest mistake is starting without a plan.</h2>
+        <p>Most property clearances become stressful when family members start removing items before documents, valuables, keys, access, photos and sale goals are agreed. A simple plan protects time, value and relationships.</p>
+        <ul>
+          <li>Decide what must be found before anything leaves the home.</li>
+          <li>Photograph each room before sorting starts.</li>
+          <li>Separate sentimental items from general contents.</li>
+          <li>Work out whether the home needs clearing, deep cleaning, gardening or sale preparation.</li>
+        </ul>
+      </div>
+      <div class="quick-panel">
+        <h3>A simple starting order</h3>
+        <ol>
+          <li>Secure the property and confirm access.</li>
+          <li>Search for documents, keys, photos and valuables.</li>
+          <li>Agree what family members want kept.</li>
+          <li>Get a quote from photos or a site visit.</li>
+          <li>Clear, clean and prepare the property for its next step.</li>
+        </ol>
+        <a href="executor-estate-clearance-guide.html">Start with the executor checklist</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<footer class="site-footer">
-<div class="container">
-<div class="footer-top">
-<div class="footer-brand">
-<a aria-label="Estate Co. home" class="footer-brand-name" href="index.html">Estate <span>Co.</span></a>
-<p class="tagline">Professional, respectful estate clearance and property cleanout support for families, executors, agents and property owners.</p>
-<a class="footer-phone" href="tel:0401857730">0401 857 730</a>
-<a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a>
-</div>
-<div class="footer-legal-col">
-<p class="footer-legal-short">Estate Co. Pty Ltd · ABN <a href="https://abr.business.gov.au/ABN/View?abn=34618204290" rel="noopener" target="_blank">34 618 204 290</a></p>
-<p class="footer-legal-short">Public liability insured · Workers compensation · Privacy Act 1988 compliant.</p>
-</div>
-</div>
-<div class="footer-service-links">
-<h4>Service areas</h4>
-<p>
-<a href="estate-clearance-melbourne.html">Melbourne</a> ·
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div>
+        <h2>Need help clearing a property?</h2>
+        <p>Send a few details and photos. We can help estimate the work and explain the best next step.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="primary-action" href="index.html#quote">Request quote</a>
+        <a class="secondary-action" href="tel:0401857730">Call now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-brand-name" href="index.html" aria-label="Estate Co. home">Estate Co.</a>
+        <p class="tagline">Professional, respectful estate clearance and property cleanout support.</p>
+        <a class="footer-phone" href="tel:0401857730">0401 857 730</a>
+        <a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a>
+      </div>
+
+      <div class="footer-legal-col">
+        <p class="footer-legal-short" style="margin-top:0">Estate Co. Pty Ltd · ABN <a href="https://abr.business.gov.au/ABN/View?abn=34618204290" rel="noopener" target="_blank">34 618 204 290</a></p>
+        <p class="footer-legal-short">Public liability insured · Workers compensation · Privacy Act 1988 compliant.</p>
+      </div>
+    </div>
+
+    <div class="footer-suburbs footer-service-links">
+      <h4>Service areas</h4>
+      <p>
+        <a href="estate-clearance-melbourne.html">Melbourne</a> ·
         <a href="estate-clearance-sydney.html">Sydney</a> ·
         <a href="estate-clearance-brisbane.html">Brisbane</a> ·
-        <a href="guides.html">Guides</a>
-</p>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Estate Co. Pty Ltd · <a href="index.html#quote">Request a quote</a></p>
-<p>Estate Co. acknowledges Australia's Traditional Custodians.</p>
-</div>
-</div>
+        <a href="guides.html">Resources</a>
+      </p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Estate Co. Pty Ltd · <a href="#quote" data-quote-cta="true">REQUEST QUOTE</a></p>
+      <p>Estate Co. acknowledges Australia's Traditional Custodians.</p>
+    </div>
+  </div>
 </footer>
-<script id="estateco-shared-nav-script">
-(function(){
-  const nav=document.getElementById('nav');
-  window.toggleDrawer=function(){
-    const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger');
-    if(!d||!b)return;
-    const open=!d.classList.contains('open');
-    d.classList.toggle('open',open);
-    b.classList.toggle('open',open);
-    b.setAttribute('aria-expanded',open?'true':'false');
-    document.body.classList.toggle('menu-open',open);
-    document.body.style.overflow=open?'hidden':'';
-  };
-  window.closeDrawer=function(){
-    const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger');
-    if(d)d.classList.remove('open');
-    if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');}
-    document.body.classList.remove('menu-open');
-    document.body.style.overflow='';
-  };
-  if(nav){window.addEventListener('scroll',function(){nav.classList.toggle('raised',window.scrollY>10);},{passive:true});}
-  document.addEventListener('click',function(e){
-    const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger');
-    if(!d||!b||!d.classList.contains('open'))return;
-    if(!d.contains(e.target)&&!b.contains(e.target))window.closeDrawer();
-  });
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeDrawer();});
-})();
-</script>
 </body>
 </html>

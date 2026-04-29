@@ -2252,6 +2252,242 @@ footer,.testi-section{background:#163653 !important}
   color:var(--warm);
 }
 
+
+/* Mobile hero tightening + conversion trust strip */
+.hero-trust-inline{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+  font-size:13px;
+  font-weight:600;
+  color:var(--navy);
+}
+.hero-trust-inline span{
+  background:rgba(255,255,255,0.82);
+  border:1px solid rgba(26,60,94,0.12);
+  border-radius:999px;
+  padding:7px 11px;
+}
+@media (max-width:600px){
+  .hero{padding-top:20px !important;padding-bottom:18px !important;min-height:auto !important}
+  .hero-content{padding-top:0 !important}
+  .hero-content > div[style*="height:12px"]{height:4px !important}
+  .hero h1{margin-top:0 !important;margin-bottom:10px !important;line-height:1.16 !important}
+  .hero-sub{margin-bottom:10px !important}
+  .hero-trust-inline{margin-top:12px;gap:6px;font-size:12px}
+  .hero-trust-inline span{padding:6px 9px}
+}
+
+
+.quick-quote-bar{
+display:flex;
+gap:10px;
+justify-content:center;
+padding:14px 16px;
+background:#F3F7FA;
+border-top:1px solid rgba(0,0,0,0.06);
+border-bottom:1px solid rgba(0,0,0,0.06);
+}
+.quick-quote-bar a{
+font-family:'DM Sans',sans-serif;
+font-weight:700;
+font-size:14px;
+padding:12px 18px;
+border-radius:6px;
+text-decoration:none;
+}
+.qq-primary{background:#163653;color:#fff}
+.qq-secondary{border:1px solid #163653;color:#163653}
+@media(min-width:768px){
+.quick-quote-bar{max-width:900px;margin:0 auto;border-radius:8px}
+}
+
+
+/* Standard EstateCo text-logo header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,60,94,.12)}
+.site-header .container{max-width:1180px;margin:0 auto;padding:0 28px}
+.site-header-inner{height:66px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.site-logo-text{text-decoration:none;display:flex;flex-direction:column;line-height:1;flex-shrink:0}
+.site-logo-main{font-family:'DM Sans',Arial,sans-serif;font-size:26px;font-weight:800;color:#163653;letter-spacing:-.8px}
+.site-logo-main span{color:#2D7FA6}
+.site-logo-sub{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#425F73;font-weight:700;margin-top:3px}
+.site-nav-menu{display:flex;align-items:center;gap:4px}
+.site-nav-menu a{font-family:'DM Sans',Arial,sans-serif;font-size:13px;font-weight:700;text-decoration:none;color:#163653;padding:9px 13px;border-radius:9px;transition:.18s}
+.site-nav-menu a:hover,.site-nav-menu a.active{background:#E7F2F7;color:#2D7FA6}
+.site-nav-actions{display:flex;align-items:center;gap:8px}
+.site-call-btn,.site-quote-btn{font-family:'DM Sans',Arial,sans-serif;font-size:12px;font-weight:800;text-decoration:none;border-radius:9px;padding:9px 14px;letter-spacing:.7px;white-space:nowrap}
+.site-call-btn{border:2px solid #163653;color:#163653;background:#fff}
+.site-quote-btn{border:2px solid #163653;background:#163653;color:#fff}
+.site-call-btn:hover{background:#163653;color:#fff}
+.site-quote-btn:hover{background:#2D7FA6;border-color:#2D7FA6;color:#fff}
+@media(max-width:760px){
+  .site-header .container{padding:0 16px}
+  .site-header-inner{height:58px}
+  .site-nav-menu{display:none}
+  .site-call-btn{display:none}
+  .site-logo-main{font-size:22px}
+  .site-logo-sub{font-size:9px}
+  .site-quote-btn{padding:8px 11px;font-size:11px}
+}
+
+
+/* Consistent EstateCo footer */
+footer{background:#163653;color:#fff;margin-top:60px;padding:32px 0 0}
+footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
+.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand-name{display:inline-block;color:#fff;text-decoration:none;font-size:26px;font-weight:800;letter-spacing:-0.5px;line-height:1;margin-bottom:8px}
+.footer-brand .tagline{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.55;margin-bottom:12px;max-width:360px}
+.footer-phone{display:block;font-size:14px;font-weight:700;color:rgba(255,255,255,0.92);text-decoration:none;margin-bottom:4px}
+.footer-email{display:block;font-size:12px;color:rgba(255,255,255,0.72);text-decoration:none}
+.footer-legal-col{display:flex;flex-direction:column;gap:0;justify-content:flex-start}
+.footer-legal-short{font-size:12px;color:rgba(255,255,255,0.62);line-height:1.6;margin-bottom:8px}
+.footer-service-links{font-size:12px;color:rgba(255,255,255,0.52);line-height:1.7}
+.footer-service-links a{color:rgba(255,255,255,0.78);text-decoration:none;font-weight:700}
+.footer-suburbs{padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-suburbs h4{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin:0 0 8px}
+.footer-suburbs p{font-size:13px;color:rgba(255,255,255,0.68);margin:0;line-height:1.7}
+.footer-suburbs a{color:rgba(255,255,255,0.82);text-decoration:none;font-weight:700}
+.footer-suburbs a:hover,.footer-service-links a:hover{color:#A8D8EA}
+.footer-bottom{padding:12px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:0}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;margin:0}
+@media(max-width:760px){footer .container{padding:0 24px}.footer-top{grid-template-columns:1fr;gap:14px}.footer-bottom{flex-direction:column;align-items:flex-start}.footer-legal-col{display:block}}
+
+
+/* Mobile header actions: menu, call icon and quote */
+.mobile-menu-btn,
+.mobile-call-btn{
+  display:none;
+}
+.mobile-call-btn svg{
+  width:15px;
+  height:15px;
+  display:block;
+}
+@media(max-width:760px){
+  .site-header-inner,
+  .nav-inner{
+    gap:8px !important;
+  }
+  .site-nav-actions,
+  .nav-right{
+    display:flex !important;
+    align-items:center !important;
+    gap:7px !important;
+    flex-shrink:0 !important;
+  }
+  .site-call-btn,
+  .nav-call-btn{
+    display:none !important;
+  }
+  .site-quote-btn,
+  .nav-quote-btn{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    height:36px !important;
+    padding:0 11px !important;
+    border-radius:9px !important;
+    font-size:10px !important;
+    line-height:1 !important;
+    letter-spacing:.6px !important;
+    white-space:nowrap !important;
+  }
+  .mobile-call-btn{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:36px !important;
+    height:36px !important;
+    border-radius:9px !important;
+    border:2px solid #163653 !important;
+    background:#fff !important;
+    color:#163653 !important;
+    text-decoration:none !important;
+    flex-shrink:0 !important;
+  }
+  .mobile-menu-btn,
+  .nav-hamburger{
+    display:inline-flex !important;
+    width:36px !important;
+    height:36px !important;
+    border-radius:9px !important;
+    background:#f0f4f8 !important;
+    border:1px solid rgba(26,60,94,.12) !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex-direction:column !important;
+    gap:5px !important;
+    padding:0 !important;
+    flex-shrink:0 !important;
+  }
+  .mobile-menu-btn span,
+  .nav-hamburger span{
+    display:block !important;
+    width:19px !important;
+    height:2px !important;
+    background:#163653 !important;
+    border-radius:2px !important;
+  }
+  .site-nav-menu,
+  .nav-menu{
+    display:none !important;
+  }
+  .site-logo-main,
+  .logo{
+    font-size:21px !important;
+  }
+  .site-logo-sub,
+  .nav-tagline{
+    font-size:8.5px !important;
+    letter-spacing:1.4px !important;
+  }
+}
+
+
+/* Clear 3-line hamburger stack for mobile */
+@media(max-width:760px){
+  .mobile-menu-btn,
+  .nav-hamburger{
+    display:inline-flex !important;
+    width:36px !important;
+    height:36px !important;
+    min-width:36px !important;
+    border-radius:9px !important;
+    background:#f0f4f8 !important;
+    border:1px solid rgba(26,60,94,.16) !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex-direction:column !important;
+    gap:4px !important;
+    padding:0 !important;
+    margin:0 !important;
+    flex-shrink:0 !important;
+  }
+  .mobile-menu-btn span,
+  .nav-hamburger span{
+    display:block !important;
+    width:19px !important;
+    height:2px !important;
+    background:#163653 !important;
+    border-radius:999px !important;
+    opacity:1 !important;
+    transform:none !important;
+  }
+  .mobile-menu-btn.open span:nth-child(1),
+  .nav-hamburger.open span:nth-child(1){
+    transform:rotate(45deg) translate(4px,4px) !important;
+  }
+  .mobile-menu-btn.open span:nth-child(2),
+  .nav-hamburger.open span:nth-child(2){
+    opacity:0 !important;
+  }
+  .mobile-menu-btn.open span:nth-child(3),
+  .nav-hamburger.open span:nth-child(3){
+    transform:rotate(-45deg) translate(4px,-4px) !important;
+  }
+}
+
 </style>
 <style>
 /* Premium services and location SEO upgrades */
@@ -3140,67 +3376,58 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 <body>
 <a class="skip-link sr-only" href="#quote" data-quote-cta="true">Skip to quote form</a>
 <!-- NAV -->
-<nav id="nav">
+
+
+<nav class="site-header">
   <div class="container">
-    <div class="nav-inner">
-      <div class="nav-brand">
-        
-<a href="/index.html" class="logo-wrap" style="text-decoration:none;display:flex;flex-direction:column;line-height:1;">
-<span style="font-weight:700;font-size:22px;color:#1A3C5E;">Estate <span style="color:#5FA8D3;">Co.</span></span>
-<span style="font-size:11px;letter-spacing:1.5px;color:#6b7c8c;text-transform:uppercase;">Property clearance</span>
+    <div class="site-header-inner">
+      <a class="site-logo-text" href="index.html" aria-label="EstateCo home">
+        <span class="site-logo-main">Estate<span>Co.</span></span>
+        <span class="site-logo-sub">Property Clearance</span>
+      </a>
+      <div class="site-nav-menu">
+        <a href="index.html">Home</a><a href="index.html#services-heading">Services</a><a href="index.html#service-locations">Areas</a><a href="guides.html">Resources</a><a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="site-nav-actions">
+        <a class="site-call-btn" href="tel:0401857730">CALL NOW</a>
+        <a class="mobile-call-btn" href="tel:0401857730" aria-label="Call EstateCo">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.3-.3.73-.4 1.12-.27 1.22.4 2.53.62 3.89.62.62 0 1.11.49 1.11 1.11v3.49c0 .62-.49 1.11-1.11 1.11C10.68 21.24 2.76 13.32 2.76 3.58c0-.62.49-1.11 1.11-1.11h3.5c.62 0 1.11.49 1.11 1.11 0 1.36.21 2.67.62 3.89.12.39.03.82-.28 1.12l-2.2 2.2z"/>
+  </svg>
 </a>
-
-        <span class="nav-tagline"></span>
-      </div>
-
-      <div class="nav-menu" aria-label="Main navigation">
-        <div class="nav-item"><a class="nav-link" href="index.html#services-heading">Services</a></div>
-        <div class="nav-item"><a class="nav-link" href="index.html#service-locations">Areas</a></div>
-        <div class="nav-item"><a class="nav-link" href="guides.html">Resources</a></div>
-        <div class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></div>
-        <div class="nav-item"><div class="nav-item"><a class="nav-link" href="#our-story">About</a></div></div>
-      </div>
-
-      <div class="nav-right">
-        <a class="nav-call-btn" href="tel:0401857730">CALL NOW</a>
-        <a class="nav-quote-btn" href="#quote" data-quote-cta="true">REQUEST QUOTE</a>
-        <button aria-controls="navDrawer" aria-expanded="false" aria-label="Open menu" class="nav-hamburger" id="navHamburger" onclick="toggleDrawer()" type="button">
-          <span></span><span></span><span></span>
-        </button>
+        <a class="site-quote-btn" href="index.html#quote">REQUEST QUOTE</a>
       </div>
     </div>
   </div>
 </nav>
-<!-- Mobile drawer -->
+
 <div class="nav-drawer" id="navDrawer">
   <div class="drawer-section">
     <div class="drawer-heading">Navigate</div>
-    <a class="drawer-link" href="index.html#services-heading" onclick="closeDrawer()">
-      <div><strong>Services</strong><span>Clearance, cleanouts and property preparation</span></div>
-    </a>
-    <a class="drawer-link" href="index.html#service-locations" onclick="closeDrawer()">
-      <div><strong>Areas</strong><span>Melbourne, regional and interstate support</span></div>
-    </a>
-    <a class="drawer-link" href="guides.html" onclick="closeDrawer()">
-      <div><strong>Resources &amp; Guides</strong><span>Executor and property clearance help</span></div>
-    </a>
-    <a class="drawer-link" href="index.html#faq" onclick="closeDrawer()">
-      <div><strong>FAQ</strong><span>Common questions</span></div>
-    </a>
-    <a class="drawer-link" href="index.html#about" onclick="closeDrawer()">
-      <div><strong>About</strong><span>Professional, polite and insured</span></div>
-    </a>
+    <a class="drawer-link" href="index.html#services-heading" onclick="closeDrawer()"><div><strong>Services</strong><span>Clearance, cleanouts and property preparation</span></div></a>
+    <a class="drawer-link" href="index.html#service-locations" onclick="closeDrawer()"><div><strong>Areas</strong><span>Melbourne, Sydney and Brisbane</span></div></a>
+    <a class="drawer-link" href="guides.html" onclick="closeDrawer()"><div><strong>Resources</strong><span>Helpful estate clearance guides</span></div></a>
+    <a class="drawer-link" href="index.html#faq" onclick="closeDrawer()"><div><strong>FAQ</strong><span>Common questions</span></div></a>
+    <a class="drawer-link" href="index.html#about" onclick="closeDrawer()"><div><strong>About</strong><span>Professional, polite and insured</span></div></a>
   </div>
   <div class="drawer-actions">
     <a class="nav-call-btn" href="tel:0401857730" style="flex:1;justify-content:center">CALL NOW</a>
-    <a class="nav-quote-btn" href="#quote" onclick="closeDrawer()" style="flex:1;justify-content:center" data-quote-cta="true">REQUEST QUOTE</a>
+    <a class="nav-quote-btn" href="index.html#quote" onclick="closeDrawer()" style="flex:1;justify-content:center">REQUEST QUOTE</a>
   </div>
 </div>
+
+
+
 <section class="hero layout-hero">
 <div class="container layout-container">
 <div class="hero-content">
 <span class="section-tag">Estate clearance Australia</span>
 <h1>Estate clearances handled with care and respect.</h1><p class="hero-sub">We clear, clean and prepare properties with calm support for families, executors, agents and property owners.</p>
+<div class="hero-trust-inline">
+<span>Fast quotes</span>
+<span>Insured team</span>
+<span>Remote updates</span>
+</div>
 <p class="hero-sub"></p>
 </div>
 </div>
@@ -3211,8 +3438,13 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
     <div class="area-marquee-group"><span class="area-chip area-region">Melbourne metro</span><span class="area-chip area-region">Eastern suburbs</span><span class="area-chip">Glen Waverley</span><span class="area-chip">Mount Waverley</span><span class="area-chip">Doncaster</span><span class="area-chip">Box Hill</span><span class="area-chip">Camberwell</span><span class="area-chip">Balwyn</span><span class="area-chip">Kew</span><span class="area-chip">Hawthorn</span><span class="area-chip">Ringwood</span><span class="area-chip">Croydon</span><span class="area-chip">Mitcham</span><span class="area-chip">Vermont</span><span class="area-chip">Wantirna</span><span class="area-chip">Blackburn</span><span class="area-chip">Burwood</span><span class="area-chip">Nunawading</span><span class="area-chip">Templestowe</span><span class="area-chip">Bulleen</span><span class="area-chip">Eltham</span><span class="area-chip">Greensborough</span><span class="area-chip area-region">South Eastern suburbs</span><span class="area-chip">Clayton</span><span class="area-chip">Oakleigh</span><span class="area-chip">Chadstone</span><span class="area-chip">Bentleigh</span><span class="area-chip">Brighton</span><span class="area-chip">Caulfield</span><span class="area-chip">Malvern</span><span class="area-chip">Toorak</span><span class="area-chip">South Yarra</span><span class="area-chip">Prahran</span><span class="area-chip">St Kilda</span><span class="area-chip">Moorabbin</span><span class="area-chip">Cheltenham</span><span class="area-chip">Mentone</span><span class="area-chip">Mordialloc</span><span class="area-chip">Dandenong</span><span class="area-chip">Narre Warren</span><span class="area-chip">Berwick</span><span class="area-chip">Cranbourne</span><span class="area-chip">Pakenham</span><span class="area-chip area-region">Northern suburbs</span><span class="area-chip">Preston</span><span class="area-chip">Reservoir</span><span class="area-chip">Thornbury</span><span class="area-chip">Northcote</span><span class="area-chip">Coburg</span><span class="area-chip">Brunswick</span><span class="area-chip">Pascoe Vale</span><span class="area-chip">Essendon</span><span class="area-chip">Moonee Ponds</span><span class="area-chip">Broadmeadows</span><span class="area-chip">Craigieburn</span><span class="area-chip">Epping</span><span class="area-chip">Mill Park</span><span class="area-chip">Bundoora</span><span class="area-chip">Heidelberg</span><span class="area-chip">Ivanhoe</span><span class="area-chip">Rosanna</span><span class="area-chip area-region">Western suburbs</span><span class="area-chip">Footscray</span><span class="area-chip">Yarraville</span><span class="area-chip">Williamstown</span><span class="area-chip">Altona</span><span class="area-chip">Newport</span><span class="area-chip">Sunshine</span><span class="area-chip">St Albans</span><span class="area-chip">Deer Park</span><span class="area-chip">Caroline Springs</span><span class="area-chip">Taylors Lakes</span><span class="area-chip">Keilor</span><span class="area-chip">Werribee</span><span class="area-chip">Hoppers Crossing</span><span class="area-chip">Point Cook</span><span class="area-chip">Tarneit</span><span class="area-chip">Truganina</span><span class="area-chip">Melton</span><span class="area-chip area-region">Bayside & Peninsula</span><span class="area-chip">Port Melbourne</span><span class="area-chip">Albert Park</span><span class="area-chip">Elwood</span><span class="area-chip">Sandringham</span><span class="area-chip">Hampton</span><span class="area-chip">Beaumaris</span><span class="area-chip">Frankston</span><span class="area-chip">Seaford</span><span class="area-chip">Chelsea</span><span class="area-chip">Mornington</span><span class="area-chip">Mount Martha</span><span class="area-chip">Dromana</span><span class="area-chip">Rosebud</span><span class="area-chip">Rye</span><span class="area-chip">Sorrento</span><span class="area-chip area-region">Regional Victoria</span><span class="area-chip">Geelong</span><span class="area-chip">Ballarat</span><span class="area-chip">Bendigo</span><span class="area-chip">Shepparton</span><span class="area-chip">Warrnambool</span><span class="area-chip">Wodonga</span><span class="area-chip">Traralgon</span><span class="area-chip">Sale</span><span class="area-chip">Bairnsdale</span><span class="area-chip">Mildura</span></div>
     <div class="area-marquee-group" aria-hidden="true"><span class="area-chip area-region">Melbourne metro</span><span class="area-chip area-region">Eastern suburbs</span><span class="area-chip">Glen Waverley</span><span class="area-chip">Mount Waverley</span><span class="area-chip">Doncaster</span><span class="area-chip">Box Hill</span><span class="area-chip">Camberwell</span><span class="area-chip">Balwyn</span><span class="area-chip">Kew</span><span class="area-chip">Hawthorn</span><span class="area-chip">Ringwood</span><span class="area-chip">Croydon</span><span class="area-chip">Mitcham</span><span class="area-chip">Vermont</span><span class="area-chip">Wantirna</span><span class="area-chip">Blackburn</span><span class="area-chip">Burwood</span><span class="area-chip">Nunawading</span><span class="area-chip">Templestowe</span><span class="area-chip">Bulleen</span><span class="area-chip">Eltham</span><span class="area-chip">Greensborough</span><span class="area-chip area-region">South Eastern suburbs</span><span class="area-chip">Clayton</span><span class="area-chip">Oakleigh</span><span class="area-chip">Chadstone</span><span class="area-chip">Bentleigh</span><span class="area-chip">Brighton</span><span class="area-chip">Caulfield</span><span class="area-chip">Malvern</span><span class="area-chip">Toorak</span><span class="area-chip">South Yarra</span><span class="area-chip">Prahran</span><span class="area-chip">St Kilda</span><span class="area-chip">Moorabbin</span><span class="area-chip">Cheltenham</span><span class="area-chip">Mentone</span><span class="area-chip">Mordialloc</span><span class="area-chip">Dandenong</span><span class="area-chip">Narre Warren</span><span class="area-chip">Berwick</span><span class="area-chip">Cranbourne</span><span class="area-chip">Pakenham</span><span class="area-chip area-region">Northern suburbs</span><span class="area-chip">Preston</span><span class="area-chip">Reservoir</span><span class="area-chip">Thornbury</span><span class="area-chip">Northcote</span><span class="area-chip">Coburg</span><span class="area-chip">Brunswick</span><span class="area-chip">Pascoe Vale</span><span class="area-chip">Essendon</span><span class="area-chip">Moonee Ponds</span><span class="area-chip">Broadmeadows</span><span class="area-chip">Craigieburn</span><span class="area-chip">Epping</span><span class="area-chip">Mill Park</span><span class="area-chip">Bundoora</span><span class="area-chip">Heidelberg</span><span class="area-chip">Ivanhoe</span><span class="area-chip">Rosanna</span><span class="area-chip area-region">Western suburbs</span><span class="area-chip">Footscray</span><span class="area-chip">Yarraville</span><span class="area-chip">Williamstown</span><span class="area-chip">Altona</span><span class="area-chip">Newport</span><span class="area-chip">Sunshine</span><span class="area-chip">St Albans</span><span class="area-chip">Deer Park</span><span class="area-chip">Caroline Springs</span><span class="area-chip">Taylors Lakes</span><span class="area-chip">Keilor</span><span class="area-chip">Werribee</span><span class="area-chip">Hoppers Crossing</span><span class="area-chip">Point Cook</span><span class="area-chip">Tarneit</span><span class="area-chip">Truganina</span><span class="area-chip">Melton</span><span class="area-chip area-region">Bayside & Peninsula</span><span class="area-chip">Port Melbourne</span><span class="area-chip">Albert Park</span><span class="area-chip">Elwood</span><span class="area-chip">Sandringham</span><span class="area-chip">Hampton</span><span class="area-chip">Beaumaris</span><span class="area-chip">Frankston</span><span class="area-chip">Seaford</span><span class="area-chip">Chelsea</span><span class="area-chip">Mornington</span><span class="area-chip">Mount Martha</span><span class="area-chip">Dromana</span><span class="area-chip">Rosebud</span><span class="area-chip">Rye</span><span class="area-chip">Sorrento</span><span class="area-chip area-region">Regional Victoria</span><span class="area-chip">Geelong</span><span class="area-chip">Ballarat</span><span class="area-chip">Bendigo</span><span class="area-chip">Shepparton</span><span class="area-chip">Warrnambool</span><span class="area-chip">Wodonga</span><span class="area-chip">Traralgon</span><span class="area-chip">Sale</span><span class="area-chip">Bairnsdale</span><span class="area-chip">Mildura</span></div>
   </div>
-</section>
+
+<div class="quick-quote-bar">
+<a href="#quote" class="qq-primary">REQUEST QUOTE</a>
+<a href="tel:0401857730" class="qq-secondary">CALL NOW</a>
 </div>
+
+</section>
 <section aria-label="Why families trust Estate Co" class="trust-strip premium-trust-strip layout-trust-strip">
 <div class="container">
 <div class="section-intro premium-section-intro services-intro" style="text-align:center;margin-bottom:20px">
@@ -3574,9 +3806,7 @@ footer,.testi-section{background:#163653 !important}
 <div class="container">
 <div class="ba-head">
 <div>
-<span class="section-tag">Before &amp; after</span>
-<h2 class="section-title">Real property clearance results</h2>
-<p class="section-sub">A premium automatic before-and-after banner showing matched property clearance results. Photos with visible faces have been removed for privacy.</p>
+
 </div>
 </div>
 <div class="ba-wrapper ba-pair-wrapper">
@@ -4155,7 +4385,7 @@ footer,.testi-section{background:#163653 !important}
         <a href="estate-clearance-melbourne.html">Melbourne</a> ·
         <a href="estate-clearance-sydney.html">Sydney</a> ·
         <a href="estate-clearance-brisbane.html">Brisbane</a> ·
-        <a href="guides.html">Guides</a>
+        <a href="guides.html">Resources</a>
       </p>
     </div>
 

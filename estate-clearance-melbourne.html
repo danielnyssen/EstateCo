@@ -1873,6 +1873,55 @@ footer,.testi-section{background:#163653 !important}
 @media(max-width:980px){.site-nav .container,.site-footer .container{padding:0 24px}.nav-menu{display:none}.nav-hamburger{display:flex}.nav-inner{height:62px}.nav-drawer{top:62px}.nav-call-btn{display:inline-flex}.nav-quote-btn{display:none}.drawer-actions .nav-quote-btn{display:inline-flex}.logo{font-size:24px}.nav-tagline{font-size:10px}}
 @media(max-width:640px){.site-nav .container,.site-footer .container{padding:0 18px}.nav-inner{height:58px}.nav-drawer{top:58px}.nav-call-btn{font-size:11px;padding:9px 10px}.nav-right{gap:6px}.logo{font-size:22px}.nav-tagline{font-size:9px;letter-spacing:1.4px}.footer-top{grid-template-columns:1fr;gap:18px}.footer-bottom{display:block}.footer-bottom p+p{margin-top:8px}.drawer-actions{grid-template-columns:1fr}.site-footer{margin-top:42px}}
 
+
+/* Standard EstateCo text-logo header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,60,94,.12)}
+.site-header .container{max-width:1180px;margin:0 auto;padding:0 28px}
+.site-header-inner{height:66px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.site-logo-text{text-decoration:none;display:flex;flex-direction:column;line-height:1;flex-shrink:0}
+.site-logo-main{font-family:'DM Sans',Arial,sans-serif;font-size:26px;font-weight:800;color:#163653;letter-spacing:-.8px}
+.site-logo-main span{color:#2D7FA6}
+.site-logo-sub{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#425F73;font-weight:700;margin-top:3px}
+.site-nav-menu{display:flex;align-items:center;gap:4px}
+.site-nav-menu a{font-family:'DM Sans',Arial,sans-serif;font-size:13px;font-weight:700;text-decoration:none;color:#163653;padding:9px 13px;border-radius:9px;transition:.18s}
+.site-nav-menu a:hover,.site-nav-menu a.active{background:#E7F2F7;color:#2D7FA6}
+.site-nav-actions{display:flex;align-items:center;gap:8px}
+.site-call-btn,.site-quote-btn{font-family:'DM Sans',Arial,sans-serif;font-size:12px;font-weight:800;text-decoration:none;border-radius:9px;padding:9px 14px;letter-spacing:.7px;white-space:nowrap}
+.site-call-btn{border:2px solid #163653;color:#163653;background:#fff}
+.site-quote-btn{border:2px solid #163653;background:#163653;color:#fff}
+.site-call-btn:hover{background:#163653;color:#fff}
+.site-quote-btn:hover{background:#2D7FA6;border-color:#2D7FA6;color:#fff}
+@media(max-width:760px){
+  .site-header .container{padding:0 16px}
+  .site-header-inner{height:58px}
+  .site-nav-menu{display:none}
+  .site-call-btn{display:none}
+  .site-logo-main{font-size:22px}
+  .site-logo-sub{font-size:9px}
+  .site-quote-btn{padding:8px 11px;font-size:11px}
+}
+
+/* Consistent EstateCo footer */
+footer{background:#163653;color:#fff;margin-top:60px;padding:32px 0 0}
+footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
+.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand-name{display:inline-block;color:#fff;text-decoration:none;font-size:26px;font-weight:800;letter-spacing:-0.5px;line-height:1;margin-bottom:8px}
+.footer-brand .tagline{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.55;margin-bottom:12px;max-width:360px}
+.footer-phone{display:block;font-size:14px;font-weight:700;color:rgba(255,255,255,0.92);text-decoration:none;margin-bottom:4px}
+.footer-email{display:block;font-size:12px;color:rgba(255,255,255,0.72);text-decoration:none}
+.footer-legal-col{display:flex;flex-direction:column;gap:0;justify-content:flex-start}
+.footer-legal-short{font-size:12px;color:rgba(255,255,255,0.62);line-height:1.6;margin-bottom:8px}
+.footer-service-links{font-size:12px;color:rgba(255,255,255,0.52);line-height:1.7}
+.footer-service-links a{color:rgba(255,255,255,0.78);text-decoration:none;font-weight:700}
+.footer-suburbs{padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-suburbs h4{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin:0 0 8px}
+.footer-suburbs p{font-size:13px;color:rgba(255,255,255,0.68);margin:0;line-height:1.7}
+.footer-suburbs a{color:rgba(255,255,255,0.82);text-decoration:none;font-weight:700}
+.footer-suburbs a:hover,.footer-service-links a:hover{color:#A8D8EA}
+.footer-bottom{padding:12px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:0}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;margin:0}
+@media(max-width:760px){footer .container{padding:0 24px}.footer-top{grid-template-columns:1fr;gap:14px}.footer-bottom{flex-direction:column;align-items:flex-start}.footer-legal-col{display:block}}
+
 </style>
 <style>
 /* Premium services and location SEO upgrades */
@@ -2440,32 +2489,25 @@ footer,.testi-section{background:#163653 !important}
 }
 </script>
 </head>
-<body><nav class="site-nav" id="nav">
-<div class="container">
-<div class="nav-inner">
-<div class="nav-brand">
-<a aria-label="Estate Co. home" class="logo-wrap" href="index.html">
-<span class="logo">Estate <span>Co.</span></span>
-<span class="nav-tagline">Property clearance</span>
-</a>
-</div>
-<div aria-label="Main navigation" class="nav-menu">
-<div class="nav-item"><a class="nav-link" href="index.html#services-heading">Services</a></div>
-<div class="nav-item"><a class="nav-link" href="index.html#service-locations">Areas</a></div>
-<div class="nav-item"><a class="nav-link" href="guides.html">Resources</a></div>
-<div class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></div>
-<div class="nav-item"><a class="nav-link" href="index.html#about">About</a></div>
-</div>
-<div class="nav-right">
-<a class="nav-call-btn" href="tel:0401857730">CALL NOW</a>
-<a class="nav-quote-btn" href="index.html#quote">REQUEST QUOTE</a>
-<button aria-controls="navDrawer" aria-expanded="false" aria-label="Open menu" class="nav-hamburger" id="navHamburger" onclick="toggleDrawer()" type="button">
-<span></span><span></span><span></span>
-</button>
-</div>
-</div>
-</div>
+<body>
+<nav class="site-header">
+  <div class="container">
+    <div class="site-header-inner">
+      <a class="site-logo-text" href="index.html" aria-label="EstateCo home">
+        <span class="site-logo-main">Estate<span>Co.</span></span>
+        <span class="site-logo-sub">Property Clearance</span>
+      </a>
+      <div class="site-nav-menu">
+        <a href="index.html">Home</a><a href="index.html#services-heading">Services</a><a class="active" href="index.html#service-locations">Areas</a><a href="guides.html">Resources</a><a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="site-nav-actions">
+        <a class="site-call-btn" href="tel:0401857730">CALL NOW</a>
+        <a class="site-quote-btn" href="index.html#quote">REQUEST QUOTE</a>
+      </div>
+    </div>
+  </div>
 </nav>
+
 <div class="nav-drawer" id="navDrawer">
 <div class="drawer-section">
 <div class="drawer-heading">Navigate</div>
@@ -2701,34 +2743,37 @@ footer,.testi-section{background:#163653 !important}
 @media(max-width:640px){.site-nav .container,.site-footer .container{padding:0 18px}.nav-inner{height:58px}.nav-drawer{top:58px}.nav-call-btn{font-size:11px;padding:9px 10px}.nav-right{gap:6px}.logo{font-size:22px}.nav-tagline{font-size:9px;letter-spacing:1.4px}.footer-top{grid-template-columns:1fr;gap:18px}.footer-bottom{display:block}.footer-bottom p+p{margin-top:8px}.drawer-actions{grid-template-columns:1fr}.site-footer{margin-top:42px}}
 </style>
 
-<footer class="site-footer">
-<div class="container">
-<div class="footer-top">
-<div class="footer-brand">
-<a aria-label="Estate Co. home" class="footer-brand-name" href="index.html">Estate <span>Co.</span></a>
-<p class="tagline">Professional, respectful estate clearance and property cleanout support for families, executors, agents and property owners.</p>
-<a class="footer-phone" href="tel:0401857730">0401 857 730</a>
-<a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a>
-</div>
-<div class="footer-legal-col">
-<p class="footer-legal-short">Estate Co. Pty Ltd · ABN <a href="https://abr.business.gov.au/ABN/View?abn=34618204290" rel="noopener" target="_blank">34 618 204 290</a></p>
-<p class="footer-legal-short">Public liability insured · Workers compensation · Privacy Act 1988 compliant.</p>
-</div>
-</div>
-<div class="footer-service-links">
-<h4>Service areas</h4>
-<p>
-<a href="estate-clearance-melbourne.html">Melbourne</a> ·
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-brand-name" href="index.html" aria-label="Estate Co. home">Estate Co.</a>
+        <p class="tagline">Professional, respectful estate clearance and property cleanout support.</p>
+        <a class="footer-phone" href="tel:0401857730">0401 857 730</a>
+        <a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a>
+      </div>
+
+      <div class="footer-legal-col">
+        <p class="footer-legal-short" style="margin-top:0">Estate Co. Pty Ltd · ABN <a href="https://abr.business.gov.au/ABN/View?abn=34618204290" rel="noopener" target="_blank">34 618 204 290</a></p>
+        <p class="footer-legal-short">Public liability insured · Workers compensation · Privacy Act 1988 compliant.</p>
+      </div>
+    </div>
+
+    <div class="footer-suburbs footer-service-links">
+      <h4>Service areas</h4>
+      <p>
+        <a href="estate-clearance-melbourne.html">Melbourne</a> ·
         <a href="estate-clearance-sydney.html">Sydney</a> ·
         <a href="estate-clearance-brisbane.html">Brisbane</a> ·
-        <a href="guides.html">Guides</a>
-</p>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Estate Co. Pty Ltd · <a href="index.html#quote">Request a quote</a></p>
-<p>Estate Co. acknowledges Australia's Traditional Custodians.</p>
-</div>
-</div>
+        <a href="guides.html">Resources</a>
+      </p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Estate Co. Pty Ltd · <a href="#quote" data-quote-cta="true">REQUEST QUOTE</a></p>
+      <p>Estate Co. acknowledges Australia's Traditional Custodians.</p>
+    </div>
+  </div>
 </footer>
 <script id="estateco-shared-nav-script">
 (function(){
