@@ -1,11 +1,12 @@
 
 <!DOCTYPE html>
+
 <html lang="en-AU">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Preparing a property for sale after death | Estate Co.</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
 body{font-family:'DM Sans',Arial,sans-serif;margin:0;background:#ffffff;color:#2C3E50;line-height:1.6}
 .container{max-width:1100px;margin:auto;padding:0 24px}
@@ -48,29 +49,64 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
 .footer-bottom p{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.5;margin:0}
 .footer-bottom a{color:rgba(255,255,255,0.48);text-decoration:none}
 @media(max-width:760px){footer .container{padding:0 24px}.footer-top{grid-template-columns:1fr;gap:14px}.footer-bottom{flex-direction:column;align-items:flex-start}.footer-legal-col{display:block}}
+
+/* === Estate Co. shared header + footer === */
+:root{--navy:#1A3C5E;--navy-mid:#1F4D78;--gold:#2D7FA6;--gold-pale:#E7F2F7;--warm:#425F73;--charcoal:#24384A;--border:rgba(26,60,94,.12);--border-med:rgba(26,60,94,.18)}
+.site-nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);transition:box-shadow .2s ease}
+.site-nav.raised{box-shadow:0 6px 24px rgba(26,60,94,.10)}
+.site-nav .container,.site-footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
+.nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-brand{display:flex;align-items:center;flex-shrink:0}.logo-wrap{display:flex;flex-direction:column;gap:2px;text-decoration:none;line-height:1}.logo{font-family:'DM Sans',Arial,sans-serif;font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.7px}.logo span{color:#5FA8D3}.nav-tagline{font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#6b7c8c;white-space:nowrap;text-align:left}
+.nav-menu{display:flex;align-items:center;gap:2px;flex:1;justify-content:center}.nav-item{position:relative}.nav-link{display:flex;align-items:center;padding:8px 15px;border-radius:9px;font-size:13px;font-weight:700;color:var(--navy);text-decoration:none;transition:.18s;white-space:nowrap}.nav-link:hover{color:var(--gold);background:rgba(45,127,166,.08)}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}.nav-call-btn,.nav-quote-btn{font-family:'DM Sans',Arial,sans-serif;font-size:12px;font-weight:800;text-decoration:none;border-radius:10px;padding:10px 14px;letter-spacing:.5px;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;line-height:1}.nav-call-btn{border:2px solid var(--navy);color:var(--navy);background:#fff}.nav-quote-btn{border:2px solid var(--navy);background:var(--navy);color:#fff}.nav-call-btn:hover{background:var(--gold-pale)}.nav-quote-btn:hover{background:var(--navy-mid);border-color:var(--navy-mid)}
+.nav-hamburger{display:none;background:#f0f5f8;border:none;border-radius:10px;width:40px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer}.nav-hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.2s}.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.nav-hamburger.open span:nth-child(2){opacity:0}.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-drawer{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;z-index:999;background:rgba(255,255,255,.98);padding:20px 22px 28px;overflow:auto;border-top:1px solid var(--border)}.nav-drawer.open{display:block}.drawer-heading{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin:4px 0 12px}.drawer-link{display:block;text-decoration:none;padding:16px 4px;border-bottom:1px solid var(--border);color:var(--navy)}.drawer-link strong{display:block;font-size:17px;margin-bottom:3px}.drawer-link span{display:block;font-size:13px;color:var(--warm);line-height:1.35}.drawer-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.drawer-actions .nav-call-btn,.drawer-actions .nav-quote-btn{width:100%;padding:13px 10px}
+.site-footer{background:#163653;color:#fff;margin-top:60px;padding:34px 0 0}.site-footer a{color:inherit}.footer-top{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.10)}.footer-brand-name{display:inline-block;color:#fff;text-decoration:none;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1;margin-bottom:8px}.footer-brand-name span{color:#5FA8D3}.footer-brand .tagline{font-size:13px;color:rgba(255,255,255,.72);line-height:1.55;margin:0 0 12px;max-width:430px}.footer-phone{display:block;font-size:15px;font-weight:800;color:#fff;text-decoration:none;margin-bottom:4px}.footer-email{display:block;font-size:13px;color:rgba(255,255,255,.72);text-decoration:none}.footer-legal-col{display:flex;flex-direction:column;justify-content:center;gap:6px}.footer-legal-short{font-size:13px;color:rgba(255,255,255,.72);line-height:1.5;margin:0}.footer-service-links{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.10)}.footer-service-links h4{font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.92);margin:0 0 8px}.footer-service-links p{margin:0;color:rgba(255,255,255,.7);font-size:14px}.footer-service-links a{text-decoration:none;color:rgba(255,255,255,.78)}.footer-service-links a:hover{color:#fff}.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 0;color:rgba(255,255,255,.62);font-size:12px}.footer-bottom p{margin:0;color:rgba(255,255,255,.62)}.footer-bottom a{text-decoration:none;color:rgba(255,255,255,.82)}
+@media(max-width:980px){.site-nav .container,.site-footer .container{padding:0 24px}.nav-menu{display:none}.nav-hamburger{display:flex}.nav-inner{height:62px}.nav-drawer{top:62px}.nav-call-btn{display:inline-flex}.nav-quote-btn{display:none}.drawer-actions .nav-quote-btn{display:inline-flex}.logo{font-size:24px}.nav-tagline{font-size:10px}}
+@media(max-width:640px){.site-nav .container,.site-footer .container{padding:0 18px}.nav-inner{height:58px}.nav-drawer{top:58px}.nav-call-btn{font-size:11px;padding:9px 10px}.nav-right{gap:6px}.logo{font-size:22px}.nav-tagline{font-size:9px;letter-spacing:1.4px}.footer-top{grid-template-columns:1fr;gap:18px}.footer-bottom{display:block}.footer-bottom p+p{margin-top:8px}.drawer-actions{grid-template-columns:1fr}.site-footer{margin-top:42px}}
+
 </style>
 </head>
-
-<body>
-
-
-<nav>
-<div class="container nav-inner">
-<a href="/index.html" class="logo-wrap">
-<img src="/logo.png" class="site-logo" alt="Estate Co.">
-<div class="nav-tagline">Property clearance</div>
+<body><nav class="site-nav" id="nav">
+<div class="container">
+<div class="nav-inner">
+<div class="nav-brand">
+<a aria-label="Estate Co. home" class="logo-wrap" href="index.html">
+<span class="logo">Estate <span>Co.</span></span>
+<span class="nav-tagline">Property clearance</span>
 </a>
-
-<div class="nav-menu">
-<a href="/index.html">Home</a>
-<a href="/index.html#services">Services</a>
-<a href="/index.html#service-locations">Areas</a>
-<a href="/guides.html">Guides</a>
-<a href="/index.html#quote">Get Quote</a>
 </div>
-
+<div aria-label="Main navigation" class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html#services-heading">Services</a></div>
+<div class="nav-item"><a class="nav-link" href="index.html#service-locations">Areas</a></div>
+<div class="nav-item"><a class="nav-link" href="guides.html">Resources</a></div>
+<div class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></div>
+<div class="nav-item"><a class="nav-link" href="index.html#about">About</a></div>
+</div>
+<div class="nav-right">
+<a class="nav-call-btn" href="tel:0401857730">CALL NOW</a>
+<a class="nav-quote-btn" href="index.html#quote">REQUEST QUOTE</a>
+<button aria-controls="navDrawer" aria-expanded="false" aria-label="Open menu" class="nav-hamburger" id="navHamburger" onclick="toggleDrawer()" type="button">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
 </div>
 </nav>
+<div class="nav-drawer" id="navDrawer">
+<div class="drawer-section">
+<div class="drawer-heading">Navigate</div>
+<a class="drawer-link" href="index.html#services-heading" onclick="closeDrawer()"><div><strong>Services</strong><span>Clearance, cleanouts and property preparation</span></div></a>
+<a class="drawer-link" href="index.html#service-locations" onclick="closeDrawer()"><div><strong>Areas</strong><span>Melbourne, Sydney, Brisbane and surrounding areas</span></div></a>
+<a class="drawer-link" href="guides.html" onclick="closeDrawer()"><div><strong>Resources</strong><span>Helpful guides for families and executors</span></div></a>
+<a class="drawer-link" href="index.html#faq" onclick="closeDrawer()"><div><strong>FAQ</strong><span>Common questions answered</span></div></a>
+<a class="drawer-link" href="index.html#about" onclick="closeDrawer()"><div><strong>About</strong><span>Family based, respectful and insured</span></div></a>
+</div>
+<div class="drawer-actions">
+<a class="nav-call-btn" href="tel:0401857730">CALL NOW</a>
+<a class="nav-quote-btn" href="index.html#quote" onclick="closeDrawer()">REQUEST QUOTE</a>
+</div>
+</div>
 
 
 <section class="hero">
@@ -79,66 +115,85 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
 <p>Steps to prepare a property for valuation and sale.</p>
 </div>
 </section>
-
 <section class="article">
 <div class="container">
-
 <h2>Overview</h2>
 <p>
 Clearing a property can involve sorting belongings, identifying sentimental items,
 removing unwanted contents and preparing the home for sale, settlement or rental.
 </p>
-
 <h2>Key considerations</h2>
 <p>
 Families often need to locate documents, photographs and valuables before items
 are removed. Clear communication between family members and executors helps
 reduce stress during the process.
 </p>
-
 <div class="cta">
 <strong>Need help clearing a property?</strong>
 <p>Estate Co. provides respectful estate clearances across Melbourne, Sydney and Brisbane.</p>
-<a class="button" href="/index.html#quote">Get a quote</a>
+<a class="button" href="index.html#quote">Get a quote</a>
 </div>
-
 </div>
 </section>
 
 
-<footer>
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="footer-brand-name" href="index.html" aria-label="Estate Co. home">Estate Co.</a>
-        <p class="tagline">Professional, respectful estate clearance and property cleanout support.</p>
-        <a class="footer-phone" href="tel:0401857730">0401 857 730</a>
-        <a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a>
-      </div>
-
-      <div class="footer-legal-col">
-        <p class="footer-legal-short" style="margin-top:0">Estate Co. Pty Ltd · ABN <a href="https://abr.business.gov.au/ABN/View?abn=34618204290" rel="noopener" target="_blank">34 618 204 290</a></p>
-        <p class="footer-legal-short">Public liability insured · Workers compensation · Privacy Act 1988 compliant.</p>
-      </div>
-    </div>
-
-    <div class="footer-suburbs footer-service-links">
-      <h4>Service areas</h4>
-      <p>
-        <a href="estate-clearance-melbourne.html">Melbourne</a> ·
+<footer class="site-footer">
+<div class="container">
+<div class="footer-top">
+<div class="footer-brand">
+<a aria-label="Estate Co. home" class="footer-brand-name" href="index.html">Estate <span>Co.</span></a>
+<p class="tagline">Professional, respectful estate clearance and property cleanout support for families, executors, agents and property owners.</p>
+<a class="footer-phone" href="tel:0401857730">0401 857 730</a>
+<a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a>
+</div>
+<div class="footer-legal-col">
+<p class="footer-legal-short">Estate Co. Pty Ltd · ABN <a href="https://abr.business.gov.au/ABN/View?abn=34618204290" rel="noopener" target="_blank">34 618 204 290</a></p>
+<p class="footer-legal-short">Public liability insured · Workers compensation · Privacy Act 1988 compliant.</p>
+</div>
+</div>
+<div class="footer-service-links">
+<h4>Service areas</h4>
+<p>
+<a href="estate-clearance-melbourne.html">Melbourne</a> ·
         <a href="estate-clearance-sydney.html">Sydney</a> ·
         <a href="estate-clearance-brisbane.html">Brisbane</a> ·
         <a href="guides.html">Guides</a>
-      </p>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 Estate Co. Pty Ltd · <a href="index.html#quote">Request a quote</a></p>
-      <p>Estate Co. acknowledges Australia's Traditional Custodians.</p>
-    </div>
-  </div>
+</p>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Estate Co. Pty Ltd · <a href="index.html#quote">Request a quote</a></p>
+<p>Estate Co. acknowledges Australia's Traditional Custodians.</p>
+</div>
+</div>
 </footer>
-
-
+<script id="estateco-shared-nav-script">
+(function(){
+  const nav=document.getElementById('nav');
+  window.toggleDrawer=function(){
+    const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger');
+    if(!d||!b)return;
+    const open=!d.classList.contains('open');
+    d.classList.toggle('open',open);
+    b.classList.toggle('open',open);
+    b.setAttribute('aria-expanded',open?'true':'false');
+    document.body.classList.toggle('menu-open',open);
+    document.body.style.overflow=open?'hidden':'';
+  };
+  window.closeDrawer=function(){
+    const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger');
+    if(d)d.classList.remove('open');
+    if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');}
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow='';
+  };
+  if(nav){window.addEventListener('scroll',function(){nav.classList.toggle('raised',window.scrollY>10);},{passive:true});}
+  document.addEventListener('click',function(e){
+    const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger');
+    if(!d||!b||!d.classList.contains('open'))return;
+    if(!d.contains(e.target)&&!b.contains(e.target))window.closeDrawer();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeDrawer();});
+})();
+</script>
 </body>
 </html>
