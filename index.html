@@ -2978,6 +2978,28 @@ footer,.testi-section{background:#163653 !important}
 </div>
 </div>
 </section>
+<!-- TRUST SECTION -->
+<section style="padding:48px 0;background:#F7FBFF;border-top:1px solid rgba(26,60,94,0.08);border-bottom:1px solid rgba(26,60,94,0.08)">
+  <div class="container">
+    <span class="section-tag">Why people trust Estate Co.</span>
+    <h2 class="section-title" style="font-size:32px">A professional team you can trust in the home</h2>
+    <p class="section-sub" style="max-width:760px">
+      Every Estate Co. clearance is handled by a polite, respectful and professional team. 
+      We understand that entering a home — especially during a sensitive time — requires care, discretion and trust.
+      Our team arrives on time, communicates clearly and treats every property with respect from start to finish.
+    </p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:24px">
+      <div class="trust-item"><div class="trust-icon">✓</div><div><strong>Police Checked Team</strong><p>Professional staff you can feel comfortable welcoming into the home.</p></div></div>
+      <div class="trust-item"><div class="trust-icon">✓</div><div><strong>Fully Insured</strong><p>Public liability and professional coverage for peace of mind.</p></div></div>
+      <div class="trust-item"><div class="trust-icon">✓</div><div><strong>Respectful & Discreet</strong><p>We understand the emotional nature of estate and property clearances.</p></div></div>
+      <div class="trust-item"><div class="trust-icon">✓</div><div><strong>Uniformed Professionals</strong><p>A well presented team that communicates clearly and works efficiently.</p></div></div>
+      <div class="trust-item"><div class="trust-icon">✓</div><div><strong>Clear Written Quotes</strong><p>No surprises. Transparent scope and communication before work begins.</p></div></div>
+      <div class="trust-item"><div class="trust-icon">✓</div><div><strong>Updates & Photos Available</strong><p>Progress updates and completion photos when you cannot attend in person.</p></div></div>
+    </div>
+  </div>
+</section>
+
 <section aria-label="Why families choose Estate Co" class="trust-strip premium-trust-strip layout-trust-strip">
 <div class="container">
 <div class="trust-grid premium-trust-grid">
@@ -4144,7 +4166,7 @@ async function submitQ(){
   if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Submitting enquiry…';}
 
   const uploadedFiles=[...files];
-  const SHEET_URL='https://script.google.com/macros/s/AKfycbzjTra6asOwm1QuzGtrSnYzHp8VVDNnBluN39i5lFCalmA26Lmc5xjbKOKswrkLIBcc/exec';
+  const SHEET_URL='https://script.google.com/macros/s/AKfycby7vphB2CDw73b5GIrV1zGiva7hFcKvfuvizJgl44e3KEbsgA5AIM6mY_9YcngMC0UFbQ/exec';
 
   const leadPayload={
     action:'lead',
@@ -4162,53 +4184,7 @@ async function submitQ(){
   // This protects the lead if the network drops, Google times out, or a large upload fails.
   ecSaveLeadBackup(ref,leadPayload);
 
-  function showUploadProgress(message,current,total){
-    document.getElementById('qbody').style.display='none';
-    document.getElementById('progBar').style.display='none';
-    document.getElementById('sucBox').style.display='none';
-
-    let box=document.getElementById('uploadProgressBox');
-    if(!box){
-      box=document.createElement('div');
-      box.id='uploadProgressBox';
-      box.style.cssText='padding:28px;background:#fff;text-align:left;animation:fIn .25s ease;';
-      const suc=document.getElementById('sucBox');
-      suc.parentNode.insertBefore(box,suc);
-    }
-
-    const totalNum=Number(total||0);
-    const currentNum=Number(current||0);
-    const pct=totalNum>0?Math.min(100,Math.round((currentNum/totalNum)*100)):(message&&message.toLowerCase().includes('saved')?100:15);
-    const progressText=totalNum>0?`${currentNum} of ${totalNum} files uploaded`:'Preparing upload';
-
-    box.innerHTML=`
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
-        <div style="width:42px;height:42px;border-radius:50%;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:800;">↑</div>
-        <div>
-          <h4 style="margin:0 0 3px;font-size:18px;color:var(--navy);font-weight:700;">Please keep this page open</h4>
-          <p style="margin:0;font-size:13px;color:var(--warm);line-height:1.5;">${message||'Uploading your photos securely.'}</p>
-        </div>
-      </div>
-      <div style="height:10px;background:#edf3f7;border-radius:999px;overflow:hidden;margin-bottom:10px;">
-        <div style="height:100%;width:${pct}%;background:var(--gold);border-radius:999px;transition:width .25s ease;"></div>
-      </div>
-      <div style="display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--warm);">
-        <span>${progressText}</span>
-        <strong style="color:var(--navy);">${pct}%</strong>
-      </div>
-    `;
-
-    const quoteEl=document.getElementById('quote');
-    if(quoteEl){const top=quoteEl.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:top,behavior:'smooth'});}
-  }
-
-  function hideUploadProgress(){
-    const box=document.getElementById('uploadProgressBox');
-    if(box)box.remove();
-  }
-
-  function showSuccess(uploadedCount){
-    hideUploadProgress();
+  function showSuccess(){
     document.getElementById('qbody').style.display='none';
     document.getElementById('progBar').style.display='none';
     const sb=document.getElementById('sucBox');
@@ -4218,7 +4194,7 @@ async function submitQ(){
     const ctEl=document.getElementById('callTime');
     if(ctEl){
       ctEl.textContent=uploadedFiles.length
-        ? `Your enquiry is saved. ${uploadedCount||uploadedFiles.length} file${(uploadedCount||uploadedFiles.length)===1?'':'s'} uploaded.`
+        ? 'Your enquiry is saved. Photos are uploading to Drive.'
         : "We'll be in touch shortly";
     }
     setTimeout(()=>{
@@ -4227,23 +4203,21 @@ async function submitQ(){
     },80);
   }
 
-  function postPayload(payload, holdMs){
-    // Use a fresh hidden iframe per submission. Reusing the same iframe can cancel
-    // earlier Apps Script POSTs, which can make only one uploaded file arrive.
-    const frameName='sheetFrame_'+Date.now()+'_'+Math.floor(Math.random()*100000);
-    const ifr=document.createElement('iframe');
-    ifr.name=frameName;
-    ifr.id=frameName;
-    ifr.style.display='none';
-    document.body.appendChild(ifr);
-
+  function postPayload(payload){
+    let ifr=document.getElementById('sheetFrame');
+    if(!ifr){
+      ifr=document.createElement('iframe');
+      ifr.id='sheetFrame';
+      ifr.name='sheetFrame';
+      ifr.style.display='none';
+      document.body.appendChild(ifr);
+    }
     const frm=document.createElement('form');
     frm.method='POST';
     frm.action=SHEET_URL;
-    frm.target=frameName;
+    frm.target='sheetFrame';
     frm.enctype='application/x-www-form-urlencoded';
     frm.style.display='none';
-
     const inp=document.createElement('input');
     inp.type='hidden';
     inp.name='payload';
@@ -4251,14 +4225,7 @@ async function submitQ(){
     frm.appendChild(inp);
     document.body.appendChild(frm);
     frm.submit();
-
-    const wait=holdMs||9000;
-    setTimeout(()=>{
-      try{document.body.removeChild(frm);}catch(e){}
-      try{document.body.removeChild(ifr);}catch(e){}
-    },wait);
-
-    return new Promise(resolve=>setTimeout(resolve,wait));
+    setTimeout(()=>{try{document.body.removeChild(frm);}catch(e){}},500);
   }
 
 
@@ -4294,7 +4261,7 @@ async function submitQ(){
   async function uploadFilesOneByOne(){
     if(!uploadedFiles.length){
       ecUpdateLeadBackup(ref,{status:'Lead submitted without files'});
-      return 0;
+      return;
     }
     let uploadedCount=0;
     for(let i=0;i<uploadedFiles.length;i++){
@@ -4302,12 +4269,10 @@ async function submitQ(){
       let sent=false;
       for(let attempt=1;attempt<=3 && !sent;attempt++){
         try{
-          const progressMsg='Uploading file '+(i+1)+' of '+uploadedFiles.length+(attempt>1?' — retry '+attempt:'')+'…';
-          if(submitBtn){submitBtn.textContent=progressMsg;}
-          showUploadProgress(progressMsg,uploadedCount,uploadedFiles.length);
+          if(submitBtn){submitBtn.textContent='Uploading file '+(i+1)+' of '+uploadedFiles.length+(attempt>1?' — retry '+attempt:'')+'…';}
           ecUpdateLeadBackup(ref,{status:'Uploading file '+(i+1)+' of '+uploadedFiles.length,uploadedCount:uploadedCount});
           const base64=await fileToBase64(file);
-          await postPayload({
+          postPayload({
             action:'file',
             reference:ref,
             name:n,
@@ -4327,11 +4292,11 @@ async function submitQ(){
               size:file.size,
               data:base64
             }
-          },11000);
+          });
           uploadedCount++;
           sent=true;
-          showUploadProgress('Uploaded '+uploadedCount+' of '+uploadedFiles.length+' file'+(uploadedFiles.length===1?'':'s')+'.',uploadedCount,uploadedFiles.length);
           ecUpdateLeadBackup(ref,{status:'File '+(i+1)+' sent to Drive upload queue',uploadedCount:uploadedCount});
+          await new Promise(resolve=>setTimeout(resolve,2400));
         }catch(err){
           console.warn('File upload failed:',file.name,err);
           ecUpdateLeadBackup(ref,{status:'File upload retry needed',lastError:String(err)});
@@ -4346,23 +4311,14 @@ async function submitQ(){
     if(submitBtn){submitBtn.textContent='Submitted';}
     ecUpdateLeadBackup(ref,{status:'Submitted. Backup retained for 24 hours as a safety copy.',uploadedCount:uploadedCount});
     setTimeout(()=>ecClearLeadBackup(ref),24*60*60*1000);
-    return uploadedCount;
+    const ctEl=document.getElementById('callTime');
+    if(ctEl)ctEl.textContent="We'll be in touch shortly";
   }
 
-  showUploadProgress(uploadedFiles.length?'Saving your enquiry before uploading files…':'Saving your enquiry…',0,uploadedFiles.length);
-  await postPayload(leadPayload,2500);
+  postPayload(leadPayload);
   ecUpdateLeadBackup(ref,{status:'Lead sent to Apps Script'});
-  ecUpdateLeadBackup(ref,{status:'Lead submitted. Uploading files if selected.'});
-
-  let finalUploadedCount=0;
-  if(uploadedFiles.length){
-    finalUploadedCount=await uploadFilesOneByOne();
-  }else{
-    showUploadProgress('Your enquiry has been saved.',0,0);
-    await new Promise(resolve=>setTimeout(resolve,700));
-  }
-
-  showSuccess(finalUploadedCount);
+  setTimeout(()=>{ecUpdateLeadBackup(ref,{status:'Lead submitted. Uploading files if selected.'});showSuccess();},900);
+  setTimeout(()=>{uploadFilesOneByOne();},1400);
 }
 
 // SERVICE TABS
