@@ -2661,6 +2661,20 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
   }
 }
 
+
+/* Mobile header order: call, quote, hamburger */
+@media(max-width:760px){
+  .mobile-header-actions{
+    display:flex !important;
+    align-items:center !important;
+    gap:7px !important;
+    margin-left:auto !important;
+  }
+  .mobile-phone-button{order:1 !important}
+  .mobile-quote-button{order:2 !important}
+  .mobile-menu-button{order:3 !important}
+}
+
 </style>
 <style>
 /* Premium services and location SEO upgrades */
@@ -3634,13 +3648,9 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
         <a href="index.html">Home</a><a href="index.html#services-heading">Services</a><a href="index.html#service-locations">Areas</a><a href="guides.html">Resources</a><a href="index.html#faq">FAQ</a>
       </div>
       
+
 <div class="site-nav-actions mobile-header-actions">
   <a class="site-call-btn desktop-call-btn" href="tel:0401857730">CALL NOW</a>
-  <button class="mobile-menu-button" id="navHamburger" type="button" aria-label="Open menu" onclick="toggleDrawer()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 
   <a class="mobile-phone-button" href="tel:0401857730" aria-label="Call EstateCo">
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -3649,7 +3659,14 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
   </a>
 
   <a class="mobile-quote-button" href="#quote">REQUEST QUOTE</a>
+
+  <button class="mobile-menu-button" id="navHamburger" type="button" aria-label="Open menu" onclick="toggleDrawer()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </div>
+
 
     </div>
   </div>
