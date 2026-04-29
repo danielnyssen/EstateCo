@@ -4162,7 +4162,53 @@ async function submitQ(){
   // This protects the lead if the network drops, Google times out, or a large upload fails.
   ecSaveLeadBackup(ref,leadPayload);
 
-  function showSuccess(){
+  function showUploadProgress(message,current,total){
+    document.getElementById('qbody').style.display='none';
+    document.getElementById('progBar').style.display='none';
+    document.getElementById('sucBox').style.display='none';
+
+    let box=document.getElementById('uploadProgressBox');
+    if(!box){
+      box=document.createElement('div');
+      box.id='uploadProgressBox';
+      box.style.cssText='padding:28px;background:#fff;text-align:left;animation:fIn .25s ease;';
+      const suc=document.getElementById('sucBox');
+      suc.parentNode.insertBefore(box,suc);
+    }
+
+    const totalNum=Number(total||0);
+    const currentNum=Number(current||0);
+    const pct=totalNum>0?Math.min(100,Math.round((currentNum/totalNum)*100)):(message&&message.toLowerCase().includes('saved')?100:15);
+    const progressText=totalNum>0?`${currentNum} of ${totalNum} files uploaded`:'Preparing upload';
+
+    box.innerHTML=`
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+        <div style="width:42px;height:42px;border-radius:50%;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:800;">↑</div>
+        <div>
+          <h4 style="margin:0 0 3px;font-size:18px;color:var(--navy);font-weight:700;">Please keep this page open</h4>
+          <p style="margin:0;font-size:13px;color:var(--warm);line-height:1.5;">${message||'Uploading your photos securely.'}</p>
+        </div>
+      </div>
+      <div style="height:10px;background:#edf3f7;border-radius:999px;overflow:hidden;margin-bottom:10px;">
+        <div style="height:100%;width:${pct}%;background:var(--gold);border-radius:999px;transition:width .25s ease;"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--warm);">
+        <span>${progressText}</span>
+        <strong style="color:var(--navy);">${pct}%</strong>
+      </div>
+    `;
+
+    const quoteEl=document.getElementById('quote');
+    if(quoteEl){const top=quoteEl.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:top,behavior:'smooth'});}
+  }
+
+  function hideUploadProgress(){
+    const box=document.getElementById('uploadProgressBox');
+    if(box)box.remove();
+  }
+
+  function showSuccess(uploadedCount){
+    hideUploadProgress();
     document.getElementById('qbody').style.display='none';
     document.getElementById('progBar').style.display='none';
     const sb=document.getElementById('sucBox');
@@ -4172,7 +4218,7 @@ async function submitQ(){
     const ctEl=document.getElementById('callTime');
     if(ctEl){
       ctEl.textContent=uploadedFiles.length
-        ? 'Your enquiry is saved. Photos are uploading to Drive.'
+        ? `Your enquiry is saved. ${uploadedCount||uploadedFiles.length} file${(uploadedCount||uploadedFiles.length)===1?'':'s'} uploaded.`
         : "We'll be in touch shortly";
     }
     setTimeout(()=>{
@@ -4248,7 +4294,7 @@ async function submitQ(){
   async function uploadFilesOneByOne(){
     if(!uploadedFiles.length){
       ecUpdateLeadBackup(ref,{status:'Lead submitted without files'});
-      return;
+      return 0;
     }
     let uploadedCount=0;
     for(let i=0;i<uploadedFiles.length;i++){
@@ -4256,7 +4302,9 @@ async function submitQ(){
       let sent=false;
       for(let attempt=1;attempt<=3 && !sent;attempt++){
         try{
-          if(submitBtn){submitBtn.textContent='Uploading file '+(i+1)+' of '+uploadedFiles.length+(attempt>1?' — retry '+attempt:'')+'…';}
+          const progressMsg='Uploading file '+(i+1)+' of '+uploadedFiles.length+(attempt>1?' — retry '+attempt:'')+'…';
+          if(submitBtn){submitBtn.textContent=progressMsg;}
+          showUploadProgress(progressMsg,uploadedCount,uploadedFiles.length);
           ecUpdateLeadBackup(ref,{status:'Uploading file '+(i+1)+' of '+uploadedFiles.length,uploadedCount:uploadedCount});
           const base64=await fileToBase64(file);
           await postPayload({
@@ -4282,6 +4330,7 @@ async function submitQ(){
           },11000);
           uploadedCount++;
           sent=true;
+          showUploadProgress('Uploaded '+uploadedCount+' of '+uploadedFiles.length+' file'+(uploadedFiles.length===1?'':'s')+'.',uploadedCount,uploadedFiles.length);
           ecUpdateLeadBackup(ref,{status:'File '+(i+1)+' sent to Drive upload queue',uploadedCount:uploadedCount});
         }catch(err){
           console.warn('File upload failed:',file.name,err);
@@ -4297,15 +4346,23 @@ async function submitQ(){
     if(submitBtn){submitBtn.textContent='Submitted';}
     ecUpdateLeadBackup(ref,{status:'Submitted. Backup retained for 24 hours as a safety copy.',uploadedCount:uploadedCount});
     setTimeout(()=>ecClearLeadBackup(ref),24*60*60*1000);
-    const ctEl=document.getElementById('callTime');
-    if(ctEl)ctEl.textContent="We'll be in touch shortly";
+    return uploadedCount;
   }
 
+  showUploadProgress(uploadedFiles.length?'Saving your enquiry before uploading files…':'Saving your enquiry…',0,uploadedFiles.length);
   await postPayload(leadPayload,2500);
   ecUpdateLeadBackup(ref,{status:'Lead sent to Apps Script'});
   ecUpdateLeadBackup(ref,{status:'Lead submitted. Uploading files if selected.'});
-  showSuccess();
-  setTimeout(()=>{uploadFilesOneByOne();},500);
+
+  let finalUploadedCount=0;
+  if(uploadedFiles.length){
+    finalUploadedCount=await uploadFilesOneByOne();
+  }else{
+    showUploadProgress('Your enquiry has been saved.',0,0);
+    await new Promise(resolve=>setTimeout(resolve,700));
+  }
+
+  showSuccess(finalUploadedCount);
 }
 
 // SERVICE TABS
