@@ -27,6 +27,27 @@ footer{background:#1A3C5E;color:#fff;margin-top:60px}
 footer a{color:rgba(255,255,255,.75);text-decoration:none;font-size:14px}
 footer h4{font-size:13px;letter-spacing:1px;margin-bottom:10px}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.2);padding:16px 0;font-size:12px;color:rgba(255,255,255,.6)}
+
+/* Consistent Estate Co. footer */
+footer{background:#163653;color:#fff;margin-top:60px;padding:32px 0 0}
+footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
+.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand-name{display:inline-block;color:#fff;text-decoration:none;font-size:26px;font-weight:700;letter-spacing:-0.5px;line-height:1;margin-bottom:8px}
+.footer-brand .tagline{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.55;margin-bottom:12px;max-width:300px}
+.footer-phone{display:block;font-size:14px;font-weight:700;color:rgba(255,255,255,0.9);text-decoration:none;margin-bottom:4px}
+.footer-email{display:block;font-size:12px;color:rgba(255,255,255,0.62);text-decoration:none}
+.footer-legal-col{display:flex;flex-direction:column;gap:0;justify-content:flex-start}
+.footer-legal-short{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:6px}
+.footer-legal-short a{color:rgba(255,255,255,0.62);text-decoration:underline;text-underline-offset:2px}
+.footer-suburbs{padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-suburbs h4{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.42);margin:0 0 8px}
+.footer-suburbs p{font-size:13px;color:rgba(255,255,255,0.66);margin:0;line-height:1.7}
+.footer-suburbs a,.footer-service-links a{color:rgba(255,255,255,0.78);text-decoration:none;font-weight:700}
+.footer-suburbs a:hover,.footer-service-links a:hover{color:#A8D8EA}
+.footer-bottom{padding:12px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:0}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.5;margin:0}
+.footer-bottom a{color:rgba(255,255,255,0.48);text-decoration:none}
+@media(max-width:760px){footer .container{padding:0 24px}.footer-top{grid-template-columns:1fr;gap:14px}.footer-bottom{flex-direction:column;align-items:flex-start}.footer-legal-col{display:block}}
 </style>
 </head>
 
@@ -86,32 +107,36 @@ reduce stress during the process.
 
 
 <footer>
-<div class="container footer-inner">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-brand-name" href="index.html" aria-label="Estate Co. home">Estate Co.</a>
+        <p class="tagline">Professional, respectful estate clearance and property cleanout support.</p>
+        <a class="footer-phone" href="tel:0401857730">0401 857 730</a>
+        <a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a>
+      </div>
 
-<div>
-<h4>Estate Co.</h4>
-<p>Respectful property clearances for families, executors and agents.</p>
-</div>
+      <div class="footer-legal-col">
+        <p class="footer-legal-short" style="margin-top:0">Estate Co. Pty Ltd · ABN <a href="https://abr.business.gov.au/ABN/View?abn=34618204290" rel="noopener" target="_blank">34 618 204 290</a></p>
+        <p class="footer-legal-short">Public liability insured · Workers compensation · Privacy Act 1988 compliant.</p>
+      </div>
+    </div>
 
-<div>
-<h4>Services</h4>
-<a href="/index.html#services">Estate cleanouts</a><br>
-<a href="/index.html#services">Downsizing</a><br>
-<a href="/index.html#services">Pre-sale preparation</a>
-</div>
+    <div class="footer-suburbs footer-service-links">
+      <h4>Service areas</h4>
+      <p>
+        <a href="estate-clearance-melbourne.html">Melbourne</a> ·
+        <a href="estate-clearance-sydney.html">Sydney</a> ·
+        <a href="estate-clearance-brisbane.html">Brisbane</a> ·
+        <a href="guides.html">Guides</a>
+      </p>
+    </div>
 
-<div>
-<h4>Locations</h4>
-<a href="/estate-clearance-melbourne.html">Melbourne</a><br>
-<a href="/estate-clearance-sydney.html">Sydney</a><br>
-<a href="/estate-clearance-brisbane.html">Brisbane</a>
-</div>
-
-</div>
-
-<div class="container footer-bottom">
-© 2026 Estate Co.
-</div>
+    <div class="footer-bottom">
+      <p>© 2026 Estate Co. Pty Ltd · <a href="index.html#quote">Request a quote</a></p>
+      <p>Estate Co. acknowledges Australia's Traditional Custodians.</p>
+    </div>
+  </div>
 </footer>
 
 

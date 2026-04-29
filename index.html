@@ -415,8 +415,6 @@ nav.raised{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
 }
 .nav-quote-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
 /* ── LOGO IMAGE ── */
-.footer-logo-wrap{flex-direction:row}
-.footer-logo-img{height:32px;width:auto;display:block}
 .mob-logo-img{height:28px;width:auto;display:block}
 
 /* ── HERO ── */
@@ -2930,9 +2928,9 @@ footer,.testi-section{background:#163653 !important}
 
 <style id="estateco-shared-consistency">
 :root{--navy:#1A3C5E;--navy-mid:#1F4D78;--gold:#2D7FA6;--gold-pale:#E7F2F7;--gold-mid:#236A8A;--offwhite:#F2F8FC;--warm:#425F73;--charcoal:#24384A;--success:#1E7A5A;--success-pale:#E8F5EE;--border:rgba(26,60,94,0.1);--border-med:rgba(26,60,94,0.16)}
-.nav-menu{gap:4px}.nav-link{font-weight:700}.nav-quote-btn{text-decoration:none}.nav-call-btn{text-decoration:none}.nav-logo-img{height:36px;width:auto}.footer-logo-img{height:34px;width:auto}.footer-service-links a{color:inherit;text-decoration:none;font-weight:700}.footer-service-links a:hover{color:var(--gold)}
+.nav-menu{gap:4px}.nav-link{font-weight:700}.nav-quote-btn{text-decoration:none}.nav-call-btn{text-decoration:none}.nav-logo-img{height:36px;width:auto}.footer-service-links a{color:inherit;text-decoration:none;font-weight:700}.footer-service-links a:hover{color:var(--gold)}
 body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .nav-quote-btn,.drawer-actions .nav-call-btn{padding:12px 14px;border-radius:10px;font-size:12px;font-weight:800;text-align:center;display:flex;align-items:center;justify-content:center;white-space:nowrap}.drawer-actions .nav-quote-btn{background:var(--navy);color:#fff;border:2px solid var(--navy)}
-@media(max-width:480px){.nav-right{gap:6px}.nav-call-btn{font-size:11px}.nav-hamburger{display:flex}.nav-drawer{top:52px}.footer-logo-wrap{align-items:flex-start}.footer-service-links{display:block}}
+@media(max-width:480px){.nav-right{gap:6px}.nav-call-btn{font-size:11px}.nav-hamburger{display:flex}.nav-drawer{top:52px}.footer-service-links{display:block}}
 </style>
 
 </head>
@@ -3769,9 +3767,7 @@ footer,.testi-section{background:#163653 !important}
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="footer-logo-wrap logo-wrap" href="index.html" aria-label="Estate Co. home">
-          <img alt="Estate Co." class="footer-logo-img" src="logo.png"/>
-        </a>
+        <a class="footer-brand-name" href="index.html" aria-label="Estate Co. home">Estate Co.</a>
         <p class="tagline">Professional, respectful estate clearance and property cleanout support.</p>
         <a class="footer-phone" href="tel:0401857730">0401 857 730</a>
         <a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a>
@@ -4315,6 +4311,27 @@ body{color:#24384A;background:#fff}
 footer,.testi-section{background:#163653 !important}
 @media(max-width:480px){body{background:#F3F7FA}.services-section,.faq-section,.reviews-section,.quote-section{background:#F3F7FA !important}.svc-card,.step-card,.review-card,.faq-item,.quote-card{box-shadow:0 5px 18px rgba(26,60,94,0.10) !important}.section-sub,.hero-sub,.svc-card p,.step-card p,.faq-a p{color:#405B70 !important}}
 
+
+/* Consistent Estate Co. footer */
+footer{background:#163653;color:#fff;margin-top:60px;padding:32px 0 0}
+footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
+.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand-name{display:inline-block;color:#fff;text-decoration:none;font-size:26px;font-weight:700;letter-spacing:-0.5px;line-height:1;margin-bottom:8px}
+.footer-brand .tagline{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.55;margin-bottom:12px;max-width:300px}
+.footer-phone{display:block;font-size:14px;font-weight:700;color:rgba(255,255,255,0.9);text-decoration:none;margin-bottom:4px}
+.footer-email{display:block;font-size:12px;color:rgba(255,255,255,0.62);text-decoration:none}
+.footer-legal-col{display:flex;flex-direction:column;gap:0;justify-content:flex-start}
+.footer-legal-short{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:6px}
+.footer-legal-short a{color:rgba(255,255,255,0.62);text-decoration:underline;text-underline-offset:2px}
+.footer-suburbs{padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-suburbs h4{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.42);margin:0 0 8px}
+.footer-suburbs p{font-size:13px;color:rgba(255,255,255,0.66);margin:0;line-height:1.7}
+.footer-suburbs a,.footer-service-links a{color:rgba(255,255,255,0.78);text-decoration:none;font-weight:700}
+.footer-suburbs a:hover,.footer-service-links a:hover{color:#A8D8EA}
+.footer-bottom{padding:12px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:0}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.5;margin:0}
+.footer-bottom a{color:rgba(255,255,255,0.48);text-decoration:none}
+@media(max-width:760px){footer .container{padding:0 24px}.footer-top{grid-template-columns:1fr;gap:14px}.footer-bottom{flex-direction:column;align-items:flex-start}.footer-legal-col{display:block}}
 </style>
 
 <!-- SEO Content (collapsed for users but indexable) -->
