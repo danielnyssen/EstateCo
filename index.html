@@ -2242,6 +2242,16 @@ footer,.testi-section{background:#163653 !important}
   }
 }
 
+
+.field-help{
+  display:block;
+  margin-top:-3px;
+  margin-bottom:8px;
+  font-size:11px;
+  line-height:1.45;
+  color:var(--warm);
+}
+
 </style>
 <style>
 /* Premium services and location SEO upgrades */
@@ -3128,7 +3138,7 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 
 </head>
 <body>
-<a class="skip-link sr-only" href="#quote">Skip to quote form</a>
+<a class="skip-link sr-only" href="#quote" data-quote-cta="true">Skip to quote form</a>
 <!-- NAV -->
 <nav id="nav">
   <div class="container">
@@ -3153,7 +3163,7 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 
       <div class="nav-right">
         <a class="nav-call-btn" href="tel:0401857730">CALL NOW</a>
-        <a class="nav-quote-btn" href="index.html#quote">REQUEST QUOTE</a>
+        <a class="nav-quote-btn" href="#quote" data-quote-cta="true">REQUEST QUOTE</a>
         <button aria-controls="navDrawer" aria-expanded="false" aria-label="Open menu" class="nav-hamburger" id="navHamburger" onclick="toggleDrawer()" type="button">
           <span></span><span></span><span></span>
         </button>
@@ -3183,7 +3193,7 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
   </div>
   <div class="drawer-actions">
     <a class="nav-call-btn" href="tel:0401857730" style="flex:1;justify-content:center">CALL NOW</a>
-    <a class="nav-quote-btn" href="index.html#quote" onclick="closeDrawer()" style="flex:1;justify-content:center">REQUEST QUOTE</a>
+    <a class="nav-quote-btn" href="#quote" onclick="closeDrawer()" style="flex:1;justify-content:center" data-quote-cta="true">REQUEST QUOTE</a>
   </div>
 </div>
 <section class="hero layout-hero">
@@ -3268,7 +3278,7 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 </div></section><div class="section-divider"></div><section aria-labelledby="quote-heading" class="quote-section"><div class="container quote-container">
 <div class="quote-panel">
 <div class="quote-panel-header">
-<span class="quote-tag">Request a Quote</span>
+<span class="quote-tag">REQUEST QUOTE</span>
 <h2>Tell us about the property</h2>
 <p>Share a few details and photos. We’ll provide a clear estimate.</p>
 </div><p class="quote-trust">Fast response • No obligation • Photos are enough</p><div id="quote">
@@ -3282,11 +3292,11 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 <div class="sp" id="p2"><div class="sn">2</div><span>Services</span></div>
 <div class="sl"></div>
 <div class="sp" id="p3"><div class="sn">3</div><span>Your details</span></div>
-</div><div class="quote-seo-intro"><strong>Quick estimate</strong><p>Suburb, size and photos are enough to get started.</p></div>
+</div><div class="quote-seo-intro"><strong>Quick estimate</strong><p>Please enter the exact property address, property size and photos so we can provide a clearer estimate.</p></div>
 <div class="qbody" id="qbody">
 <!-- Step 1 — Property -->
 <div class="fstep on" id="fs1">
-<div class="fg"><label>Property suburb &amp; state *</label><input aria-label="Property suburb and state for estate clearance quote" id="suburb" placeholder="e.g. Glen Waverley, VIC" type="text"/></div>
+<div class="fg"><label>Exact property address &amp; state *</label><input aria-label="Exact property address and state for estate clearance quote" id="suburb" placeholder="e.g. 24 Coleman Parade, Glen Waverley VIC 3150" type="text"/ autocomplete="street-address" inputmode="text"></div>
 <div class="fg"><label>Property type</label>
 <select id="ptype">
 <option value="">Select type</option>
@@ -3336,7 +3346,7 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 <div class="fg"><label>Email *</label><input aria-label="Your email address" autocomplete="email" id="femail" placeholder="jane@email.com" type="email"/></div>
 <div class="fg"><label>Phone *</label><input aria-label="Your phone number" autocomplete="tel" id="fphone" placeholder="04XX XXX XXX" type="tel"/></div>
 <div class="fg"><label>Notes (optional)</label><textarea id="fnotes" placeholder="Anything else we should know…"></textarea></div>
-<div class="btn-row"><button class="bbk" onclick="qBack(3)" type="button">← Back</button><button class="bnx" onclick="submitQ()" type="button">GET QUOTE</button></div>
+<div class="btn-row"><button class="bbk" onclick="qBack(3)" type="button">← Back</button><button class="bnx" onclick="submitQ()" type="button">REQUEST QUOTE</button></div>
 </div>
 </div>
 <div class="suc-box" id="sucBox">
@@ -4072,7 +4082,7 @@ footer,.testi-section{background:#163653 !important}
 
       <div class="about-cta">
         <p>If you’re not sure where to start, we’re happy to guide you.</p>
-        <a href="#quote" class="navy-btn">Request a Quote</a>
+        <a href="#quote" class="navy-btn" data-quote-cta="true">REQUEST QUOTE</a>
       </div>
     </div>
   </div>
@@ -4150,7 +4160,7 @@ footer,.testi-section{background:#163653 !important}
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 Estate Co. Pty Ltd · <a href="index.html#quote">Request a quote</a></p>
+      <p>© 2026 Estate Co. Pty Ltd · <a href="#quote" data-quote-cta="true">REQUEST QUOTE</a></p>
       <p>Estate Co. acknowledges Australia's Traditional Custodians.</p>
     </div>
   </div>
@@ -4161,7 +4171,7 @@ footer,.testi-section{background:#163653 !important}
     <a class="mob-logo logo-wrap" href="index.html" aria-label="Estate Co. home"></a>
     <div class="mob-actions">
       <a class="mb-action mb-call" href="tel:0401857730">📞 0401 857 730</a>
-      <a class="mb-action mb-quote" href="index.html#quote">Get Quote</a>
+      <a class="mb-action mb-quote" href="#quote" data-quote-cta="true">REQUEST QUOTE</a>
     </div>
   </div>
 </div>
@@ -4635,9 +4645,7 @@ function filterFaq(el,cat){
 </script>
 <!-- FLOATING QUOTE BUTTON -->
 <button class="float-quote-btn" onclick="scrollToEl('quote')" type="button">
-<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-  REQUEST QUOTE
-</button>
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>REQUEST QUOTE</button>
 <style>
 .float-quote-btn{position:fixed;bottom:24px;right:24px;left:auto;z-index:999;background:var(--navy);color:#fff;border:none;border-radius:50px;padding:14px 22px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,0.18);transition:transform 0.2s,box-shadow 0.2s}
 .float-quote-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.22)}
@@ -4880,6 +4888,51 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
     if(!d.contains(e.target)&&!b.contains(e.target))window.closeDrawer();
   });
   document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeDrawer();});
+})();
+</script>
+
+
+<script>
+(function(){
+  function trackQuoteClick(link){
+    var label = (link && link.textContent ? link.textContent.trim() : 'REQUEST QUOTE') || 'REQUEST QUOTE';
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'request_quote_click',
+      event_category: 'Lead',
+      event_label: label,
+      page_path: window.location.pathname
+    });
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'request_quote_click', {
+        event_category: 'Lead',
+        event_label: label
+      });
+    }
+  }
+
+  document.addEventListener('click', function(e){
+    var link = e.target.closest('a[data-quote-cta="true"], a[href="#quote"], a[href="index.html#quote"]');
+    if (!link) return;
+
+    trackQuoteClick(link);
+
+    var target = document.getElementById('quote');
+    if (!target) return;
+
+    if (link.getAttribute('href') === '#quote') {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      if (history.pushState) {
+        history.pushState(null, '', '#quote');
+      } else {
+        window.location.hash = 'quote';
+      }
+    }
+  });
 })();
 </script>
 
