@@ -2708,6 +2708,13 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
 }
 .mission-quote p{margin:0;line-height:1.6;}
 
+
+/* Google Places dropdown support */
+.pac-container{
+  z-index:20000 !important;
+  font-family:'DM Sans', Arial, sans-serif;
+}
+
 </style>
 <style>
 /* Premium services and location SEO upgrades */
@@ -3855,7 +3862,15 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 <div class="qbody" id="qbody">
 <!-- Step 1 — Property -->
 <div class="fstep on" id="fs1">
-<div class="fg"><label>Property address &amp; state *</label><input aria-label="Property address and state for estate clearance quote" id="suburb" placeholder="e.g. 24 Coleman Parade, Glen Waverley VIC 3150" type="text"/ autocomplete="street-address" inputmode="text"></div>
+<div class="fg"><label>Property address &amp; state *</label><input aria-label="Property address and state for estate clearance quote" id="suburb" name="propertyAddress" placeholder="Enter the full property address, suburb, state and postcode" type="text" autocomplete="street-address" inputmode="text">
+<input type="hidden" id="jobSizeEstimate" name="jobSizeEstimate">
+<input type="hidden" id="propertyStreet" name="propertyStreet">
+<input type="hidden" id="propertySuburb" name="propertySuburb">
+<input type="hidden" id="propertyState" name="propertyState">
+<input type="hidden" id="propertyPostcode" name="propertyPostcode">
+<input type="hidden" id="propertyCountry" name="propertyCountry">
+<input type="hidden" id="propertyPlaceId" name="propertyPlaceId">
+<input type="hidden" id="formattedAddress" name="formattedAddress"></div>
 <div class="fg"><label>Property type</label>
 <select id="ptype">
 <option value="">Select type</option>
@@ -4935,6 +4950,13 @@ function qGo(from){
   clearErr();
   if(from===1){
     const suburb=document.getElementById('suburb').value.trim();
+  const propertyStreet=(document.getElementById('propertyStreet')||{}).value||'';
+  const propertySuburb=(document.getElementById('propertySuburb')||{}).value||'';
+  const propertyState=(document.getElementById('propertyState')||{}).value||'';
+  const propertyPostcode=(document.getElementById('propertyPostcode')||{}).value||'';
+  const propertyCountry=(document.getElementById('propertyCountry')||{}).value||'';
+  const propertyPlaceId=(document.getElementById('propertyPlaceId')||{}).value||'';
+  const formattedAddress=(document.getElementById('formattedAddress')||{}).value||'';
     const ptype=document.getElementById('ptype').value;
     const psize=document.getElementById('psize').value;
     if(!suburb){showErr('Please enter a suburb and state.');return;}
@@ -5194,12 +5216,21 @@ async function submitQ(){
   if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Submitting enquiry…';}
 
   const uploadedFiles=[...files];
-  const SHEET_URL='https://script.google.com/macros/s/AKfycbzjTra6asOwm1QuzGtrSnYzHp8VVDNnBluN39i5lFCalmA26Lmc5xjbKOKswrkLIBcc/exec';
+  const SHEET_URL='https://script.google.com/macros/s/AKfycbxjXKyFuuPsBzr1mKFSSLF8jv2Vnn42L9mZPh1Pcf0KOGiUgifgQVI-OrwTdViYstQb/exec';
 
   const leadPayload={
     action:'lead',
     reference:ref,name:n,email:e,phone:ph,
-    suburb:suburb,propertyType:ptype,size:psize,
+    suburb:suburb,
+    propertyAddress:suburb,
+    formattedAddress:formattedAddress,
+    propertyStreet:propertyStreet,
+    propertySuburb:propertySuburb,
+    propertyState:propertyState,
+    propertyPostcode:propertyPostcode,
+    propertyCountry:propertyCountry,
+    propertyPlaceId:propertyPlaceId,
+    propertyType:ptype,size:psize,
     services:services,
     notes:notes.trim(),
     fileCount:uploadedFiles.length,
@@ -5788,5 +5819,140 @@ function closeDrawer(){
   }
 }
 </script>
+
+
+<script>
+window.addEventListener("DOMContentLoaded", function(){
+  var addressInput = document.getElementById("suburb");
+  if(addressInput){
+    addressInput.removeAttribute("disabled");
+    addressInput.removeAttribute("readonly");
+    addressInput.style.pointerEvents = "auto";
+  }
+});
+</script>
+
+
+<script>
+function estimateJobSize(){
+
+  const propertyType = document.getElementById("ptype")?.value || "";
+  const propertySize = document.getElementById("psize")?.value || "";
+
+  const services = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+    .map(cb => cb.value.toLowerCase())
+    .join(", ");
+
+  let estimate = "Standard";
+
+  if(propertySize.includes("4") || services.includes("hoard")){
+    estimate = "Large / Complex";
+  }
+  else if(propertySize.includes("3") || services.includes("deep")){
+    estimate = "Medium / Detailed";
+  }
+  else if(propertySize.includes("1") || propertySize.includes("2")){
+    estimate = "Small / Simple";
+  }
+
+  const field = document.getElementById("jobSizeEstimate");
+  if(field) field.value = estimate;
+
+}
+
+document.addEventListener("change", estimateJobSize);
+</script>
+
+
+<script>
+/* Google Places address autocomplete — manual typing remains enabled */
+(function(){
+  function setAddressPart(id, value){
+    var el = document.getElementById(id);
+    if(el) el.value = value || "";
+  }
+
+  function clearExtractedAddress(){
+    ["propertyStreet","propertySuburb","propertyState","propertyPostcode","propertyCountry","propertyPlaceId","formattedAddress"].forEach(function(id){
+      setAddressPart(id, "");
+    });
+  }
+
+  function extractAddressParts(place){
+    var parts = {};
+    (place.address_components || []).forEach(function(component){
+      component.types.forEach(function(type){
+        parts[type] = component.long_name;
+        parts[type + "_short"] = component.short_name;
+      });
+    });
+
+    var street = [parts.street_number, parts.route].filter(Boolean).join(" ");
+    var suburb = parts.locality || parts.postal_town || parts.sublocality || parts.sublocality_level_1 || "";
+    var state = parts.administrative_area_level_1_short || parts.administrative_area_level_1 || "";
+    var postcode = parts.postal_code || "";
+    var country = parts.country || "";
+
+    setAddressPart("propertyStreet", street);
+    setAddressPart("propertySuburb", suburb);
+    setAddressPart("propertyState", state);
+    setAddressPart("propertyPostcode", postcode);
+    setAddressPart("propertyCountry", country);
+    setAddressPart("propertyPlaceId", place.place_id || "");
+    setAddressPart("formattedAddress", place.formatted_address || document.getElementById("suburb").value || "");
+  }
+
+  window.ecInitPlacesAutocomplete = function(){
+    var input = document.getElementById("suburb");
+    if(!input) return;
+
+    input.removeAttribute("disabled");
+    input.removeAttribute("readonly");
+    input.style.pointerEvents = "auto";
+
+    if(!window.google || !google.maps || !google.maps.places){
+      console.warn("Google Places library did not load. Address field will remain manual.");
+      return;
+    }
+
+    var autocomplete = new google.maps.places.Autocomplete(input, {
+      types: ["address"],
+      componentRestrictions: { country: "au" },
+      fields: ["address_components", "formatted_address", "place_id", "geometry", "name"]
+    });
+
+    autocomplete.addListener("place_changed", function(){
+      var place = autocomplete.getPlace();
+      if(!place || !place.address_components){
+        clearExtractedAddress();
+        return;
+      }
+      extractAddressParts(place);
+    });
+
+    // If user manually edits after selecting a suggestion, do not block typing.
+    input.addEventListener("input", function(){
+      clearExtractedAddress();
+      setAddressPart("formattedAddress", input.value);
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", function(){
+    var input = document.getElementById("suburb");
+    if(input){
+      input.removeAttribute("disabled");
+      input.removeAttribute("readonly");
+      input.style.pointerEvents = "auto";
+    }
+
+    // Handles cases where Google script loads before this listener or callback is blocked.
+    if(window.google && google.maps && google.maps.places){
+      window.ecInitPlacesAutocomplete();
+    }
+  });
+})();
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8z6QPUDGWkaGH9HvyADNLxNNNfJ1nLes&libraries=places&callback=ecInitPlacesAutocomplete"></script>
+
 </body>
 </html>
