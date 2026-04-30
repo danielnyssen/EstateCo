@@ -80,82 +80,80 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
 }
 
 
-/* Consistent EstateCo footer */
-footer{background:#163653;color:#fff;margin-top:60px;padding:32px 0 0}
-footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
-.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.08)}
-.footer-brand-name{display:inline-block;color:#fff;text-decoration:none;font-size:26px;font-weight:800;letter-spacing:-0.5px;line-height:1;margin-bottom:8px}
-.footer-brand .tagline{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.55;margin-bottom:12px;max-width:360px}
-.footer-phone{display:block;font-size:14px;font-weight:700;color:rgba(255,255,255,0.92);text-decoration:none;margin-bottom:4px}
-.footer-email{display:block;font-size:12px;color:rgba(255,255,255,0.72);text-decoration:none}
-.footer-legal-col{display:flex;flex-direction:column;gap:0;justify-content:flex-start}
-.footer-legal-short{font-size:12px;color:rgba(255,255,255,0.62);line-height:1.6;margin-bottom:8px}
-.footer-service-links{font-size:12px;color:rgba(255,255,255,0.52);line-height:1.7}
-.footer-service-links a{color:rgba(255,255,255,0.78);text-decoration:none;font-weight:700}
-.footer-suburbs{padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
-.footer-suburbs h4{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin:0 0 8px}
-.footer-suburbs p{font-size:13px;color:rgba(255,255,255,0.68);margin:0;line-height:1.7}
-.footer-suburbs a{color:rgba(255,255,255,0.82);text-decoration:none;font-weight:700}
-.footer-suburbs a:hover,.footer-service-links a:hover{color:#A8D8EA}
-.footer-bottom{padding:12px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:0}
-.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;margin:0}
-@media(max-width:760px){footer .container{padding:0 24px}.footer-top{grid-template-columns:1fr;gap:14px}.footer-bottom{flex-direction:column;align-items:flex-start}.footer-legal-col{display:block}}
-
-
-/* EstateCo clean shared header */
-.ec-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,60,94,.12)}
-.ec-header .container{max-width:1180px;margin:0 auto;padding:0 28px}
-.ec-header-inner{height:66px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.ec-logo{text-decoration:none;display:flex;flex-direction:column;line-height:1;flex-shrink:0}
-.ec-logo-main{font-family:'DM Sans',Arial,sans-serif;font-size:26px;font-weight:800;color:#163653;letter-spacing:-.8px}
-.ec-logo-main span{color:#2D7FA6}
-.ec-logo-sub{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#425F73;font-weight:700;margin-top:3px}
-.ec-menu{display:flex;align-items:center;gap:4px}
-.ec-menu a{font-family:'DM Sans',Arial,sans-serif;font-size:13px;font-weight:700;text-decoration:none;color:#163653;padding:9px 13px;border-radius:9px;transition:.18s;white-space:nowrap}
-.ec-menu a:hover{background:#E7F2F7;color:#2D7FA6}
-.ec-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.ec-call,.ec-quote,.ec-mobile-call,.ec-mobile-menu{font-family:'DM Sans',Arial,sans-serif;text-decoration:none;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
-.ec-call{border:2px solid #163653;color:#163653;background:#fff;padding:9px 14px;font-size:12px;font-weight:800;letter-spacing:.7px}
-.ec-quote{border:2px solid #163653;background:#163653;color:#fff;padding:9px 14px;font-size:12px;font-weight:800;letter-spacing:.7px}
-.ec-call:hover{background:#163653;color:#fff}
-.ec-quote:hover{background:#2D7FA6;border-color:#2D7FA6;color:#fff}
-.ec-mobile-call,.ec-mobile-menu{display:none}
-.ec-mobile-call svg{width:15px;height:15px;display:block}
-.ec-mobile-menu span{display:block;width:19px;height:2px;background:#163653;border-radius:999px;transition:transform .2s ease,opacity .2s ease}
-.ec-mobile-menu.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
-.ec-mobile-menu.open span:nth-child(2){opacity:0}
-.ec-mobile-menu.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
-.ec-drawer{display:none;position:fixed;top:66px;left:0;right:0;bottom:0;background:#fff;z-index:999;overflow-y:auto;padding:18px 20px 90px;border-top:1px solid rgba(26,60,94,.12)}
-.ec-drawer.open{display:block}
-.ec-drawer-heading{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#425F73;margin:6px 0 10px}
-.ec-drawer-link{display:block;text-decoration:none;padding:14px 15px;border-radius:14px;background:#f7fbfe;margin-bottom:8px;border:1px solid rgba(26,60,94,.12)}
-.ec-drawer-link strong{display:block;color:#163653;font-size:15px}
-.ec-drawer-link span{display:block;color:#425F73;font-size:12px;margin-top:2px}
-.ec-drawer-actions{display:flex;gap:10px;margin-top:14px}
-.ec-drawer-call,.ec-drawer-quote{flex:1;display:flex;align-items:center;justify-content:center;text-decoration:none;border-radius:10px;padding:13px 10px;font-size:13px;font-weight:800}
-.ec-drawer-call{border:2px solid #163653;color:#163653;background:#fff}
-.ec-drawer-quote{border:2px solid #163653;background:#163653;color:#fff}
-@media(max-width:760px){
-  .ec-header .container{padding:0 12px}
-  .ec-header-inner{height:58px;gap:8px}
-  .ec-logo-main{font-size:21px}
-  .ec-logo-sub{font-size:8.5px;letter-spacing:1.35px}
-  .ec-menu{display:none}
-  .ec-call{display:none}
-  .ec-actions{gap:7px;margin-left:auto}
-  .ec-mobile-call{display:inline-flex;width:36px;height:36px;min-width:36px;border:2px solid #163653;color:#163653;background:#fff}
-  .ec-quote{height:36px;padding:0 10px;font-size:10px;letter-spacing:.45px}
-  .ec-mobile-menu{display:inline-flex;width:36px;height:36px;min-width:36px;border-radius:9px;border:1.5px solid rgba(22,54,83,.18);background:#f0f4f8;flex-direction:column;gap:4px;padding:0;cursor:pointer}
-  .ec-drawer{top:58px}
-}
-@media(max-width:374px){
-  .ec-logo-main{font-size:19px}
-  .ec-logo-sub{display:none}
-  .ec-actions{gap:5px}
-  .ec-mobile-call,.ec-mobile-menu{width:34px;height:34px;min-width:34px}
-  .ec-quote{height:34px;padding:0 8px;font-size:9px}
+/* Premium EstateCo hero treatment */
+@media(min-width:761px){
+  .hero{
+    padding:72px 0 76px !important;
+    min-height:auto !important;
+    background:linear-gradient(145deg,#ffffff 0%,#f7fbfe 46%,#e9f4fa 100%) !important;
+  }
+  .hero::before{
+    filter:blur(3px) saturate(.45) brightness(.98) !important;
+    opacity:.32 !important;
+    transform:scale(1.03) !important;
+  }
+  .hero::after{
+    background:
+      radial-gradient(circle at 78% 18%,rgba(45,127,166,.13),transparent 34%),
+      linear-gradient(115deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.94) 42%,rgba(234,244,250,.88) 100%) !important;
+  }
+  .hero-inner{
+    align-items:center !important;
+    gap:64px !important;
+  }
+  .hero-copy-col{
+    max-width:680px !important;
+  }
+  .hero h1{
+    max-width:720px !important;
+    font-size:clamp(46px,5vw,68px) !important;
+    line-height:1.02 !important;
+    letter-spacing:-1.7px !important;
+    margin-bottom:18px !important;
+  }
+  .hero-sub{
+    max-width:560px !important;
+    font-size:17px !important;
+    line-height:1.68 !important;
+    color:#425F73 !important;
+  }
+  .hero-proof{
+    max-width:600px !important;
+    margin:18px 0 20px !important;
+  }
+  .quote-card{
+    border-radius:18px !important;
+    box-shadow:0 18px 60px rgba(26,60,94,.16) !important;
+    border:1px solid rgba(26,60,94,.10) !important;
+  }
+  .qc-head{
+    padding:22px 26px !important;
+    background:linear-gradient(135deg,#163653 0%,#1F4D78 100%) !important;
+  }
+  .hero-trust-inline{
+    max-width:580px !important;
+  }
 }
 
+/* Keep mobile neat and compact */
+@media(max-width:480px){
+  .hero{
+    padding-top:0 !important;
+  }
+  .hero-inner{
+    padding-top:18px !important;
+  }
+  .hero h1{
+    font-size:26px !important;
+    line-height:1.18 !important;
+    letter-spacing:-.25px !important;
+  }
+  .hero-easy{
+    color:#5FB6E5 !important;
+    font-weight:800 !important;
+    white-space:nowrap !important;
+  }
+}
 
 </style>
 </head>
@@ -163,50 +161,23 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
 <body>
 
 
+<nav>
+<div class="container nav-inner">
+<a href="/index.html" class="logo-wrap">
+<img src="/logo.png" class="site-logo" alt="Estate Co.">
+<div class="nav-tagline">Property clearance</div>
+</a>
 
-
-<nav class="ec-header">
-  <div class="container">
-    <div class="ec-header-inner">
-      <a class="ec-logo" href="index.html" aria-label="EstateCo home">
-        <span class="ec-logo-main">Estate<span>Co.</span></span>
-        <span class="ec-logo-sub">Property Clearance</span>
-      </a>
-      <div class="ec-menu">
-        <a href="index.html">Home</a>
-        <a href="index.html#services-heading">Services</a>
-        <a href="index.html#service-locations">Areas</a>
-        <a href="guides.html">Resources</a>
-        <a href="index.html#faq">FAQ</a>
-      </div>
-      <div class="ec-actions">
-        <a class="ec-call" href="tel:0401857730">CALL NOW</a>
-        <a class="ec-mobile-call" href="tel:0401857730" aria-label="Call EstateCo">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.3-.3.73-.4 1.12-.27 1.22.4 2.53.62 3.89.62.62 0 1.11.49 1.11 1.11v3.49c0 .62-.49 1.11-1.11 1.11C10.68 21.24 2.76 13.32 2.76 3.58c0-.62.49-1.11 1.11-1.11h3.5c.62 0 1.11.49 1.11 1.11 0 1.36.21 2.67.62 3.89.12.39.03.82-.28 1.12l-2.2 2.2z"/></svg>
-        </a>
-        <a class="ec-quote" href="index.html#quote">REQUEST QUOTE</a>
-        <button class="ec-mobile-menu" id="ecMenuButton" type="button" aria-label="Open menu" aria-expanded="false" onclick="toggleDrawer()">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </div>
-</nav>
-<div class="ec-drawer" id="ecDrawer">
-  <div class="ec-drawer-heading">Navigate</div>
-  <a class="ec-drawer-link" href="index.html#services-heading" onclick="closeDrawer()"><strong>Services</strong><span>Clearance, cleanouts and property preparation</span></a>
-  <a class="ec-drawer-link" href="index.html#service-locations" onclick="closeDrawer()"><strong>Areas</strong><span>Melbourne, Sydney and Brisbane</span></a>
-  <a class="ec-drawer-link" href="guides.html" onclick="closeDrawer()"><strong>Resources</strong><span>Helpful estate clearance guides</span></a>
-  <a class="ec-drawer-link" href="index.html#faq" onclick="closeDrawer()"><strong>FAQ</strong><span>Common questions</span></a>
-  <a class="ec-drawer-link" href="index.html#about" onclick="closeDrawer()"><strong>About</strong><span>Professional, polite and insured</span></a>
-  <div class="ec-drawer-actions">
-    <a class="ec-drawer-call" href="tel:0401857730">CALL NOW</a>
-    <a class="ec-drawer-quote" href="index.html#quote" onclick="closeDrawer()">REQUEST QUOTE</a>
-  </div>
+<div class="nav-menu">
+<a href="/index.html">Home</a>
+<a href="/index.html#services">Services</a>
+<a href="/index.html#service-locations">Areas</a>
+<a href="/guides.html">Guides</a>
+<a href="/index.html#quote">Get Quote</a>
 </div>
 
-
-
+</div>
+</nav>
 
 
 <section class="hero">
@@ -288,18 +259,18 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
 
 <div class="related-guides">
 <strong>Related guides:</strong><br>
-<a href="executor-estate-clearance-guide.html">Executor checklist</a>
-<a href="deceased-estate-cleanout-costs.html">Cleanout costs</a>
-<a href="preparing-property-for-sale-after-death.html">Preparing for sale</a>
-<a href="remote-estate-clearance.html">Remote clearance</a>
-<a href="downsizing-property-clearance.html">Downsizing</a>
-<a href="hoarded-property-cleanout-guide.html">Hoarded properties</a>
+<a href="/executor-estate-clearance-guide.html">Executor checklist</a>
+<a href="/deceased-estate-cleanout-costs.html">Cleanout costs</a>
+<a href="/preparing-property-for-sale-after-death.html">Preparing for sale</a>
+<a href="/remote-estate-clearance.html">Remote clearance</a>
+<a href="/downsizing-property-clearance.html">Downsizing</a>
+<a href="/hoarded-property-cleanout-guide.html">Hoarded properties</a>
 </div>
 
 <div class="cta">
 <strong>Need help clearing or preparing a property?</strong>
 <p>Estate Co. helps families, executors, agents and property owners clear, clean and prepare homes with respectful communication, clear quotes and practical next steps.</p>
-<a class="button" href="index.html#quote">Request a quote</a>
+<a class="button" href="/index.html#quote">Request a quote</a>
 </div>
 </div>
 </section>
@@ -327,41 +298,17 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
         <a href="estate-clearance-melbourne.html">Melbourne</a> ·
         <a href="estate-clearance-sydney.html">Sydney</a> ·
         <a href="estate-clearance-brisbane.html">Brisbane</a> ·
-        <a href="guides.html">Resources</a>
+        <a href="guides.html">Guides</a>
       </p>
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 Estate Co. Pty Ltd · <a href="index.html#quote" data-quote-cta="true">REQUEST QUOTE</a></p>
+      <p>© 2026 Estate Co. Pty Ltd · <a href="index.html#quote">Request a quote</a></p>
       <p>Estate Co. acknowledges Australia's Traditional Custodians.</p>
     </div>
   </div>
 </footer>
 
 
-
-
-
-<script>
-function toggleDrawer(){
-  var drawer=document.getElementById('ecDrawer');
-  var btn=document.getElementById('ecMenuButton');
-  if(!drawer) return;
-  drawer.classList.toggle('open');
-  if(btn){
-    btn.classList.toggle('open');
-    btn.setAttribute('aria-expanded', drawer.classList.contains('open') ? 'true' : 'false');
-  }
-}
-function closeDrawer(){
-  var drawer=document.getElementById('ecDrawer');
-  var btn=document.getElementById('ecMenuButton');
-  if(drawer) drawer.classList.remove('open');
-  if(btn){
-    btn.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-  }
-}
-</script>
 </body>
 </html>
