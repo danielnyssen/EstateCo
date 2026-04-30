@@ -152,6 +152,28 @@ footer{background:var(--navy);color:#fff;padding:34px 0 0}
   .footer-bottom{display:block}
 }
 
+/* Consistent EstateCo footer */
+footer{background:#163653;color:#fff;margin-top:60px;padding:32px 0 0}
+footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
+.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand-name{display:inline-block;color:#fff;text-decoration:none;font-size:26px;font-weight:800;letter-spacing:-0.5px;line-height:1;margin-bottom:8px}
+.footer-brand .tagline{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.55;margin-bottom:12px;max-width:360px}
+.footer-phone{display:block;font-size:14px;font-weight:700;color:rgba(255,255,255,0.92);text-decoration:none;margin-bottom:4px}
+.footer-email{display:block;font-size:12px;color:rgba(255,255,255,0.72);text-decoration:none}
+.footer-legal-col{display:flex;flex-direction:column;gap:0;justify-content:flex-start}
+.footer-legal-short{font-size:12px;color:rgba(255,255,255,0.62);line-height:1.6;margin-bottom:8px}
+.footer-service-links{font-size:12px;color:rgba(255,255,255,0.52);line-height:1.7}
+.footer-service-links a{color:rgba(255,255,255,0.78);text-decoration:none;font-weight:700}
+.footer-suburbs{padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-suburbs h4{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin:0 0 8px}
+.footer-suburbs p{font-size:13px;color:rgba(255,255,255,0.68);margin:0;line-height:1.7}
+.footer-suburbs a{color:rgba(255,255,255,0.82);text-decoration:none;font-weight:700}
+.footer-suburbs a:hover,.footer-service-links a:hover{color:#A8D8EA}
+.footer-bottom{padding:12px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:0}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;margin:0}
+@media(max-width:760px){footer .container{padding:0 24px}.footer-top{grid-template-columns:1fr;gap:14px}.footer-bottom{flex-direction:column;align-items:flex-start}.footer-legal-col{display:block}}
+
+
 /* Standard EstateCo text-logo header */
 .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,60,94,.12)}
 .site-header .container{max-width:1180px;margin:0 auto;padding:0 28px}
@@ -179,28 +201,322 @@ footer{background:var(--navy);color:#fff;padding:34px 0 0}
   .site-quote-btn{padding:8px 11px;font-size:11px}
 }
 
+/* Mobile header actions: menu, call icon and quote */
+.mobile-menu-btn,
+.mobile-call-btn{
+  display:none;
+}
+.mobile-call-btn svg{
+  width:15px;
+  height:15px;
+  display:block;
+}
+@media(max-width:760px){
+  .site-header-inner,
+  .nav-inner{
+    gap:8px !important;
+  }
+  .site-nav-actions,
+  .nav-right{
+    display:flex !important;
+    align-items:center !important;
+    gap:7px !important;
+    flex-shrink:0 !important;
+  }
+  .site-call-btn,
+  .nav-call-btn{
+    display:none !important;
+  }
+  .site-quote-btn,
+  .nav-quote-btn{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    height:36px !important;
+    padding:0 11px !important;
+    border-radius:9px !important;
+    font-size:10px !important;
+    line-height:1 !important;
+    letter-spacing:.6px !important;
+    white-space:nowrap !important;
+  }
+  .mobile-call-btn{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:36px !important;
+    height:36px !important;
+    border-radius:9px !important;
+    border:2px solid #163653 !important;
+    background:#fff !important;
+    color:#163653 !important;
+    text-decoration:none !important;
+    flex-shrink:0 !important;
+  }
+  .mobile-menu-btn,
+  .nav-hamburger{
+    display:inline-flex !important;
+    width:36px !important;
+    height:36px !important;
+    border-radius:9px !important;
+    background:#f0f4f8 !important;
+    border:1px solid rgba(26,60,94,.12) !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex-direction:column !important;
+    gap:5px !important;
+    padding:0 !important;
+    flex-shrink:0 !important;
+  }
+  .mobile-menu-btn span,
+  .nav-hamburger span{
+    display:block !important;
+    width:19px !important;
+    height:2px !important;
+    background:#163653 !important;
+    border-radius:2px !important;
+  }
+  .site-nav-menu,
+  .nav-menu{
+    display:none !important;
+  }
+  .site-logo-main,
+  .logo{
+    font-size:21px !important;
+  }
+  .site-logo-sub,
+  .nav-tagline{
+    font-size:8.5px !important;
+    letter-spacing:1.4px !important;
+  }
+}
 
-/* Consistent EstateCo footer */
-footer{background:#163653;color:#fff;margin-top:60px;padding:32px 0 0}
-footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
-.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.08)}
-.footer-brand-name{display:inline-block;color:#fff;text-decoration:none;font-size:26px;font-weight:800;letter-spacing:-0.5px;line-height:1;margin-bottom:8px}
-.footer-brand .tagline{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.55;margin-bottom:12px;max-width:360px}
-.footer-phone{display:block;font-size:14px;font-weight:700;color:rgba(255,255,255,0.92);text-decoration:none;margin-bottom:4px}
-.footer-email{display:block;font-size:12px;color:rgba(255,255,255,0.72);text-decoration:none}
-.footer-legal-col{display:flex;flex-direction:column;gap:0;justify-content:flex-start}
-.footer-legal-short{font-size:12px;color:rgba(255,255,255,0.62);line-height:1.6;margin-bottom:8px}
-.footer-service-links{font-size:12px;color:rgba(255,255,255,0.52);line-height:1.7}
-.footer-service-links a{color:rgba(255,255,255,0.78);text-decoration:none;font-weight:700}
-.footer-suburbs{padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
-.footer-suburbs h4{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin:0 0 8px}
-.footer-suburbs p{font-size:13px;color:rgba(255,255,255,0.68);margin:0;line-height:1.7}
-.footer-suburbs a{color:rgba(255,255,255,0.82);text-decoration:none;font-weight:700}
-.footer-suburbs a:hover,.footer-service-links a:hover{color:#A8D8EA}
-.footer-bottom{padding:12px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:0}
-.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;margin:0}
-@media(max-width:760px){footer .container{padding:0 24px}.footer-top{grid-template-columns:1fr;gap:14px}.footer-bottom{flex-direction:column;align-items:flex-start}.footer-legal-col{display:block}}
+/* Clear 3-line hamburger stack for mobile */
+@media(max-width:760px){
+  .mobile-menu-btn,
+  .nav-hamburger{
+    display:inline-flex !important;
+    width:36px !important;
+    height:36px !important;
+    min-width:36px !important;
+    border-radius:9px !important;
+    background:#f0f4f8 !important;
+    border:1px solid rgba(26,60,94,.16) !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex-direction:column !important;
+    gap:4px !important;
+    padding:0 !important;
+    margin:0 !important;
+    flex-shrink:0 !important;
+  }
+  .mobile-menu-btn span,
+  .nav-hamburger span{
+    display:block !important;
+    width:19px !important;
+    height:2px !important;
+    background:#163653 !important;
+    border-radius:999px !important;
+    opacity:1 !important;
+    transform:none !important;
+  }
+  .mobile-menu-btn.open span:nth-child(1),
+  .nav-hamburger.open span:nth-child(1){
+    transform:rotate(45deg) translate(4px,4px) !important;
+  }
+  .mobile-menu-btn.open span:nth-child(2),
+  .nav-hamburger.open span:nth-child(2){
+    opacity:0 !important;
+  }
+  .mobile-menu-btn.open span:nth-child(3),
+  .nav-hamburger.open span:nth-child(3){
+    transform:rotate(-45deg) translate(4px,-4px) !important;
+  }
+}
 
+/* Definitive mobile header: hamburger + phone + quote */
+.mobile-header-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-shrink:0;
+}
+.mobile-menu-button,
+.mobile-phone-button{
+  display:none;
+}
+.mobile-quote-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#163653;
+  color:#fff;
+  border:2px solid #163653;
+  border-radius:9px;
+  padding:9px 14px;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-decoration:none;
+  white-space:nowrap;
+}
+@media(max-width:760px){
+  .site-header-inner,
+  .nav-inner{
+    height:58px !important;
+    gap:8px !important;
+  }
+
+  .site-nav-menu,
+  .nav-menu{
+    display:none !important;
+  }
+
+  .mobile-header-actions{
+    display:flex !important;
+    align-items:center !important;
+    gap:7px !important;
+    margin-left:auto !important;
+  }
+
+  .mobile-menu-button{
+    display:inline-flex !important;
+    width:36px !important;
+    height:36px !important;
+    min-width:36px !important;
+    border-radius:9px !important;
+    background:#f0f4f8 !important;
+    border:1.5px solid rgba(22,54,83,.18) !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex-direction:column !important;
+    gap:4px !important;
+    padding:0 !important;
+    margin:0 !important;
+    cursor:pointer !important;
+    -webkit-appearance:none !important;
+    appearance:none !important;
+    flex-shrink:0 !important;
+  }
+
+  .mobile-menu-button span{
+    display:block !important;
+    width:19px !important;
+    height:2px !important;
+    min-height:2px !important;
+    background:#163653 !important;
+    border-radius:999px !important;
+    opacity:1 !important;
+    transition:transform .2s ease, opacity .2s ease !important;
+  }
+
+  .mobile-menu-button.open span:nth-child(1){
+    transform:rotate(45deg) translate(4px,4px) !important;
+  }
+  .mobile-menu-button.open span:nth-child(2){
+    opacity:0 !important;
+  }
+  .mobile-menu-button.open span:nth-child(3){
+    transform:rotate(-45deg) translate(4px,-4px) !important;
+  }
+
+  .mobile-phone-button{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:36px !important;
+    height:36px !important;
+    min-width:36px !important;
+    border-radius:9px !important;
+    border:2px solid #163653 !important;
+    background:#fff !important;
+    color:#163653 !important;
+    text-decoration:none !important;
+    flex-shrink:0 !important;
+  }
+
+  .mobile-phone-button svg{
+    width:15px !important;
+    height:15px !important;
+    display:block !important;
+  }
+
+  .mobile-quote-button{
+    display:inline-flex !important;
+    height:36px !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:0 10px !important;
+    border-radius:9px !important;
+    background:#163653 !important;
+    color:#fff !important;
+    border:2px solid #163653 !important;
+    font-size:10px !important;
+    font-weight:800 !important;
+    letter-spacing:.45px !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    text-decoration:none !important;
+    flex-shrink:0 !important;
+  }
+
+  .site-call-btn,
+  .nav-call-btn,
+  .site-quote-btn,
+  .nav-quote-btn,
+  .mobile-call-btn,
+  .nav-hamburger{
+    display:none !important;
+  }
+
+  .site-logo-main,
+  .logo{
+    font-size:21px !important;
+  }
+
+  .site-logo-sub,
+  .nav-tagline{
+    font-size:8.5px !important;
+    letter-spacing:1.4px !important;
+  }
+}
+
+/* Desktop call button restore */
+.desktop-call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #163653;
+  color:#163653;
+  background:#fff;
+  border-radius:9px;
+  padding:9px 14px;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-decoration:none;
+}
+
+@media(max-width:760px){
+  .desktop-call-btn{
+    display:none !important;
+  }
+}
+
+/* Mobile header order: call, quote, hamburger */
+@media(max-width:760px){
+  .mobile-header-actions{
+    display:flex !important;
+    align-items:center !important;
+    gap:7px !important;
+    margin-left:auto !important;
+  }
+  .mobile-phone-button{order:1 !important}
+  .mobile-quote-button{order:2 !important}
+  .mobile-menu-button{order:3 !important}
+}
 </style>
 </head>
 <body>
@@ -214,15 +530,46 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
         <span class="site-logo-sub">Property Clearance</span>
       </a>
       <div class="site-nav-menu">
-        <a href="index.html">Home</a><a href="index.html#services-heading">Services</a><a href="index.html#service-locations">Areas</a><a class="active" href="guides.html">Resources</a><a href="index.html#faq">FAQ</a>
+        <a href="index.html">Home</a><a href="index.html#services-heading">Services</a><a href="index.html#service-locations">Areas</a><a href="guides.html">Resources</a><a href="index.html#faq">FAQ</a>
       </div>
-      <div class="site-nav-actions">
-        <a class="site-call-btn" href="tel:0401857730">CALL NOW</a>
-        <a class="site-quote-btn" href="index.html#quote">REQUEST QUOTE</a>
-      </div>
+      
+
+<div class="site-nav-actions mobile-header-actions">
+  <a class="site-call-btn desktop-call-btn" href="tel:0401857730">CALL NOW</a>
+
+  <a class="mobile-phone-button" href="tel:0401857730" aria-label="Call EstateCo">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.3-.3.73-.4 1.12-.27 1.22.4 2.53.62 3.89.62.62 0 1.11.49 1.11 1.11v3.49c0 .62-.49 1.11-1.11 1.11C10.68 21.24 2.76 13.32 2.76 3.58c0-.62.49-1.11 1.11-1.11h3.5c.62 0 1.11.49 1.11 1.11 0 1.36.21 2.67.62 3.89.12.39.03.82-.28 1.12l-2.2 2.2z"/>
+    </svg>
+  </a>
+
+  <a class="mobile-quote-button" href="#quote">REQUEST QUOTE</a>
+
+  <button class="mobile-menu-button" id="navHamburger" type="button" aria-label="Open menu" onclick="toggleDrawer()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
+
+
     </div>
   </div>
 </nav>
+<div class="nav-drawer" id="navDrawer">
+  <div class="drawer-section">
+    <div class="drawer-heading">Navigate</div>
+    <a class="drawer-link" href="index.html#services-heading" onclick="closeDrawer()"><div><strong>Services</strong><span>Clearance, cleanouts and property preparation</span></div></a>
+    <a class="drawer-link" href="index.html#service-locations" onclick="closeDrawer()"><div><strong>Areas</strong><span>Melbourne, Sydney and Brisbane</span></div></a>
+    <a class="drawer-link" href="guides.html" onclick="closeDrawer()"><div><strong>Resources</strong><span>Helpful estate clearance guides</span></div></a>
+    <a class="drawer-link" href="index.html#faq" onclick="closeDrawer()"><div><strong>FAQ</strong><span>Common questions</span></div></a>
+    <a class="drawer-link" href="index.html#about" onclick="closeDrawer()"><div><strong>About</strong><span>Professional, polite and insured</span></div></a>
+  </div>
+  <div class="drawer-actions">
+    <a class="nav-call-btn" href="tel:0401857730" style="flex:1;justify-content:center">CALL NOW</a>
+    <a class="nav-quote-btn" href="#quote" onclick="closeDrawer()" style="flex:1;justify-content:center">REQUEST QUOTE</a>
+  </div>
+</div>
 
 
 
@@ -418,5 +765,22 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
     </div>
   </div>
 </footer>
+
+<script>
+function toggleDrawer(){
+  var drawer=document.getElementById('navDrawer');
+  var hamburger=document.getElementById('navHamburger');
+  if(!drawer) return;
+  drawer.classList.toggle('open');
+  if(hamburger){hamburger.classList.toggle('open');}
+}
+function closeDrawer(){
+  var drawer=document.getElementById('navDrawer');
+  var hamburger=document.getElementById('navHamburger');
+  if(drawer){drawer.classList.remove('open');}
+  if(hamburger){hamburger.classList.remove('open');}
+}
+</script>
+
 </body>
 </html>
