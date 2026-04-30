@@ -1177,8 +1177,8 @@ footer{background:var(--navy);padding:32px 0 0}
 }
 /* Each icon variant using ::before/::after for distinct shapes */
 .si-estate::before{width:18px;height:14px;clip-path:polygon(50% 0%,100% 40%,100% 100%,0% 100%,0% 40%)}
-.si-valuation::before{width:16px;height:18px;border:2px solid var(--gold);border-radius:2px;background:none}
-.si-valuation::after{content:'';position:absolute;width:8px;height:1.5px;background:var(--gold);box-shadow:0 4px 0 var(--gold),0 8px 0 var(--gold);left:50%;transform:translateX(-50%);top:calc(50% - 4px)}
+.si-Property Valuation::before{width:16px;height:18px;border:2px solid var(--gold);border-radius:2px;background:none}
+.si-Property Valuation::after{content:'';position:absolute;width:8px;height:1.5px;background:var(--gold);box-shadow:0 4px 0 var(--gold),0 8px 0 var(--gold);left:50%;transform:translateX(-50%);top:calc(50% - 4px)}
 .si-sell::before{width:14px;height:14px;border-radius:50%}
 .si-sell::after{content:'';position:absolute;width:6px;height:10px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg);top:8px;right:9px;background:none}
 .si-digital::before{width:12px;height:18px;border:2px solid var(--gold);border-radius:3px;background:none}
@@ -2253,57 +2253,6 @@ footer,.testi-section{background:#163653 !important}
 }
 
 
-/* Mobile hero tightening + conversion trust strip */
-.hero-trust-inline{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:14px;
-  font-size:13px;
-  font-weight:600;
-  color:var(--navy);
-}
-.hero-trust-inline span{
-  background:rgba(255,255,255,0.82);
-  border:1px solid rgba(26,60,94,0.12);
-  border-radius:999px;
-  padding:7px 11px;
-}
-@media (max-width:600px){
-  .hero{padding-top:20px !important;padding-bottom:18px !important;min-height:auto !important}
-  .hero-content{padding-top:0 !important}
-  .hero-content > div[style*="height:12px"]{height:4px !important}
-  .hero h1{margin-top:0 !important;margin-bottom:10px !important;line-height:1.16 !important}
-  .hero-sub{margin-bottom:10px !important}
-  .hero-trust-inline{margin-top:12px;gap:6px;font-size:12px}
-  .hero-trust-inline span{padding:6px 9px}
-}
-
-
-.quick-quote-bar{
-display:flex;
-gap:10px;
-justify-content:center;
-padding:14px 16px;
-background:#F3F7FA;
-border-top:1px solid rgba(0,0,0,0.06);
-border-bottom:1px solid rgba(0,0,0,0.06);
-}
-.quick-quote-bar a{
-font-family:'DM Sans',sans-serif;
-font-weight:700;
-font-size:14px;
-padding:12px 18px;
-border-radius:6px;
-text-decoration:none;
-}
-.qq-primary{background:#163653;color:#fff}
-.qq-secondary{border:1px solid #163653;color:#163653}
-@media(min-width:768px){
-.quick-quote-bar{max-width:900px;margin:0 auto;border-radius:8px}
-}
-
-
 /* Consistent EstateCo footer */
 footer{background:#163653;color:#fff;margin-top:60px;padding:32px 0 0}
 footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
@@ -2381,6 +2330,383 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
   .ec-quote{height:34px;padding:0 8px;font-size:9px}
 }
 
+
+
+/* Premium photo upload panel below notes */
+.photo-upload-panel{
+  margin:14px 0 12px;
+  padding:18px;
+  border:1.5px solid rgba(176,132,72,.34);
+  border-radius:16px;
+  background:linear-gradient(145deg,#FFF9F0 0%,#F8EFE2 100%);
+  box-shadow:0 10px 30px rgba(90,64,34,.08);
+}
+.photo-upload-panel-head{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:12px;
+}
+.photo-upload-panel-icon{
+  width:34px;
+  height:34px;
+  border-radius:10px;
+  background:#163653;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  position:relative;
+}
+.photo-upload-panel-icon::before{
+  content:'';
+  width:16px;
+  height:12px;
+  border:2px solid #fff;
+  border-radius:3px;
+  display:block;
+}
+.photo-upload-panel-title{
+  font-size:15px;
+  font-weight:800;
+  color:#163653;
+  margin:0 0 2px;
+}
+.photo-upload-panel-sub{
+  font-size:12px;
+  line-height:1.55;
+  color:#6F5635;
+  margin:0;
+}
+.photo-upload-panel .upz{
+  background:#fff;
+  border:1.5px dashed rgba(176,132,72,.55);
+  border-radius:14px;
+  margin-bottom:10px;
+}
+.photo-upload-panel .upz:hover{
+  border-color:#B08448;
+  background:#FFFDF8;
+}
+.no-photo-option{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-top:10px;
+  padding:12px 13px;
+  border:1px solid rgba(176,132,72,.28);
+  border-radius:12px;
+  background:rgba(255,255,255,.68);
+  cursor:pointer;
+}
+.no-photo-option input{
+  margin-top:3px;
+  accent-color:#163653;
+}
+.no-photo-option strong{
+  display:block;
+  font-size:13px;
+  color:#163653;
+  line-height:1.25;
+}
+.no-photo-option span{
+  display:block;
+  font-size:12px;
+  color:#6F5635;
+  line-height:1.45;
+  margin-top:2px;
+}
+.photo-required-note{
+  font-size:11px;
+  color:#7A5A28;
+  line-height:1.45;
+  margin-top:8px;
+}
+@media(max-width:480px){
+  .photo-upload-panel{padding:15px;border-radius:15px}
+  .photo-upload-panel-title{font-size:14px}
+}
+
+
+/* Selected photo upload status */
+.photo-upload-status{
+  display:none;
+  margin-top:10px;
+  padding:11px 12px;
+  border-radius:12px;
+  background:#EAF4FA;
+  border:1px solid rgba(45,127,166,.22);
+  color:#163653;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.45;
+}
+.photo-upload-status.show{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+.photo-upload-status::before{
+  content:'';
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:#2D7FA6;
+  box-shadow:0 0 0 4px rgba(45,127,166,.12);
+  flex-shrink:0;
+}
+.photo-upload-status.no-photos{
+  display:flex;
+  background:#FFF9F0;
+  border-color:rgba(176,132,72,.34);
+  color:#6F5635;
+}
+.photo-upload-status.no-photos::before{
+  background:#B08448;
+  box-shadow:0 0 0 4px rgba(176,132,72,.14);
+}
+.photo-upload-status.error{
+  display:flex;
+  background:#FFF5F2;
+  border-color:rgba(180,91,62,.34);
+  color:#8A3F2E;
+}
+.photo-upload-status.error::before{
+  background:#B45B3E;
+  box-shadow:0 0 0 4px rgba(180,91,62,.12);
+}
+
+
+/* Clear visible no-photos checkbox option */
+.no-photo-option{
+  position:relative;
+  display:flex !important;
+  align-items:flex-start !important;
+  gap:12px !important;
+  margin-top:12px !important;
+  padding:14px 14px !important;
+  border:1.5px solid rgba(176,132,72,.38) !important;
+  border-radius:14px !important;
+  background:#fff !important;
+  cursor:pointer !important;
+  color:#163653 !important;
+}
+.no-photo-option input{
+  position:absolute !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+}
+.no-photo-check{
+  width:22px !important;
+  height:22px !important;
+  min-width:22px !important;
+  border:2px solid #B08448 !important;
+  border-radius:6px !important;
+  background:#fff !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  margin-top:1px !important;
+  box-shadow:0 1px 0 rgba(0,0,0,.04) !important;
+}
+.no-photo-option input:checked + .no-photo-check{
+  background:#163653 !important;
+  border-color:#163653 !important;
+}
+.no-photo-option input:checked + .no-photo-check::after{
+  content:'' !important;
+  width:6px !important;
+  height:11px !important;
+  border-right:2px solid #fff !important;
+  border-bottom:2px solid #fff !important;
+  transform:rotate(45deg) translate(-1px,-1px) !important;
+  display:block !important;
+}
+.no-photo-copy{
+  display:block !important;
+  flex:1 !important;
+}
+.no-photo-copy strong{
+  display:block !important;
+  font-size:13px !important;
+  line-height:1.25 !important;
+  color:#163653 !important;
+  margin-bottom:3px !important;
+}
+.no-photo-copy span{
+  display:block !important;
+  font-size:12px !important;
+  line-height:1.45 !important;
+  color:#6F5635 !important;
+}
+.no-photo-option:has(input:checked){
+  border-color:#163653 !important;
+  background:#F2F8FC !important;
+}
+@media(max-width:480px){
+  .no-photo-option{
+    display:flex !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    padding:15px 14px !important;
+    margin-top:12px !important;
+  }
+  .no-photo-check{
+    width:24px !important;
+    height:24px !important;
+    min-width:24px !important;
+  }
+  .no-photo-copy strong{
+    font-size:14px !important;
+  }
+  .no-photo-copy span{
+    font-size:12px !important;
+  }
+}
+
+
+/* Mobile friendly service cards */
+.cgrid{
+  gap:10px !important;
+}
+.co{
+  padding:12px 12px !important;
+  border-radius:10px !important;
+  font-size:13px !important;
+}
+@media(max-width:480px){
+  .cgrid{
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+  }
+  .co{
+    padding:14px 12px !important;
+    font-size:13px !important;
+  }
+}
+
+
+/* Mobile concise topic/service descriptions */
+@media(max-width:480px){
+  .svc-card p,
+  .step-card p,
+  .blog-card p,
+  .trust-item p,
+  .cover-body p{
+    font-size:12px !important;
+    line-height:1.45 !important;
+    display:-webkit-box !important;
+    -webkit-line-clamp:2 !important;
+    -webkit-box-orient:vertical !important;
+    overflow:hidden !important;
+    margin-top:2px !important;
+  }
+  .svc-card h4,
+  .step-card h4,
+  .blog-card h4,
+  .cover-body h4{
+    font-size:14px !important;
+    line-height:1.25 !important;
+    margin-bottom:3px !important;
+  }
+  .svc-card{
+    padding:13px 14px !important;
+  }
+}
+
+
+/* Stable hero trust pills */
+.hero-trust-inline{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+  max-width:520px;
+}
+.hero-trust-inline span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.86);
+  border:1px solid rgba(26,60,94,.12);
+  border-radius:999px;
+  padding:7px 11px;
+  font-size:13px;
+  font-weight:700;
+  color:#163653;
+  line-height:1;
+  white-space:nowrap;
+}
+@media(max-width:480px){
+  .hero-trust-inline{
+    gap:6px;
+    margin-top:12px;
+    max-width:100%;
+  }
+  .hero-trust-inline span{
+    font-size:11px;
+    padding:6px 8px;
+    flex:0 0 auto;
+  }
+}
+
+
+/* Sticky mobile header */
+.ec-header{
+  position:sticky !important;
+  top:0 !important;
+  z-index:3000 !important;
+}
+@media(max-width:760px){
+  .ec-header{
+    position:fixed !important;
+    top:0 !important;
+    left:0 !important;
+    right:0 !important;
+    width:100% !important;
+    z-index:3000 !important;
+    box-shadow:0 2px 14px rgba(22,54,83,.10) !important;
+  }
+  body{
+    padding-top:58px !important;
+  }
+  .ec-drawer{
+    top:58px !important;
+    z-index:2999 !important;
+  }
+}
+
+
+.hero-easy{
+  color:#5FB6E5;
+  font-weight:700;
+}
+
+
+/* Mobile headline tightening */
+@media(max-width:480px){
+  h1{
+    font-size:26px !important;
+    line-height:1.2 !important;
+    letter-spacing:-0.2px;
+  }
+  .hero-easy{
+    white-space:nowrap;
+  }
+}
+
+
+.mission-quote{
+  margin-top:18px;
+  padding:14px 18px;
+  background:#E7F2F7;
+  border-left:4px solid #2D7FA6;
+  border-radius:8px;
+  font-style:italic;
+  color:#1A3C5E;
+}
+.mission-quote p{margin:0;line-height:1.6;}
 
 </style>
 <style>
@@ -3246,6 +3572,37 @@ footer,.testi-section{background:#163653 !important}
   }
 }
 
+
+.hero-easy{
+  color:#5FB6E5;
+  font-weight:700;
+}
+
+
+/* Mobile headline tightening */
+@media(max-width:480px){
+  h1{
+    font-size:26px !important;
+    line-height:1.2 !important;
+    letter-spacing:-0.2px;
+  }
+  .hero-easy{
+    white-space:nowrap;
+  }
+}
+
+
+.mission-quote{
+  margin-top:18px;
+  padding:14px 18px;
+  background:#E7F2F7;
+  border-left:4px solid #2D7FA6;
+  border-radius:8px;
+  font-style:italic;
+  color:#1A3C5E;
+}
+.mission-quote p{margin:0;line-height:1.6;}
+
 </style><meta content="Melbourne" name="geo.placename"/><meta content="-37.8136,144.9631" name="ICBM"/><link href="//images.unsplash.com" rel="dns-prefetch"/>
 
 <style>
@@ -3259,6 +3616,37 @@ footer,.testi-section{background:#163653 !important}
 .seo-location-details p{font-size:13px;color:#425F73;line-height:1.65;margin:10px 0 0;}
 @media(max-width:760px){.location-card-grid{grid-template-columns:1fr}.service-locations-section{padding:28px 0}}
 
+
+.hero-easy{
+  color:#5FB6E5;
+  font-weight:700;
+}
+
+
+/* Mobile headline tightening */
+@media(max-width:480px){
+  h1{
+    font-size:26px !important;
+    line-height:1.2 !important;
+    letter-spacing:-0.2px;
+  }
+  .hero-easy{
+    white-space:nowrap;
+  }
+}
+
+
+.mission-quote{
+  margin-top:18px;
+  padding:14px 18px;
+  background:#E7F2F7;
+  border-left:4px solid #2D7FA6;
+  border-radius:8px;
+  font-style:italic;
+  color:#1A3C5E;
+}
+.mission-quote p{margin:0;line-height:1.6;}
+
 </style>
 
 <style id="estateco-shared-consistency">
@@ -3266,6 +3654,37 @@ footer,.testi-section{background:#163653 !important}
 .nav-menu{gap:4px}.nav-link{font-weight:700}.nav-quote-btn{text-decoration:none}.nav-call-btn{text-decoration:none}.nav-logo-img{height:36px;width:auto}.footer-service-links a{color:inherit;text-decoration:none;font-weight:700}.footer-service-links a:hover{color:var(--gold)}
 body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .nav-quote-btn,.drawer-actions .nav-call-btn{padding:12px 14px;border-radius:10px;font-size:12px;font-weight:400;text-align:center;display:flex;align-items:center;justify-content:center;white-space:nowrap}.drawer-actions .nav-quote-btn{background:var(--navy);color:#fff;border:2px solid var(--navy)}
 @media(max-width:480px){.nav-right{gap:6px}.nav-call-btn{font-size:11px}.nav-hamburger{display:flex}.nav-drawer{top:52px}.footer-service-links{display:block}}
+
+
+.hero-easy{
+  color:#5FB6E5;
+  font-weight:700;
+}
+
+
+/* Mobile headline tightening */
+@media(max-width:480px){
+  h1{
+    font-size:26px !important;
+    line-height:1.2 !important;
+    letter-spacing:-0.2px;
+  }
+  .hero-easy{
+    white-space:nowrap;
+  }
+}
+
+
+.mission-quote{
+  margin-top:18px;
+  padding:14px 18px;
+  background:#E7F2F7;
+  border-left:4px solid #2D7FA6;
+  border-radius:8px;
+  font-style:italic;
+  color:#1A3C5E;
+}
+.mission-quote p{margin:0;line-height:1.6;}
 
 </style>
 
@@ -3326,11 +3745,12 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 <div class="container layout-container">
 <div class="hero-content">
 <span class="section-tag">Estate clearance Australia</span>
-<h1>Estate clearances handled with care and respect.</h1><p class="hero-sub">We clear, clean and prepare properties with calm support for families, executors, agents and property owners.</p>
+<h1>Estate clearances handled with care & respect <span class="hero-easy">the easy way</span></h1><p class="hero-sub">We clear, clean and prepare properties with calm support for families, executors, agents and property owners.</p>
 <div class="hero-trust-inline">
 <span>Fast quotes</span>
 <span>Insured team</span>
-<span>Remote updates</span>
+<span>Professional</span>
+<span>Easy process</span>
 </div>
 <p class="hero-sub"></p>
 </div>
@@ -3355,11 +3775,14 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 <span class="section-tag">Why families trust Estate Co.</span>
 <h2 class="section-title" style="font-size:clamp(28px,3.5vw,42px);margin-bottom:10px">A professional team you can trust</h2>
 <p class="section-sub" style="max-width:720px;margin:0 auto">Estate clearances require care and professionalism. Our polite, insured team works respectfully inside every home and keeps the process simple.</p>
+
 </div>
 <div class="trust-grid premium-trust-grid">
 <div class="trust-card premium-trust-card site-card"><div><h4>Professional &amp; respectful</h4><p>Clear communication and careful work from start to finish.</p></div></div>
 <div class="trust-card premium-trust-card site-card"><div><h4>Insured &amp; reliable</h4><p>Clear written quotes and agreed scope before work begins.</p></div></div>
-<div class="trust-card premium-trust-card site-card"><div><h4>Easy to organise</h4><p>Fast quotes, remote updates and photos when needed.</p></div></div>
+<div class="trust-card premium-trust-card site-card"><div><h4>Easy to organise</h4><p>Fast quotes, remote updates and photos when needed.</p>
+
+</div></div>
 </div>
 </div>
 </section>
@@ -3377,36 +3800,36 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 <div class="svc-right">
 
 <h3>Estate Cleanouts</h3>
-<p>Full property clear-outs following a passing. Furniture, belongings and household contents carefully removed and sorted.</p>
-<p>Handled respectfully so families and executors don’t have to manage the physical and emotional workload themselves.</p>
+<p>Full property clear-outs following a passing.</p>
+<p>Handled respectfully so families and executors don’t have to manage the physical.</p>
 </div>
 </article>
 <article class="svc-card site-card">
 <div class="svc-right">
 <h3>Downsizing &amp; Aged Care Transitions</h3>
-<p>Whole-home sorting and clearance when moving to a smaller home, retirement village or aged care accommodation.</p>
-<p>We help separate what to keep, donate, store or remove so the transition is organised and manageable.</p>
+<p>Whole-home sorting and clearance when moving to a smaller home, retirement.</p>
+<p>We help separate what to keep, donate, store or remove so the transition is.</p>
 </div>
 </article>
 <article class="svc-card site-card">
 <div class="svc-right">
 <h3>Hoarded &amp; Neglected Properties</h3>
-<p>Clearance of heavily cluttered or long-neglected homes where standard cleaning or removal is not practical.</p>
-<p>Our team works discreetly and without judgement to restore the property to a safe and usable condition.</p>
+<p>Clearance of heavily cluttered or long-neglected homes where standard cleaning or.</p>
+<p>Our team works discreetly and without judgement to restore the property to a safe.</p>
 </div>
 </article>
 <article class="svc-card site-card">
 <div class="svc-right">
 <h3>Chemical &amp; Drug Remediation</h3>
-<p>Specialised deep cleaning for properties affected by chemical contamination, drug activity or hazardous residue.</p>
-<p>Rooms and surfaces are professionally cleaned to remove contaminants and prepare the home for safe occupation.</p>
+<p>Specialised deep cleaning for properties affected by chemical contamination, drug.</p>
+<p>Rooms and surfaces are professionally cleaned to remove contaminants and prepare.</p>
 </div>
 </article>
 <article class="svc-card site-card">
 <div class="svc-right">
 <h3>Pre-Sale Property Preparation</h3>
-<p>Clearing unwanted contents and preparing homes for real estate photography, inspections and sale.</p>
-<p>The property is presented clean, open and ready for market without owners needing to coordinate multiple trades.</p>
+<p>Clearing unwanted contents and preparing homes for real estate photography,.</p>
+<p>The property is presented clean, open and ready for market without owners needing.</p>
 </div>
 </article>
 
@@ -3428,11 +3851,11 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 <div class="sp" id="p2"><div class="sn">2</div><span>Services</span></div>
 <div class="sl"></div>
 <div class="sp" id="p3"><div class="sn">3</div><span>Your details</span></div>
-</div><div class="quote-seo-intro"><strong>Quick estimate</strong><p>Please enter the exact property address, property size and photos so we can provide a clearer estimate.</p></div>
+</div><div class="quote-seo-intro"><strong></strong></div>
 <div class="qbody" id="qbody">
 <!-- Step 1 — Property -->
 <div class="fstep on" id="fs1">
-<div class="fg"><label>Exact property address &amp; state *</label><input aria-label="Exact property address and state for estate clearance quote" id="suburb" placeholder="e.g. 24 Coleman Parade, Glen Waverley VIC 3150" type="text"/ autocomplete="street-address" inputmode="text"></div>
+<div class="fg"><label>Property address &amp; state *</label><input aria-label="Property address and state for estate clearance quote" id="suburb" placeholder="e.g. 24 Coleman Parade, Glen Waverley VIC 3150" type="text"/ autocomplete="street-address" inputmode="text"></div>
 <div class="fg"><label>Property type</label>
 <select id="ptype">
 <option value="">Select type</option>
@@ -3458,12 +3881,13 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 <span class="ql">What do you need?</span>
 <span class="qs">Select all that apply</span>
 <div class="cgrid">
-<label class="co" onclick="ckToggle(this)"><input type="checkbox"/> Full clearance</label>
-<label class="co" onclick="ckToggle(this)"><input type="checkbox"/> Valuation</label>
-<label class="co" onclick="ckToggle(this)"><input type="checkbox"/> Deep cleaning</label>
-<label class="co" onclick="ckToggle(this)"><input type="checkbox"/> Painting</label>
-<label class="co" onclick="ckToggle(this)"><input type="checkbox"/> Garden</label>
-<label class="co" onclick="ckToggle(this)"><input type="checkbox"/> Minor repairs</label>
+<label class="co" onclick="ckToggle(this)"><input type="checkbox"/> Full Property Clearance</label>
+
+<label class="co" onclick="ckToggle(this)"><input type="checkbox"/> Deep Property Cleaning</label>
+<label class="co" onclick="ckToggle(this)"><input type="checkbox"/> Interior Painting</label>
+<label class="co" onclick="ckToggle(this)"><input type="checkbox"/> Garden Clean Up</label>
+<label class="co" onclick="ckToggle(this)"><input type="checkbox"/> Minor Property Repairs</label>
+<label class="co" onclick="ckToggle(this)"><input type="checkbox"/> Property Valuation</label>
 <label class="co" onclick="ckToggle(this)" style="grid-column:1/-1"><input id="otherCheck" onclick="toggleOther()" type="checkbox"/> Other — please describe</label>
 <div id="otherBox" style="display:none;grid-column:1/-1;margin-top:4px"><textarea placeholder="Please describe what you need…" rows="2" style="width:100%;font-family:'DM Sans',sans-serif;font-size:14px;border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;resize:vertical;line-height:1.5"></textarea></div>
 </div>
@@ -3471,17 +3895,40 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 </div>
 <!-- Step 3 — Contact + Upload -->
 <div class="fstep" id="fs3">
-<div class="upz" id="upz">
-<input accept=".jpg,.jpeg,.png,.heic,.pdf" id="fIn" multiple="" onchange="addF(this.files)" type="file"/>
-<div class="upload-cam-icon"></div>
-<div class="uz-t">Drop photos here or click to browse</div>
-<div class="uz-s">JPG, PNG, HEIC, PDF · max 10MB per file · up to 10 files<br/><strong>Your enquiry saves first, then photos upload securely</strong></div>
-</div>
-<div class="chips" id="chipArea"></div>
 <div class="fg"><label>Full name *</label><input aria-label="Your full name" autocomplete="name" id="fname" placeholder="Jane Smith" type="text"/></div>
 <div class="fg"><label>Email *</label><input aria-label="Your email address" autocomplete="email" id="femail" placeholder="jane@email.com" type="email"/></div>
 <div class="fg"><label>Phone *</label><input aria-label="Your phone number" autocomplete="tel" id="fphone" placeholder="04XX XXX XXX" type="tel"/></div>
 <div class="fg"><label>Notes (optional)</label><textarea id="fnotes" placeholder="Anything else we should know…"></textarea></div>
+
+<div class="photo-upload-panel" id="photoUploadPanel">
+  <div class="photo-upload-panel-head">
+    <div class="photo-upload-panel-icon" aria-hidden="true"></div>
+    <div>
+      <p class="photo-upload-panel-title">Upload property photos</p>
+      <p class="photo-upload-panel-sub">Photos help us quote faster and more accurately. Please upload at least one photo unless there are no photos available.</p>
+    </div>
+  </div>
+
+  <div class="upz" id="upz">
+    <input accept=".jpg,.jpeg,.png,.heic,.pdf" id="fIn" multiple="" onchange="addF(this.files)" type="file"/>
+    <div class="upload-cam-icon"></div>
+    <div class="uz-t">Drop photos here or click to browse</div>
+    <div class="uz-s">JPG, PNG, HEIC, PDF · max 10MB per file · up to 10 files<br/><strong>Your enquiry saves first, then photos upload securely</strong></div>
+  </div>
+  <div class="chips" id="chipArea"></div>
+  <div class="photo-upload-status" id="photoUploadStatus" aria-live="polite"></div>
+
+  <label class="no-photo-option" for="noPhotos">
+    <input id="noPhotos" type="checkbox" onchange="toggleNoPhotos()"/>
+    <span class="no-photo-check" aria-hidden="true"></span>
+    <span class="no-photo-copy">
+      <strong>No photos to upload</strong>
+      <span>Tick this if you cannot provide photos right now. We may call for more details before quoting.</span>
+    </span>
+  </label>
+  <div class="photo-required-note">Required: upload at least one photo or tick “No photos to upload”.</div>
+</div>
+
 <div class="btn-row"><button class="bbk" onclick="qBack(3)" type="button">← Back</button><button class="bnx" onclick="submitQ()" type="button">REQUEST QUOTE</button></div>
 </div>
 </div>
@@ -3506,7 +3953,7 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 <div class="ss-num">1</div>
 <div class="ss-content">
 <h6>We review your property</h6>
-<p>Our team reviews your enquiry details. If photos were selected, we may follow up for the images separately.</p>
+<p>Our team reviews your enquiry details.</p>
 </div>
 </div>
 <div class="suc-step">
@@ -3535,7 +3982,7 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 <!-- Resources link -->
 <div style="padding:16px 28px;border-top:1px solid var(--border);background:var(--offwhite);text-align:center">
 <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-<a href="guides.html" onmouseout="this.style.background='#fff';this.style.color='var(--navy)'" onmouseover="this.style.background='var(--navy)';this.style.color='#fff'" style="display:inline-block;text-decoration:none;color:var(--navy);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;padding:11px 20px;background:#fff;border:2px solid var(--navy);border-radius:8px;transition:all 0.2s">Estate Guides</a>
+<a href="guides.html" onmouseout="this.style.background='#fff';this.style.color='var(--navy)'" onmouseover="this.style.background='var(--navy)';this.style.color='#fff'" style="display:inline-block;text-decoration:none;color:var(--navy);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;padding:11px 20px;background:#fff;border:2px solid var(--navy);border-radius:8px;transition:all 0.2s">Estate Guides & Help</a>
 <a href="tel:0401857730" onmouseout="this.style.opacity='1'" onmouseover="this.style.opacity='0.85'" style="display:inline-block;text-decoration:none;color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;padding:11px 20px;background:var(--gold);border:2px solid var(--gold);border-radius:8px;transition:all 0.2s">CALL NOW</a>
 </div>
 </div>
@@ -3603,6 +4050,37 @@ body{color:#24384A;background:#fff}
 footer,.testi-section{background:#163653 !important}
 @media(max-width:480px){body{background:#F3F7FA}.services-section,.faq-section,.reviews-section,.quote-section{background:#F3F7FA !important}.svc-card,.step-card,.review-card,.faq-item,.quote-card{box-shadow:0 5px 18px rgba(26,60,94,0.10) !important}.section-sub,.hero-sub,.svc-card p,.step-card p,.faq-a p{color:#405B70 !important}}
 
+
+
+.hero-easy{
+  color:#5FB6E5;
+  font-weight:700;
+}
+
+
+/* Mobile headline tightening */
+@media(max-width:480px){
+  h1{
+    font-size:26px !important;
+    line-height:1.2 !important;
+    letter-spacing:-0.2px;
+  }
+  .hero-easy{
+    white-space:nowrap;
+  }
+}
+
+
+.mission-quote{
+  margin-top:18px;
+  padding:14px 18px;
+  background:#E7F2F7;
+  border-left:4px solid #2D7FA6;
+  border-radius:8px;
+  font-style:italic;
+  color:#1A3C5E;
+}
+.mission-quote p{margin:0;line-height:1.6;}
 
 </style>
 <script>
@@ -3705,6 +4183,37 @@ body{color:#24384A;background:#fff}
 footer,.testi-section{background:#163653 !important}
 @media(max-width:480px){body{background:#F3F7FA}.services-section,.faq-section,.reviews-section,.quote-section{background:#F3F7FA !important}.svc-card,.step-card,.review-card,.faq-item,.quote-card{box-shadow:0 5px 18px rgba(26,60,94,0.10) !important}.section-sub,.hero-sub,.svc-card p,.step-card p,.faq-a p{color:#405B70 !important}}
 
+
+
+.hero-easy{
+  color:#5FB6E5;
+  font-weight:700;
+}
+
+
+/* Mobile headline tightening */
+@media(max-width:480px){
+  h1{
+    font-size:26px !important;
+    line-height:1.2 !important;
+    letter-spacing:-0.2px;
+  }
+  .hero-easy{
+    white-space:nowrap;
+  }
+}
+
+
+.mission-quote{
+  margin-top:18px;
+  padding:14px 18px;
+  background:#E7F2F7;
+  border-left:4px solid #2D7FA6;
+  border-radius:8px;
+  font-style:italic;
+  color:#1A3C5E;
+}
+.mission-quote p{margin:0;line-height:1.6;}
 
 </style>
 <!-- IMAGE CAROUSEL -->
@@ -3813,6 +4322,37 @@ footer,.testi-section{background:#163653 !important}
 .ba-pair-caption{background:linear-gradient(180deg,rgba(16,43,68,0),rgba(16,43,68,0.92));padding-top:80px}
 @media(max-width:700px){.ba-pair{grid-template-columns:1fr;min-height:0}.ba-panel:first-child{border-right:none;border-bottom:2px solid rgba(255,255,255,0.8)}.ba-panel .ba-full-img{height:245px}.ba-pair-caption{position:relative;left:auto;right:auto;bottom:auto;background:#102B44;padding:16px}.ba-panel figcaption{top:10px;left:10px}.ba-panel figcaption strong{font-size:12px}.ba-pair-caption .ba-counter{display:inline-flex;margin-top:10px}.ba-slide::after{display:none}}
 
+
+.hero-easy{
+  color:#5FB6E5;
+  font-weight:700;
+}
+
+
+/* Mobile headline tightening */
+@media(max-width:480px){
+  h1{
+    font-size:26px !important;
+    line-height:1.2 !important;
+    letter-spacing:-0.2px;
+  }
+  .hero-easy{
+    white-space:nowrap;
+  }
+}
+
+
+.mission-quote{
+  margin-top:18px;
+  padding:14px 18px;
+  background:#E7F2F7;
+  border-left:4px solid #2D7FA6;
+  border-radius:8px;
+  font-style:italic;
+  color:#1A3C5E;
+}
+.mission-quote p{margin:0;line-height:1.6;}
+
 </style>
 <!-- GOOGLE REVIEWS -->
 <div class="section-divider"></div><section class="reviews-section">
@@ -3845,7 +4385,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">2 weeks ago</div>
 </div>
-<p>"I was in London managing Mum's estate in Sydney. Estate Co. handled everything remotely — photo updates daily, and the final report was exactly what the solicitor needed. Never had to fly back."</p>
+<p>"I was in London managing Mum's estate in Sydney.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -3856,7 +4396,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">1 month ago</div>
 </div>
-<p>"After Dad passed we didn't know where to start. Estate Co. were professional, compassionate, and incredibly efficient. The digital estate report was invaluable for probate."</p>
+<p>"After Dad passed we didn't know where to start.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -3867,7 +4407,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">6 weeks ago</div>
 </div>
-<p>"As a solicitor I refer estate work constantly. Estate Co. is the only service that provides professional-grade documentation, real status updates, and treats families with genuine care."</p>
+<p>"As a solicitor I refer estate work constantly.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -3878,7 +4418,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">2 months ago</div>
 </div>
-<p>"Cleared Mum's Toorak home in three days. Every item was documented and we received a full report at the end. Quote came through in quickly as promised. Exceptional service."</p>
+<p>"Cleared Mum's Toorak home in three days.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -3889,7 +4429,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">2 months ago</div>
 </div>
-<p>"Used them as executor for my uncle's estate. The pay-at-settlement option was a huge relief. The team was respectful of belongings and the digital report satisfied all legal requirements."</p>
+<p>"Used them as executor for my uncle's estate.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -3900,7 +4440,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">3 months ago</div>
 </div>
-<p>"Managing from Brisbane while the property was in Perth — completely seamless. The team sent photos throughout, sold several valuable items, and the property was market-ready in a week."</p>
+<p>"Managing from Brisbane while the property was in Perth — completely seamless.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -3911,7 +4451,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">3 months ago</div>
 </div>
-<p>"Fixed price, no surprises, no hidden extras. The quote was accurate to the dollar. The team was respectful and thorough. Would recommend without hesitation to anyone in this situation."</p>
+<p>"Fixed price, no surprises, no hidden extras.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -3922,7 +4462,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">4 months ago</div>
 </div>
-<p>"I was dreading the whole process but Estate Co. made it genuinely straightforward. They handled everything with sensitivity at what was already a really difficult time for our family."</p>
+<p>"I was dreading the whole process but Estate Co.</p>
 </div>
 <!-- clone for seamless loop -->
 <div class="review-card">
@@ -3934,7 +4474,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">2 weeks ago</div>
 </div>
-<p>"I was in London managing Mum's estate in Sydney. Estate Co. handled everything remotely — photo updates daily, and the final report was exactly what the solicitor needed. Never had to fly back."</p>
+<p>"I was in London managing Mum's estate in Sydney.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -3945,7 +4485,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">1 month ago</div>
 </div>
-<p>"After Dad passed we didn't know where to start. Estate Co. were professional, compassionate, and incredibly efficient. The digital estate report was invaluable for probate."</p>
+<p>"After Dad passed we didn't know where to start.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -3956,7 +4496,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">6 weeks ago</div>
 </div>
-<p>"As a solicitor I refer estate work constantly. Estate Co. is the only service that provides professional-grade documentation, real status updates, and treats families with genuine care."</p>
+<p>"As a solicitor I refer estate work constantly.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -3967,7 +4507,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">2 months ago</div>
 </div>
-<p>"Cleared Mum's Toorak home in three days. Every item was documented and we received a full report at the end. Quote came through in quickly as promised. Exceptional service."</p>
+<p>"Cleared Mum's Toorak home in three days.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -3978,7 +4518,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">2 months ago</div>
 </div>
-<p>"Used them as executor for my uncle's estate. The pay-at-settlement option was a huge relief. The team was respectful of belongings and the digital report satisfied all legal requirements."</p>
+<p>"Used them as executor for my uncle's estate.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -3989,7 +4529,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">3 months ago</div>
 </div>
-<p>"Managing from Brisbane while the property was in Perth — completely seamless. The team sent photos throughout, sold several valuable items, and the property was market-ready in a week."</p>
+<p>"Managing from Brisbane while the property was in Perth — completely seamless.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -4000,7 +4540,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">3 months ago</div>
 </div>
-<p>"Fixed price, no surprises, no hidden extras. The quote was accurate to the dollar. The team was respectful and thorough. Would recommend without hesitation to anyone in this situation."</p>
+<p>"Fixed price, no surprises, no hidden extras.</p>
 </div>
 <div class="review-card">
 <div class="rc-top">
@@ -4011,7 +4551,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="rc-date">4 months ago</div>
 </div>
-<p>"I was dreading the whole process but Estate Co. made it genuinely straightforward. They handled everything with sensitivity at what was already a really difficult time for our family."</p>
+<p>"I was dreading the whole process but Estate Co.</p>
 </div>
 </div>
 </div>
@@ -4033,7 +4573,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="faq-q-body">
 <h4>How much does estate clearance cost in Australia?</h4>
-<div class="faq-a"><p>Most estate clearances range from $1,200 for a small studio apartment to $15,000+ for a large acreage property. We provide a fixed, all-inclusive quote promptly of receiving your photos or video — no hourly rates, no surprises.</p></div>
+<div class="faq-a"><p>Costs can vary depending on the size of the property, amount of contents, access, disposal needs and whether cleaning or preparation work is also required. Photos and property details can help give a clearer indication before work is arranged.</p></div>
 </div>
 </div>
 </div>
@@ -4044,7 +4584,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="faq-q-body">
 <h4>Is estate clearance tax deductible?</h4>
-<div class="faq-a"><p>Deceased estate clearance costs are generally a legitimate estate expense, deductible against the estate — not against the personal income of beneficiaries or executors. We provide full itemised invoices suitable for estate accounting. We recommend confirming the tax treatment with your estate solicitor or accountant, as each estate is different.</p></div>
+<div class="faq-a"><p>Tax treatment can depend on the circumstances of the estate or property, so it is best to seek advice from an accountant or qualified adviser. Where needed, invoices and job details can help families or executors keep clear records for their own administration.</p></div>
 </div>
 </div>
 </div>
@@ -4055,7 +4595,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="faq-q-body">
 <h4>How quickly can you start? What's the timeline?</h4>
-<div class="faq-a"><p>We provide a quote promptly of receiving your photos or video. For urgent situations, we can have someone on-site within 48 hours of request and commence work within 5 business days of quote acceptance. These timelines are publicly stated commitments — not estimates. If you have an urgent situation, call us directly on 0401 857 730.</p></div>
+<div class="faq-a"><p>We provide a quote promptly of receiving your photos or video.</p></div>
 </div>
 </div>
 </div>
@@ -4066,7 +4606,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="faq-q-body">
 <h4>What happens to the contents of the property?</h4>
-<div class="faq-a"><p>Before we begin, we identify and set aside any items the family wants to keep. Remaining contents are sorted into: (1) items to sell — auctioned or sold on behalf of the estate; (2) items to donate — given to charities with donation receipts; (3) items to dispose of — responsibly recycled or removed. Every item is accounted for in your digital estate report.</p></div>
+<div class="faq-a"><p>Before we begin, we identify and set aside any items the family wants to keep.</p></div>
 </div>
 </div>
 </div>
@@ -4077,7 +4617,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="faq-q-body">
 <h4>What is the digital estate report?</h4>
-<div class="faq-a"><p>At completion, every client receives a comprehensive itemised PDF report detailing everything removed from the property — what was sold (with sale amounts), what was donated (to which charities), and what was disposed of. This document is critical for executor legal obligations and beneficiary transparency, and satisfies probate court requirements.</p></div>
+<div class="faq-a"><p>Once the work is complete, we provide a digital report showing photos of the property and the completed clearance and cleaning. This gives families, executors and property managers a clear record of the work carried out, particularly when they cannot be present at the property.</p></div>
 </div>
 </div>
 </div>
@@ -4088,7 +4628,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="faq-q-body">
 <h4>Do I need to be present at the property?</h4>
-<div class="faq-a"><p>No — our service is designed to be fully remote. We quote via photo or video upload, conduct all consultations via phone or Zoom, and deliver all documentation digitally. Many of our clients are interstate or overseas — in the UK, USA, and Singapore. You never need to book a flight or travel to the property.</p></div>
+<div class="faq-a"><p>Not necessarily. In many cases the family, executor or owner is unable to attend the property due to location, timing or other responsibilities. Where appropriate, access arrangements can be coordinated and progress updates provided so the work can continue without requiring someone to be onsite the entire time. This helps reduce the practical burden during what can already be a difficult period.</p></div>
 </div>
 </div>
 </div>
@@ -4099,7 +4639,7 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="faq-q-body">
 <h4>How does the remote quote process work?</h4>
-<div class="faq-a"><p>Upload photos or a short video of the property using the form on this page. Our team reviews and sends a fixed quote to your email promptly. You can then book a Zoom or phone consultation to discuss, ask questions, and approve the quote. Everything — including the service agreement — is handled digitally.</p></div>
+<div class="faq-a"><p>You can usually start by sending through property details and photos or a short video using the quote form. This helps provide an initial understanding of the property, access and likely scope of work before any next steps are discussed.</p></div>
 </div>
 </div>
 </div>
@@ -4110,11 +4650,12 @@ footer,.testi-section{background:#163653 !important}
 </div>
 <div class="faq-q-body">
 <h4>What is probate and do I need it before clearance can begin?</h4>
-<div class="faq-a"><p>Probate is the legal process that confirms a will's validity and authorises the executor to deal with the estate. In most Australian states, you do not need to wait for probate to be granted before beginning clearance — particularly if the executor has identified and set aside disputed items. We work with your solicitor to understand what can proceed. Our estate valuation service assists with the probate application itself.</p></div>
+<div class="faq-a"><p>Probate requirements can depend on the estate, the property and who has authority to make decisions. It is best to confirm the legal position with the executor, solicitor or relevant representative before arranging a full clearance, particularly where ownership or access has not yet been confirmed.</p></div>
 </div>
 </div>
 </div>
-</div></div></section>
+</div>
+      </section>
 <!-- RESOURCES PROMO -->
 <section style="padding:56px 0;background:var(--navy);position:relative;overflow:hidden">
 <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&amp;fit=crop&amp;w=1600&amp;q=80') center/cover no-repeat;opacity:0.06"></div>
@@ -4169,12 +4710,44 @@ footer,.testi-section{background:#163653 !important}
 @media(max-width:480px){body{background:#F3F7FA}.services-section,.faq-section,.reviews-section,.quote-section{background:#F3F7FA !important}.svc-card,.step-card,.review-card,.faq-item,.quote-card{box-shadow:0 5px 18px rgba(26,60,94,0.10) !important}.section-sub,.hero-sub,.svc-card p,.step-card p,.faq-a p{color:#405B70 !important}}
 
 
+
+.hero-easy{
+  color:#5FB6E5;
+  font-weight:700;
+}
+
+
+/* Mobile headline tightening */
+@media(max-width:480px){
+  h1{
+    font-size:26px !important;
+    line-height:1.2 !important;
+    letter-spacing:-0.2px;
+  }
+  .hero-easy{
+    white-space:nowrap;
+  }
+}
+
+
+.mission-quote{
+  margin-top:18px;
+  padding:14px 18px;
+  background:#E7F2F7;
+  border-left:4px solid #2D7FA6;
+  border-radius:8px;
+  font-style:italic;
+  color:#1A3C5E;
+}
+.mission-quote p{margin:0;line-height:1.6;}
+
 </style>
 <!-- ABOUT -->
 
 <section id="our-story" class="about-family">
   <div class="container">
     <div class="about-family-card">
+
       <span class="section-tag">Our story</span>
       <h2>A Melbourne family business built to make a difficult process easier</h2>
 
@@ -4188,7 +4761,10 @@ footer,.testi-section{background:#163653 !important}
 
       <blockquote class="mission-quote">
         <span>“</span>
-        <p>Our goal is simple — to help people when they need it most. Every home is handled with care, compassion and respect for the people and memories connected to it.</p>
+        <p>
+          Our goal is simple — to help people when they need it most. Every home is handled with care, compassion and respect for the people and memories connected to it.
+        </p>
+        <span>”</span>
       </blockquote>
 
       <div class="how-it-works">
@@ -4207,13 +4783,13 @@ footer,.testi-section{background:#163653 !important}
           <div class="step">
             <span class="step-number">2</span>
             <h4>Receive a clear plan</h4>
-            <p>We provide a straightforward estimate and explain exactly how the clearance and cleaning will be handled.</p>
+            <p>We provide a straightforward estimate and explain exactly how the clearance and.</p>
           </div>
 
           <div class="step">
             <span class="step-number">3</span>
             <h4>We take care of everything</h4>
-            <p>Our team clears, cleans and prepares the property for sale, settlement, rental reset or handover.</p>
+            <p>Our team clears, cleans and prepares the property for sale, settlement, rental.</p>
           </div>
         </div>
       </div>
@@ -4261,12 +4837,7 @@ footer,.testi-section{background:#163653 !important}
 
     <details class="seo-location-details">
       <summary>Melbourne areas we support</summary>
-      <p>
-        Estate Co. supports estate clearance, deceased estate cleanouts, downsizing clearances,
-        hoarded property cleanups and pre-sale property preparation across Melbourne suburbs including
-        Glen Waverley, Mount Waverley, Doncaster, Box Hill, Camberwell, Hawthorn, Kew, Brighton,
-        Essendon, Moonee Ponds, Preston, Reservoir, Williamstown, Point Cook, Frankston and Mornington.
-      </p>
+      <p>Estate Co.</p>
     </details>
   </div>
 </section>
@@ -4391,6 +4962,12 @@ function selR(el){
 function ckToggle(el){setTimeout(()=>el.classList.toggle('ck',el.querySelector('input').checked),0);}
 function toggleOther(){var box=document.getElementById('otherBox');var chk=document.getElementById('otherCheck');box.style.display=chk.checked?'block':'none';}
 function addF(fl){
+  const panel=document.getElementById('photoUploadPanel');
+  if(panel){panel.style.borderColor='';panel.style.boxShadow='';}
+  const noPhotos=document.getElementById('noPhotos');
+  if(noPhotos) noPhotos.checked=false;
+  const upload=document.getElementById('upz');
+  if(upload){upload.style.opacity='1';upload.style.pointerEvents='auto';}
   const MAX_SIZE=10*1024*1024; // 10MB per file
   const MAX_FILES=10;
   const MAX_TOTAL_SIZE=100*1024*1024; // 10 files x 10MB max, uploaded one-by-one after lead capture
@@ -4411,11 +4988,31 @@ function addF(fl){
     if(!files.find(x=>x.name===f.name&&x.size===f.size)) files.push(f);
   });
   renderChips();
-}
+
+  refreshPhotoStatus();}
 function renderChips(){
   document.getElementById('chipArea').innerHTML=files.map((f,i)=>`<div class="chip">${f.name.slice(0,16)}${f.name.length>16?'…':''}<button type="button" onclick="rmF(${i})">×</button></div>`).join('');
+  refreshPhotoStatus();
+  refreshPhotoStatus();
 }
 function rmF(i){files.splice(i,1);renderChips();}
+
+function toggleNoPhotos(){
+  const panel=document.getElementById('photoUploadPanel');
+  if(panel){panel.style.borderColor='';panel.style.boxShadow='';}
+  const noPhotos=document.getElementById('noPhotos');
+  const upload=document.getElementById('upz');
+  const fileInput=document.getElementById('fIn');
+  if(noPhotos && noPhotos.checked){
+    files=[];
+    renderChips();
+    if(fileInput) fileInput.value='';
+    if(upload){upload.style.opacity='0.48';upload.style.pointerEvents='none';}
+  }else{
+    if(upload){upload.style.opacity='1';upload.style.pointerEvents='auto';}
+  }
+  refreshPhotoStatus();
+}
 const uz=document.getElementById('upz');
 if(uz){
   uz.addEventListener('dragover',e=>{e.preventDefault();uz.style.borderColor='var(--gold)'});
@@ -4512,6 +5109,64 @@ function ecShowRecoveryNotice(){
 }
 setTimeout(ecShowRecoveryNotice,1200);
 
+
+function getSelectedPhotoCount(){
+  try{
+    if(Array.isArray(files)) return files.length;
+    if(files && typeof files.length==='number') return files.length;
+  }catch(e){}
+  const chipArea=document.getElementById('chipArea');
+  if(chipArea) return chipArea.querySelectorAll('.chip').length;
+  return 0;
+}
+
+function isNoPhotosSelected(){
+  const noPhotos=document.getElementById('noPhotos');
+  return !!(noPhotos && noPhotos.checked);
+}
+
+
+function updatePhotoStatus(state,message){
+  const status=document.getElementById('photoUploadStatus');
+  if(!status) return;
+  status.className='photo-upload-status';
+  if(state) status.classList.add('show');
+  if(state==='no-photos') status.classList.add('no-photos');
+  if(state==='error') status.classList.add('error');
+  status.textContent=message||'';
+}
+
+function refreshPhotoStatus(){
+  const count=getSelectedPhotoCount ? getSelectedPhotoCount() : (Array.isArray(files)?files.length:0);
+  const noPhotos=isNoPhotosSelected ? isNoPhotosSelected() : !!(document.getElementById('noPhotos')&&document.getElementById('noPhotos').checked);
+  if(count>0){
+    updatePhotoStatus('selected', count+' file'+(count===1?'':'s')+' selected. Photos will upload securely after your enquiry is saved.');
+  }else if(noPhotos){
+    updatePhotoStatus('no-photos','No photos selected. We may call for extra details before quoting.');
+  }else{
+    updatePhotoStatus('', '');
+  }
+}
+
+function validatePhotoRequirement(){
+  const hasPhotos=getSelectedPhotoCount()>0;
+  const noPhotosChecked=isNoPhotosSelected();
+  if(!hasPhotos && !noPhotosChecked){
+    showErr('Please upload at least one photo, or tick “No photos to upload”.');
+    updatePhotoStatus('error','Please upload at least one photo, or tick “No photos to upload”.');
+    const panel=document.getElementById('photoUploadPanel');
+    if(panel){
+      panel.style.borderColor='#B45B3E';
+      panel.style.boxShadow='0 0 0 4px rgba(180,91,62,.12), 0 10px 30px rgba(90,64,34,.08)';
+      panel.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+    const cb=document.getElementById('noPhotos');
+    if(cb){cb.focus({preventScroll:true});}
+    return false;
+  }
+  return true;
+}
+
 async function submitQ(){
   clearErr();
   const n=document.getElementById('fname').value.trim();
@@ -4520,6 +5175,8 @@ async function submitQ(){
   if(!n){showErr('Please enter your full name.');return;}
   if(!e||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){showErr('Please enter a valid email address.');return;}
   if(!ph){showErr('Please enter your phone number.');return;}
+
+  if(!validatePhotoRequirement()) return;
 
   const ref=genRef();
   const firstName=n.split(' ')[0];
@@ -4547,6 +5204,7 @@ async function submitQ(){
     notes:notes.trim(),
     fileCount:uploadedFiles.length,
     fileNames:uploadedFiles.map(f=>f.name).join(', '),
+    noPhotosToUpload:!!(document.getElementById('noPhotos')&&document.getElementById('noPhotos').checked),
     files:[]
   };
 
@@ -4992,6 +5650,37 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
     display:none;
   }
 }
+
+
+.hero-easy{
+  color:#5FB6E5;
+  font-weight:700;
+}
+
+
+/* Mobile headline tightening */
+@media(max-width:480px){
+  h1{
+    font-size:26px !important;
+    line-height:1.2 !important;
+    letter-spacing:-0.2px;
+  }
+  .hero-easy{
+    white-space:nowrap;
+  }
+}
+
+
+.mission-quote{
+  margin-top:18px;
+  padding:14px 18px;
+  background:#E7F2F7;
+  border-left:4px solid #2D7FA6;
+  border-radius:8px;
+  font-style:italic;
+  color:#1A3C5E;
+}
+.mission-quote p{margin:0;line-height:1.6;}
 
 </style>
 
