@@ -2304,34 +2304,6 @@ text-decoration:none;
 }
 
 
-/* Standard EstateCo text-logo header */
-.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,60,94,.12)}
-.site-header .container{max-width:1180px;margin:0 auto;padding:0 28px}
-.site-header-inner{height:66px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.site-logo-text{text-decoration:none;display:flex;flex-direction:column;line-height:1;flex-shrink:0}
-.site-logo-main{font-family:'DM Sans',Arial,sans-serif;font-size:26px;font-weight:800;color:#163653;letter-spacing:-.8px}
-.site-logo-main span{color:#2D7FA6}
-.site-logo-sub{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#425F73;font-weight:700;margin-top:3px}
-.site-nav-menu{display:flex;align-items:center;gap:4px}
-.site-nav-menu a{font-family:'DM Sans',Arial,sans-serif;font-size:13px;font-weight:700;text-decoration:none;color:#163653;padding:9px 13px;border-radius:9px;transition:.18s}
-.site-nav-menu a:hover,.site-nav-menu a.active{background:#E7F2F7;color:#2D7FA6}
-.site-nav-actions{display:flex;align-items:center;gap:8px}
-.site-call-btn,.site-quote-btn{font-family:'DM Sans',Arial,sans-serif;font-size:12px;font-weight:800;text-decoration:none;border-radius:9px;padding:9px 14px;letter-spacing:.7px;white-space:nowrap}
-.site-call-btn{border:2px solid #163653;color:#163653;background:#fff}
-.site-quote-btn{border:2px solid #163653;background:#163653;color:#fff}
-.site-call-btn:hover{background:#163653;color:#fff}
-.site-quote-btn:hover{background:#2D7FA6;border-color:#2D7FA6;color:#fff}
-@media(max-width:760px){
-  .site-header .container{padding:0 16px}
-  .site-header-inner{height:58px}
-  .site-nav-menu{display:none}
-  .site-call-btn{display:none}
-  .site-logo-main{font-size:22px}
-  .site-logo-sub{font-size:9px}
-  .site-quote-btn{padding:8px 11px;font-size:11px}
-}
-
-
 /* Consistent EstateCo footer */
 footer{background:#163653;color:#fff;margin-top:60px;padding:32px 0 0}
 footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
@@ -2354,326 +2326,61 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
 @media(max-width:760px){footer .container{padding:0 24px}.footer-top{grid-template-columns:1fr;gap:14px}.footer-bottom{flex-direction:column;align-items:flex-start}.footer-legal-col{display:block}}
 
 
-/* Mobile header actions: menu, call icon and quote */
-.mobile-menu-btn,
-.mobile-call-btn{
-  display:none;
-}
-.mobile-call-btn svg{
-  width:15px;
-  height:15px;
-  display:block;
-}
+
+/* EstateCo clean shared header */
+.ec-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,60,94,.12)}
+.ec-header .container{max-width:1180px;margin:0 auto;padding:0 28px}
+.ec-header-inner{height:66px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.ec-logo{text-decoration:none;display:flex;flex-direction:column;line-height:1;flex-shrink:0}
+.ec-logo-main{font-family:'DM Sans',Arial,sans-serif;font-size:26px;font-weight:800;color:#163653;letter-spacing:-.8px}
+.ec-logo-main span{color:#2D7FA6}
+.ec-logo-sub{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#425F73;font-weight:700;margin-top:3px}
+.ec-menu{display:flex;align-items:center;gap:4px}
+.ec-menu a{font-family:'DM Sans',Arial,sans-serif;font-size:13px;font-weight:700;text-decoration:none;color:#163653;padding:9px 13px;border-radius:9px;transition:.18s;white-space:nowrap}
+.ec-menu a:hover{background:#E7F2F7;color:#2D7FA6}
+.ec-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.ec-call,.ec-quote,.ec-mobile-call,.ec-mobile-menu{font-family:'DM Sans',Arial,sans-serif;text-decoration:none;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+.ec-call{border:2px solid #163653;color:#163653;background:#fff;padding:9px 14px;font-size:12px;font-weight:800;letter-spacing:.7px}
+.ec-quote{border:2px solid #163653;background:#163653;color:#fff;padding:9px 14px;font-size:12px;font-weight:800;letter-spacing:.7px}
+.ec-call:hover{background:#163653;color:#fff}
+.ec-quote:hover{background:#2D7FA6;border-color:#2D7FA6;color:#fff}
+.ec-mobile-call,.ec-mobile-menu{display:none}
+.ec-mobile-call svg{width:15px;height:15px;display:block}
+.ec-mobile-menu span{display:block;width:19px;height:2px;background:#163653;border-radius:999px;transition:transform .2s ease,opacity .2s ease}
+.ec-mobile-menu.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.ec-mobile-menu.open span:nth-child(2){opacity:0}
+.ec-mobile-menu.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+.ec-drawer{display:none;position:fixed;top:66px;left:0;right:0;bottom:0;background:#fff;z-index:999;overflow-y:auto;padding:18px 20px 90px;border-top:1px solid rgba(26,60,94,.12)}
+.ec-drawer.open{display:block}
+.ec-drawer-heading{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#425F73;margin:6px 0 10px}
+.ec-drawer-link{display:block;text-decoration:none;padding:14px 15px;border-radius:14px;background:#f7fbfe;margin-bottom:8px;border:1px solid rgba(26,60,94,.12)}
+.ec-drawer-link strong{display:block;color:#163653;font-size:15px}
+.ec-drawer-link span{display:block;color:#425F73;font-size:12px;margin-top:2px}
+.ec-drawer-actions{display:flex;gap:10px;margin-top:14px}
+.ec-drawer-call,.ec-drawer-quote{flex:1;display:flex;align-items:center;justify-content:center;text-decoration:none;border-radius:10px;padding:13px 10px;font-size:13px;font-weight:800}
+.ec-drawer-call{border:2px solid #163653;color:#163653;background:#fff}
+.ec-drawer-quote{border:2px solid #163653;background:#163653;color:#fff}
 @media(max-width:760px){
-  .site-header-inner,
-  .nav-inner{
-    gap:8px !important;
-  }
-  .site-nav-actions,
-  .nav-right{
-    display:flex !important;
-    align-items:center !important;
-    gap:7px !important;
-    flex-shrink:0 !important;
-  }
-  .site-call-btn,
-  .nav-call-btn{
-    display:none !important;
-  }
-  .site-quote-btn,
-  .nav-quote-btn{
-    display:inline-flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-    height:36px !important;
-    padding:0 11px !important;
-    border-radius:9px !important;
-    font-size:10px !important;
-    line-height:1 !important;
-    letter-spacing:.6px !important;
-    white-space:nowrap !important;
-  }
-  .mobile-call-btn{
-    display:inline-flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-    width:36px !important;
-    height:36px !important;
-    border-radius:9px !important;
-    border:2px solid #163653 !important;
-    background:#fff !important;
-    color:#163653 !important;
-    text-decoration:none !important;
-    flex-shrink:0 !important;
-  }
-  .mobile-menu-btn,
-  .nav-hamburger{
-    display:inline-flex !important;
-    width:36px !important;
-    height:36px !important;
-    border-radius:9px !important;
-    background:#f0f4f8 !important;
-    border:1px solid rgba(26,60,94,.12) !important;
-    align-items:center !important;
-    justify-content:center !important;
-    flex-direction:column !important;
-    gap:5px !important;
-    padding:0 !important;
-    flex-shrink:0 !important;
-  }
-  .mobile-menu-btn span,
-  .nav-hamburger span{
-    display:block !important;
-    width:19px !important;
-    height:2px !important;
-    background:#163653 !important;
-    border-radius:2px !important;
-  }
-  .site-nav-menu,
-  .nav-menu{
-    display:none !important;
-  }
-  .site-logo-main,
-  .logo{
-    font-size:21px !important;
-  }
-  .site-logo-sub,
-  .nav-tagline{
-    font-size:8.5px !important;
-    letter-spacing:1.4px !important;
-  }
+  .ec-header .container{padding:0 12px}
+  .ec-header-inner{height:58px;gap:8px}
+  .ec-logo-main{font-size:21px}
+  .ec-logo-sub{font-size:8.5px;letter-spacing:1.35px}
+  .ec-menu{display:none}
+  .ec-call{display:none}
+  .ec-actions{gap:7px;margin-left:auto}
+  .ec-mobile-call{display:inline-flex;width:36px;height:36px;min-width:36px;border:2px solid #163653;color:#163653;background:#fff}
+  .ec-quote{height:36px;padding:0 10px;font-size:10px;letter-spacing:.45px}
+  .ec-mobile-menu{display:inline-flex;width:36px;height:36px;min-width:36px;border-radius:9px;border:1.5px solid rgba(22,54,83,.18);background:#f0f4f8;flex-direction:column;gap:4px;padding:0;cursor:pointer}
+  .ec-drawer{top:58px}
+}
+@media(max-width:374px){
+  .ec-logo-main{font-size:19px}
+  .ec-logo-sub{display:none}
+  .ec-actions{gap:5px}
+  .ec-mobile-call,.ec-mobile-menu{width:34px;height:34px;min-width:34px}
+  .ec-quote{height:34px;padding:0 8px;font-size:9px}
 }
 
-
-/* Clear 3-line hamburger stack for mobile */
-@media(max-width:760px){
-  .mobile-menu-btn,
-  .nav-hamburger{
-    display:inline-flex !important;
-    width:36px !important;
-    height:36px !important;
-    min-width:36px !important;
-    border-radius:9px !important;
-    background:#f0f4f8 !important;
-    border:1px solid rgba(26,60,94,.16) !important;
-    align-items:center !important;
-    justify-content:center !important;
-    flex-direction:column !important;
-    gap:4px !important;
-    padding:0 !important;
-    margin:0 !important;
-    flex-shrink:0 !important;
-  }
-  .mobile-menu-btn span,
-  .nav-hamburger span{
-    display:block !important;
-    width:19px !important;
-    height:2px !important;
-    background:#163653 !important;
-    border-radius:999px !important;
-    opacity:1 !important;
-    transform:none !important;
-  }
-  .mobile-menu-btn.open span:nth-child(1),
-  .nav-hamburger.open span:nth-child(1){
-    transform:rotate(45deg) translate(4px,4px) !important;
-  }
-  .mobile-menu-btn.open span:nth-child(2),
-  .nav-hamburger.open span:nth-child(2){
-    opacity:0 !important;
-  }
-  .mobile-menu-btn.open span:nth-child(3),
-  .nav-hamburger.open span:nth-child(3){
-    transform:rotate(-45deg) translate(4px,-4px) !important;
-  }
-}
-
-
-/* Definitive mobile header: hamburger + phone + quote */
-.mobile-header-actions{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  flex-shrink:0;
-}
-.mobile-menu-button,
-.mobile-phone-button{
-  display:none;
-}
-.mobile-quote-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:#163653;
-  color:#fff;
-  border:2px solid #163653;
-  border-radius:9px;
-  padding:9px 14px;
-  font-family:'DM Sans',Arial,sans-serif;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.7px;
-  text-decoration:none;
-  white-space:nowrap;
-}
-@media(max-width:760px){
-  .site-header-inner,
-  .nav-inner{
-    height:58px !important;
-    gap:8px !important;
-  }
-
-  .site-nav-menu,
-  .nav-menu{
-    display:none !important;
-  }
-
-  .mobile-header-actions{
-    display:flex !important;
-    align-items:center !important;
-    gap:7px !important;
-    margin-left:auto !important;
-  }
-
-  .mobile-menu-button{
-    display:inline-flex !important;
-    width:36px !important;
-    height:36px !important;
-    min-width:36px !important;
-    border-radius:9px !important;
-    background:#f0f4f8 !important;
-    border:1.5px solid rgba(22,54,83,.18) !important;
-    align-items:center !important;
-    justify-content:center !important;
-    flex-direction:column !important;
-    gap:4px !important;
-    padding:0 !important;
-    margin:0 !important;
-    cursor:pointer !important;
-    -webkit-appearance:none !important;
-    appearance:none !important;
-    flex-shrink:0 !important;
-  }
-
-  .mobile-menu-button span{
-    display:block !important;
-    width:19px !important;
-    height:2px !important;
-    min-height:2px !important;
-    background:#163653 !important;
-    border-radius:999px !important;
-    opacity:1 !important;
-    transition:transform .2s ease, opacity .2s ease !important;
-  }
-
-  .mobile-menu-button.open span:nth-child(1){
-    transform:rotate(45deg) translate(4px,4px) !important;
-  }
-  .mobile-menu-button.open span:nth-child(2){
-    opacity:0 !important;
-  }
-  .mobile-menu-button.open span:nth-child(3){
-    transform:rotate(-45deg) translate(4px,-4px) !important;
-  }
-
-  .mobile-phone-button{
-    display:inline-flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-    width:36px !important;
-    height:36px !important;
-    min-width:36px !important;
-    border-radius:9px !important;
-    border:2px solid #163653 !important;
-    background:#fff !important;
-    color:#163653 !important;
-    text-decoration:none !important;
-    flex-shrink:0 !important;
-  }
-
-  .mobile-phone-button svg{
-    width:15px !important;
-    height:15px !important;
-    display:block !important;
-  }
-
-  .mobile-quote-button{
-    display:inline-flex !important;
-    height:36px !important;
-    align-items:center !important;
-    justify-content:center !important;
-    padding:0 10px !important;
-    border-radius:9px !important;
-    background:#163653 !important;
-    color:#fff !important;
-    border:2px solid #163653 !important;
-    font-size:10px !important;
-    font-weight:800 !important;
-    letter-spacing:.45px !important;
-    line-height:1 !important;
-    white-space:nowrap !important;
-    text-decoration:none !important;
-    flex-shrink:0 !important;
-  }
-
-  .site-call-btn,
-  .nav-call-btn,
-  .site-quote-btn,
-  .nav-quote-btn,
-  .mobile-call-btn,
-  .nav-hamburger{
-    display:none !important;
-  }
-
-  .site-logo-main,
-  .logo{
-    font-size:21px !important;
-  }
-
-  .site-logo-sub,
-  .nav-tagline{
-    font-size:8.5px !important;
-    letter-spacing:1.4px !important;
-  }
-}
-
-
-/* Desktop call button restore */
-.desktop-call-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:2px solid #163653;
-  color:#163653;
-  background:#fff;
-  border-radius:9px;
-  padding:9px 14px;
-  font-family:'DM Sans',Arial,sans-serif;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.7px;
-  text-decoration:none;
-}
-
-@media(max-width:760px){
-  .desktop-call-btn{
-    display:none !important;
-  }
-}
-
-
-/* Mobile header order: call, quote, hamburger */
-@media(max-width:760px){
-  .mobile-header-actions{
-    display:flex !important;
-    align-items:center !important;
-    gap:7px !important;
-    margin-left:auto !important;
-  }
-  .mobile-phone-button{order:1 !important}
-  .mobile-quote-button{order:2 !important}
-  .mobile-menu-button{order:3 !important}
-}
 
 </style>
 <style>
@@ -3539,29 +3246,6 @@ footer,.testi-section{background:#163653 !important}
   }
 }
 
-/* Desktop call button restore */
-.desktop-call-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:2px solid #163653;
-  color:#163653;
-  background:#fff;
-  border-radius:9px;
-  padding:9px 14px;
-  font-family:'DM Sans',Arial,sans-serif;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.7px;
-  text-decoration:none;
-}
-
-@media(max-width:760px){
-  .desktop-call-btn{
-    display:none !important;
-  }
-}
-
 </style><meta content="Melbourne" name="geo.placename"/><meta content="-37.8136,144.9631" name="ICBM"/><link href="//images.unsplash.com" rel="dns-prefetch"/>
 
 <style>
@@ -3575,29 +3259,6 @@ footer,.testi-section{background:#163653 !important}
 .seo-location-details p{font-size:13px;color:#425F73;line-height:1.65;margin:10px 0 0;}
 @media(max-width:760px){.location-card-grid{grid-template-columns:1fr}.service-locations-section{padding:28px 0}}
 
-/* Desktop call button restore */
-.desktop-call-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:2px solid #163653;
-  color:#163653;
-  background:#fff;
-  border-radius:9px;
-  padding:9px 14px;
-  font-family:'DM Sans',Arial,sans-serif;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.7px;
-  text-decoration:none;
-}
-
-@media(max-width:760px){
-  .desktop-call-btn{
-    display:none !important;
-  }
-}
-
 </style>
 
 <style id="estateco-shared-consistency">
@@ -3605,29 +3266,6 @@ footer,.testi-section{background:#163653 !important}
 .nav-menu{gap:4px}.nav-link{font-weight:700}.nav-quote-btn{text-decoration:none}.nav-call-btn{text-decoration:none}.nav-logo-img{height:36px;width:auto}.footer-service-links a{color:inherit;text-decoration:none;font-weight:700}.footer-service-links a:hover{color:var(--gold)}
 body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .nav-quote-btn,.drawer-actions .nav-call-btn{padding:12px 14px;border-radius:10px;font-size:12px;font-weight:400;text-align:center;display:flex;align-items:center;justify-content:center;white-space:nowrap}.drawer-actions .nav-quote-btn{background:var(--navy);color:#fff;border:2px solid var(--navy)}
 @media(max-width:480px){.nav-right{gap:6px}.nav-call-btn{font-size:11px}.nav-hamburger{display:flex}.nav-drawer{top:52px}.footer-service-links{display:block}}
-
-/* Desktop call button restore */
-.desktop-call-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:2px solid #163653;
-  color:#163653;
-  background:#fff;
-  border-radius:9px;
-  padding:9px 14px;
-  font-family:'DM Sans',Arial,sans-serif;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.7px;
-  text-decoration:none;
-}
-
-@media(max-width:760px){
-  .desktop-call-btn{
-    display:none !important;
-  }
-}
 
 </style>
 
@@ -3637,55 +3275,50 @@ body.menu-open{overflow:hidden}.nav-drawer.open{display:block}.drawer-actions .n
 <!-- NAV -->
 
 
-<nav class="site-header">
+
+<nav class="ec-header">
   <div class="container">
-    <div class="site-header-inner">
-      <a class="site-logo-text" href="index.html" aria-label="EstateCo home">
-        <span class="site-logo-main">Estate<span>Co.</span></span>
-        <span class="site-logo-sub">Property Clearance</span>
+    <div class="ec-header-inner">
+      <a class="ec-logo" href="index.html" aria-label="EstateCo home">
+        <span class="ec-logo-main">Estate<span>Co.</span></span>
+        <span class="ec-logo-sub">Property Clearance</span>
       </a>
-      <div class="site-nav-menu">
-        <a href="index.html">Home</a><a href="index.html#services-heading">Services</a><a href="index.html#service-locations">Areas</a><a href="guides.html">Resources</a><a href="index.html#faq">FAQ</a>
+      <div class="ec-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#services-heading">Services</a>
+        <a href="index.html#service-locations">Areas</a>
+        <a href="guides.html">Resources</a>
+        <a href="index.html#faq">FAQ</a>
       </div>
-      
-
-<div class="site-nav-actions mobile-header-actions">
-  <a class="site-call-btn desktop-call-btn" href="tel:0401857730">CALL NOW</a>
-
-  <a class="mobile-phone-button" href="tel:0401857730" aria-label="Call EstateCo">
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.3-.3.73-.4 1.12-.27 1.22.4 2.53.62 3.89.62.62 0 1.11.49 1.11 1.11v3.49c0 .62-.49 1.11-1.11 1.11C10.68 21.24 2.76 13.32 2.76 3.58c0-.62.49-1.11 1.11-1.11h3.5c.62 0 1.11.49 1.11 1.11 0 1.36.21 2.67.62 3.89.12.39.03.82-.28 1.12l-2.2 2.2z"/>
-    </svg>
-  </a>
-
-  <a class="mobile-quote-button" href="#quote">REQUEST QUOTE</a>
-
-  <button class="mobile-menu-button" id="navHamburger" type="button" aria-label="Open menu" onclick="toggleDrawer()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</div>
-
-
+      <div class="ec-actions">
+        <a class="ec-call" href="tel:0401857730">CALL NOW</a>
+        <a class="ec-mobile-call" href="tel:0401857730" aria-label="Call EstateCo">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.3-.3.73-.4 1.12-.27 1.22.4 2.53.62 3.89.62.62 0 1.11.49 1.11 1.11v3.49c0 .62-.49 1.11-1.11 1.11C10.68 21.24 2.76 13.32 2.76 3.58c0-.62.49-1.11 1.11-1.11h3.5c.62 0 1.11.49 1.11 1.11 0 1.36.21 2.67.62 3.89.12.39.03.82-.28 1.12l-2.2 2.2z"/></svg>
+        </a>
+        <a class="ec-quote" href="#quote">REQUEST QUOTE</a>
+        <button class="ec-mobile-menu" id="ecMenuButton" type="button" aria-label="Open menu" aria-expanded="false" onclick="toggleDrawer()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </div>
 </nav>
-
-<div class="nav-drawer" id="navDrawer">
-  <div class="drawer-section">
-    <div class="drawer-heading">Navigate</div>
-    <a class="drawer-link" href="index.html#services-heading" onclick="closeDrawer()"><div><strong>Services</strong><span>Clearance, cleanouts and property preparation</span></div></a>
-    <a class="drawer-link" href="index.html#service-locations" onclick="closeDrawer()"><div><strong>Areas</strong><span>Melbourne, Sydney and Brisbane</span></div></a>
-    <a class="drawer-link" href="guides.html" onclick="closeDrawer()"><div><strong>Resources</strong><span>Helpful estate clearance guides</span></div></a>
-    <a class="drawer-link" href="index.html#faq" onclick="closeDrawer()"><div><strong>FAQ</strong><span>Common questions</span></div></a>
-    <a class="drawer-link" href="index.html#about" onclick="closeDrawer()"><div><strong>About</strong><span>Professional, polite and insured</span></div></a>
-  </div>
-  <div class="drawer-actions">
-    <a class="nav-call-btn" href="tel:0401857730" style="flex:1;justify-content:center">CALL NOW</a>
-    <a class="nav-quote-btn" href="#quote" onclick="closeDrawer()" style="flex:1;justify-content:center">REQUEST QUOTE</a>
+<div class="ec-drawer" id="ecDrawer">
+  <div class="ec-drawer-heading">Navigate</div>
+  <a class="ec-drawer-link" href="index.html#services-heading" onclick="closeDrawer()"><strong>Services</strong><span>Clearance, cleanouts and property preparation</span></a>
+  <a class="ec-drawer-link" href="index.html#service-locations" onclick="closeDrawer()"><strong>Areas</strong><span>Melbourne, Sydney and Brisbane</span></a>
+  <a class="ec-drawer-link" href="guides.html" onclick="closeDrawer()"><strong>Resources</strong><span>Helpful estate clearance guides</span></a>
+  <a class="ec-drawer-link" href="index.html#faq" onclick="closeDrawer()"><strong>FAQ</strong><span>Common questions</span></a>
+  <a class="ec-drawer-link" href="index.html#about" onclick="closeDrawer()"><strong>About</strong><span>Professional, polite and insured</span></a>
+  <div class="ec-drawer-actions">
+    <a class="ec-drawer-call" href="tel:0401857730">CALL NOW</a>
+    <a class="ec-drawer-quote" href="#quote" onclick="closeDrawer()">REQUEST QUOTE</a>
   </div>
 </div>
+
+
+
+
 
 
 
@@ -3971,29 +3604,6 @@ footer,.testi-section{background:#163653 !important}
 @media(max-width:480px){body{background:#F3F7FA}.services-section,.faq-section,.reviews-section,.quote-section{background:#F3F7FA !important}.svc-card,.step-card,.review-card,.faq-item,.quote-card{box-shadow:0 5px 18px rgba(26,60,94,0.10) !important}.section-sub,.hero-sub,.svc-card p,.step-card p,.faq-a p{color:#405B70 !important}}
 
 
-/* Desktop call button restore */
-.desktop-call-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:2px solid #163653;
-  color:#163653;
-  background:#fff;
-  border-radius:9px;
-  padding:9px 14px;
-  font-family:'DM Sans',Arial,sans-serif;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.7px;
-  text-decoration:none;
-}
-
-@media(max-width:760px){
-  .desktop-call-btn{
-    display:none !important;
-  }
-}
-
 </style>
 <script>
 var baCurrent=0;
@@ -4095,29 +3705,6 @@ body{color:#24384A;background:#fff}
 footer,.testi-section{background:#163653 !important}
 @media(max-width:480px){body{background:#F3F7FA}.services-section,.faq-section,.reviews-section,.quote-section{background:#F3F7FA !important}.svc-card,.step-card,.review-card,.faq-item,.quote-card{box-shadow:0 5px 18px rgba(26,60,94,0.10) !important}.section-sub,.hero-sub,.svc-card p,.step-card p,.faq-a p{color:#405B70 !important}}
 
-
-/* Desktop call button restore */
-.desktop-call-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:2px solid #163653;
-  color:#163653;
-  background:#fff;
-  border-radius:9px;
-  padding:9px 14px;
-  font-family:'DM Sans',Arial,sans-serif;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.7px;
-  text-decoration:none;
-}
-
-@media(max-width:760px){
-  .desktop-call-btn{
-    display:none !important;
-  }
-}
 
 </style>
 <!-- IMAGE CAROUSEL -->
@@ -4225,29 +3812,6 @@ footer,.testi-section{background:#163653 !important}
 .ba-panel figcaption strong{font-size:13px;line-height:1;color:#fff;white-space:nowrap}
 .ba-pair-caption{background:linear-gradient(180deg,rgba(16,43,68,0),rgba(16,43,68,0.92));padding-top:80px}
 @media(max-width:700px){.ba-pair{grid-template-columns:1fr;min-height:0}.ba-panel:first-child{border-right:none;border-bottom:2px solid rgba(255,255,255,0.8)}.ba-panel .ba-full-img{height:245px}.ba-pair-caption{position:relative;left:auto;right:auto;bottom:auto;background:#102B44;padding:16px}.ba-panel figcaption{top:10px;left:10px}.ba-panel figcaption strong{font-size:12px}.ba-pair-caption .ba-counter{display:inline-flex;margin-top:10px}.ba-slide::after{display:none}}
-
-/* Desktop call button restore */
-.desktop-call-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:2px solid #163653;
-  color:#163653;
-  background:#fff;
-  border-radius:9px;
-  padding:9px 14px;
-  font-family:'DM Sans',Arial,sans-serif;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.7px;
-  text-decoration:none;
-}
-
-@media(max-width:760px){
-  .desktop-call-btn{
-    display:none !important;
-  }
-}
 
 </style>
 <!-- GOOGLE REVIEWS -->
@@ -4605,29 +4169,6 @@ footer,.testi-section{background:#163653 !important}
 @media(max-width:480px){body{background:#F3F7FA}.services-section,.faq-section,.reviews-section,.quote-section{background:#F3F7FA !important}.svc-card,.step-card,.review-card,.faq-item,.quote-card{box-shadow:0 5px 18px rgba(26,60,94,0.10) !important}.section-sub,.hero-sub,.svc-card p,.step-card p,.faq-a p{color:#405B70 !important}}
 
 
-/* Desktop call button restore */
-.desktop-call-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:2px solid #163653;
-  color:#163653;
-  background:#fff;
-  border-radius:9px;
-  padding:9px 14px;
-  font-family:'DM Sans',Arial,sans-serif;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.7px;
-  text-decoration:none;
-}
-
-@media(max-width:760px){
-  .desktop-call-btn{
-    display:none !important;
-  }
-}
-
 </style>
 <!-- ABOUT -->
 
@@ -4775,9 +4316,9 @@ footer,.testi-section{background:#163653 !important}
 <script>
 // NAV
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('raised',window.scrollY>10)});
-function toggleDrawer(){const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger'),o=d.classList.toggle('open');b.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}
-function closeDrawer(){document.getElementById('navDrawer').classList.remove('open');document.getElementById('navHamburger').classList.remove('open');document.body.style.overflow='';}
-window.addEventListener('scroll',()=>{if(document.getElementById('navDrawer').classList.contains('open'))closeDrawer();},{passive:true});
+function toggleDrawer(){const d=document.getElementById('ecDrawer'),b=document.getElementById('ecMenuButton'),o=d.classList.toggle('open');b.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}
+function closeDrawer(){document.getElementById('ecDrawer').classList.remove('open');document.getElementById('ecMenuButton').classList.remove('open');document.body.style.overflow='';}
+window.addEventListener('scroll',()=>{if(document.getElementById('ecDrawer').classList.contains('open'))closeDrawer();},{passive:true});
 function scrollToEl(id){const el=document.getElementById(id);if(el){const top=el.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:top,behavior:'smooth'});}}
 // Step card scroll highlight
 (function(){
@@ -5452,29 +4993,6 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
   }
 }
 
-/* Desktop call button restore */
-.desktop-call-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:2px solid #163653;
-  color:#163653;
-  background:#fff;
-  border-radius:9px;
-  padding:9px 14px;
-  font-family:'DM Sans',Arial,sans-serif;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.7px;
-  text-decoration:none;
-}
-
-@media(max-width:760px){
-  .desktop-call-btn{
-    display:none !important;
-  }
-}
-
 </style>
 
 <!-- SEO Content (collapsed for users but indexable) -->
@@ -5483,10 +5001,10 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
 <script id="estateco-shared-nav-script">
 (function(){
   const nav=document.getElementById('nav');
-  const drawer=document.getElementById('navDrawer');
-  const burger=document.getElementById('navHamburger');
+  const drawer=document.getElementById('ecDrawer');
+  const burger=document.getElementById('ecMenuButton');
   window.toggleDrawer=function(){
-    const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger');
+    const d=document.getElementById('ecDrawer'),b=document.getElementById('ecMenuButton');
     if(!d||!b)return;
     const open=!d.classList.contains('open');
     d.classList.toggle('open',open);
@@ -5496,7 +5014,7 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
     document.body.style.overflow=open?'hidden':'';
   };
   window.closeDrawer=function(){
-    const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger');
+    const d=document.getElementById('ecDrawer'),b=document.getElementById('ecMenuButton');
     if(d)d.classList.remove('open');
     if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');}
     document.body.classList.remove('menu-open');
@@ -5504,7 +5022,7 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
   };
   if(nav){window.addEventListener('scroll',function(){nav.classList.toggle('raised',window.scrollY>10);},{passive:true});}
   document.addEventListener('click',function(e){
-    const d=document.getElementById('navDrawer'),b=document.getElementById('navHamburger');
+    const d=document.getElementById('ecDrawer'),b=document.getElementById('ecMenuButton');
     if(!d||!b||!d.classList.contains('open'))return;
     if(!d.contains(e.target)&&!b.contains(e.target))window.closeDrawer();
   });
@@ -5557,5 +5075,29 @@ footer .container{max-width:1180px;margin:0 auto;padding:0 48px}
 })();
 </script>
 
+
+
+
+<script>
+function toggleDrawer(){
+  var drawer=document.getElementById('ecDrawer');
+  var btn=document.getElementById('ecMenuButton');
+  if(!drawer) return;
+  drawer.classList.toggle('open');
+  if(btn){
+    btn.classList.toggle('open');
+    btn.setAttribute('aria-expanded', drawer.classList.contains('open') ? 'true' : 'false');
+  }
+}
+function closeDrawer(){
+  var drawer=document.getElementById('ecDrawer');
+  var btn=document.getElementById('ecMenuButton');
+  if(drawer) drawer.classList.remove('open');
+  if(btn){
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }
+}
+</script>
 </body>
 </html>
