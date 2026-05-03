@@ -1,47 +1,306 @@
 <!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#1A3C5E"><title>Professional Referral Program | Estate Co.</title><meta name="description" content="Professional referral form for real estate agents, aged care coordinators, lawyers and property professionals."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><style>
 :root{--navy:#1A3C5E;--mid:#1F4D78;--blue:#2D7FA6;--pale:#E7F2F7;--off:#F2F8FC;--warm:#425F73;--char:#24384A;--border:rgba(26,60,94,.12);--shadow:0 18px 60px rgba(26,60,94,.13)}
 *{box-sizing:border-box;margin:0;padding:0}body{font-family:'DM Sans',Arial,sans-serif;color:var(--char);background:#fff;line-height:1.65}a{color:inherit}
-.container{max-width:1120px;margin:0 auto;padding:0 34px}.logo{font-size:28px;font-weight:900;color:var(--navy);letter-spacing:-.8px;text-decoration:none;line-height:1}.logo span{color:var(--blue)}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}.logo{font-size:28px;font-weight:900;color:var(--navy);letter-spacing:-.8px;text-decoration:none;line-height:1}.logo span{color:var(--blue)}
 .logo-sub{display:block;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--warm);font-weight:900;margin-top:4px}
 nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-.nav-inner{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.nav-actions{display:flex;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:13px 20px;font-size:13px;font-weight:900;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:.18s;font-family:inherit}
+.nav-inner{height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}.nav-actions{display:flex;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:11px;padding:11px 16px;font-size:12px;font-weight:900;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:.18s;font-family:inherit}
 .btn-primary{background:var(--navy);color:#fff}.btn-primary:hover{background:var(--mid);transform:translateY(-1px)}.btn-secondary{background:#fff;color:var(--navy);border-color:var(--border)}.btn-secondary:hover{border-color:var(--blue);background:var(--pale)}
-.hero{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(231,242,247,.92)),url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=75&auto=format&fit=crop');background-size:cover;background-position:center;padding:76px 0 58px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}.eyebrow{display:inline-flex;border:1px solid rgba(45,127,166,.22);background:rgba(255,255,255,.75);padding:8px 12px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:18px}
-.hero h1{font-size:clamp(40px,5.2vw,68px);line-height:1.02;color:var(--navy);letter-spacing:-2px;margin-bottom:18px}.lead{font-size:18px;color:var(--warm);max-width:610px;margin-bottom:24px}
-.trust-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.pill{background:#fff;border:1px solid var(--border);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;color:var(--navy)}
-.card{background:#fff;border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow)}.reward-card,.side-panel,.form-card{padding:26px}.reward-title,.tag{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
-.reward-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.reward{background:var(--off);border:1px solid var(--border);border-radius:18px;padding:18px}.reward strong{display:block;font-size:32px;color:var(--navy);line-height:1}.reward span,.fine{display:block;font-size:12px;color:var(--warm);margin-top:6px}
-.section{padding:64px 0}.soft{background:var(--off)}.section-head{max-width:760px;margin-bottom:26px}h2{font-size:clamp(30px,4vw,48px);line-height:1.08;color:var(--navy);letter-spacing:-1.2px;margin-bottom:10px}.section-sub{font-size:16px;color:var(--warm)}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{padding:22px;border-radius:20px;background:#fff;border:1px solid var(--border)}.feature-icon{width:42px;height:42px;border-radius:14px;background:var(--pale);display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:900;margin-bottom:14px}.feature h3{font-size:17px;color:var(--navy);margin-bottom:6px}.feature p{font-size:14px;color:var(--warm)}
-.form-shell{display:grid;grid-template-columns:.78fr 1.22fr;gap:24px;align-items:start}.side-panel{position:sticky;top:88px}.side-panel h3{font-size:24px;color:var(--navy);line-height:1.15;margin-bottom:12px}.side-panel ul{list-style:none;display:grid;gap:12px;margin-top:18px}.side-panel li{display:flex;gap:10px;font-size:14px;color:var(--warm)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(231,242,247,.92)),url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=75&auto=format&fit=crop');background-size:cover;background-position:center;padding:46px 0 34px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .78fr;gap:26px;align-items:center}.eyebrow{display:inline-flex;border:1px solid rgba(45,127,166,.22);background:rgba(255,255,255,.75);padding:6px 10px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.hero h1{font-size:clamp(34px,4.6vw,56px);line-height:1.02;color:var(--navy);letter-spacing:-1.6px;margin-bottom:12px}.lead{font-size:16px;color:var(--warm);max-width:590px;margin-bottom:14px}
+.trust-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.pill{background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 10px;font-size:11px;font-weight:900;color:var(--navy)}
+.card{background:#fff;border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow)}.reward-card,.side-panel,.form-card{padding:20px}.reward-title,.tag{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.reward-grid{display:grid;grid-template-columns:1fr;gap:10px}.reward{background:var(--off);border:1px solid var(--border);border-radius:16px;padding:14px}.reward strong{display:block;font-size:30px;color:var(--navy);line-height:1}.reward span,.fine{display:block;font-size:12px;color:var(--warm);margin-top:6px}
+.section{padding:38px 0}.soft{background:var(--off)}.section-head{max-width:740px;margin-bottom:18px}h2{font-size:clamp(26px,3.4vw,40px);line-height:1.08;color:var(--navy);letter-spacing:-1px;margin-bottom:8px}.section-sub{font-size:16px;color:var(--warm)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.feature{padding:16px;border-radius:18px;background:#fff;border:1px solid var(--border)}.feature-icon{width:34px;height:34px;border-radius:12px;background:var(--pale);display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:900;margin-bottom:10px}.feature h3{font-size:16px;color:var(--navy);margin-bottom:4px}.feature p{font-size:13px;color:var(--warm);line-height:1.45}
+.form-shell{display:grid;grid-template-columns:.68fr 1.32fr;gap:18px;align-items:start}.side-panel{position:sticky;top:76px}.side-panel h3{font-size:21px;color:var(--navy);line-height:1.12;margin-bottom:8px}.side-panel ul{list-style:none;display:grid;gap:8px;margin-top:12px}.side-panel li{display:flex;gap:8px;font-size:13px;color:var(--warm);line-height:1.35}
 .tick{width:22px;height:22px;border-radius:50%;background:var(--pale);color:var(--blue);display:inline-flex;align-items:center;justify-content:center;font-weight:900;flex:0 0 22px}
-.form-title{font-size:13px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;color:var(--navy);padding-bottom:10px;border-bottom:1px solid var(--border);margin:8px 0 18px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}.fg.full{grid-column:1/-1}.fg label{font-size:12px;font-weight:900;color:var(--navy);letter-spacing:.6px;text-transform:uppercase}.fg input,.fg select,.fg textarea{width:100%;border:1px solid var(--border);border-radius:12px;padding:13px 14px;font:inherit;font-size:15px;color:var(--char);outline:none;background:#fff}.fg textarea{min-height:110px;resize:vertical}.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(45,127,166,.09)}
-.upload{border:1.5px dashed rgba(45,127,166,.34);background:var(--pale);border-radius:16px;padding:18px;text-align:center;position:relative}.upload input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.form-title{font-size:12px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy);padding-bottom:8px;border-bottom:1px solid var(--border);margin:4px 0 12px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:9px}.fg.full{grid-column:1/-1}.fg label{font-size:12px;font-weight:900;color:var(--navy);letter-spacing:.6px;text-transform:uppercase}.fg input,.fg select,.fg textarea{width:100%;border:1px solid var(--border);border-radius:11px;padding:10px 12px;font:inherit;font-size:14px;color:var(--char);outline:none;background:#fff}.fg textarea{min-height:78px;resize:vertical}.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(45,127,166,.09)}
+.upload{border:1.5px dashed rgba(45,127,166,.34);background:var(--pale);border-radius:14px;padding:14px;text-align:center;position:relative}.upload input{position:absolute;inset:0;opacity:0;cursor:pointer}
 .status{display:none;margin-top:14px;border-radius:14px;padding:14px;font-size:14px}.status.ok{display:block;background:#E8F5EE;color:#1E7A5A;border:1px solid rgba(30,122,90,.16)}.status.err{display:block;background:#FFF2F0;color:#A43E32;border:1px solid rgba(164,62,50,.16)}
-.copy-box{background:#fff;border:1px solid var(--border);border-radius:20px;padding:22px}.copy-text{background:var(--off);border:1px solid var(--border);border-radius:16px;padding:16px;color:var(--char);font-size:14px;margin:14px 0;white-space:pre-line}.footer{background:var(--navy);color:#fff;padding:58px 0 26px;margin-top:0}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;align-items:start}.footer .logo{color:#fff}.footer-note{color:rgba(255,255,255,.68);font-size:14px;max-width:340px;margin:12px 0 18px}.footer-phone{display:block;color:#fff;text-decoration:none;font-size:21px;font-weight:900;margin-bottom:4px}.footer-email{display:block;color:rgba(255,255,255,.74);text-decoration:none;font-size:14px}.footer-col h4{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.95);margin-bottom:14px}.footer-col ul{list-style:none;display:grid;gap:8px}.footer-col li,.footer-col a{font-size:13px;color:rgba(255,255,255,.7);text-decoration:none}.footer-col a:hover{color:#fff}.footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:34px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.footer-bottom p{font-size:12px;color:rgba(255,255,255,.55)}.footer-cta{background:linear-gradient(135deg,var(--off),#fff);border-top:1px solid var(--border);padding:36px 0}.footer-cta-inner{display:flex;justify-content:space-between;align-items:center;gap:22px}.footer-cta h2{font-size:clamp(28px,3.2vw,42px);margin:0}.footer-cta p{color:var(--warm);font-size:15px;margin-top:6px;max-width:620px}
+.copy-box{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px}.copy-text{background:var(--off);border:1px solid var(--border);border-radius:14px;padding:13px;color:var(--char);font-size:13px;margin:10px 0;white-space:pre-line;line-height:1.45}.footer{background:var(--navy);color:#fff;padding:38px 0 20px;margin-top:0}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;align-items:start}.footer .logo{color:#fff}.footer-note{color:rgba(255,255,255,.68);font-size:14px;max-width:340px;margin:12px 0 18px}.footer-phone{display:block;color:#fff;text-decoration:none;font-size:21px;font-weight:900;margin-bottom:4px}.footer-email{display:block;color:rgba(255,255,255,.74);text-decoration:none;font-size:14px}.footer-col h4{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.95);margin-bottom:14px}.footer-col ul{list-style:none;display:grid;gap:8px}.footer-col li,.footer-col a{font-size:13px;color:rgba(255,255,255,.7);text-decoration:none}.footer-col a:hover{color:#fff}.footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:34px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.footer-bottom p{font-size:12px;color:rgba(255,255,255,.55)}.footer-cta{background:linear-gradient(135deg,var(--off),#fff);border-top:1px solid var(--border);padding:24px 0}.footer-cta-inner{display:flex;justify-content:space-between;align-items:center;gap:22px}.footer-cta h2{font-size:clamp(28px,3.2vw,42px);margin:0}.footer-cta p{color:var(--warm);font-size:15px;margin-top:6px;max-width:620px}
 .resource-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.guide-card{padding:28px;background:linear-gradient(145deg,#fff,var(--off));border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow)}.guide-card h3{font-size:28px;line-height:1.1;color:var(--navy);margin-bottom:10px}.steps{display:grid;gap:12px;margin-top:18px}.step{display:flex;gap:12px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:15px}.step b{width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 28px}
-@media(max-width:860px){.container{padding:0 18px}.hero{padding:48px 0 36px}.hero-grid,.form-shell,.resource-grid{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.reward-grid,.field-grid{grid-template-columns:1fr}.side-panel{position:static}.nav-actions .btn-secondary{display:none}.hero h1{letter-spacing:-1px}.footer-grid{grid-template-columns:1fr}.footer-cta-inner{flex-direction:column;align-items:flex-start}.section{padding:42px 0}}
-</style></head><body>
-<nav><div class="container nav-inner"><a href="index.html" class="logo">Estate <span>Co.</span><span class="logo-sub">Property Clearance</span></a><div class="nav-actions"><a class="btn btn-secondary" href="tel:0401857730">Call 0401 857 730</a><a class="btn btn-primary" href="#referral-form">Submit Referral</a></div></div></nav>
-<header class="hero"><div class="container hero-grid"><div><div class="eyebrow">Professional referrals only</div><h1>Refer a property clearance in under 30 seconds.</h1><p class="lead">For real estate agents, aged care coordinators, lawyers and property professionals. Send us the client’s details and we’ll take it from there.</p><div class="trust-row"><span class="pill">Respectful clearances</span><span class="pill">Fast follow-up</span><span class="pill">Fully insured</span><span class="pill">Melbourne family business</span></div></div><aside class="card reward-card"><div class="reward-title">Thank-you gift</div><div class="reward-grid"><div class="reward"><strong>$50</strong><span>Prezzee gift card for completed jobs $1,000–$4,999</span></div><div class="reward"><strong>$100</strong><span>Prezzee gift card for completed jobs $5,000 and above</span></div></div><p class="fine">Rewards are issued after the job is completed and paid. Referral gifts are provided as a private thank-you to the referrer and are not communicated to the client. Estate Co. may verify referrals before issuing rewards.</p></aside></div></header>
-<section class="section soft"><div class="container"><div class="section-head"><div class="tag">Why refer Estate Co.</div><h2>A calm, professional option for sensitive property clearances.</h2><p class="section-sub">We help families and property professionals clear, clean and prepare homes for sale, settlement, rental reset or handover.</p></div><div class="grid-3"><div class="feature"><div class="feature-icon">1</div><h3>One trusted contact</h3><p>Clearance, rubbish removal, deep cleaning, garden tidy and basic preparation can be coordinated together.</p></div><div class="feature"><div class="feature-icon">2</div><h3>Respectful handling</h3><p>Suitable for deceased estates, downsizing, aged care transitions and neglected properties where sensitivity matters.</p></div><div class="feature"><div class="feature-icon">3</div><h3>Fast referral process</h3><p>Submit the client’s basic details. We contact them, arrange next steps and keep the referral recorded.</p></div></div></div></section>
-<section class="section" id="referral-form"><div class="container form-shell"><aside class="card side-panel"><div class="tag">Submit referral</div><h3>Complete the form and we’ll follow up with the client.</h3><p class="section-sub">You’ll receive an email confirmation. If the job is completed and paid, we’ll send your Prezzee gift card.</p><ul><li><span class="tick">✓</span><span>No referral code needed.</span></li><li><span class="tick">✓</span><span>Photos are optional but helpful.</span></li><li><span class="tick">✓</span><span>Rewards apply to jobs over $1,000.</span></li></ul></aside>
-<form class="card form-card" id="referralForm"><div class="form-title">Your details</div><div class="field-grid"><div class="fg"><label>Your name *</label><input name="referrerName" id="referrerName" required autocomplete="name"></div><div class="fg"><label>Your email *</label><input name="referrerEmail" id="referrerEmail" type="email" required autocomplete="email"></div><div class="fg"><label>Your phone</label><input name="referrerPhone" id="referrerPhone" type="tel" autocomplete="tel"></div><div class="fg"><label>Company / agency</label><input name="referrerCompany" id="referrerCompany" autocomplete="organization"></div></div><div class="form-title">Client / property details</div><div class="field-grid"><div class="fg"><label>Client name *</label><input name="clientName" id="clientName" required></div><div class="fg"><label>Client phone *</label><input name="clientPhone" id="clientPhone" type="tel" required></div><div class="fg full"><label>Full property address</label><input name="propertyAddress" id="propertyAddress" placeholder="Start typing the full address, suburb, state and postcode" autocomplete="street-address" inputmode="text"><input type="hidden" id="formattedAddress" name="formattedAddress"><input type="hidden" id="propertyStreet" name="propertyStreet"><input type="hidden" id="propertySuburb" name="propertySuburb"><input type="hidden" id="propertyState" name="propertyState"><input type="hidden" id="propertyPostcode" name="propertyPostcode"><input type="hidden" id="propertyCountry" name="propertyCountry"><input type="hidden" id="propertyPlaceId" name="propertyPlaceId"><small class="fine">Please include unit number, street, suburb, state and postcode where available.</small></div><div class="fg"><label>Property type</label><select id="propertyType" name="propertyType"><option value="">Select type</option><option>House</option><option>Unit / Apartment</option><option>Townhouse</option><option>Commercial</option><option>Other</option></select></div><div class="fg"><label>Likely job type</label><select id="jobType" name="jobType"><option value="">Select type</option><option>Deceased estate clearance</option><option>Downsizing / aged care transition</option><option>Pre-sale property preparation</option><option>Rental reset / abandoned contents</option><option>Hoarded or neglected property</option><option>General house cleanout</option></select></div><div class="fg full"><label>Notes</label><textarea name="notes" id="notes" placeholder="Anything helpful — urgency, access, property condition, or family situation."></textarea></div><div class="fg full"><label>Photos optional</label><div class="upload"><input id="photos" name="photos" type="file" accept="image/*,.pdf" multiple><strong>Upload photos or documents</strong><span> Optional. Up to 10 files recommended.</span></div></div></div><button class="btn btn-primary" id="submitBtn" type="submit">Submit Referral</button><div id="formStatus" class="status"></div></form></div></section>
-<section class="section soft"><div class="container"><div class="copy-box"><div class="tag">Prefer to send the client directly?</div><h2>Copy this message</h2><div class="copy-text" id="copyText">Estate Co helps families clear and prepare properties after deceased estates, downsizing, difficult tenancy situations or property sales.
+@media(max-width:860px){.container{padding:0 14px}.hero{padding:28px 0 22px}.hero-grid,.form-shell,.resource-grid{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.reward-grid,.field-grid{grid-template-columns:1fr}.side-panel{position:static}.nav-actions .btn-secondary{display:none}.hero h1{letter-spacing:-1px}.footer-grid{grid-template-columns:1fr}.footer-cta-inner{flex-direction:column;align-items:flex-start}.section{padding:42px 0}}
 
-You can request help here:
-https://estateco.com.au/</div><button class="btn btn-secondary" onclick="navigator.clipboard.writeText(document.getElementById('copyText').innerText);this.textContent='Copied';">Copy Message</button></div></div></section>
-<section class="footer-cta"><div class="container footer-cta-inner"><div><h2>Need help clearing a property?</h2><p>Estate Co can help clear, clean and prepare homes for sale, settlement, rental reset or handover.</p></div><a class="btn btn-primary" href="index.html#quote">Request Quote</a></div></section><footer class="footer"><div class="container footer-grid"><div><a href="index.html" class="logo">Estate <span>Co.</span></a><p class="footer-note">Respectful estate clearance and property preparation for families, executors and property professionals.</p><a class="footer-phone" href="tel:0401857730">0401 857 730</a><a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a></div><div class="footer-col"><h4>Services</h4><ul><li>Estate clearance</li><li>Deceased estate cleanouts</li><li>Downsizing clearances</li><li>Hoarded property cleanup</li><li>End-of-lease clearouts</li><li>Pre-sale preparation</li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="guides.html">Guides & advice</a></li><li><a href="agents.html">For real estate agents</a></li><li><a href="index.html#quote">Request a quote</a></li><li><a href="index.html#faq">FAQs</a></li></ul></div><div class="footer-col"><h4>Areas served</h4><ul><li>Melbourne</li><li>Sydney</li><li>Brisbane</li><li>Glen Waverley</li><li>Doncaster</li><li>Camberwell</li><li>Brighton</li></ul></div></div><div class="container footer-bottom"><p>© Estate Co. Property Clearance.</p><p>Estate clearance, deceased estate cleanouts and property preparation across Australia.</p></div></footer>
+@media(max-width:640px){
+  .logo{font-size:24px}
+  .logo-sub{font-size:9px}
+  .nav-inner{height:56px}
+  .hero h1{font-size:34px;margin-bottom:8px}
+  .lead{font-size:14px;line-height:1.45;margin-bottom:10px}
+  .trust-row{gap:6px;margin-top:10px}
+  .pill{font-size:10px;padding:5px 8px}
+  .reward-card,.side-panel,.form-card{padding:16px}
+  .reward-title,.tag{font-size:10px;margin-bottom:6px}
+  .fine{font-size:11px;line-height:1.35}
+  .section{padding:28px 0}
+  .section-head{margin-bottom:14px}
+  h2{font-size:28px}
+  .section-sub{font-size:14px;line-height:1.45}
+  .feature{text-align:left;padding:14px}
+  .feature-icon{margin:0 0 8px}
+  .form-title{margin-top:2px}
+  .fg label{font-size:11px}
+  .footer-cta-inner{gap:12px}
+  .footer-grid{gap:22px}
+}
+
+
+.story-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:24px;
+  box-shadow:0 12px 34px rgba(26,60,94,.08);
+}
+.story-card h2{margin-bottom:8px}
+.story-card .story-kicker{
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+.story-card .story-lead{
+  font-size:17px;
+  font-weight:800;
+  color:var(--navy);
+  line-height:1.25;
+  margin-bottom:10px;
+}
+.story-card p{
+  color:var(--warm);
+  font-size:14px;
+  line-height:1.55;
+  margin-bottom:10px;
+}
+.story-quote{
+  margin-top:12px;
+  padding:14px 16px;
+  border-left:4px solid var(--blue);
+  background:var(--off);
+  border-radius:14px;
+  color:var(--navy)!important;
+  font-weight:800;
+}
+@media(max-width:640px){
+  .story-card{padding:18px;border-radius:18px}
+  .story-card .story-lead{font-size:16px}
+  .story-card p{font-size:13px;line-height:1.48}
+}
+
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px 12px;
+  margin-top:6px;
+}
+.service-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:12px;
+  padding:9px 10px;
+  font-size:13px;
+  color:var(--char);
+  cursor:pointer;
+  line-height:1.25;
+}
+.service-item input{
+  width:16px;
+  height:16px;
+  cursor:pointer;
+  flex:0 0 16px;
+}
+@media(max-width:640px){
+  .service-grid{grid-template-columns:1fr;gap:7px}
+  .service-item{padding:8px 9px;font-size:12.5px}
+}
+
+</style></head><body>
+<nav><div class="container nav-inner"><a href="index.html" class="logo">Estate <span>Co.</span><span class="logo-sub">Property Clearance</span></a><div class="nav-actions"><a class="btn btn-secondary" href="tel:1300264318">Call 1300264318</a><a class="btn btn-primary" href="#referral-form">Submit Referral</a></div></div></nav>
+<header class="hero"><div class="container hero-grid"><div><div class="eyebrow">Professional referrals only</div><h1>Refer a property clearance in seconds.</h1><p class="lead">For agents, aged-care coordinators, lawyers and property professionals. Free inspection • Quote from photos • $100 thank-you</p><div class="trust-row"><span class="pill">Respectful clearances</span><span class="pill">Fast follow-up</span><span class="pill">Fully insured</span><span class="pill">Melbourne family business</span></div></div><aside class="card reward-card"><div class="reward-title">Thank-you gift</div><div class="reward-grid"><div class="reward"><strong>$100</strong><span>Prezzee gift card for completed jobs over $3,000</span></div></div><p class="fine">Rewards are issued after the job is completed and paid. Referral gifts are provided as a private thank-you to the referrer and are not communicated to the client.</p></aside></div></header>
+<section class="section soft"><div class="container"><div class="section-head"><div class="tag">Why refer Estate Co.</div><h2>Three reasons to refer Estate Co.</h2><p class="section-sub">Fast, simple support for property clearances, cleanouts and sale preparation.</p></div><div class="grid-3">
+
+<div class="feature">
+<div class="feature-icon">✓</div>
+<h3>Free inspection</h3>
+<p>We can inspect the property or review photos to understand the scope before quoting.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">✓</div>
+<h3>Quote from photos</h3>
+<p>Many clearances can be quoted quickly from photos — ideal when access is limited.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">✓</div>
+<h3>$100 thank-you gift card</h3>
+<p>For completed jobs over $3,000 as a private thank-you to the referrer.</p>
+</div>
+
+</div></div></section>
+<section class="section" id="referral-form"><div class="container form-shell"><aside class="card side-panel"><div class="tag">Submit referral</div><h3>Send the details. We’ll follow up.</h3><p class="section-sub">You’ll receive confirmation and referral credit for eligible jobs.</p><ul><li><span class="tick">✓</span><span>No referral code needed.</span></li><li><span class="tick">✓</span><span>Photos help us quote faster.</span></li><li><span class="tick">✓</span><span>$100 reward applies over $3,000.</span></li></ul></aside>
+<form class="card form-card" id="referralForm"><div class="form-title">Your details</div><div class="field-grid"><div class="fg"><label>Your name *</label><input name="referrerName" id="referrerName" required autocomplete="name"></div><div class="fg"><label>Your email *</label><input name="referrerEmail" id="referrerEmail" type="email" required autocomplete="email"></div><div class="fg"><label>Your phone</label><input name="referrerPhone" id="referrerPhone" type="tel" autocomplete="tel"></div><div class="fg"><label>Company / agency</label><input name="referrerCompany" id="referrerCompany" autocomplete="organization"></div></div><div class="form-title">Client / property details</div><div class="field-grid"><div class="fg"><label>Client name *</label><input name="clientName" id="clientName" required></div><div class="fg"><label>Client phone *</label><input name="clientPhone" id="clientPhone" type="tel" required></div><div class="fg full"><label>Full property address</label><input name="propertyAddress" id="propertyAddress" placeholder="Start typing the full address, suburb, state and postcode" autocomplete="street-address" inputmode="text"><input type="hidden" id="formattedAddress" name="formattedAddress"><input type="hidden" id="propertyStreet" name="propertyStreet"><input type="hidden" id="propertySuburb" name="propertySuburb"><input type="hidden" id="propertyState" name="propertyState"><input type="hidden" id="propertyPostcode" name="propertyPostcode"><input type="hidden" id="propertyCountry" name="propertyCountry"><input type="hidden" id="propertyPlaceId" name="propertyPlaceId"><small class="fine">Please include unit number, street, suburb, state and postcode where available.</small></div><div class="fg"><label>Property type</label><select id="propertyType" name="propertyType"><option value="">Select type</option><option>House</option><option>Unit / Apartment</option><option>Townhouse</option><option>Commercial</option><option>Other</option></select></div><div class="fg"><label>Likely job type</label><select id="jobType" name="jobType"><option value="">Select type</option><option>Deceased estate clearance</option><option>Downsizing / aged care transition</option><option>Pre-sale property preparation</option><option>Rental reset / abandoned contents</option><option>Hoarded or neglected property</option><option>General house cleanout</option></select></div><div class="fg full"><label>What help is likely needed?</label><div class="service-grid"><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Full property clearance"><span>Full property clearance</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Rubbish removal"><span>Rubbish removal</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Deep cleaning"><span>Deep cleaning</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Garden tidy"><span>Garden tidy</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Preparing property for sale"><span>Preparing property for sale</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Hoarded or heavily cluttered property"><span>Hoarded / heavily cluttered</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Downsizing or aged care move"><span>Downsizing / aged care move</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Deceased estate clearance"><span>Deceased estate clearance</span></label></div><p class="fine">Tick anything that may apply. We can confirm details during inspection or photo review.</p></div><div class="fg full"><label>Notes (optional)</label><textarea name="notes" id="notes" placeholder="Anything helpful — urgency, access, property condition, or family situation."></textarea></div><div class="fg full"><label>Photos optional</label><div class="upload"><input id="photos" name="photos" type="file" accept="image/*,.pdf" multiple><strong>Upload photos or documents</strong><span> Optional. Up to 10 files recommended.</span></div></div></div><button class="btn btn-primary" id="submitBtn" type="submit">SUBMIT REFERRAL</button><div id="formStatus" class="status"></div></form></div></section>
+<section class="section soft"><div class="container"><div class="copy-box">
+<div class="tag">Prefer to introduce us directly?</div>
+<h2>Share this with a client</h2>
+<p class="section-sub">Quick message you can forward:</p>
+
+<div class="copy-text" id="copyText">
+Estate Co helps clear, clean and prepare properties during times of transition.
+
+They regularly assist with deceased estates, downsizing, aged care moves, rental resets, hoarded or neglected properties and general property cleanouts.
+
+Their team can manage the full process including clearance, rubbish removal, deep cleaning, garden tidy and preparing the property for sale or handover.
+
+They offer free inspections and can often provide a quote from photos.
+
+You can contact them here:
+https://estateco.com.au/
+</div>
+
+<button class="btn btn-secondary" onclick="navigator.clipboard.writeText(document.getElementById('copyText').innerText);this.textContent='Copied';">
+Copy & Send
+</button>
+
+<p class="fine">Free inspection available or quote from photos.</p>
+</div></div></section>
+
+<section class="section soft" id="our-story">
+  <div class="container">
+    <div class="story-card">
+      <div class="story-kicker">Our Story</div>
+      <h2>A Melbourne family business built to make a difficult process easier.</h2>
+      <p class="story-lead">Estate Co. was created after seeing how difficult it can be to manage a home during times of transition.</p>
+      <p>Whether after the passing of a loved one, a move into aged care, or when a property has simply become overwhelming, clearing and preparing a home can feel stressful, time-consuming and emotionally heavy.</p>
+      <p>We believed there should be a better way — one that is organised, respectful and genuinely supportive. Our team helps families, executors, property owners and real estate agents clear, clean and prepare homes with care, discretion and professionalism.</p>
+      <p class="story-quote">Our goal is simple — to help people when they need it most. Every home is handled with care, compassion and respect for the people and memories connected to it.</p>
+    </div>
+  </div>
+</section>
+<section class="footer-cta"><div class="container footer-cta-inner"><div><h2>Need help clearing a property?</h2><p>Estate Co can help clear, clean and prepare homes for sale, settlement, rental reset or handover.</p></div><a class="btn btn-primary" href="index.html#quote">Request Quote</a></div></section><footer class="footer"><div class="container footer-grid"><div><a href="index.html" class="logo">Estate <span>Co.</span></a><p class="footer-note">Respectful estate clearance and property preparation for families, executors and property professionals.</p><a class="footer-phone" href="tel:1300264318">Contact us: 1300264318</a><a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a></div><div class="footer-col"><h4>Services</h4><ul><li>Estate clearance</li><li>Deceased estate cleanouts</li><li>Downsizing clearances</li><li>Hoarded property cleanup</li><li>End-of-lease clearouts</li><li>Pre-sale preparation</li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="guides.html">Guides & advice</a></li><li><a href="agents.html">For real estate agents</a></li><li><a href="index.html#quote">Request a quote</a></li><li><a href="index.html#faq">FAQs</a></li></ul></div><div class="footer-col"><h4>Areas served</h4><ul><li>Melbourne</li><li>Sydney</li><li>Brisbane</li><li>Glen Waverley</li><li>Doncaster</li><li>Camberwell</li><li>Brighton</li></ul></div></div><div class="container footer-bottom"><p>© Estate Co. Property Clearance.</p><p>Estate clearance, deceased estate cleanouts and property preparation across Australia.</p></div></footer>
 <script>
-const SHEET_URL="https://script.google.com/macros/s/AKfycbxjXKyFuuPsBzr1mKFSSLF8jv2Vnn42L9mZPh1Pcf0KOGiUgifgQVI-OrwTdViYstQb/exec";
+const SHEET_URL="https://script.google.com/macros/s/AKfycbyoBKzHAuanLhpumkIomUaX4aGXPtSYH8FVmMV_TOGEN1WMJLedyMtoT3_DNNBHDfD53g/exec";
 function genRef(){const d=new Date(),date=d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');return 'EC-REF-'+date+'-'+Math.random().toString(36).slice(2,6).toUpperCase();}
 function st(t,m){const e=document.getElementById('formStatus');e.className='status '+t;e.textContent=m;}
 function f64(f){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]||'');r.onerror=rej;r.readAsDataURL(f);})}
 async function collectFiles(){const input=document.getElementById('photos'),fs=Array.from(input&&input.files?input.files:[]).slice(0,10),out=[];for(const f of fs)out.push({name:f.name,type:f.type,size:f.size,data:await f64(f)});return out;}
 function postPayload(payload){const n='sheetFrame_'+Date.now(),i=document.createElement('iframe');i.name=n;i.style.display='none';document.body.appendChild(i);const form=document.createElement('form');form.method='POST';form.action=SHEET_URL;form.target=n;form.enctype='application/x-www-form-urlencoded';form.style.display='none';const inp=document.createElement('input');inp.type='hidden';inp.name='payload';inp.value=JSON.stringify(payload);form.appendChild(inp);document.body.appendChild(form);form.submit();setTimeout(()=>{try{form.remove();i.remove();}catch(e){}},9000);return new Promise(r=>setTimeout(r,1800));}
-function initPlaces(){const input=document.getElementById('propertyAddress');if(!input)return;function setPart(id,value){const el=document.getElementById(id);if(el)el.value=value||'';}function extractParts(place){const parts={};(place.address_components||[]).forEach(c=>{c.types.forEach(t=>{parts[t]=c.long_name;parts[t+'_short']=c.short_name;});});const street=[parts.street_number,parts.route].filter(Boolean).join(' ');const suburb=parts.locality||parts.postal_town||parts.sublocality||parts.sublocality_level_1||'';const state=parts.administrative_area_level_1_short||parts.administrative_area_level_1||'';setPart('formattedAddress',place.formatted_address||input.value);setPart('propertyStreet',street);setPart('propertySuburb',suburb);setPart('propertyState',state);setPart('propertyPostcode',parts.postal_code||'');setPart('propertyCountry',parts.country||'');setPart('propertyPlaceId',place.place_id||'');}input.removeAttribute('disabled');input.removeAttribute('readonly');input.addEventListener('input',()=>{setPart('formattedAddress',input.value);['propertyStreet','propertySuburb','propertyState','propertyPostcode','propertyCountry','propertyPlaceId'].forEach(id=>setPart(id,''));});if(!window.google||!google.maps||!google.maps.places)return;const ac=new google.maps.places.Autocomplete(input,{types:['address'],componentRestrictions:{country:'au'},fields:['formatted_address','place_id','address_components']});ac.addListener('place_changed',()=>{const p=ac.getPlace();if(p)extractParts(p);});}
-window.ecInitPlacesAutocomplete=initPlaces;document.addEventListener('DOMContentLoaded',initPlaces);
 
-document.getElementById('referralForm').addEventListener('submit',async e=>{e.preventDefault();const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Submitting referral…';try{const fd=new FormData(e.target),ref=genRef(),files=await collectFiles();const payload={action:'referral',reference:ref,leadType:'Referral',submissionDate:new Date().toISOString(),name:fd.get('clientName')||'',email:'',phone:fd.get('clientPhone')||'',clientName:fd.get('clientName')||'',clientPhone:fd.get('clientPhone')||'',referrerName:fd.get('referrerName')||'',referrerEmail:fd.get('referrerEmail')||'',referrerPhone:fd.get('referrerPhone')||'',referrerCompany:fd.get('referrerCompany')||'',suburb:fd.get('propertyAddress')||'',propertyAddress:fd.get('propertyAddress')||'',formattedAddress:fd.get('formattedAddress')||fd.get('propertyAddress')||'',propertyPlaceId:fd.get('propertyPlaceId')||'',propertyStreet:fd.get('propertyStreet')||'',propertySuburb:fd.get('propertySuburb')||'',propertyState:fd.get('propertyState')||'',propertyPostcode:fd.get('propertyPostcode')||'',propertyCountry:fd.get('propertyCountry')||'',propertyType:fd.get('propertyType')||'',services:fd.get('jobType')||'',notes:fd.get('notes')||'',rewardTerms:'$50 Prezzee for completed jobs $1,000-$4,999; $100 Prezzee for completed jobs $5,000 and above',fileCount:files.length,fileNames:files.map(f=>f.name).join(', '),files};await postPayload(payload);st('ok','Thank you — referral submitted. Your reference is '+ref+'.');e.target.reset();}catch(err){st('err','Something went wrong. Please try again or call 0401 857 730.');}finally{btn.disabled=false;btn.textContent='Submit Referral';}});
-</script><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8z6QPUDGWkaGH9HvyADNLxNNNfJ1nLes&libraries=places&callback=ecInitPlacesAutocomplete"></script></body></html>
+function initPlaces(){
+  const input=document.getElementById('propertyAddress');
+  if(!input)return false;
+
+  function setPart(id,value){
+    const el=document.getElementById(id);
+    if(el)el.value=value||'';
+  }
+
+  function clearExtractedParts(){
+    ['propertyStreet','propertySuburb','propertyState','propertyPostcode','propertyCountry','propertyPlaceId'].forEach(id=>setPart(id,''));
+  }
+
+  function extractParts(place){
+    const parts={};
+    (place.address_components||[]).forEach(c=>{
+      c.types.forEach(t=>{
+        parts[t]=c.long_name;
+        parts[t+'_short']=c.short_name;
+      });
+    });
+
+    const street=[parts.street_number,parts.route].filter(Boolean).join(' ');
+    const suburb=parts.locality||parts.postal_town||parts.sublocality||parts.sublocality_level_1||parts.administrative_area_level_2||'';
+    const state=parts.administrative_area_level_1_short||parts.administrative_area_level_1||'';
+
+    input.value=place.formatted_address||input.value;
+    setPart('formattedAddress',place.formatted_address||input.value);
+    setPart('propertyStreet',street);
+    setPart('propertySuburb',suburb);
+    setPart('propertyState',state);
+    setPart('propertyPostcode',parts.postal_code||'');
+    setPart('propertyCountry',parts.country||'');
+    setPart('propertyPlaceId',place.place_id||'');
+  }
+
+  input.disabled=false;
+  input.readOnly=false;
+  input.removeAttribute('disabled');
+  input.removeAttribute('readonly');
+
+  input.addEventListener('input',()=>{
+    setPart('formattedAddress',input.value);
+    clearExtractedParts();
+  });
+
+  if(!window.google||!google.maps||!google.maps.places){
+    return false;
+  }
+
+  if(input.dataset.placesReady==='true'){
+    return true;
+  }
+
+  const ac=new google.maps.places.Autocomplete(input,{
+    types:['address'],
+    componentRestrictions:{country:'au'},
+    fields:['formatted_address','place_id','address_components','name']
+  });
+
+  ac.addListener('place_changed',()=>{
+    const place=ac.getPlace();
+    if(place&&place.address_components){
+      extractParts(place);
+    }else{
+      setPart('formattedAddress',input.value);
+    }
+  });
+
+  input.dataset.placesReady='true';
+  return true;
+}
+
+function waitForPlacesAutocomplete(attempt){
+  attempt=attempt||0;
+  if(initPlaces())return;
+  if(attempt<30){
+    setTimeout(()=>waitForPlacesAutocomplete(attempt+1),300);
+  }
+}
+
+window.ecInitPlacesAutocomplete=function(){
+  waitForPlacesAutocomplete(0);
+};
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',()=>waitForPlacesAutocomplete(0));
+}else{
+  waitForPlacesAutocomplete(0);
+}
+
+
+document.getElementById('referralForm').addEventListener('submit',async e=>{e.preventDefault();const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Submitting referral…';try{const fd=new FormData(e.target),ref=genRef(),files=await collectFiles();const servicesNeededChecked=Array.from(document.querySelectorAll('input[name="servicesNeeded"]:checked')).map(x=>x.value);const payload={action:'referral',reference:ref,leadType:'Referral',submissionDate:new Date().toISOString(),name:fd.get('clientName')||'',email:'',phone:fd.get('clientPhone')||'',clientName:fd.get('clientName')||'',clientPhone:fd.get('clientPhone')||'',referrerName:fd.get('referrerName')||'',referrerEmail:fd.get('referrerEmail')||'',referrerPhone:fd.get('referrerPhone')||'',referrerCompany:fd.get('referrerCompany')||'',suburb:fd.get('propertyAddress')||'',propertyAddress:fd.get('propertyAddress')||'',formattedAddress:fd.get('formattedAddress')||fd.get('propertyAddress')||'',propertyPlaceId:fd.get('propertyPlaceId')||'',propertyStreet:fd.get('propertyStreet')||'',propertySuburb:fd.get('propertySuburb')||'',propertyState:fd.get('propertyState')||'',propertyPostcode:fd.get('propertyPostcode')||'',propertyCountry:fd.get('propertyCountry')||'',propertyType:fd.get('propertyType')||'',services:[fd.get('jobType')||'',...servicesNeededChecked].filter(Boolean).join(', '),jobType:fd.get('jobType')||'',servicesNeeded:servicesNeededChecked.join(', '),notes:fd.get('notes')||'',rewardTerms:'$100 Prezzee gift card for completed jobs over $3,000',fileCount:files.length,fileNames:files.map(f=>f.name).join(', '),files};await postPayload(payload);st('ok','Thank you — referral submitted. Your reference is '+ref+'.');e.target.reset();}catch(err){st('err','Something went wrong. Please try again or call 1300264318.');}finally{btn.disabled=false;btn.textContent='Submit Referral';}});
+</script>
+<script>
+window.gm_authFailure=function(){
+  const input=document.getElementById('propertyAddress');
+  const status=document.getElementById('formStatus');
+  if(input){
+    input.disabled=false;
+    input.readOnly=false;
+    input.placeholder='Enter the full property address';
+  }
+  if(status){
+    status.className='status err';
+    status.textContent='Google address lookup could not load. Please check that the API key has Places API enabled and your website domain is allowed.';
+  }
+};
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6AJ4jh-C0YYCMIuuEwMHci8LI07ByDDc&libraries=places&callback=ecInitPlacesAutocomplete&loading=async"></script></body></html>
