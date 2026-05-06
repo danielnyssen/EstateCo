@@ -19,6 +19,17 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-f
 .form-title{font-size:12px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy);padding-bottom:8px;border-bottom:1px solid var(--border);margin:4px 0 12px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:9px}.fg.full{grid-column:1/-1}.fg label{font-size:12px;font-weight:900;color:var(--navy);letter-spacing:.6px;text-transform:uppercase}.fg input,.fg select,.fg textarea{width:100%;border:1px solid var(--border);border-radius:11px;padding:10px 12px;font:inherit;font-size:14px;color:var(--char);outline:none;background:#fff}.fg textarea{min-height:78px;resize:vertical}.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(45,127,166,.09)}
 .upload{border:1.5px dashed rgba(45,127,166,.34);background:var(--pale);border-radius:14px;padding:14px;text-align:center;position:relative}.upload input{position:absolute;inset:0;opacity:0;cursor:pointer}
 .status{display:none;margin-top:14px;border-radius:14px;padding:14px;font-size:14px}.status.ok{display:block;background:#E8F5EE;color:#1E7A5A;border:1px solid rgba(30,122,90,.16)}.status.err{display:block;background:#FFF2F0;color:#A43E32;border:1px solid rgba(164,62,50,.16)}
+.upload-progress-card{display:none;margin-top:14px;background:#fff;border:1px solid rgba(26,60,94,.12);border-radius:16px;padding:15px;box-shadow:0 10px 28px rgba(26,60,94,.08)}
+.upload-progress-card.show{display:block}
+.upload-progress-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px}
+.upload-progress-title{font-size:12px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy)}
+.upload-progress-percent{font-size:13px;font-weight:900;color:var(--blue)}
+.upload-progress-track{height:9px;background:var(--off);border-radius:999px;overflow:hidden;border:1px solid rgba(26,60,94,.08)}
+.upload-progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--navy),var(--blue));border-radius:999px;transition:width .25s ease}
+.upload-progress-copy{margin-top:8px;font-size:13px;color:var(--warm);line-height:1.45}
+.upload-progress-file{margin-top:4px;font-size:12px;color:var(--warm);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:640px){.upload-progress-card{border-radius:15px;padding:14px}.upload-progress-copy{font-size:13px}}
+
 .copy-box{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px}.copy-text{background:var(--off);border:1px solid var(--border);border-radius:14px;padding:13px;color:var(--char);font-size:13px;margin:10px 0;white-space:pre-line;line-height:1.45}.footer{background:var(--navy);color:#fff;padding:38px 0 20px;margin-top:0}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;align-items:start}.footer .logo{color:#fff}.footer-note{color:rgba(255,255,255,.68);font-size:14px;max-width:340px;margin:12px 0 18px}.footer-phone{display:block;color:#fff;text-decoration:none;font-size:21px;font-weight:900;margin-bottom:4px}.footer-email{display:block;color:rgba(255,255,255,.74);text-decoration:none;font-size:14px}.footer-col h4{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.95);margin-bottom:14px}.footer-col ul{list-style:none;display:grid;gap:8px}.footer-col li,.footer-col a{font-size:13px;color:rgba(255,255,255,.7);text-decoration:none}.footer-col a:hover{color:#fff}.footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:34px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.footer-bottom p{font-size:12px;color:rgba(255,255,255,.55)}.footer-cta{background:linear-gradient(135deg,var(--off),#fff);border-top:1px solid var(--border);padding:24px 0}.footer-cta-inner{display:flex;justify-content:space-between;align-items:center;gap:22px}.footer-cta h2{font-size:clamp(28px,3.2vw,42px);margin:0}.footer-cta p{color:var(--warm);font-size:15px;margin-top:6px;max-width:620px}
 .resource-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.guide-card{padding:28px;background:linear-gradient(145deg,#fff,var(--off));border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow)}.guide-card h3{font-size:28px;line-height:1.1;color:var(--navy);margin-bottom:10px}.steps{display:grid;gap:12px;margin-top:18px}.step{display:flex;gap:12px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:15px}.step b{width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 28px}
 @media(max-width:860px){.container{padding:0 14px}.hero{padding:28px 0 22px}.hero-grid,.form-shell,.resource-grid{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.reward-grid,.field-grid{grid-template-columns:1fr}.side-panel{position:static}.nav-actions .btn-secondary{display:none}.hero h1{letter-spacing:-1px}.footer-grid{grid-template-columns:1fr}.footer-cta-inner{flex-direction:column;align-items:flex-start}.section{padding:42px 0}}
@@ -147,7 +158,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-f
 
 </div></div></section>
 <section class="section" id="referral-form"><div class="container form-shell"><aside class="card side-panel"><div class="tag">Submit referral</div><h3>Send the details. We’ll follow up.</h3><p class="section-sub">You’ll receive confirmation and referral credit for eligible jobs.</p><ul><li><span class="tick">✓</span><span>No referral code needed.</span></li><li><span class="tick">✓</span><span>Photos help us quote faster.</span></li><li><span class="tick">✓</span><span>$100 reward applies over $3,000.</span></li></ul></aside>
-<form class="card form-card" id="referralForm"><div class="form-title">Your details</div><div class="field-grid"><div class="fg"><label>Your name *</label><input name="referrerName" id="referrerName" required autocomplete="name"></div><div class="fg"><label>Your email *</label><input name="referrerEmail" id="referrerEmail" type="email" required autocomplete="email"></div><div class="fg"><label>Your phone</label><input name="referrerPhone" id="referrerPhone" type="tel" autocomplete="tel"></div><div class="fg"><label>Company / agency</label><input name="referrerCompany" id="referrerCompany" autocomplete="organization"></div></div><div class="form-title">Client / property details</div><div class="field-grid"><div class="fg"><label>Client name *</label><input name="clientName" id="clientName" required></div><div class="fg"><label>Client phone *</label><input name="clientPhone" id="clientPhone" type="tel" required></div><div class="fg full"><label>Full property address</label><input name="propertyAddress" id="propertyAddress" placeholder="Start typing the full address, suburb, state and postcode" autocomplete="street-address" inputmode="text"><input type="hidden" id="formattedAddress" name="formattedAddress"><input type="hidden" id="propertyStreet" name="propertyStreet"><input type="hidden" id="propertySuburb" name="propertySuburb"><input type="hidden" id="propertyState" name="propertyState"><input type="hidden" id="propertyPostcode" name="propertyPostcode"><input type="hidden" id="propertyCountry" name="propertyCountry"><input type="hidden" id="propertyPlaceId" name="propertyPlaceId"><small class="fine">Please include unit number, street, suburb, state and postcode where available.</small></div><div class="fg"><label>Property type</label><select id="propertyType" name="propertyType"><option value="">Select type</option><option>House</option><option>Unit / Apartment</option><option>Townhouse</option><option>Commercial</option><option>Other</option></select></div><div class="fg"><label>Likely job type</label><select id="jobType" name="jobType"><option value="">Select type</option><option>Deceased estate clearance</option><option>Downsizing / aged care transition</option><option>Pre-sale property preparation</option><option>Rental reset / abandoned contents</option><option>Hoarded or neglected property</option><option>General house cleanout</option></select></div><div class="fg full"><label>What help is likely needed?</label><div class="service-grid"><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Full property clearance"><span>Full property clearance</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Rubbish removal"><span>Rubbish removal</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Deep cleaning"><span>Deep cleaning</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Garden tidy"><span>Garden tidy</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Preparing property for sale"><span>Preparing property for sale</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Hoarded or heavily cluttered property"><span>Hoarded / heavily cluttered</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Downsizing or aged care move"><span>Downsizing / aged care move</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Deceased estate clearance"><span>Deceased estate clearance</span></label></div><p class="fine">Tick anything that may apply. We can confirm details during inspection or photo review.</p></div><div class="fg full"><label>Notes (optional)</label><textarea name="notes" id="notes" placeholder="Anything helpful — urgency, access, property condition, or family situation."></textarea></div><div class="fg full"><label>Photos optional</label><div class="upload"><input id="photos" name="photos" type="file" accept="image/*,.pdf" multiple><strong>Upload photos or documents</strong><span> Optional. Up to 10 files recommended.</span></div></div></div><button class="btn btn-primary" id="submitBtn" type="submit">SUBMIT REFERRAL</button><div id="formStatus" class="status"></div></form></div></section>
+<form class="card form-card" id="referralForm"><div class="form-title">Your details</div><div class="field-grid"><div class="fg"><label>Your name *</label><input name="referrerName" id="referrerName" required autocomplete="name"></div><div class="fg"><label>Your email *</label><input name="referrerEmail" id="referrerEmail" type="email" required autocomplete="email"></div><div class="fg"><label>Your phone</label><input name="referrerPhone" id="referrerPhone" type="tel" autocomplete="tel"></div><div class="fg"><label>Company / agency</label><input name="referrerCompany" id="referrerCompany" autocomplete="organization"></div></div><div class="form-title">Client / property details</div><div class="field-grid"><div class="fg"><label>Client name *</label><input name="clientName" id="clientName" required></div><div class="fg"><label>Client phone *</label><input name="clientPhone" id="clientPhone" type="tel" required></div><div class="fg full"><label>Full property address</label><input name="propertyAddress" id="propertyAddress" placeholder="Start typing the full address, suburb, state and postcode" autocomplete="street-address" inputmode="text"><input type="hidden" id="formattedAddress" name="formattedAddress"><input type="hidden" id="propertyStreet" name="propertyStreet"><input type="hidden" id="propertySuburb" name="propertySuburb"><input type="hidden" id="propertyState" name="propertyState"><input type="hidden" id="propertyPostcode" name="propertyPostcode"><input type="hidden" id="propertyCountry" name="propertyCountry"><input type="hidden" id="propertyPlaceId" name="propertyPlaceId"><small class="fine">Please include unit number, street, suburb, state and postcode where available.</small></div><div class="fg"><label>Property type</label><select id="propertyType" name="propertyType"><option value="">Select type</option><option>House</option><option>Unit / Apartment</option><option>Townhouse</option><option>Commercial</option><option>Other</option></select></div><div class="fg"><label>Likely job type</label><select id="jobType" name="jobType"><option value="">Select type</option><option>Deceased estate clearance</option><option>Downsizing / aged care transition</option><option>Pre-sale property preparation</option><option>Rental reset / abandoned contents</option><option>Hoarded or neglected property</option><option>General house cleanout</option></select></div><div class="fg full"><label>What help is likely needed?</label><div class="service-grid"><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Full property clearance"><span>Full property clearance</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Rubbish removal"><span>Rubbish removal</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Deep cleaning"><span>Deep cleaning</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Garden tidy"><span>Garden tidy</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Preparing property for sale"><span>Preparing property for sale</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Hoarded or heavily cluttered property"><span>Hoarded / heavily cluttered</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Downsizing or aged care move"><span>Downsizing / aged care move</span></label><label class="service-item"><input type="checkbox" name="servicesNeeded" value="Deceased estate clearance"><span>Deceased estate clearance</span></label></div><p class="fine">Tick anything that may apply. We can confirm details during inspection or photo review.</p></div><div class="fg full"><label>Notes (optional)</label><textarea name="notes" id="notes" placeholder="Anything helpful — urgency, access, property condition, or family situation."></textarea></div><div class="fg full"><label>Photos optional</label><div class="upload"><input id="photos" name="photos" type="file" accept="image/*,.pdf" multiple><strong>Upload photos or documents</strong><span> Optional. Up to 10 files recommended.</span></div></div></div><button class="btn btn-primary" id="submitBtn" type="submit">SUBMIT REFERRAL</button><div id="formStatus" class="status"></div><div id="fileUploadStatus" class="upload-progress-card" aria-live="polite" aria-hidden="true"><div class="upload-progress-head"><div class="upload-progress-title">Files uploading</div><div id="fileUploadPercent" class="upload-progress-percent">0%</div></div><div class="upload-progress-track"><div id="fileUploadFill" class="upload-progress-fill"></div></div><div id="fileUploadCopy" class="upload-progress-copy">Please keep this page open while your photos or documents finish uploading.</div><div id="fileUploadName" class="upload-progress-file"></div></div></form></div></section>
 <section class="section soft"><div class="container"><div class="copy-box">
 <div class="tag">Prefer to introduce us directly?</div>
 <h2>Share this with a client</h2>
@@ -187,12 +198,80 @@ Copy & Send
 </section>
 <section class="footer-cta"><div class="container footer-cta-inner"><div><h2>Need help clearing a property?</h2><p>Estate Co can help clear, clean and prepare homes for sale, settlement, rental reset or handover.</p></div><a class="btn btn-primary" href="index.html#quote">Request Quote</a></div></section><footer class="footer"><div class="container footer-grid"><div><a href="index.html" class="logo">Estate <span>Co.</span></a><p class="footer-note">Respectful estate clearance and property preparation for families, executors and property professionals.</p><a class="footer-phone" href="tel:1300264318">Contact us: 1300264318</a><a class="footer-email" href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a></div><div class="footer-col"><h4>Services</h4><ul><li>Estate clearance</li><li>Deceased estate cleanouts</li><li>Downsizing clearances</li><li>Hoarded property cleanup</li><li>End-of-lease clearouts</li><li>Pre-sale preparation</li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="guides.html">Guides & advice</a></li><li><a href="agents.html">For real estate agents</a></li><li><a href="index.html#quote">Request a quote</a></li><li><a href="index.html#faq">FAQs</a></li></ul></div><div class="footer-col"><h4>Areas served</h4><ul><li>Melbourne</li><li>Sydney</li><li>Brisbane</li><li>Glen Waverley</li><li>Doncaster</li><li>Camberwell</li><li>Brighton</li></ul></div></div><div class="container footer-bottom"><p>© Estate Co. Property Clearance.</p><p>Estate clearance, deceased estate cleanouts and property preparation across Australia.</p></div></footer>
 <script>
-const SHEET_URL="https://script.google.com/macros/s/AKfycbyoBKzHAuanLhpumkIomUaX4aGXPtSYH8FVmMV_TOGEN1WMJLedyMtoT3_DNNBHDfD53g/exec";
-function genRef(){const d=new Date(),date=d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');return 'EC-REF-'+date+'-'+Math.random().toString(36).slice(2,6).toUpperCase();}
-function st(t,m){const e=document.getElementById('formStatus');e.className='status '+t;e.textContent=m;}
-function f64(f){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]||'');r.onerror=rej;r.readAsDataURL(f);})}
-async function collectFiles(){const input=document.getElementById('photos'),fs=Array.from(input&&input.files?input.files:[]).slice(0,10),out=[];for(const f of fs)out.push({name:f.name,type:f.type,size:f.size,data:await f64(f)});return out;}
-function postPayload(payload){const n='sheetFrame_'+Date.now(),i=document.createElement('iframe');i.name=n;i.style.display='none';document.body.appendChild(i);const form=document.createElement('form');form.method='POST';form.action=SHEET_URL;form.target=n;form.enctype='application/x-www-form-urlencoded';form.style.display='none';const inp=document.createElement('input');inp.type='hidden';inp.name='payload';inp.value=JSON.stringify(payload);form.appendChild(inp);document.body.appendChild(form);form.submit();setTimeout(()=>{try{form.remove();i.remove();}catch(e){}},9000);return new Promise(r=>setTimeout(r,1800));}
+const SHEET_URL='https://script.google.com/macros/s/AKfycbwudmypH6wITs1PYvzqrlKocX8x2WAdHrojInoPIDYbkPs_u4t5EpxsqtE0VSDoVjVA/exec';
+
+function genRef(){
+  const d=new Date();
+  const date=d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');
+  return 'EC-REF-'+date+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+}
+
+function st(type,message){
+  const el=document.getElementById('formStatus');
+  if(!el)return;
+  el.className='status '+type;
+  el.textContent=message;
+}
+
+function fileUploadProgress(show,total,done,fileName){
+  const wrap=document.getElementById('fileUploadStatus');
+  const fill=document.getElementById('fileUploadFill');
+  const percent=document.getElementById('fileUploadPercent');
+  const copy=document.getElementById('fileUploadCopy');
+  const name=document.getElementById('fileUploadName');
+  if(!wrap)return;
+  if(!show){
+    wrap.classList.remove('show');
+    wrap.setAttribute('aria-hidden','true');
+    if(fill)fill.style.width='0%';
+    if(percent)percent.textContent='0%';
+    if(name)name.textContent='';
+    return;
+  }
+  total=Math.max(Number(total)||0,1);
+  done=Math.max(Number(done)||0,0);
+  const pct=Math.min(100,Math.round((done/total)*100));
+  wrap.classList.add('show');
+  wrap.setAttribute('aria-hidden','false');
+  if(fill)fill.style.width=pct+'%';
+  if(percent)percent.textContent=pct+'%';
+  if(copy)copy.textContent=pct>=100?'Files uploaded successfully. Finalising your referral…':'Please keep this page open while your photos or documents finish uploading.';
+  if(name)name.textContent=fileName?('Uploading: '+fileName):(total>0?('Preparing '+total+' file'+(total===1?'':'s')+'…'):'');
+}
+
+function f64(file){
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    reader.onload=()=>resolve(String(reader.result).split(',')[1]||'');
+    reader.onerror=reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+function selectedFiles(){
+  const input=document.getElementById('photos');
+  return Array.from(input&&input.files?input.files:[]).slice(0,10);
+}
+
+function postPayload(payload, holdMs){
+  var json=JSON.stringify(payload);
+  var isFile=(payload.action==='file');
+  var holdTime=(holdMs!=null)?holdMs:(isFile?12000:8000);
+  window.__ecSent=window.__ecSent||{};
+  var key=[payload.action||'referral',payload.reference||'',payload.fileIndex!=null?String(payload.fileIndex):'',(payload.file&&payload.file.name)||''].join('|');
+  if(window.__ecSent[key]) return Promise.resolve();
+  window.__ecSent[key]=true;
+  if(navigator.sendBeacon){try{navigator.sendBeacon(SHEET_URL,new Blob(['payload='+encodeURIComponent(json)],{type:'application/x-www-form-urlencoded'}));}catch(e){}}
+  try{fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'payload='+encodeURIComponent(json)}).catch(function(e){});}catch(e){}
+  try{
+    var fn='ecf_'+Date.now()+'_'+Math.floor(Math.random()*1e6);
+    var ifr=document.createElement('iframe'); ifr.name=fn; ifr.style.cssText='display:none;position:absolute;left:-9999px;width:1px;height:1px'; document.body.appendChild(ifr);
+    var frm=document.createElement('form'); frm.method='POST'; frm.action=SHEET_URL; frm.target=fn; frm.enctype='application/x-www-form-urlencoded'; frm.style.display='none';
+    var inp=document.createElement('input'); inp.type='hidden'; inp.name='payload'; inp.value=json; frm.appendChild(inp); document.body.appendChild(frm); frm.submit();
+    setTimeout(function(){try{document.body.removeChild(frm);}catch(e){}try{document.body.removeChild(ifr);}catch(e){}},Math.max(holdTime+4000,15000));
+  }catch(e){try{delete window.__ecSent[key];}catch(_){} throw e;}
+  return new Promise(function(r){setTimeout(r,holdTime);});
+}
 
 function initPlaces(){
   const input=document.getElementById('propertyAddress');
@@ -209,10 +288,10 @@ function initPlaces(){
 
   function extractParts(place){
     const parts={};
-    (place.address_components||[]).forEach(c=>{
-      c.types.forEach(t=>{
-        parts[t]=c.long_name;
-        parts[t+'_short']=c.short_name;
+    (place.address_components||[]).forEach(component=>{
+      component.types.forEach(type=>{
+        parts[type]=component.long_name;
+        parts[type+'_short']=component.short_name;
       });
     });
 
@@ -240,27 +319,19 @@ function initPlaces(){
     clearExtractedParts();
   });
 
-  if(!window.google||!google.maps||!google.maps.places){
-    return false;
-  }
+  if(!window.google||!google.maps||!google.maps.places)return false;
+  if(input.dataset.placesReady==='true')return true;
 
-  if(input.dataset.placesReady==='true'){
-    return true;
-  }
-
-  const ac=new google.maps.places.Autocomplete(input,{
+  const autocomplete=new google.maps.places.Autocomplete(input,{
     types:['address'],
     componentRestrictions:{country:'au'},
     fields:['formatted_address','place_id','address_components','name']
   });
 
-  ac.addListener('place_changed',()=>{
-    const place=ac.getPlace();
-    if(place&&place.address_components){
-      extractParts(place);
-    }else{
-      setPart('formattedAddress',input.value);
-    }
+  autocomplete.addListener('place_changed',()=>{
+    const place=autocomplete.getPlace();
+    if(place&&place.address_components)extractParts(place);
+    else setPart('formattedAddress',input.value);
   });
 
   input.dataset.placesReady='true';
@@ -270,14 +341,10 @@ function initPlaces(){
 function waitForPlacesAutocomplete(attempt){
   attempt=attempt||0;
   if(initPlaces())return;
-  if(attempt<30){
-    setTimeout(()=>waitForPlacesAutocomplete(attempt+1),300);
-  }
+  if(attempt<30)setTimeout(()=>waitForPlacesAutocomplete(attempt+1),300);
 }
 
-window.ecInitPlacesAutocomplete=function(){
-  waitForPlacesAutocomplete(0);
-};
+window.ecInitPlacesAutocomplete=function(){waitForPlacesAutocomplete(0);};
 
 if(document.readyState==='loading'){
   document.addEventListener('DOMContentLoaded',()=>waitForPlacesAutocomplete(0));
@@ -285,8 +352,149 @@ if(document.readyState==='loading'){
   waitForPlacesAutocomplete(0);
 }
 
+const referralForm=document.getElementById('referralForm');
 
-document.getElementById('referralForm').addEventListener('submit',async e=>{e.preventDefault();const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Submitting referral…';try{const fd=new FormData(e.target),ref=genRef(),files=await collectFiles();const servicesNeededChecked=Array.from(document.querySelectorAll('input[name="servicesNeeded"]:checked')).map(x=>x.value);const payload={action:'referral',reference:ref,leadType:'Referral',submissionDate:new Date().toISOString(),name:fd.get('clientName')||'',email:'',phone:fd.get('clientPhone')||'',clientName:fd.get('clientName')||'',clientPhone:fd.get('clientPhone')||'',referrerName:fd.get('referrerName')||'',referrerEmail:fd.get('referrerEmail')||'',referrerPhone:fd.get('referrerPhone')||'',referrerCompany:fd.get('referrerCompany')||'',suburb:fd.get('propertyAddress')||'',propertyAddress:fd.get('propertyAddress')||'',formattedAddress:fd.get('formattedAddress')||fd.get('propertyAddress')||'',propertyPlaceId:fd.get('propertyPlaceId')||'',propertyStreet:fd.get('propertyStreet')||'',propertySuburb:fd.get('propertySuburb')||'',propertyState:fd.get('propertyState')||'',propertyPostcode:fd.get('propertyPostcode')||'',propertyCountry:fd.get('propertyCountry')||'',propertyType:fd.get('propertyType')||'',services:[fd.get('jobType')||'',...servicesNeededChecked].filter(Boolean).join(', '),jobType:fd.get('jobType')||'',servicesNeeded:servicesNeededChecked.join(', '),notes:fd.get('notes')||'',rewardTerms:'$100 Prezzee gift card for completed jobs over $3,000',fileCount:files.length,fileNames:files.map(f=>f.name).join(', '),files};await postPayload(payload);st('ok','Thank you — referral submitted. Your reference is '+ref+'.');e.target.reset();}catch(err){st('err','Something went wrong. Please try again or call 1300264318.');}finally{btn.disabled=false;btn.textContent='Submit Referral';}});
+async function sendReferral(){
+  if(window.__ecRefBusy) return;
+  window.__ecRefBusy = true;
+
+  var form   = document.getElementById('referralForm');
+  var orig   = document.getElementById('submitBtn');
+  var st     = document.getElementById('formStatus');
+  if(!form){ window.__ecRefBusy=false; return; }
+
+  var fd  = new FormData(form);
+  var rn  = fd.get('referrerName') || '';
+  var re  = fd.get('referrerEmail') || '';
+  var cn  = fd.get('clientName') || '';
+  var cp  = fd.get('clientPhone') || '';
+
+  if(!rn || !re){
+    if(st){st.className='status err';st.textContent='Please enter your name and email.';}
+    window.__ecRefBusy=false; return;
+  }
+  if(!cn || !cp){
+    if(st){st.className='status err';st.textContent='Please enter the client name and phone.';}
+    window.__ecRefBusy=false; return;
+  }
+
+  if(orig){orig.disabled=true; orig.textContent='Submitting referral…';}
+  if(st){st.className='status ok'; st.textContent='Sending referral…';}
+
+  var ref   = genRef();
+  var files = selectedFiles();
+  var svc   = Array.from(document.querySelectorAll('input[name="servicesNeeded"]:checked')).map(function(i){return i.value;});
+  var jt    = fd.get('jobType') || '';
+
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwudmypH6wITs1PYvzqrlKocX8x2WAdHrojInoPIDYbkPs_u4t5EpxsqtE0VSDoVjVA/exec';
+
+  var payload = {
+    action:'referral', reference:ref, leadType:'Referral',
+    submissionDate: new Date().toISOString(),
+    name:cn, email:'', phone:cp,
+    clientName:cn, clientPhone:cp,
+    referrerName:rn, referrerEmail:re,
+    referrerPhone:   fd.get('referrerPhone') || '',
+    referrerCompany: fd.get('referrerCompany') || '',
+    suburb:          fd.get('propertyAddress') || '',
+    propertyAddress: fd.get('propertyAddress') || '',
+    formattedAddress:fd.get('formattedAddress') || fd.get('propertyAddress') || '',
+    propertyPlaceId: fd.get('propertyPlaceId') || '',
+    propertyStreet:  fd.get('propertyStreet') || '',
+    propertySuburb:  fd.get('propertySuburb') || '',
+    propertyState:   fd.get('propertyState') || '',
+    propertyPostcode:fd.get('propertyPostcode') || '',
+    propertyCountry: fd.get('propertyCountry') || '',
+    propertyType:    fd.get('propertyType') || '',
+    jobType:jt,
+    servicesNeeded:  svc.join(', '),
+    services:        [jt, svc.join(', ')].filter(Boolean).join(', '),
+    notes:           fd.get('notes') || '',
+    rewardTerms:     '$100 Prezzee gift card for completed jobs over $3,000',
+    fileCount: files.length,
+    fileNames: files.map(function(f){return f.name;}).join(', '),
+    files: [],
+    device:  window.__edi ? window.__edi.dv : '',
+    browser: window.__edi ? window.__edi.br : '',
+    screen:  window.__edi ? window.__edi.sc : '',
+    referrer:window.__edi ? window.__edi.rf : '',
+    pageUrl: window.__edi ? window.__edi.pu : ''
+  };
+
+  var json = JSON.stringify(payload);
+  var body = 'payload=' + encodeURIComponent(json);
+
+  // sendBeacon — OS-level, most reliable on mobile
+  if(navigator.sendBeacon){
+    try{ navigator.sendBeacon(SHEET_URL, new Blob([body],{type:'application/x-www-form-urlencoded'})); }catch(e){}
+  }
+  // fetch no-cors — desktop primary
+  try{
+    fetch(SHEET_URL,{method:'POST',mode:'no-cors',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+    .catch(function(){});
+  }catch(e){}
+  // iframe form POST — universal fallback
+  try{
+    var fn='ecf_'+Date.now();
+    var ifr=document.createElement('iframe');
+    ifr.name=fn; ifr.style.cssText='display:none;position:absolute;left:-9999px;width:1px;height:1px';
+    document.body.appendChild(ifr);
+    var frm=document.createElement('form');
+    frm.method='POST'; frm.action=SHEET_URL; frm.target=fn;
+    frm.enctype='application/x-www-form-urlencoded'; frm.style.display='none';
+    var inp=document.createElement('input');
+    inp.type='hidden'; inp.name='payload'; inp.value=json;
+    frm.appendChild(inp); document.body.appendChild(frm); frm.submit();
+    setTimeout(function(){
+      try{document.body.removeChild(frm);}catch(e){}
+      try{document.body.removeChild(ifr);}catch(e){}
+    },20000);
+  }catch(e){}
+
+  // Upload selected files after the referral details have been sent.
+  try{
+    if(files.length){
+      fileUploadProgress(true,files.length,0,'');
+      if(orig){orig.textContent='Files uploading…';}
+      if(st){st.className='status ok'; st.textContent='Referral details sent. Uploading '+files.length+' file'+(files.length===1?'':'s')+'…';}
+      for(var i=0;i<files.length;i++){
+        var file=files[i];
+        fileUploadProgress(true,files.length,i,file.name);
+        var data=await f64(file);
+        await postPayload({
+          action:'file',
+          reference:ref,
+          leadType:'Referral',
+          fileIndex:i+1,
+          fileCount:files.length,
+          file:{
+            name:file.name,
+            type:file.type||'application/octet-stream',
+            size:file.size||0,
+            data:data
+          }
+        },900);
+        fileUploadProgress(true,files.length,i+1,file.name);
+      }
+    }
+    if(st){st.className='status ok'; st.textContent='Thank you — referral submitted. Your reference is '+ref+'.'+(files.length?' Files uploaded successfully.':'');}
+    if(files.length){fileUploadProgress(true,files.length,files.length,'');}
+    form.reset();
+  }catch(e){
+    if(st){st.className='status err'; st.textContent='Referral details were submitted, but one or more files may not have finished uploading. Please try again or email the files with reference '+ref+'.';}
+  }finally{
+    if(orig){orig.disabled=false; orig.textContent='SUBMIT REFERRAL';}
+    setTimeout(function(){ window.__ecRefBusy=false; }, 1500);
+  }
+}
+
+if(referralForm){
+  referralForm.addEventListener('submit', function(event){
+    event.preventDefault();
+    sendReferral();
+  });
+}
 </script>
 <script>
 window.gm_authFailure=function(){
@@ -303,4 +511,65 @@ window.gm_authFailure=function(){
   }
 };
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6AJ4jh-C0YYCMIuuEwMHci8LI07ByDDc&libraries=places&callback=ecInitPlacesAutocomplete&loading=async"></script></body></html>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6AJ4jh-C0YYCMIuuEwMHci8LI07ByDDc&libraries=places&callback=ecInitPlacesAutocomplete&loading=async"></script>
+<style>
+#ecRefMobSub{display:none;position:fixed;opacity:0;z-index:99999;touch-action:manipulation;-webkit-appearance:none;cursor:pointer;border:none;background:transparent;}
+@media(min-width:661px){#ecRefMobSub{display:none!important;}}
+</style>
+<button id="ecRefMobSub" type="button"> </button>
+<script>
+(function(){
+  // Device info — collected once on page load
+  try{
+    var ua=navigator.userAgent||'';
+    var mob=/iPhone|Android|iPod/.test(ua);
+    var tab=/iPad|Tablet/.test(ua)||(mob&&Math.min(screen.width,screen.height)>=768);
+    var dv=(tab?'Tablet':mob?'Mobile':'Desktop')+' / '+(/iPhone|iPad|iPod/.test(ua)?'iOS':/Android/.test(ua)?'Android':/Windows/.test(ua)?'Windows':/Mac/.test(ua)?'macOS':'Unknown');
+    var br=/CriOS/.test(ua)?'Chrome (iOS)':/FxiOS/.test(ua)?'Firefox (iOS)':/Chrome/.test(ua)?'Chrome':/Firefox/.test(ua)?'Firefox':/Safari/.test(ua)?'Safari':'Unknown';
+    window.__edi={dv:dv,br:br,sc:screen.width+'x'+screen.height,rf:document.referrer||'direct',pu:window.location.href};
+  }catch(e){window.__edi={dv:'',br:'',sc:'',rf:'',pu:''};}
+
+  var sub=document.getElementById('ecRefMobSub');
+  if(!sub) return;
+
+  // Position overlay over submit button — runs repeatedly to handle keyboard dismiss
+  function position(){
+    if(window.innerWidth>660){sub.style.display='none';return;}
+    var orig=document.getElementById('submitBtn');
+    if(!orig||orig.offsetWidth===0){sub.style.display='none';return;}
+    var r=orig.getBoundingClientRect();
+    if(r.width===0){sub.style.display='none';return;}
+    sub.style.cssText='display:block;position:fixed;left:'+r.left+'px;top:'+r.top+'px;width:'+r.width+'px;height:'+r.height+'px;opacity:0;z-index:99999;touch-action:manipulation;-webkit-appearance:none;cursor:pointer;border:none;background:transparent;';
+  }
+
+  // Reposition on load, scroll, resize, and after keyboard dismissal
+  position();
+  setTimeout(position,500);
+  setTimeout(position,1500);
+  window.addEventListener('scroll',position,{passive:true});
+  window.addEventListener('resize',position,{passive:true});
+  window.addEventListener('focusout',function(){setTimeout(position,400);},{passive:true});
+  window.addEventListener('touchend',function(){setTimeout(position,300);},{passive:true});
+
+  var busy=false, touched=false;
+
+  function doSub(){
+    if(window.innerWidth>660) return;
+    sendReferral();
+  }
+
+  sub.addEventListener('touchstart',function(e){
+    e.preventDefault();
+    touched=true;
+    setTimeout(function(){touched=false;},1000);
+    doSub();
+  },{passive:false});
+
+  sub.addEventListener('click',function(){
+    if(!touched) doSub();
+  });
+
+})();
+</script>
+</body>
+</html>

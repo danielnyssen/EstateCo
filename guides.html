@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#1A3C5E">
 <title>Estate clearance guides | Estate Co.</title>
-<meta name="description" content="Helpful estate clearance guides for Australian families, executors and property owners.">
+<meta name="description" content="Practical Estate Co. guides for families, executors and property owners managing estate clearances, hoarded homes, downsizing and sale preparation.">
 <meta name="keywords" content="estate clearance guides, executor estate checklist, deceased estate cleanout">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://estateco.com.au/guides.html">
@@ -108,7 +108,7 @@ footer h4{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;margin-bo
   .footer-inner{grid-template-columns:1fr}
   .container{padding:0 18px}
   h1{font-size:34px}
-  .hero-inner{padding:40px 0 32px}
+  .hero-inner{padding:40px 22px 32px}
   .article-wrap{padding:34px 0}
   .side-card{position:static}
 }
@@ -172,21 +172,382 @@ footer h4{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;margin-bo
 
 /* Keep mobile neat and compact */
 @media(max-width:480px){
+  .container{
+    padding-left:22px !important;
+    padding-right:22px !important;
+  }
   .hero{
     padding-top:0 !important;
   }
   .hero-inner{
-    padding-top:18px !important;
+    padding:26px 26px 34px !important;
+  }
+  .hero-inner > div:first-child{
+    width:100% !important;
+    max-width:100% !important;
+    padding:0 2px !important;
+  }
+  .breadcrumb{
+    margin-bottom:14px !important;
+  }
+  .eyebrow{
+    display:block !important;
+    margin-bottom:12px !important;
+    line-height:1.35 !important;
   }
   .hero h1{
-    font-size:26px !important;
-    line-height:1.18 !important;
+    font-size:28px !important;
+    line-height:1.16 !important;
     letter-spacing:-.25px !important;
+    margin-bottom:14px !important;
+  }
+  .hero p{
+    font-size:15.5px !important;
+    line-height:1.65 !important;
+    max-width:100% !important;
+    margin:0 !important;
   }
   .hero-easy{
     color:#5FB6E5 !important;
     font-weight:800 !important;
     white-space:nowrap !important;
+  }
+}
+
+
+
+/* Footer aligned to match main Estate Co. site */
+.footer-inner > div:first-child{max-width:360px}
+.footer-inner > div:first-child p{line-height:1.7}
+@media(max-width:860px){
+  footer{margin-top:42px}
+  .footer-inner{
+    padding:34px 22px 30px !important;
+    gap:24px !important;
+    text-align:left;
+  }
+  .footer-inner > div:first-child{
+    max-width:100%;
+  }
+  .footer-bottom{
+    padding-left:22px !important;
+    padding-right:22px !important;
+  }
+}
+
+
+/* Mobile hero spacing fix: keeps top copy away from the left edge */
+@media(max-width:600px){
+  header.hero .container.hero-inner{
+    width:100% !important;
+    padding-left:26px !important;
+    padding-right:26px !important;
+  }
+  header.hero .breadcrumb,
+  header.hero .eyebrow,
+  header.hero h1,
+  header.hero p{
+    max-width:100% !important;
+  }
+}
+@media(max-width:380px){
+  header.hero .container.hero-inner{
+    padding-left:24px !important;
+    padding-right:24px !important;
+  }
+}
+
+
+
+/* Modern chapter-style resource hub refresh */
+:root{
+  --gold:#C69A4A;
+  --gold-soft:#F6E9CF;
+  --ink:#17324D;
+  --paper:#FFFCF7;
+  --mist:#EEF6FA;
+}
+body{background:linear-gradient(180deg,#fff 0%,#fbfdfe 46%,#f7fbfe 100%)}
+nav{box-shadow:0 6px 24px rgba(26,60,94,.05)}
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 20%,rgba(198,154,74,.18),transparent 28%),
+    radial-gradient(circle at 14% 82%,rgba(45,127,166,.14),transparent 30%),
+    linear-gradient(145deg,#ffffff 0%,#f7fbfe 54%,#edf6fa 100%) !important;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(198,154,74,.16);
+  border-radius:28px;
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;padding:54px 0 44px !important;grid-template-columns:minmax(0,1fr) 340px !important;gap:44px !important}
+.breadcrumb{margin-bottom:12px !important}
+.eyebrow{color:var(--gold) !important;letter-spacing:2.2px}
+.hero h1{font-size:clamp(38px,5vw,62px) !important;letter-spacing:-1.8px !important;margin-bottom:14px !important}
+.hero p{font-size:17px !important;line-height:1.62 !important;max-width:640px !important}
+.trust-panel{
+  border-radius:24px !important;
+  padding:26px !important;
+  box-shadow:0 22px 55px rgba(26,60,94,.12) !important;
+  background:rgba(255,255,255,.88) !important;
+  backdrop-filter:blur(10px);
+}
+.trust-panel h3{font-size:18px !important}
+.trust-list{gap:12px !important}
+.trust-list div{background:#f8fbfd;border:1px solid rgba(26,60,94,.08);border-radius:12px;padding:10px 12px;font-weight:600}
+main.container{padding-top:34px !important;padding-bottom:34px !important}
+.start-card{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 88% 20%,rgba(198,154,74,.26),transparent 26%),
+    linear-gradient(135deg,#17324D 0%,#1A3C5E 55%,#214E73 100%) !important;
+  border-radius:26px !important;
+  padding:28px !important;
+  margin:0 0 30px !important;
+  box-shadow:0 22px 60px rgba(26,60,94,.18);
+}
+.start-card:after{
+  content:"Resource hub";
+  position:absolute;
+  right:-18px;
+  bottom:10px;
+  font-size:78px;
+  font-weight:800;
+  letter-spacing:-3px;
+  color:rgba(255,255,255,.045);
+  pointer-events:none;
+}
+.start-card h2{font-size:clamp(26px,3vw,36px) !important;letter-spacing:-.8px;max-width:780px}
+.start-card p{max-width:780px}
+.start-card .button{position:relative;z-index:1;border-radius:999px;padding:13px 20px;box-shadow:0 10px 24px rgba(0,0,0,.12)}
+.library-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;margin-bottom:18px}
+.library-head h2{color:var(--navy);font-size:34px;margin:0 0 4px;letter-spacing:-.8px;line-height:1.1}
+.library-head p{color:var(--warm);max-width:760px;margin:0;font-size:16px;line-height:1.62}
+.chapter-note{border:1px solid rgba(198,154,74,.25);background:#fffaf0;color:#765820;padding:12px 15px;border-radius:999px;font-weight:800;font-size:12px;white-space:nowrap}
+.guides-grid{grid-template-columns:repeat(3,1fr) !important;gap:18px !important;margin-top:20px !important;counter-reset:chapter}
+.guide-card{
+  counter-increment:chapter;
+  position:relative;
+  min-height:240px;
+  border-radius:22px !important;
+  padding:22px !important;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,255,255,.98)),
+    radial-gradient(circle at 100% 0%,rgba(198,154,74,.22),transparent 34%) !important;
+  box-shadow:0 12px 36px rgba(26,60,94,.07);
+}
+.guide-card:before{
+  content:"Chapter " counter(chapter, decimal-leading-zero);
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  border:1px solid rgba(198,154,74,.28);
+  background:var(--gold-soft);
+  color:#7B5C20;
+  border-radius:999px;
+  padding:6px 10px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  margin-bottom:28px;
+}
+.guide-card:after{
+  content:"Read guide →";
+  position:absolute;
+  left:22px;
+  bottom:20px;
+  color:var(--blue);
+  font-weight:900;
+  font-size:13px;
+}
+.guide-card h3{font-size:20px !important;line-height:1.18 !important;letter-spacing:-.35px;margin-bottom:10px !important;max-width:95%}
+.guide-card p{font-size:14.5px !important;line-height:1.58 !important;margin-bottom:38px !important}
+.guide-card:hover{transform:translateY(-5px) !important;box-shadow:0 20px 50px rgba(26,60,94,.14) !important;border-color:rgba(198,154,74,.45) !important}
+.guide-card:nth-child(2n){background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,255,255,.99)),radial-gradient(circle at 100% 0%,rgba(45,127,166,.18),transparent 36%) !important}
+.guide-card:nth-child(3n){background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,255,255,.99)),radial-gradient(circle at 100% 0%,rgba(26,60,94,.16),transparent 36%) !important}
+.resource-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0 0}
+.resource-strip div{background:#fff;border:1px solid var(--border);border-radius:18px;padding:16px 18px;box-shadow:0 10px 28px rgba(26,60,94,.055)}
+.resource-strip strong{display:block;color:var(--navy);font-size:15px;margin-bottom:3px}.resource-strip span{display:block;color:var(--warm);font-size:13px;line-height:1.45}
+@media(max-width:860px){
+  .hero:before{inset:10px;border-radius:22px}.hero-inner{padding:34px 24px 30px !important;gap:20px !important}.trust-panel{display:block !important}.library-head{grid-template-columns:1fr}.chapter-note{width:max-content}.guides-grid{grid-template-columns:1fr !important;gap:14px !important}.guide-card{min-height:auto;padding:20px !important}.guide-card:before{margin-bottom:18px}.resource-strip{grid-template-columns:1fr}.start-card{padding:24px !important}.start-card:after{display:none}
+}
+@media(max-width:480px){
+  .hero h1{font-size:31px !important}.hero p{font-size:15px !important}.trust-panel{padding:18px !important;border-radius:18px !important}.library-head h2{font-size:28px}.start-card{margin-bottom:24px !important}.chapter-note{border-radius:14px;white-space:normal}.guide-card h3{font-size:19px !important}
+}
+
+
+/* Standalone article library upgrade */
+.resource-main{padding:34px 28px 38px !important;}
+.intro-choice-card{grid-template-columns:minmax(0,1fr) auto !important;align-items:center !important;}
+.intro-choice-card h2{max-width:720px !important;}
+.quick-starts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;position:relative;z-index:1;max-width:900px;}
+.quick-starts a{display:block;text-decoration:none;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:13px 14px;color:#fff;transition:.18s;}
+.quick-starts a:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+.quick-starts strong{display:block;font-size:14px;margin-bottom:2px;color:#fff;}
+.quick-starts span{display:block;font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.35;}
+.library-head{margin:0 0 24px !important;}
+.chapter-note{background:#fff7e6 !important;}
+.guide-category{margin:28px 0 32px;}
+.category-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid rgba(26,60,94,.10);}
+.category-head span{font-size:11px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
+.category-head h2{font-size:24px;line-height:1.15;letter-spacing:-.55px;color:var(--navy);max-width:700px;margin:0;}
+.guides-grid{margin-top:0 !important;}
+.guides-grid.two-up{grid-template-columns:repeat(2,1fr) !important;}
+.guides-grid.single-feature{grid-template-columns:minmax(0,680px) !important;}
+.guide-card{display:flex !important;flex-direction:column;min-height:326px !important;padding:22px 22px 58px !important;border-radius:24px !important;}
+.guide-card:before{content:none !important;}
+.guide-card:after{content:"Read article →" !important;}
+.guide-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px;}
+.guide-meta span{font-size:10.5px;font-weight:900;letter-spacing:.75px;text-transform:uppercase;color:#6d5424;background:#fff6e4;border:1px solid rgba(198,154,74,.24);border-radius:999px;padding:6px 9px;white-space:nowrap;}
+.guide-meta span:last-child{color:var(--warm);background:#f7fbfe;border-color:rgba(26,60,94,.10);}
+.guide-icon{width:44px;height:44px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#fff 0%,#f8ead0 100%);border:1px solid rgba(198,154,74,.26);color:#8b661f;font-weight:900;font-size:20px;margin-bottom:14px;box-shadow:0 10px 24px rgba(26,60,94,.06);}
+.guide-card h3{margin-bottom:10px !important;}
+.guide-for{font-size:14px !important;line-height:1.5 !important;color:var(--warm) !important;margin:0 0 14px !important;}
+.guide-for strong{color:var(--navy);}
+.guide-preview{margin:0 !important;padding:0 !important;display:grid;gap:7px;color:var(--warm);font-size:13.5px;line-height:1.35;}
+.guide-preview li{list-style:none;position:relative;padding-left:19px;}
+.guide-preview li:before{content:"✓";position:absolute;left:0;top:0;color:var(--blue);font-weight:900;}
+.topic-executor{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.99)),radial-gradient(circle at 100% 0%,rgba(198,154,74,.22),transparent 36%) !important;}
+.topic-costs{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.99)),radial-gradient(circle at 100% 0%,rgba(88,151,177,.18),transparent 36%) !important;}
+.topic-sale{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.99)),radial-gradient(circle at 100% 0%,rgba(26,60,94,.16),transparent 36%) !important;}
+.topic-remote{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.99)),radial-gradient(circle at 100% 0%,rgba(45,127,166,.18),transparent 36%) !important;}
+.topic-hoarded{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.99)),radial-gradient(circle at 100% 0%,rgba(117,107,93,.20),transparent 36%) !important;}
+.topic-downsizing{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.99)),radial-gradient(circle at 100% 0%,rgba(198,154,74,.20),transparent 36%) !important;}
+.soft-cta{margin-top:22px !important;}
+@media(max-width:860px){
+  .resource-main{padding:26px 22px 32px !important;}
+  .intro-choice-card{grid-template-columns:1fr !important;}
+  .quick-starts{grid-template-columns:1fr;}
+  .category-head{display:block;}
+  .category-head span{display:block;margin-bottom:7px;}
+  .category-head h2{font-size:22px;}
+  .guides-grid.two-up,.guides-grid.single-feature{grid-template-columns:1fr !important;}
+  .guide-card{min-height:auto !important;padding:20px 20px 56px !important;}
+  .guide-meta{align-items:flex-start;flex-wrap:wrap;margin-bottom:14px;}
+}
+@media(max-width:480px){
+  .resource-main{padding-left:22px !important;padding-right:22px !important;}
+  .guide-category{margin:24px 0 28px;}
+  .guide-icon{width:40px;height:40px;border-radius:14px;font-size:18px;}
+}
+
+
+/* Authority + real-world polish pass */
+body{line-height:1.6;}
+.guide-card{cursor:pointer !important;}
+.guide-card:hover{transform:translateY(-6px) !important;box-shadow:0 22px 56px rgba(26,60,94,.15) !important;}
+.guide-badges{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 14px;}
+.guide-badges span{font-size:11px;font-weight:900;color:var(--navy);background:#eef6fa;border:1px solid rgba(26,60,94,.10);border-radius:999px;padding:6px 9px;line-height:1;}
+.guide-badges .complexity{background:#fff7e6;border-color:rgba(198,154,74,.26);color:#73551e;}
+.real-cue,.mistake-note{font-size:13px !important;line-height:1.45 !important;border-radius:14px;padding:10px 12px;margin:0 0 12px !important;}
+.real-cue{background:#f7fbfe;border:1px solid rgba(26,60,94,.09);color:#425F73 !important;}
+.mistake-note{background:#fffaf0;border:1px solid rgba(198,154,74,.22);color:#6c572e !important;}
+.real-cue strong,.mistake-note strong{color:var(--navy);}
+.related-situations{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.related-situations span{font-size:11.5px;font-weight:800;color:#425F73;background:#fff;border:1px solid rgba(26,60,94,.10);border-radius:999px;padding:6px 9px;}
+.quick-answer-band{margin:18px 0 0;padding:14px 16px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.20);border-radius:18px;color:rgba(255,255,255,.78);font-size:14px;line-height:1.5;max-width:840px;position:relative;z-index:1;}
+.quick-answer-band strong{display:block;color:#fff;margin-bottom:3px;}
+.resource-strip.soft-cta{grid-template-columns:1.15fr 1fr 1fr !important;}
+.resource-strip .reassurance-wide{background:linear-gradient(135deg,#fff 0%,#fffaf0 100%);border-color:rgba(198,154,74,.22);}
+.resource-strip .reassurance-wide strong{font-size:16px;}
+@media(max-width:860px){
+  .guide-badges{gap:7px;}
+  .resource-strip.soft-cta{grid-template-columns:1fr !important;}
+  .quick-answer-band{font-size:13.5px;}
+}
+
+
+
+/* Final formatting QA pass */
+.library-head h2{font-size:clamp(27px,3vw,34px) !important;}
+.guide-card{
+  min-height:auto !important;
+  height:100% !important;
+  padding:22px !important;
+}
+.guide-card:after{
+  position:static !important;
+  display:block !important;
+  margin-top:auto !important;
+  padding-top:18px !important;
+  color:var(--blue) !important;
+}
+.guide-preview{margin-bottom:12px !important;}
+.related-situations{margin-top:12px !important;margin-bottom:0 !important;}
+.guide-meta span{line-height:1.05 !important;}
+.quick-starts a:focus-visible,.guide-card:focus-visible,.button:focus-visible{outline:3px solid rgba(198,154,74,.55);outline-offset:3px;}
+@media(max-width:860px){
+  .hero-inner{padding-left:22px !important;padding-right:22px !important;}
+  .library-head{gap:12px !important;margin-bottom:18px !important;}
+  .chapter-note{width:fit-content !important;}
+  .guide-card{padding:20px !important;}
+  .guide-card:after{padding-top:16px !important;}
+}
+@media(max-width:480px){
+  .hero h1{font-size:30px !important;}
+  .category-head h2{font-size:21px !important;}
+  .guide-badges span,.related-situations span{font-size:10.8px !important;}
+}
+
+
+/* Hero alignment final pass: match Estate Co. page container */
+.hero{
+  padding:0 !important;
+}
+header.hero .container.hero-inner{
+  width:100% !important;
+  max-width:1120px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding:46px 28px 36px !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) 320px !important;
+  gap:36px !important;
+  align-items:center !important;
+}
+header.hero .hero-inner > div:first-child{
+  max-width:720px !important;
+  width:100% !important;
+}
+header.hero .breadcrumb,
+header.hero .eyebrow,
+header.hero h1,
+header.hero p{
+  max-width:720px !important;
+}
+header.hero .trust-panel{
+  width:100% !important;
+  max-width:320px !important;
+  justify-self:end !important;
+}
+@media(max-width:860px){
+  header.hero .container.hero-inner{
+    grid-template-columns:1fr !important;
+    padding:32px 22px 30px !important;
+    gap:18px !important;
+  }
+  header.hero .trust-panel{
+    max-width:100% !important;
+    justify-self:stretch !important;
+  }
+}
+@media(max-width:480px){
+  header.hero .container.hero-inner{
+    padding:26px 20px 28px !important;
+  }
+  header.hero .breadcrumb{
+    margin-bottom:10px !important;
+  }
+  header.hero .eyebrow{
+    margin-bottom:8px !important;
   }
 }
 
@@ -230,7 +591,7 @@ footer h4{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;margin-bo
       <div class="breadcrumb"><a href="/index.html">Home</a> / Guides</div>
       <span class="eyebrow">Helpful resources</span>
       <h1>Estate clearance guides</h1>
-      <p>Plain-English resources for families, executors and property owners managing clearances, cleanouts and sale preparation.</p>
+      <p>Plain-English resources built from real clearance jobs across Melbourne homes — not theory. Choose the article that matches your situation and get practical next steps.</p>
     </div>
     <aside class="trust-panel">
       <h3>Estate Co. support</h3>
@@ -238,78 +599,169 @@ footer h4{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;margin-bo
         <div>Respectful property clearances</div>
         <div>Remote support available</div>
         <div>Clear quotes and communication</div>
+        <div>Practical advice, not generic blog content</div>
       </div>
     </aside>
   </div>
 </header>
-<main class="container" style="padding:50px 28px;">
-  <section class="start-card">
+<main class="container resource-main">
+  <section class="start-card intro-choice-card">
     <div>
-      <span class="eyebrow" style="color:#9bd3e8">Start here</span>
-      <h2>Estate clearance resources for families, executors and property owners</h2>
-      <p>These guides are designed to become a practical resource library — not just short service pages. Each article answers a real question families ask when they need to clear, clean or prepare a property after a death, move, downsizing decision or difficult tenancy.</p>
-      <p style="margin-top:10px;color:rgba(255,255,255,.78)">Start with the executor checklist if you are managing a deceased estate, or choose the guide that best matches your situation.</p>
+      <span class="eyebrow" style="color:#9bd3e8">Not sure where to start?</span>
+      <h2>Choose the guide that matches your situation</h2>
+      <p>Each article is standalone. You do not need to read these in order — pick the topic that fits the property, family situation or decision you are dealing with now.</p>
+      <div class="quick-starts" aria-label="Suggested starting points">
+        <a href="/executor-estate-clearance-guide.html"><strong>Executor?</strong><span>Start with the estate checklist</span></a>
+        <a href="/deceased-estate-cleanout-costs.html"><strong>Unsure on cost?</strong><span>See what affects pricing</span></a>
+        <a href="/hoarded-property-cleanout-guide.html"><strong>Difficult property?</strong><span>Read the cluttered home guide</span></a>
+      </div>
+      <div class="quick-answer-band"><strong>Quick answer</strong> Most families do not need to know the full process before they start. The right first step is choosing the guide that matches the property, then using photos and clear details to turn uncertainty into a practical plan.</div>
     </div>
-    <a class="button" href="/executor-estate-clearance-guide.html">Read the checklist</a>
+    <a class="button" href="/index.html#quote">Get a quick opinion</a>
   </section>
 
-  <span class="eyebrow">Resource library</span>
-  <h2 style="color:var(--navy);font-size:32px;margin:0 0 8px;">Choose a practical guide</h2>
-  <p style="color:var(--warm);max-width:760px;">Every guide is written in plain English and structured like a helpful blog article, with checklists, decision points and practical next steps. This page can keep growing as Estate Co. publishes more articles over time.</p>
-
-  <div class="guides-grid">
-    <a class="guide-card" href="/executor-estate-clearance-guide.html">
-      <h3>Executor estate clearance checklist</h3>
-      <p>A step-by-step guide for executors managing a property after a death, including what to secure, what to keep, how to communicate with beneficiaries and when to arrange clearance.</p>
-    </a>
-
-    <a class="guide-card" href="/deceased-estate-cleanout-costs.html">
-      <h3>Deceased estate cleanout costs</h3>
-      <p>A transparent guide to what affects estate cleanout pricing, from property size and access to disposal, deep cleaning, urgency, valuables and sale preparation.</p>
-    </a>
-
-    <a class="guide-card" href="/preparing-property-for-sale-after-death.html">
-      <h3>Preparing a property for sale after a death</h3>
-      <p>How to move from a lived-in family home to a property that is clear, clean, presentable and ready for agent appraisal, photography, inspections or settlement.</p>
-    </a>
-
-    <a class="guide-card" href="/remote-estate-clearance.html">
-      <h3>Remote estate clearance for interstate families</h3>
-      <p>How to coordinate a property clearance when you cannot attend in person, including photo reviews, item approvals, access, progress updates and completion reporting.</p>
-    </a>
-
-    <a class="guide-card" href="/downsizing-property-clearance.html">
-      <h3>Downsizing property clearance guide</h3>
-      <p>A calm guide for families helping someone move into a smaller home, retirement village or aged care accommodation while managing belongings respectfully.</p>
-    </a>
-
-    <a class="guide-card" href="/hoarded-property-cleanout-guide.html">
-      <h3>Hoarded property cleanout guide</h3>
-      <p>A respectful, safety-first guide to clearing severely cluttered or long-neglected homes, including hidden valuables, hazards, staged sorting and deep cleaning.</p>
-    </a>
+  <div class="library-head">
+    <div>
+      <span class="eyebrow">Resource library</span>
+      <h2>Choose an article based on your situation</h2>
+      <p>Independent, plain-English guides for families, executors, agents and property owners. Each guide is designed to answer one clear problem from start to finish.</p>
+    </div>
+    <div class="chapter-note">Standalone articles</div>
   </div>
 
-  <section style="margin-top:46px;background:#f7fbfe;border:1px solid var(--border);border-radius:18px;padding:28px">
-    <span class="eyebrow">Future blog ideas</span>
-    <h2 style="color:var(--navy);font-size:28px;margin:0 0 10px;">Topics to add next</h2>
-    <p style="color:var(--warm);max-width:760px;">To keep building search traffic, Estate Co. can continue publishing helpful guides around real questions people search for during property transitions.</p>
-    <div class="guides-grid" style="margin-top:18px">
-      <div class="guide-card"><h3>What to do with furniture from a deceased estate</h3><p>Donation, resale, storage and disposal options explained.</p></div>
-      <div class="guide-card"><h3>How to clear a house before settlement</h3><p>A practical timeline for sellers, agents and executors.</p></div>
-      <div class="guide-card"><h3>How to prepare a hoarded home for sale</h3><p>Safety, cleaning, repairs and agent presentation steps.</p></div>
+  <section class="guide-category" aria-labelledby="deceased-estates-heading">
+    <div class="category-head">
+      <span>Deceased estates</span>
+      <h2 id="deceased-estates-heading">When you are managing a property after a death</h2>
     </div>
+    <div class="guides-grid">
+      <a class="guide-card topic-executor" href="/executor-estate-clearance-guide.html">
+        <div class="guide-meta"><span>Independent guide</span><span>8 min read</span></div>
+        <div class="guide-icon">✓</div>
+        <h3>Executor estate clearance checklist</h3>
+        <p class="guide-for"><strong>For:</strong> Executors and families unsure what to secure, keep or clear first.</p>
+        <div class="guide-badges"><span class="complexity">Moderate complexity</span><span>Usually 1–3 days</span><span>Updated May 2026</span></div>
+        <p class="real-cue"><strong>Real-world cue:</strong> Common in Melbourne family homes with decades of paperwork, furniture and personal contents.</p>
+        <p class="mistake-note"><strong>Common mistake:</strong> Clearing too quickly before checking for documents, keys, photos, jewellery or sentimental items.</p>
+        <ul class="guide-preview">
+          <li>What to do before anything is removed</li>
+          <li>How to handle key documents and belongings</li>
+          <li>When to arrange clearance support</li>
+        </ul>
+        <div class="related-situations"><span>Related: costs</span><span>Related: sale preparation</span></div>
+      </a>
+
+      <a class="guide-card topic-costs" href="/deceased-estate-cleanout-costs.html">
+        <div class="guide-meta"><span>Independent guide</span><span>7 min read</span></div>
+        <div class="guide-icon">$</div>
+        <h3>Deceased estate cleanout costs</h3>
+        <p class="guide-for"><strong>For:</strong> Families wanting a clearer idea of pricing before booking work.</p>
+        <div class="guide-badges"><span class="complexity">Variable complexity</span><span>Quote often 4–6 hrs</span><span>Updated May 2026</span></div>
+        <p class="real-cue"><strong>Real-world cue:</strong> Useful when comparing a small unit, full family home, garage, shed or hard-access property.</p>
+        <p class="mistake-note"><strong>Common mistake:</strong> Assuming cost is based only on property size rather than access, volume, disposal and cleaning needs.</p>
+        <ul class="guide-preview">
+          <li>What affects the final quote</li>
+          <li>Why photos help speed up pricing</li>
+          <li>How access, volume and cleaning change cost</li>
+        </ul>
+        <div class="related-situations"><span>Related: executor checklist</span><span>Related: remote clearance</span></div>
+      </a>
+
+      <a class="guide-card topic-sale" href="/preparing-property-for-sale-after-death.html">
+        <div class="guide-meta"><span>Independent guide</span><span>9 min read</span></div>
+        <div class="guide-icon">⌂</div>
+        <h3>Preparing a property for sale after a death</h3>
+        <p class="guide-for"><strong>For:</strong> Families moving from a lived-in home to a sale-ready property.</p>
+        <div class="guide-badges"><span class="complexity">Moderate complexity</span><span>Usually 2–5 days</span><span>Updated May 2026</span></div>
+        <p class="real-cue"><strong>Real-world cue:</strong> Typical for older homes needing contents removed, surfaces cleaned and presentation improved before appraisal.</p>
+        <p class="mistake-note"><strong>Common mistake:</strong> Booking photos or inspections before the home is clear enough to show space, light and condition.</p>
+        <ul class="guide-preview">
+          <li>How to prepare for agent appraisal</li>
+          <li>What buyers and agents notice first</li>
+          <li>How to move from clearout to presentation</li>
+        </ul>
+        <div class="related-situations"><span>Related: cleanout costs</span><span>Related: executor checklist</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="guide-category" aria-labelledby="property-challenges-heading">
+    <div class="category-head">
+      <span>Property challenges</span>
+      <h2 id="property-challenges-heading">When access, distance or condition makes the job harder</h2>
+    </div>
+    <div class="guides-grid two-up">
+      <a class="guide-card topic-remote" href="/remote-estate-clearance.html">
+        <div class="guide-meta"><span>Independent guide</span><span>6 min read</span></div>
+        <div class="guide-icon">↗</div>
+        <h3>Remote estate clearance for interstate families</h3>
+        <p class="guide-for"><strong>For:</strong> Families coordinating a property clearance when they cannot attend in person.</p>
+        <div class="guide-badges"><span class="complexity">Moderate complexity</span><span>Often staged remotely</span><span>Updated May 2026</span></div>
+        <p class="real-cue"><strong>Real-world cue:</strong> Common for interstate families managing Melbourne properties through agents, neighbours or lockbox access.</p>
+        <p class="mistake-note"><strong>Common mistake:</strong> Not agreeing upfront on what needs approval, what can be removed, and how progress will be confirmed.</p>
+        <ul class="guide-preview">
+          <li>How photo reviews work</li>
+          <li>How access and approvals can be managed</li>
+          <li>What updates to request during the job</li>
+        </ul>
+        <div class="related-situations"><span>Related: costs</span><span>Related: sale preparation</span></div>
+      </a>
+
+      <a class="guide-card topic-hoarded" href="/hoarded-property-cleanout-guide.html">
+        <div class="guide-meta"><span>Independent guide</span><span>10 min read</span></div>
+        <div class="guide-icon">!</div>
+        <h3>Hoarded property cleanout guide</h3>
+        <p class="guide-for"><strong>For:</strong> Families, agents or owners dealing with severe clutter or long-neglected homes.</p>
+        <div class="guide-badges"><span class="complexity">Complex</span><span>Often staged over days</span><span>Updated May 2026</span></div>
+        <p class="real-cue"><strong>Real-world cue:</strong> Useful for properties where clutter, odour, access issues or hidden hazards make a normal cleanout unrealistic.</p>
+        <p class="mistake-note"><strong>Common mistake:</strong> Treating it like a simple rubbish removal job instead of planning for safety, access and staged clearance.</p>
+        <ul class="guide-preview">
+          <li>How to approach safety and hazards</li>
+          <li>Why staged clearing can help</li>
+          <li>What to expect before cleaning starts</li>
+        </ul>
+        <div class="related-situations"><span>Related: difficult cleanups</span><span>Related: cleaning</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="guide-category" aria-labelledby="life-transitions-heading">
+    <div class="category-head">
+      <span>Life transitions</span>
+      <h2 id="life-transitions-heading">When someone is downsizing, moving or simplifying</h2>
+    </div>
+    <div class="guides-grid single-feature">
+      <a class="guide-card topic-downsizing" href="/downsizing-property-clearance.html">
+        <div class="guide-meta"><span>Independent guide</span><span>7 min read</span></div>
+        <div class="guide-icon">→</div>
+        <h3>Downsizing property clearance guide</h3>
+        <p class="guide-for"><strong>For:</strong> Families helping someone move into a smaller home, retirement village or aged care accommodation.</p>
+        <div class="guide-badges"><span class="complexity">Simple to moderate</span><span>Usually 1–3 days</span><span>Updated May 2026</span></div>
+        <p class="real-cue"><strong>Real-world cue:</strong> Common when a long-term home needs to be reduced quickly but respectfully before handover or sale.</p>
+        <p class="mistake-note"><strong>Common mistake:</strong> Trying to make every decision at once instead of separating keep, family, donate and clear items.</p>
+        <ul class="guide-preview">
+          <li>How to reduce overwhelm</li>
+          <li>What to keep, donate or clear</li>
+          <li>How to prepare the home for the next step</li>
+        </ul>
+        <div class="related-situations"><span>Related: sale preparation</span><span>Related: cleanout costs</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="resource-strip soft-cta" aria-label="Get help choosing a guide">
+    <div class="reassurance-wide"><strong>These situations are rarely straightforward</strong><span>Most families are working through this for the first time. It is normal to feel unsure about the right order, what to keep, or when to bring in help.</span></div>
+    <div><strong>Photos make it easier</strong><span>Clear photos can quickly turn advice into a practical quote and help avoid unnecessary back-and-forth.</span></div>
+    <div><strong>Unsure where to begin?</strong><span>Send what you know and we can point you to the right next step without pressure.</span></div>
   </section>
 </main>
 
-
 <footer>
-<a class="footer-phone" href="tel:1300264318">Contact us: 1300264318</a>
-
   <div class="container footer-inner">
     <div>
       <div class="footer-logo">Estate <span>Co.</span></div>
-      <p>Respectful property clearances for families, executors, agents and property managers.</p>
-      <p style="margin-top:12px;"><a href="tel:1300264318">1300264318</a><br><a href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a></p>
+      <p>Professional, respectful estate clearance and property cleanout support.</p>
+      <p style="margin-top:12px;">Contact us: <a href="tel:1300264318">1300264318</a><br><a href="mailto:contactus@estateco.com.au">contactus@estateco.com.au</a></p>
     </div>
     <div>
       <h4>Services</h4>

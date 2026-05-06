@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Estate Co. – SEO Linking Strategy Guide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f8fb;color:#1e3048;line-height:1.65;font-size:15px}
+.page{max-width:900px;margin:0 auto;padding:40px 32px 80px}
+h1{font-size:32px;font-weight:800;color:#1A3C5E;margin-bottom:6px;letter-spacing:-.5px}
+.subtitle{font-size:16px;color:#425F73;margin-bottom:40px}
+h2{font-size:21px;font-weight:700;color:#1A3C5E;margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid #E7F2F7}
+h3{font-size:16px;font-weight:700;color:#1A3C5E;margin:24px 0 8px}
+p{color:#425F73;margin-bottom:14px}
+ul,ol{padding-left:20px;margin-bottom:16px}
+li{color:#425F73;margin-bottom:6px}
+.card{background:#fff;border:1px solid rgba(26,60,94,.12);border-radius:14px;padding:24px;margin-bottom:16px}
+.card h3{margin-top:0}
+.badge{display:inline-block;background:#E7F2F7;color:#1A3C5E;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px}
+.badge.high{background:#FEF3C7;color:#92400E}
+.badge.critical{background:#FEE2E2;color:#991B1B}
+code{background:#E7F2F7;padding:2px 6px;border-radius:4px;font-family:monospace;font-size:13px;color:#163653}
+pre{background:#1A3C5E;color:#A8D8EA;padding:18px 20px;border-radius:10px;overflow-x:auto;font-size:13px;line-height:1.6;margin:12px 0 20px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tier{counter-reset:item}
+.tier-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(26,60,94,.08)}
+.tier-item:last-child{border-bottom:none}
+.tier-num{width:28px;height:28px;border-radius:50%;background:#1A3C5E;color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.highlight{background:#fffbeb;border:1px solid #fcd34d;border-radius:10px;padding:16px 20px;margin:16px 0}
+.highlight strong{color:#92400E}
+.file-list{background:#fff;border:1px solid rgba(26,60,94,.12);border-radius:10px;padding:20px;margin:12px 0}
+.file-list li{font-family:monospace;font-size:13px;color:#163653;list-style:none;padding:3px 0}
+.file-list li::before{content:' ';opacity:.7}
+.file-list li.hub::before{content:' '}
+.file-list li.xml::before{content:' '}
+.file-list li.txt::before{content:' '}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr}.page{padding:24px 18px 60px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Estate Co. — SEO Linking Strategy</h1>
+<p class="subtitle">Complete guide to deploying and linking 56 suburb pages for maximum search visibility across Melbourne.</p>
+
+<!--  FILES GENERATED  -->
+<h2> What's been generated</h2>
+<div class="card">
+  <p><strong>49 individual suburb pages</strong> — Tier 1 high-priority suburbs, each with unique local content, schema markup, FAQ, service listing and internal links.</p>
+  <p><strong>7 regional hub pages</strong> — Area landing pages covering groups of suburbs (e.g. Eastern Suburbs, Bayside, Mornington Peninsula).</p>
+  <p><strong>sitemap.xml</strong> — Full XML sitemap covering all 62 pages on the site ready to submit to Google Search Console.</p>
+  <p><strong>robots.txt</strong> — Correct crawl directives pointing to the sitemap.</p>
+</div>
+
+<div class="file-list">
+  <ul>
+    <li class="hub">estate-clearance-eastern-suburbs.html</li>
+    <li class="hub">estate-clearance-south-east-melbourne.html</li>
+    <li class="hub">estate-clearance-northern-suburbs.html</li>
+    <li class="hub">estate-clearance-western-suburbs.html</li>
+    <li class="hub">estate-clearance-bayside-melbourne.html</li>
+    <li class="hub">estate-clearance-mornington-peninsula.html</li>
+    <li class="hub">estate-clearance-inner-melbourne.html</li>
+    <li>estate-clearance-toorak.html</li>
+    <li>estate-clearance-brighton.html</li>
+    <li>estate-clearance-hawthorn.html</li>
+    <li>estate-clearance-camberwell.html</li>
+    <li>estate-clearance-malvern.html … (+ 37 more suburb pages)</li>
+    <li class="xml">sitemap.xml</li>
+    <li class="txt">robots.txt</li>
+  </ul>
+</div>
+
+<!--  SITE ARCHITECTURE  -->
+<h2> Site architecture (hierarchy)</h2>
+<div class="card">
+  <p>Google rewards clear, logical site structure. Every link flows <em>upward</em> (suburb → hub → Melbourne → Home) and <em>downward</em> (Home → Melbourne → hub → suburb), creating a strong internal link graph.</p>
+  <pre>
+index.html (Home)
+   estate-clearance-melbourne.html ← Add suburb links here
+         estate-clearance-eastern-suburbs.html
+              estate-clearance-box-hill.html
+              estate-clearance-doncaster.html
+              estate-clearance-glen-waverley.html
+              ...
+         estate-clearance-bayside-melbourne.html
+              estate-clearance-brighton.html
+              estate-clearance-sandringham.html
+              ...
+         estate-clearance-mornington-peninsula.html
+              estate-clearance-frankston.html
+              estate-clearance-mornington.html
+              ...
+         ... (4 more regional hubs)</pre>
+</div>
+
+<!--  REQUIRED CHANGES TO EXISTING PAGES  -->
+<h2> Required changes to your existing pages</h2>
+
+<div class="card">
+  <span class="badge critical">Critical — Do This First</span>
+  <h3>1. Update estate-clearance-melbourne.html</h3>
+  <p>The Melbourne page must become the hub for all suburb links. Add a section like this — replace the existing plain-text suburb list:</p>
+  <pre>
+&lt;!-- Add this section to estate-clearance-melbourne.html --&gt;
+&lt;section&gt;
+  &lt;h2&gt;Melbourne Regions&lt;/h2&gt;
+  &lt;div class="region-grid"&gt;
+    &lt;a href="estate-clearance-eastern-suburbs.html"&gt;Eastern Suburbs&lt;/a&gt;
+    &lt;a href="estate-clearance-bayside-melbourne.html"&gt;Bayside&lt;/a&gt;
+    &lt;a href="estate-clearance-mornington-peninsula.html"&gt;Mornington Peninsula&lt;/a&gt;
+    &lt;a href="estate-clearance-northern-suburbs.html"&gt;Northern Suburbs&lt;/a&gt;
+    &lt;a href="estate-clearance-western-suburbs.html"&gt;Western Suburbs&lt;/a&gt;
+    &lt;a href="estate-clearance-south-east-melbourne.html"&gt;South East Melbourne&lt;/a&gt;
+    &lt;a href="estate-clearance-inner-melbourne.html"&gt;Inner Melbourne&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;h2&gt;Key Suburbs&lt;/h2&gt;
+  &lt;div class="suburb-link-grid"&gt;
+    &lt;a href="estate-clearance-toorak.html"&gt;Estate Clearance Toorak&lt;/a&gt;
+    &lt;a href="estate-clearance-brighton.html"&gt;Estate Clearance Brighton&lt;/a&gt;
+    &lt;a href="estate-clearance-hawthorn.html"&gt;Estate Clearance Hawthorn&lt;/a&gt;
+    &lt;a href="estate-clearance-camberwell.html"&gt;Estate Clearance Camberwell&lt;/a&gt;
+    &lt;a href="estate-clearance-frankston.html"&gt;Estate Clearance Frankston&lt;/a&gt;
+    &lt;a href="estate-clearance-mornington.html"&gt;Estate Clearance Mornington&lt;/a&gt;
+    &lt;a href="estate-clearance-dandenong.html"&gt;Estate Clearance Dandenong&lt;/a&gt;
+    &lt;a href="estate-clearance-box-hill.html"&gt;Estate Clearance Box Hill&lt;/a&gt;
+    &lt;!-- Add all suburb links here --&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre>
+</div>
+
+<div class="card">
+  <span class="badge critical">Critical — Do This First</span>
+  <h3>2. Update the footer on index.html and all existing pages</h3>
+  <p>Replace the current minimal footer service area links with a comprehensive suburb link section. The generated suburb pages already include this footer — apply the same pattern to <code>index.html</code>, <code>estate-clearance-melbourne.html</code>, <code>estate-clearance-sydney.html</code>, <code>estate-clearance-brisbane.html</code> and <code>guides.html</code>.</p>
+  <pre>
+&lt;!-- Replace footer service area section with: --&gt;
+&lt;div class="footer-suburbs"&gt;
+  &lt;h4&gt;Melbourne regions&lt;/h4&gt;
+  &lt;p&gt;
+    &lt;a href="estate-clearance-eastern-suburbs.html"&gt;Eastern Suburbs&lt;/a&gt; ·
+    &lt;a href="estate-clearance-bayside-melbourne.html"&gt;Bayside&lt;/a&gt; ·
+    &lt;a href="estate-clearance-mornington-peninsula.html"&gt;Mornington Peninsula&lt;/a&gt; ·
+    &lt;a href="estate-clearance-northern-suburbs.html"&gt;Northern Suburbs&lt;/a&gt; ·
+    &lt;a href="estate-clearance-western-suburbs.html"&gt;Western Suburbs&lt;/a&gt; ·
+    &lt;a href="estate-clearance-south-east-melbourne.html"&gt;South East&lt;/a&gt; ·
+    &lt;a href="estate-clearance-inner-melbourne.html"&gt;Inner Melbourne&lt;/a&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;a href="estate-clearance-toorak.html"&gt;Toorak&lt;/a&gt; ·
+    &lt;a href="estate-clearance-brighton.html"&gt;Brighton&lt;/a&gt; ·
+    &lt;a href="estate-clearance-hawthorn.html"&gt;Hawthorn&lt;/a&gt; ·
+    &lt;a href="estate-clearance-frankston.html"&gt;Frankston&lt;/a&gt; ·
+    &lt;a href="estate-clearance-mornington.html"&gt;Mornington&lt;/a&gt; ·
+    &lt;a href="estate-clearance-dandenong.html"&gt;Dandenong&lt;/a&gt; ·
+    &lt;a href="estate-clearance-glen-waverley.html"&gt;Glen Waverley&lt;/a&gt; ·
+    &lt;a href="estate-clearance-box-hill.html"&gt;Box Hill&lt;/a&gt; ·
+    &lt;a href="estate-clearance-doncaster.html"&gt;Doncaster&lt;/a&gt; ·
+    &lt;a href="estate-clearance-camberwell.html"&gt;Camberwell&lt;/a&gt; ·
+    &lt;a href="estate-clearance-kew.html"&gt;Kew&lt;/a&gt; ·
+    &lt;a href="estate-clearance-malvern.html"&gt;Malvern&lt;/a&gt; ·
+    &lt;a href="estate-clearance-st-kilda.html"&gt;St Kilda&lt;/a&gt; ·
+    &lt;a href="estate-clearance-south-yarra.html"&gt;South Yarra&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</pre>
+</div>
+
+<div class="card">
+  <span class="badge high">High Priority</span>
+  <h3>3. Add the Areas nav link to index.html</h3>
+  <p>The homepage nav currently anchors to <code>#service-locations</code>. Update it to link to the Melbourne page which now acts as the area hub:</p>
+  <pre>
+&lt;!-- In nav, update Areas link: --&gt;
+&lt;a href="estate-clearance-melbourne.html"&gt;Areas&lt;/a&gt;</pre>
+</div>
+
+<div class="card">
+  <span class="badge high">High Priority</span>
+  <h3>4. Upload sitemap.xml and robots.txt to your server root</h3>
+  <p>Both files must live at the root of your domain:</p>
+  <ul>
+    <li><code>https://estateco.com.au/sitemap.xml</code></li>
+    <li><code>https://estateco.com.au/robots.txt</code></li>
+  </ul>
+  <p>Then submit the sitemap URL in <strong>Google Search Console</strong> → Sitemaps → Add sitemap.</p>
+</div>
+
+<!--  LINKING PRINCIPLES  -->
+<h2> Linking principles that build credibility</h2>
+
+<div class="card">
+  <h3>Why this structure works</h3>
+  <p>Google evaluates pages partly by how many other pages on your site link to them — and whether those links use relevant anchor text. The structure here creates a three-tier link graph:</p>
+  <div class="tier">
+    <div class="tier-item">
+      <div class="tier-num">1</div>
+      <div>
+        <strong>Home + Melbourne page → all 7 regional hubs</strong><br/>
+        <span style="color:#425F73;font-size:14px">High-authority root pages distributing link equity to regional hubs</span>
+      </div>
+    </div>
+    <div class="tier-item">
+      <div class="tier-num">2</div>
+      <div>
+        <strong>Each regional hub → its suburb pages</strong><br/>
+        <span style="color:#425F73;font-size:14px">Hub pages pass authority to individual suburb pages in their area</span>
+      </div>
+    </div>
+    <div class="tier-item">
+      <div class="tier-num">3</div>
+      <div>
+        <strong>Each suburb page → nearby suburbs + its hub + Melbourne page</strong><br/>
+        <span style="color:#425F73;font-size:14px">Suburb pages link laterally (nearby) and upward (hub, Melbourne, home)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card">
+    <h3> Anchor text rules</h3>
+    <ul>
+      <li>Use "Estate Clearance [Suburb]" as anchor text — matches search queries</li>
+      <li>Vary occasionally: "deceased estate cleanout [Suburb]", "house clearance [Suburb]"</li>
+      <li>Don't use generic "click here" or "learn more"</li>
+      <li>Footer links should use the suburb name only (shorter)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3> What makes these pages credible</h3>
+    <ul>
+      <li>Unique content per page (local council, aged care references, local context)</li>
+      <li>Schema LocalBusiness + Service + BreadcrumbList + FAQPage</li>
+      <li>Breadcrumb navigation (Home → Melbourne → Suburb)</li>
+      <li>Canonical tags on every page</li>
+      <li>Internal links flowing in both directions</li>
+    </ul>
+  </div>
+</div>
+
+<!--  GUIDES LINKING  -->
+<h2> Linking your guides content to suburb pages</h2>
+<div class="card">
+  <p>Your existing guides are valuable — they create topical authority. Link from guides to relevant suburb pages contextually. For example:</p>
+  <ul>
+    <li>In a guide about "executor responsibilities" → link to "Estate Clearance Melbourne" and "Estate Clearance [high-search suburb]"</li>
+    <li>In a guide about "how to prepare a property for sale" → link to "Pre-Sale Property Preparation" service and 2–3 suburb pages</li>
+    <li>Each guide should link to at least 2–3 suburb or service pages naturally within the body text</li>
+  </ul>
+  <div class="highlight">
+    <strong>Pro tip:</strong> Add a "We service this area" callout box at the end of each guide with links to 3–4 suburb pages — this creates high-quality contextual links from informational content to service pages.
+  </div>
+</div>
+
+<!--  DEPLOYMENT ORDER  -->
+<h2> Deployment order</h2>
+
+<div class="card">
+  <div class="tier">
+    <div class="tier-item">
+      <div class="tier-num">1</div>
+      <div><strong>Upload all generated files</strong> to your server root (same folder as index.html)<br/><span style="color:#425F73;font-size:14px">56 HTML files + sitemap.xml + robots.txt</span></div>
+    </div>
+    <div class="tier-item">
+      <div class="tier-num">2</div>
+      <div><strong>Update estate-clearance-melbourne.html</strong> with regional hub and suburb links<br/><span style="color:#425F73;font-size:14px">This is the most important existing page — it needs to be the area hub</span></div>
+    </div>
+    <div class="tier-item">
+      <div class="tier-num">3</div>
+      <div><strong>Update footer on all existing pages</strong> with comprehensive suburb links<br/><span style="color:#425F73;font-size:14px">index.html, guides.html, sydney, brisbane pages</span></div>
+    </div>
+    <div class="tier-item">
+      <div class="tier-num">4</div>
+      <div><strong>Submit sitemap.xml to Google Search Console</strong><br/><span style="color:#425F73;font-size:14px">Go to Search Console → Sitemaps → add https://estateco.com.au/sitemap.xml</span></div>
+    </div>
+    <div class="tier-item">
+      <div class="tier-num">5</div>
+      <div><strong>Request indexing for priority pages</strong> in Google Search Console<br/><span style="color:#425F73;font-size:14px">Use URL Inspection tool → Request Indexing for: Toorak, Brighton, Frankston, Mornington, Hawthorn, Camberwell, Dandenong, Box Hill</span></div>
+    </div>
+    <div class="tier-item">
+      <div class="tier-num">6</div>
+      <div><strong>Monitor in Google Search Console over 4–8 weeks</strong><br/><span style="color:#425F73;font-size:14px">Check: Coverage report (pages indexed), Performance report (impressions/clicks by suburb query)</span></div>
+    </div>
+  </div>
+</div>
+
+<!--  NEXT PHASE  -->
+<h2> Next phase — expanding coverage</h2>
+<div class="card">
+  <p>Once these 49 suburb pages are indexed and generating traffic, the next phase is:</p>
+  <ul>
+    <li><strong>Add more suburb pages</strong> — Essendon, Moonee Ponds, Pakenham, Seaford, Chelsea, Williamstown, Altona, Newport, Bundoora, Mill Park, Epping, Craigieburn, Caroline Springs, Deer Park</li>
+    <li><strong>Add service + suburb combo pages</strong> — "Deceased Estate Cleanout Toorak", "Pre-Sale Property Preparation Brighton"</li>
+    <li><strong>Expand guides</strong> — "Estate clearance checklist for Mornington Peninsula executors", "What happens to contents during a Melbourne estate clearance"</li>
+    <li><strong>Build external links</strong> — Local real estate agent directories, solicitor/estate planner referrals, Victorian government executor resources</li>
+  </ul>
+</div>
+
+<div style="margin-top:40px;padding:24px;background:#1A3C5E;border-radius:14px;color:#fff">
+  <p style="color:rgba(255,255,255,.9);font-size:15px;margin:0"><strong style="color:#A8D8EA">Summary:</strong> You now have 56 pages ready to deploy — 49 suburb pages and 7 regional hubs — each with correct SEO structure, schema markup, unique local content, and a complete internal link graph. Upload them all, update the Melbourne page and footer links on existing pages, submit the sitemap, and you'll have one of the most comprehensive estate clearance location coverage structures in Melbourne.</p>
+</div>
+
+</div>
+</body>
+</html>
